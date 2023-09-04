@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .image-container {
+            position: relative;
+            display: inline-block;
+            width: 500px;
+            /* 이미지 컨테이너의 가로 너비 설정 */
+            height: 500px;
+            /* 이미지 컨테이너의 세로 높이 설정 */
+            overflow: hidden;
+            /* 넘치는 내용 숨김 */
+            background-color: black;
+            /* 검은색 배경 추가 */
+        }
+
+        .highlight {
+            position: absolute;
+            width: 0;
+            height: 10px;
+            background-color: yellow;
+            transition: width 1s;
+        }
+
+        .top-highlight {
+            top: 0;
+            left: 0;
+        }
+
+        .bottom-highlight {
+            bottom: 0;
+            right: 0;
+        }
+
+        .left-highlight {
+            bottom: 0;
+            left: 0;
+            width: 10px;
+            background-color: yellow;
+            height: 0;
+            transition: height 1s;
+        }
+
+        .right-highlight {
+            top: 0;
+            right: 0;
+            width: 10px;
+            background-color: yellow;
+            height: 0;
+            transition: height 1s;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var imageContainer = document.querySelector(".image-container");
+            var topHighlight = document.querySelector(".top-highlight");
+            var bottomHighlight = document.querySelector(".bottom-highlight");
+            var leftHighlight = document.querySelector(".left-highlight");
+            var rightHighlight = document.querySelector(".right-highlight");
+
+            imageContainer.addEventListener("mouseenter", function () {
+                topHighlight.style.width = "100%";
+                bottomHighlight.style.width = "100%";
+                leftHighlight.style.height = "100%";
+                rightHighlight.style.height = "100%";
+            });
+
+            imageContainer.addEventListener("mouseleave", function () {
+                topHighlight.style.width = "0";
+                bottomHighlight.style.width = "0";
+                leftHighlight.style.height = "0";
+                rightHighlight.style.height = "0";
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="image-container">
+        <div class="highlight top-highlight"></div>
+        <div class="highlight bottom-highlight"></div>
+        <div class="highlight left-highlight"></div>
+        <div class="highlight right-highlight"></div>
+    </div>
+</body>
+
+</html>
