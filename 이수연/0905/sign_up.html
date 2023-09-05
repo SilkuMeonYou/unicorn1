@@ -15,10 +15,6 @@
             align-items: flex-end;
         }
 
-        .t2>div {
-            margin-bottom: 10px;
-        }
-
         .t2 input[type=text],
         .t2 input[type=password] {
             width: 315px;
@@ -29,6 +25,9 @@
         .t2 input[type=button] {
             width: 325px;
             height: 60px;
+        }
+        .pwpw, .t3, .t4, .t5 {
+            margin-top: 30px;
         }
 
         .b {
@@ -114,7 +113,7 @@
             });
 
             pwInput.addEventListener('blur', function () {
-                idMessage.style.display = 'none';
+                pwMessage.style.display = 'none';
             });
 
             document.querySelector('.signup-input').addEventListener('focus', function () { // 비밀번호
@@ -126,7 +125,7 @@
             });
 
             idInput.addEventListener('blur', function () {
-                pwMessage.style.display = 'none';
+                idMessage.style.display = 'none';
             });
 
             document.querySelector('.signup-input').addEventListener('focus', function () { // 이메일
@@ -164,7 +163,7 @@
         <div class="t2">
             <div>아이디 <input type="text" class="id-input" placeholder="아이디 입력"></div>
             <div id="id1" style="display: none; color: red; font-size: 13px;">아이디는 필수입니다</div>
-            <div>비밀번호 <input type="password" class="pw-input" placeholder="비밀번호 입력"></div>
+            <div class="pwpw">비밀번호 <input type="password" class="pw-input" placeholder="비밀번호 입력"></div>
             <div id="pw1" style="display: none; color: red; font-size: 13px;">비밀번호는 필수입니다</div>
             <div class="t3">
                 이메일주소 <input type="text" class="e-input" placeholder="이메일주소 입력" style="width: 200px;">@
@@ -180,7 +179,7 @@
             <div class="t4">핸드폰 번호 <input type="text" class="num-input" placeholder="- 빼고 입력"></div>
             <div id="num1" style="display: none; color: red; font-size: 13px;">핸드폰번호는 필수입니다</div>
             <div style="display: flex;">
-                <div>
+                <div class="t5">
                     수강강좌
                     <select style="width: 325px; height: 40px; margin-left: 10px;">
                         <option value="강좌선택" selected></option>
