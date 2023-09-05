@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    
+</head>
+<style>
+    div {
+        /* border: 1px solid orange; */
+    }
+    body {
+        margin-top: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: 'pretendard';
+        width: 1280px;
+        height: 1500px;
+        min-width: 300px;
+    }
+    #head {
+        border-top : 1px solid #109ddc;
+        background-color: white;
+        position: fixed;
+        display: flex;
+        width: 1280px;
+        height: 230px;
+        flex-wrap: wrap;
+        z-index: 1000;
+    }
+        .logo {
+            /* width: 990px; */
+            width: 79%;
+            text-align: center;
+            height: 180px;
+        }
+        
+        .img1 {
+            margin-top: 60px;
+            margin-left: 150px;
+        }
+        .img1:hover{
+            cursor: pointer;
+        }
+
+        .img2 {
+            margin-top: 40px;
+        }
+        .img3 {
+            margin-top: 30px;
+            
+        }
+
+        .fours {
+            display: flex;
+            flex-wrap: wrap;
+            width: 260px;
+            height: 180px;
+        }
+            .fours1 {
+                width: 80px;
+                height: 89px;
+                line-height: 90px;
+                font-size: 14px;
+            }
+            .fours2 {
+                font-weight: 700;
+                font-size: 18px;
+                width: 176px;
+                height: 89px;
+            }
+            
+            .fours3 {
+                width: 80px;
+                height: 89px;
+                line-height: 150px;
+                font-size: 14px;
+            }
+            .fours3:hover{
+                cursor: pointer;
+            }
+
+            .fours4 {
+                width: 176px;
+                height: 89px;
+                line-height: 150px;
+                font-size: 14px;
+            }
+            .fours4:hover{
+                cursor: pointer;
+            }
+
+    .button {
+        border-top: 1px solid rgb(216, 215, 215);
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 20%;
+        line-height: 40px;
+        font-weight: 700;
+        font-size: 20px;
+    }
+    .button:hover, #category:hover, .room:hover{
+        cursor: pointer;
+    }
+    
+    .buttonsub1 {
+        width: 317px;
+        /* width: 25%; */
+        /* border 지우고 다시 확인해볼 것 마지막에 */
+        height: 100%;
+        position:relative;
+    }
+
+    /* menubutton hover */
+    .buttonsub1::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-color: #6098FF;
+        transform: scaleY(0.3);
+        opacity: 0;
+        transition: transform 0.8s cubic-bezier(0.08, 0.35, 0.13, 1.02), opacity 0.4s;
+        /* transition: transform 0.8s cubic-bezier(0.71, 0.11, 0.13, 1.02), opacity 0.4s; */
+    }
+
+    .buttonsub1:hover::before {
+        opacity: 1;
+        background-color: #6098FF;
+        transform: scaleY(1);
+    }
+    /*  end menubutton hover */
+
+
+    #blank {
+        height: 230px;
+        
+    }
+
+    #category {
+        display: 100%;
+        height: 160px;
+        display: flex;
+        text-align: center;
+    }
+    .category_1,
+    .category_2,
+    .category_3,
+    .category_4 {
+        width: 317px;
+        height: 160px;
+        /* 스크립트로 이벤트 줘서 변경할 것 */
+        /* opacity: 0; */
+        display: none;
+        z-index: 1000;
+        position: fixed;
+    }
+
+    /* 하위버튼 위치 고정 */
+    .category_2 {
+        margin-left: 317px;
+    }
+    .category_3 {
+        margin-left: 634px;
+    }
+    .category_4 {
+        margin-left: 950px;
+    }
+
+    .categorysub1 {
+        width: 317px;
+        height: 40px;
+        /* background-color: rgb(215, 242, 250); */
+        background-color: white;
+        /* 겹쳐지는지 확인여부 */
+
+    }
+    .categorysub1:hover {
+        background-color: rgb(171, 228, 245);
+    }
+
+
+
+
+
+
+
+    #second {
+        border: 1px solid orange;
+        margin-top: -100px;
+        height: 800px;
+        z-index: 10;
+    }
+
+    .main1 {
+        /* border: 1px solid red; */
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .notice {
+        border: 1px solid red;
+        margin: 2% 2%;
+        width: 35%;
+        height: 300px;
+    }
+
+    .room {
+        border-radius: 15px;
+        z-index: 10;
+
+        margin: 2% 2%;
+        width: 60%;
+        height: 280px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-image: url("http://www.human.or.kr/images/sec01_05.jpg");
+        background-size: 800px 300px;
+    }
+    .room1, .room2, .room3, .room4 {
+        width: 100%;
+        height: 100%;
+        padding: 15% 0 15% 0;
+        text-align: center;
+        z-index: -10
+    }
+    .room1 span, .room2 span, .room3 span, .room4 span {
+        font-size: 30px;
+        font-weight: 700;
+        color: white;
+        text-shadow: 2px 2px black;
+        line-height: 200px;
+    }
+
+    .main2 {
+        /* border: 1px solid red; */
+        display: flex;
+        justify-content: space-around;
+    }
+    .main3 {
+        margin: 2% 2%;
+        width: 70%;
+        height: 200px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    
+    /*movehighlight css (color외 수정금지) */
+    .image-container {
+        position: relative;
+        display: inline-block;
+        width: 300px;
+        height: 280px;
+        overflow: hidden;
+    }
+    .highlight {
+        position: absolute;
+        width: 0;
+        height: 7px;
+        background-color: #8cbfd6;
+        transition: width 0.5s;
+    }
+    .top-highlight {
+        top: 0;
+        left: 0;
+    }
+    .bottom-highlight {
+        bottom: 0;
+        right: 0;
+    }
+    .left-highlight {
+        bottom: 0;
+        left: 0;
+        width: 7px;
+        background-color: #8cbfd6;
+        height: 0;
+        transition: height 0.5s;
+    }
+    .right-highlight {
+        top: 0;
+        right: 0;
+        width: 7px;
+        background-color: #8cbfd6;
+        /* background-color: #d5edf8; */
+        height: 0;
+        transition: height 0.5s;
+    }
+    /* end border css*/
+
+
+    .rv, .sg {
+        width: 50%;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .rv {
+        border-top: 1px solid rgb(216, 215, 215);
+    }
+    .sg {
+        border-bottom: 1px solid rgb(216, 215, 215);
+    }
+
+    .seat {
+        width: 150px;
+        margin-top: -15px;
+    }
+    .food {
+        width: 150px;
+    }
+
+    /* 확대 */
+    .rv:hover, .sg:hover {
+        transform: scale(1.1);
+        transition: 0.5s ease-out;
+        cursor: pointer;
+    }
+    .rv:not(:hover), .sg:not(:hover) {
+        transition: 0.5s ease-out;
+    }
+    /* 확대 끝 */
+
+    .ad {
+        border: 1px solid red;
+        margin: 2% 2%;
+        width: 30%;
+        height: 200px;
+        text-align: center;
+    }
+
+    /* food overay */
+    .sg {
+        overflow:hidden;
+        transition: all .65s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+    .sg .transition{
+        position: absolute;
+        top: -10%;
+        left: 0%;
+        width: 100%;
+        height: 10%;
+        background: rgb(255, 209, 4);
+        z-index:-1;
+    }
+    .sg:hover .transition{
+        height:100%;
+        top:100%;
+        transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+    } 
+
+    .rv {
+        overflow:hidden;
+        transition: all .65s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+    .rv .transition{
+        position: absolute;
+        top: -10%;
+        left: 0%;
+        width: 100%;
+        height: 10%;
+        background: rgb(119, 245, 0);
+        z-index:-1;
+    }
+    .rv:hover .transition{
+        height:100%;
+        top:100%;
+        transition: all .7s cubic-bezier(0.7, 0, 0.475, 1);
+                        /*처음나타나는 속도,퍼지는 속도,지나가는 속도 */
+    } 
+
+
+    
+</style>
+<script>
+
+</script>
+<body>
+    <div id="head">   
+        <div class="logo">
+            <img class="img1" src="http://www.human.or.kr/images/h_logo.png">
+        </div>
+        <div class="fours">
+            <div class="fours1">
+                <img class="img2" src="http://www.human.or.kr/images/menu_icon.png" width="25px">
+            </div>
+            <div class="fours2">
+                <img class="img3" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAkCAYAAAB8DZEQAAAACXBIWXMAAAsTAAALEwEAmpwYAAADGUlEQVRIiaXXTYiWVRQH8N87vo3gjDZYUvYFjUYWmIuyJmgTQQTlonRR4SKQCqFyFRIUiSW4sJZJ0KJFk1BT9gHRJoIgi8oWZYEjMn0RZFqKMvk50+Keh+eZx+e+7zszBx4u9/zPOf/7ce6956GzDOBRjGIc5zCNC5jAGDbh0i5xGmUhtuJoBC2+f/ALjtT0J7EDg70SrMKP4TyFvdiAy2t2Q1iHPcoZTuD2bgR3xGinsQ+rexzYMD4Nv0nclzO8Qbk8r6HdI0EhLWyrEF00ozb2h8Hrswxel4JoQm2PngpgP/rnSdJSLt2OQtnG76Ec6eA8iAfwJB6UNj4nw1IynBTpfXcQfN7B6XEcNzNtJ/FcjLxJ9oTdJtgenScyxluU6fy+tOajOBv6nRm/dYGPkc7BtHQ+6nIF/pOmfm8Nu1Vajinc3OA7pEwAX0fnkgbDzYHtzoz2hcC3Z/AjuNCHxWF4rsFoONovM0H2Rbsig0+ir0/a0JZ0X9XleLRXZYIsj/ZEBl+C8/CuNJM1DUYjynWt37QL8X3g6xt8lwU2Ds9HZ0tmNJ8E/gPux3W4R1rCaXyHvga/DYG/BXdG59sMydJKwPp3ANdk/D4Mm0fEKMZDUU/TQtrYKKX7N/hYyrzcFXSLlNpHsahQbgySg2bx8HQY0FcRb2sVaOGzAPZiwTxIdiv38KKZLsdvYTA6R6Kd4X8MN+aMbsLfcyQqCE5IL2xHWa0sFHolmhVBISvxR49EcyKYDdG8CAak89OJqE7Qki7brrIKb0oP0huhayJqmsFL0mU4httyBE8ri7RTZr6UVaKfGwjgIWXNNoUX6wTrAzyPlzUXCVWi3B4M4FmcDrvNVfCLUD6cm2aF6G2s7WJ3V8Q7VFX+FMqruzj3KoM4Ix694h34KNr35F/BXmWptPn9+KAKLJYutGLTd+m92C5kpVQu/RtxDuNKZhZmS/AqHlOehz+lYuEgfpU2/Kx0nQ/hWqlQH8H1lVjv4Bn8lRvRCinnD2h+DXPfIbyioVbIlZiF9OMyaTkHot+WfufOSCXPKelqP50L8j8DCv9BNrvGdwAAAABJRU5ErkJggg==" width="20px">
+                각 지점교육센터
+            </div>
+            <div class="fours3">로그인</div>
+            <div class="fours4">회원가입</div>
+        </div>
+        <div class="button">
+            <div class="buttonsub1" name="buttonsub_1">공지사항</div>
+            <div class="buttonsub1" name="buttonsub_2">강의실</div>
+            <div class="buttonsub1" name="buttonsub_3">주변맛집</div>
+            <div class="buttonsub1" name="buttonsub_4">좌석예약</div>
+        </div>
+    </div>
+    <!-- fixed 공백 채우기 -->
+    <div id="blank"></div>
+
+    <div id="category">
+        <div class="category_1">
+            <div class="categorysub1"><span class="tmp2">공지사항(인혜)</span></div>
+            <div class="categorysub1"><span class="tmp">행사안내(신영)</span></div>
+            <!-- <div class="categorysub1"></div>
+            <div class="categorysub1"></div> -->
+        </div>
+        <div class="category_2">
+            <div class="categorysub1">1강의실</div>
+            <div class="categorysub1">2강의실</div>
+            <div class="categorysub1">3강의실</div>
+            <div class="categorysub1">4강의실</div>
+        </div>
+        <div class="category_3">
+            <div class="categorysub1"><span class="tmp3">맛집지도(여준)</span></div>
+            <div class="categorysub1">맛집랭킹</div>
+            <div class="categorysub1">추천하기</div>
+            <div class="categorysub1"></div>
+        </div>
+        <div class="category_4">
+            <div class="categorysub1"><span class="tmp4">좌석예약(만경)</span></div>
+            <div class="categorysub1">좌석확인</div>
+            <div class="categorysub1">마이페이지</div>
+            <div class="categorysub1"></div>
+        </div>
+    </div>
+
+
+    <div id="second">
+        <div class="main1">
+            <div class="notice">공지사항</div>
+            <div class="room">
+                <div class="image-container">
+                    <div class="room1"><span>1강의실</span></div>
+                    <div class="highlight top-highlight"></div>
+                    <div class="highlight bottom-highlight"></div>
+                    <div class="highlight left-highlight"></div>
+                    <div class="highlight right-highlight"></div>
+                </div>
+                <div class="image-container">
+                    <div class="room2"><span>2강의실</span></div>
+                    <div class="highlight top-highlight"></div>
+                    <div class="highlight bottom-highlight"></div>
+                    <div class="highlight left-highlight"></div>
+                    <div class="highlight right-highlight"></div>
+                </div>
+                <div class="image-container">
+                    <div class="room3"><span>3강의실</span></div>
+                    <div class="highlight top-highlight"></div>
+                    <div class="highlight bottom-highlight"></div>
+                    <div class="highlight left-highlight"></div>
+                    <div class="highlight right-highlight"></div>
+                </div>
+                <div class="image-container">
+                    <div class="room4"><span>4강의실</span></div>
+                    <div class="highlight top-highlight"></div>
+                    <div class="highlight bottom-highlight"></div>
+                    <div class="highlight left-highlight"></div>
+                    <div class="highlight right-highlight"></div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="main2">
+            <div class="main3">
+                <div class="rv">
+                    좌석예약 <br><br>
+                    <img class="seat" src="https://icon-library.com/images/monitor-icon-png/monitor-icon-png-22.jpg">
+                    <div class="transition"></div>
+                </div>
+                <div class="sg">
+                    주변맛집 <br>
+                    <img class="food" src="../../img/restaurant.png" alt="주변맛집">
+                    <div class="transition"></div>
+                </div>
+            </div>
+                <div class="ad">
+                    광고
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    
+    <script>
+        window.addEventListener("load", function () {
+            bind();
+        
+        })
+
+        function bind() {
+            console.log("check")
+
+            let open = document.querySelector("#category .category_1");
+
+            // 버튼에 mouseover 이벤트
+            document.querySelector("[name='buttonsub_1']").addEventListener("mouseover", function () {
+                console.log("mouseover")
+                let open = document.querySelector("#category .category_1")
+                open.style.display = "block";
+
+
+                // 버튼에서 바로 마우스 빼면 사라짐. 하위버튼으로 마우스오버해도 사라지지 않게
+                if (open.style.display = "block") {
+                    document.querySelector("#category .category_1").addEventListener("mouseover", function () {
+                        open.style.display = "block";
+
+                    })
+                    // 하위버튼 마우스오버 상태에서 마우스 빼도 안 사라지는 것 방지(사라지게)
+                    document.querySelector("#category .category_1").addEventListener("mouseout", function () {
+                        open.style.display = "none";
+
+
+                    })
+                }
+            })
+            document.querySelector("[name='buttonsub_1']").addEventListener("mouseout", function () {
+                console.log("mouseout")
+                let open = document.querySelector("#category .category_1")
+                open.style.display = "none";
+
+            })
+
+
+            document.querySelector("[name='buttonsub_2']").addEventListener("mouseover", function () {
+                console.log("mouseover")
+                let open = document.querySelector("#category .category_2")
+                open.style.display = "block";
+
+
+                if (open.style.display = "block") {
+                    document.querySelector("#category .category_2").addEventListener("mouseover", function () {
+                        open.style.display = "block";
+                    })
+
+                    document.querySelector("#category .category_2").addEventListener("mouseout", function () {
+                        open.style.display = "none";
+                    })
+                }
+            })
+            document.querySelector("[name='buttonsub_2']").addEventListener("mouseout", function () {
+                console.log("mouseout")
+                let open = document.querySelector("#category .category_2")
+                open.style.display = "none";
+            })
+
+
+            document.querySelector("[name='buttonsub_3']").addEventListener("mouseover", function () {
+                console.log("mouseover")
+                let open = document.querySelector("#category .category_3")
+                open.style.display = "block";
+
+
+                if (open.style.display = "block") {
+                    document.querySelector("#category .category_3").addEventListener("mouseover", function () {
+                        open.style.display = "block";
+                    })
+
+                    document.querySelector("#category .category_3").addEventListener("mouseout", function () {
+                        open.style.display = "none";
+                    })
+                }
+            })
+            document.querySelector("[name='buttonsub_3']").addEventListener("mouseout", function () {
+                console.log("mouseout")
+                let open = document.querySelector("#category .category_3")
+                open.style.display = "none";
+            })
+
+
+            document.querySelector("[name='buttonsub_4']").addEventListener("mouseover", function () {
+                console.log("mouseover")
+                let open = document.querySelector("#category .category_4")
+                open.style.display = "block";
+
+
+                if (open.style.display = "block") {
+                    document.querySelector("#category .category_4").addEventListener("mouseover", function () {
+                        open.style.display = "block";
+                    })
+
+                    document.querySelector("#category .category_4").addEventListener("mouseout", function () {
+                        open.style.display = "none";
+                    })
+                }
+            })
+            document.querySelector("[name='buttonsub_4']").addEventListener("mouseout", function () {
+                console.log("mouseout")
+                let open = document.querySelector("#category .category_4")
+                open.style.display = "none";
+            })
+            // 버튼 마우스오버 이벤트 끝 
+
+
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+        var imageContainers = document.querySelectorAll(".image-container");
+
+        imageContainers.forEach(function (imageContainer) {
+            var topHighlight = imageContainer.querySelector(".top-highlight");
+            var bottomHighlight = imageContainer.querySelector(".bottom-highlight");
+            var leftHighlight = imageContainer.querySelector(".left-highlight");
+            var rightHighlight = imageContainer.querySelector(".right-highlight");
+
+            imageContainer.addEventListener("mouseenter", function () {
+                topHighlight.style.width = "100%";
+                bottomHighlight.style.width = "100%";
+                leftHighlight.style.height = "100%";
+                rightHighlight.style.height = "100%";
+            });
+
+            imageContainer.addEventListener("mouseleave", function () {
+                topHighlight.style.width = "0";
+                bottomHighlight.style.width = "0";
+                leftHighlight.style.height = "0";
+                rightHighlight.style.height = "0";
+            });
+        });
+
+        });
+
+        // 메인
+        document.querySelector(".img1").addEventListener("click", function() {
+            window.location.href="0904_윤여준_main_home.html";
+            let img1 = document.querySelector(".img1")
+        });
+
+        // 신영
+        document.querySelector(".tmp").addEventListener("click", function() {
+            let tmp = document.querySelector(".tmp");
+            let second = document.querySelector("#second");
+
+            let xhr = new XMLHttpRequest();
+            xhr.responseText = "";
+            xhr.open("GET", "0904_admin_sinyoung/administrator.html");
+            xhr.onload = function() {
+                second.innerHTML = xhr.responseText;
+
+                // html 로드가 끝나면 javascript 만들어서 추가
+                let sc = document.createElement("script")
+                sc.setAttribute("src", "/javascript/unicorn/0904_admin_sinyoung/js/administrator.js")
+                document.querySelector("body").append(sc)
+            };
+            xhr.send();
+        });
+        
+
+        // function loadScript(url, callback) {
+        // var script = document.createElement("script");
+        // script.type = "text/javascript";
+        // script.src = "0904_admin_sinyoung/js/administrator.js";
+
+        // // 스크립트 로드가 완료되면 콜백 함수를 호출
+        // script.onload = callback;
+
+        // // HTML 문서의 <head> 또는 <body>에 스크립트 요소 추가
+        // document.head.appendChild(script);
+        // }
+
+
+        // 인혜
+        document.querySelector(".tmp2").addEventListener("click", function() {
+            let tmp2 = document.querySelector(".tmp2");
+            let second2 = document.querySelector("#second");
+
+            let xhr = new XMLHttpRequest();
+            xhr.responseText = "";
+            xhr.open("GET", "0905_inhye/mypage.html");
+            xhr.onload = function() {
+                second2.innerHTML = xhr.responseText;
+                
+                // let sc = document.createElement("script")
+                // sc.setAttribute("src", "/javascript/unicorn/0905/assets/administrator.js")
+                // document.querySelector("body").append(sc)
+            };
+        xhr.send();
+        });
+        
+        // 여준(지도)
+        document.querySelector(".tmp3").addEventListener("click", function() {
+            let tmp3 = document.querySelector(".tmp3");
+            let second3 = document.querySelector("#second");
+
+            let xhr = new XMLHttpRequest();
+            xhr.responseText = "";
+            xhr.open("GET", "0904_api copy.html");
+            xhr.onload = function() {
+            second3.innerHTML = xhr.responseText;
+        
+        };
+        xhr.send();
+        });
+
+        // 만경(좌석)
+        document.querySelector(".tmp4").addEventListener("click", function() {
+            let tmp4 = document.querySelector(".tmp4");
+            let second4 = document.querySelector("#second");
+
+            let xhr = new XMLHttpRequest();
+            xhr.responseText = "";
+            // xhr.open("GET", "/javascript/unicorn/0905_mankyung/seatReservation_최만경_0904.html");
+            xhr.open("GET", "0905_mankyung/seatReservation_최만경_0904.html");
+            xhr.onload = function() {
+            second4.innerHTML = xhr.responseText;
+
+        };
+        xhr.send();
+        });
+
+        // 수연(로그인)
+        document.querySelector(".fours3").addEventListener("click", function() {
+            console.log("click")
+            window.location.href="/javascript/unicorn/0905_suyeon/login.html"
+        });
+        // 수연(회원가입)
+        document.querySelector(".fours4").addEventListener("click", function() {
+            console.log("click")
+            window.location.href="/javascript/unicorn/0905_suyeon/sign_up.html"
+        });
+
+        
+
+        
+    </script>
+    <script src="./0904_admin_sinyoung/js/administrator.js"></script>
+    
+    
+    
+</body>
+
+</html>
