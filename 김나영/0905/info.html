@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <style>
+        body {
+            background-color: #e3e8ed;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .bigbox {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #e3e0e0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            text-align: left;
+            margin-bottom: 20px;
+            background-color: #f5f5f5; /* Add background color */
+            padding: 10px; /* Add padding */
+            border-radius: 5px; /* Add rounded corners */
+        }
+
+        .column h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .column p {
+            margin: 8px 0;
+            font-size: 18px;
+            background-color: #bed1c5; /* Add background color */
+            padding: 5px; /* Add padding */
+            border-radius: 5px; /* Add rounded corners */
+        }
+
+        .course-list select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bigbox">
+        <div class="column">
+            <h3>회원 정보</h3>
+            <p><strong>회원명:</strong> 김사람</p>
+            <p><strong>이메일:</strong> human@mail.column</p>
+            <p><strong>전화번호:</strong> 010-1234-1234</p>
+            <p><strong>주소:</strong> 천안시</p>
+            <p><strong>생년월일:</strong> 1998-03-03</p>
+            <p><strong>메일수신여부:</strong> 수신거부</p>
+            <p><strong>알림 설정:</strong> 수신거부</p>
+        </div>
+        <div class="column">
+            <h3>수강 중인 강의</h3>
+            <select multiple>
+                <option value="강의1">강의 1: 웹 개발 기초</option>
+                <option value="강의2">강의 2: 데이터베이스 설계</option>
+                <option value="강의3">강의 3: 프론트엔드 개발</option>
+                <!-- 다른 과목들을 여기에 추가하세요. -->
+            </select>
+        </div>
+    </div>
+</body>
+</html>
