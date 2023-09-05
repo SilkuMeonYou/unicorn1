@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>회원가입</title>
+    <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <style>
+        body {
+            font-family: 'pretendard';
+        }
+        .t2 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .t2>div {
+            margin-bottom: 10px;
+        }
+
+        .t2 input[type=text],
+        .t2 input[type=password] {
+            width: 315px;
+            height: 40px;
+            margin-left: 10px;
+        }
+
+        .t2 input[type=button] {
+            width: 325px;
+            height: 60px;
+        }
+
+        .b {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .select {
+            height: 43px;
+            width: 95px;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const idInput = document.querySelector('.t2 input[type="text"]');
+            const pwInput = document.querySelector('.t2 input[type="password"]');
+            const eInput = document.querySelector('.t3 input[type="text"]');
+            const numInput = document.querySelector('.t4 input[type="text"]');
+
+            const idMessage = document.getElementById('id1');
+            const pwMessage = document.getElementById('pw1');
+            const eMessage = document.getElementById('e1');
+            const numMessage = document.getElementById('num1');
+
+            const signUp = document.getElementById('.singup-input');
+
+            idInput.addEventListener('keydown', function (event) {
+                if (event.key == 'Enter') {
+                    event.preventDefault();
+                    pwInput.focus();
+                }
+            });
+
+            pwInput.addEventListener('keydown', function (event) {
+                if (event.key == 'Enter') {
+                    event.preventDefault();
+                    eInput.focus();
+                }
+            });
+
+            eInput.addEventListener('keydown', function (event) {
+                if (event.key == 'Enter') {
+                    event.preventDefault();
+                    numInput.focus();
+                }
+            });
+
+            pwInput.addEventListener('focus', function () { // 비밀번호 입력 필드를 선택(포커스)했을때
+                if (idInput.value == '') { // 아이디 입력 필드가 빈값이면
+                    idMessage.style.display = 'block'; // 아이디는 필수입니다 보이게 설정
+                } else {
+                    idMessage.style.display = 'none'; // 아니면 안보이게 설정
+                }
+            });
+
+            eInput.addEventListener('focus', function () { // 이메일 입력 필드를 선택(포커스)했을때
+                if (pwInput.value == '') { // 비밀번호 입력 필드가 빈값이면
+                    pwMessage.style.display = 'block'; // 비밀번호는 필수입니다 보이게 설정
+                } else {
+                    pwMessage.style.display = 'none'; // 아니면 안보이게 설정
+                }
+            });
+
+            numInput.addEventListener('focus', function () { // 전화번호 입력 필드를 선택(포커스)했을때
+                if (eInput.value == '') { // 이메일 입력 필드가 빈값이면
+                    eMessage.style.display = 'block'; // 이메일은 필수입니다 보이게 설정
+                } else {
+                    eMessage.style.display = 'none'; // 아니면 안보이게 설정
+                }
+            });
+
+            document.querySelector('.signup-input').addEventListener('focus', function () { // 아이디
+                if (idInput.value == '') {
+                    idMessage.style.display = 'block';
+                } else {
+                    idMessage.style.display = 'none';
+                }
+            });
+
+            pwInput.addEventListener('blur', function () {
+                idMessage.style.display = 'none';
+            });
+
+            document.querySelector('.signup-input').addEventListener('focus', function () { // 비밀번호
+                if (pwInput.value == '') {
+                    pwMessage.style.display = 'block';
+                } else {
+                    pwMessage.style.display = 'none';
+                }
+            });
+
+            idInput.addEventListener('blur', function () {
+                pwMessage.style.display = 'none';
+            });
+
+            document.querySelector('.signup-input').addEventListener('focus', function () { // 이메일
+                if (eInput.value == '') {
+                    eMessage.style.display = 'block';
+                } else {
+                    eMessage.style.display = 'none';
+                }
+            });
+
+            eInput.addEventListener('blur', function () {
+                eMessage.style.display = 'none';
+            });
+
+            document.querySelector('.signup-input').addEventListener('focus', function () { // 핸드폰번호
+                if (numInput.value == '') {
+                    numMessage.style.display = 'block';
+                } else {
+                    numMessage.style.display = 'none';
+                }
+            });
+
+            numInput.addEventListener('blur', function () {
+                numMessage.style.display = 'none';
+            });
+
+        })
+    </script>
+
+</head>
+
+<body>
+    <div class="b">
+        <img src="http://www.human.or.kr/images/h_logo.png" style="margin-bottom: 130px;">
+        <div class="t2">
+            <div>아이디 <input type="text" class="id-input" placeholder="아이디 입력"></div>
+            <div id="id1" style="display: none; color: red; font-size: 13px;">아이디는 필수입니다</div>
+            <div>비밀번호 <input type="password" class="pw-input" placeholder="비밀번호 입력"></div>
+            <div id="pw1" style="display: none; color: red; font-size: 13px;">비밀번호는 필수입니다</div>
+            <div class="t3">
+                이메일주소 <input type="text" class="e-input" placeholder="이메일주소 입력" style="width: 200px;">@
+                <select class="select">
+                    <option value="이메일 선택" selected>이메일선택</option>
+                    <option value="naver.com">naver.com</option>
+                    <option value="nate.com">nate.com</option>
+                    <option value="hanmail.net">hanmail.net</option>
+                    <option value="gmail.com">gmail.com</option>
+                </select>
+                <div id="e1" style="display: none; color: red; margin-left: 300px; font-size: 13px;">이메일은 필수입니다</div>
+            </div>
+            <div class="t4">핸드폰 번호 <input type="text" class="num-input" placeholder="- 빼고 입력"></div>
+            <div id="num1" style="display: none; color: red; font-size: 13px;">핸드폰번호는 필수입니다</div>
+            <div style="display: flex;">
+                <div>
+                    수강강좌
+                    <select style="width: 325px; height: 40px; margin-left: 10px;">
+                        <option value="강좌선택" selected></option>
+                        <option value="java">java(자바)</option>
+                        <option value="spring">spring(스프링)</option>
+                        <option value="python">python(파이썬)</option>
+                        <option value="빅데이터">빅데이터</option>
+                    </select>
+                </div>
+            </div>
+            <input type="button" class="signup-input" value="가입하기"
+                style="background-color:aquamarine; margin-top: 50px; font-size: large;">
+        </div>
+    </div>
+</body>
+
+</html>

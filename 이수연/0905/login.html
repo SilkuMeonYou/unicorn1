@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>로그인</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <style>
+        .t1 {
+            margin-bottom: 80px;
+        }
+
+        .t2 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .t2>div {
+            margin-bottom: 30px;
+        }
+
+        .t2 input[type=text],
+        .t2 input[type=password] {
+            width: 300px;
+            height: 60px;
+            margin-left: 10px;
+        }
+
+        .t2 input[type=button] {
+            /* 클래스 t2 내의 버튼 유형 입력 필드에 스타일 적용 */
+            width: 300px;
+            height: 60px;
+        }
+
+        .t3 {
+            margin-top: 50px;
+        }
+
+        .b {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .t3_1,
+        .t3_2 {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        a {
+            color: rgb(7, 171, 221);
+            text-decoration-line: underline;
+        }
+
+        /* #id1,
+        #pw1 {
+            width: 200px;
+        } */
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const idInput = document.querySelector('.t2 input[type="text"]');
+            const pwInput = document.querySelector('.t2 input[type="password"]');
+            const idMessage = document.getElementById('id1');
+            const pwMessage = document.getElementById('pw1');
+            const login = document.getElementById('.login-input');
+
+            // const showPasswordButton =  document.getElementById('showPasswordButton');
+            // const passwordInput = document.getElementById('passwordInput');
+
+            // const passwordInput = document.getElementsById('passwordInput');
+
+            // 엔터 키를 누르면 다음 입력 필드로 이동하도록 설정
+            idInput.addEventListener('keydown', function (event) {
+                if (event.key == 'Enter') {
+                    event.preventDefault(); // 엔터 키의 기본동작을 막음
+                    pwInput.focus(); // 비밀번호 입력 필드로 포커스 이동
+                }
+            });
+
+            pwInput.addEventListener('focus', function () { // 비밀번호 입력 필드를 선택(포커스)했을때
+                if (idInput.value == '') { // 아이디 입력 필드가 빈값이면
+                    idMessage.style.display = 'block'; // 아이디는 필수입니다 보이게 설정
+                } else {
+                    idMessage.style.display = 'none'; // 아니면 안보이게 설정
+                }
+            });
+
+            pwInput.addEventListener('blur', function () { // 비밀번호 입력필드에서 포커스를 잃었을때
+                pwMessage.style.display = 'none'; // 비밀번호는 필수입니다 안보이게 설정
+            });
+
+            document.querySelector('.login-input').addEventListener('focus', function () { // 로그인버튼 선택시
+                if (pwInput.value == '') { // 비밀번호 입력 필드가 빈값이면
+                    pwMessage.style.display = 'block'; // 비밀번호는 필수입니다 보이게 설정
+                } else {
+                    pwMessage.style.display = 'none'; // 아니면 안보이게 설정
+                }
+            });
+
+            document.querySelector('.login-input').addEventListener('focus', function () { // 로그인버튼 선택시
+                if (idInput.value == '') { // 아이디 입력 필드가 빈값이면
+                    idMessage.style.display = 'block'; // 아이디는 필수입니다 보이게 설정
+                } else {
+                    idMessage.style.display = 'none'; // 아니면 안보이게 설정
+                }
+            });
+
+            idInput.addEventListener('blur', function () { // 아이디 입력필드에서 포커스를 잃었을때
+                idMessage.style.display = 'none'; // 아이디는 필수입니다 안보이게 설정
+
+            });
+
+            // showPasswordButton.addEventListener('click', function() {
+            //     if (passwordInput.type === 'password') {
+            //         passwordInput.type = 'text';
+            //     } else {
+            //         passwordInput.type = 'password';
+            //     }
+            // });
+
+            // 아이디 입력하면 비밀번호 창 나오게
+            // idInput.addEventListener('input', function () {
+            //     if (idInput.value.trim() !== '') {
+            //         passwordInput.style.display = 'block';
+            //     } else {
+            //         passwordInput.style.display = 'none';
+            //     }
+            // });
+
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="b">
+        <img src="http://www.human.or.kr/images/h_logo.png" style="margin-bottom: 50px;">
+        <div class="t1">
+            <h2 style="color:rgb(76, 153, 224);">로그인</h2>
+        </div>
+        <div class="t2">
+            <div>아이디 <input type="text" class="id-input" placeholder="아이디를 입력하세요"></div>
+            <div id="id1" class="idid" style="display: none; color: red; font-size: 13px;">아이디는 필수입니다</div>
+            <div>비밀번호 <input type="password" class="pw-input" placeholder="비밀번호를 입력하세요"></div>
+            <div id="pw1" style="display: none; color: red; font-size: 13px;">비밀번호는 필수입니다</div>
+            <div style="display: flex;">
+                <div>아이디 저장</div>
+                <input type="checkbox" style="margin-left: 10px; margin-right: 10px; ">
+            </div>
+            <input type="button" class="login-input" value="로그인"
+                style="background-color:aquamarine; margin-top: 20px; font-size: large;">
+        </div>
+        <div class="t3">
+            <div class="t3_1">
+                <div>휴먼교육센터가 처음이신가요?</div>
+                <div>
+                    <a href="sign_up.html">회원가입</a>
+                </div>
+            </div>
+            <div class="t3_2">
+                <div>아이디 찾기</div>
+                <div>|</div>
+                <div>비밀번호 찾기</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
