@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exex</title>
+   <style>
+    
+body{
+    margin: 0;
+    height: 100vh;
+}
+.head {
+    width: 100%;
+    height:50px;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    background-color: #ffffff;
+   
+}
+input {
+    outline: none;
+}
+.body{
+    display: flex;   
+    height: 100vh; 
+    background-color: #f7f7f7;
+
+}
+
+/* 메뉴 css */
+#mobileMenu{
+    display: none;
+}
+.menuBox{
+    width: 9%;
+    min-width: 120px;
+    max-width: 120px;
+    text-align: center;
+
+    border-radius: 10px;
+    font-size: 13px;
+    position: fixed;
+    margin-left: 10px;
+    margin-top:180px ;
+    
+    user-select: none;  /* 글씨 선택 안됨 */
+}
+.menu {
+    background-color: rgb(34, 50, 65);
+    height: 35px;
+    color: rgb(245, 245, 245);
+    padding-top: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px grey;
+    margin-bottom: 5px;
+    border: 1px solid grey;
+   
+}
+.menu:hover {
+    background-color: rgb(68, 89, 109);
+    cursor: pointer;
+}
+#welcome_admin{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    color: white;
+    border-radius: 10px;
+    background-color: rgb(34, 50, 65);
+    margin-bottom: 5px;
+    box-shadow: 3px 3px grey;
+    
+}
+.menu_class{
+    color: white;
+    font-size: 12px;
+    margin-bottom: 8px;
+    
+}
+.menu_class:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#admin_class1,#admin_class2,#admin_class3,#admin_class4  {
+    display: none;
+}
+
+#admin_notice{
+    background-color: rgb(68, 89, 109);
+    box-shadow: 1px 1px grey;
+}
+.logout{
+    margin-top: 100px;
+    color: white;
+    background-color: rgb(34, 50, 65);
+    box-shadow: 3px 3px grey;
+    border-radius: 10px;
+    padding: 10px;
+}
+.logout:hover{
+    cursor: pointer;
+}
+
+
+
+/* 메인 css */
+.main{
+    width: 89%;  
+    min-width: 800px;
+    padding: 30px 70px 70px 70px;
+
+    margin-top: 70px;
+    margin-left: 100px; 
+    display: flex;
+    flex-direction: column;
+    background-color: #f7f7f7;
+   
+    
+}
+.main_title{
+    width: 200px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(34, 50, 65);
+    text-shadow: 2px 2px rgb(204, 204, 204);
+}
+.mainBox {
+    border-radius: 10px;
+    box-shadow: 2px 2px grey;
+    border: 1px solid grey;
+
+}
+
+/* 글쓰기 버튼*/
+.write{
+    width: 80px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    background-color: rgb(34, 50, 65);
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-left: 90%;
+    box-shadow: 2px 2px grey;
+    color: white;
+}
+.write:hover{
+    cursor: pointer;
+}
+/* 메인 제목 */
+.rowBox{   
+   
+    border-radius: 10px 10px 0 0 ;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    background-color: #444857;
+}
+.row {
+    float: left;
+    min-width: 180px;
+    text-align: center;
+    background-color: #444857;
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+
+#number{
+    width: 10%;
+}
+#title{
+    width:70%
+}
+#del{
+    width: 20%;
+}
+
+/* 메인 리스트 */
+.mainBody{ 
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.infoBox {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+.info{
+    float: left;
+    min-width: 180px;
+    text-align: center;
+    padding: 1px;
+ 
+    
+}
+#noticeNo{
+    width: 10%;
+}
+#noticeTitle{
+    width: 80%;
+}
+#noticeButtonBox{
+    width: 10%;
+    padding-left: 50px;
+}
+.noticeButton{
+    width: 80px;
+    height: 25px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+.noticeButton:hover{
+    cursor: pointer;
+    background-color: rgb(240, 244, 247);
+}
+/* page */
+.pageBox{
+    margin-top: 20px ;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    user-select: none;
+}
+.pageNum{
+    width: 30px;
+    text-align: center;
+    box-shadow: 2px 2px grey;
+    border-radius: 10px;
+    border: 1px solid grey;
+    margin-left: 5px;
+}
+#pageNum1{
+    background-color: rgb(34, 50, 65);
+    border-radius: 10px;
+    box-shadow: 2px 2px grey;
+    color: #ffffff;
+}
+.pageNum:hover{
+    cursor: pointer;
+}
+
+   </style>
+
+</head>
+
+<body>
+    <div class="head">
+        <img src="http://www.human.or.kr/images/h_logo.png">
+        <div id="mobileMenu">
+            <img 
+            src="https://w7.pngwing.com/pngs/639/1013/png-transparent-hamburger-button-computer-icons-drop-down-list-fast-food-menu-rectangle-share-icon-pancake-thumbnail.png"
+            style="width:30px; height:30px;"
+            >
+        </div>
+    </div>
+
+    <div class="body">
+        <!--menu-->
+        <div class="menuBox" id="menuBox">
+            <div id="welcome_admin">관리자 님 <br> 환영합니다!</div>
+            <div class="menu" id="admin_notice" onclick="location.href='/Unicorn/administrator.html'">공지사항</div>
+            <div class="menu" id="admin_class">강의실</div>
+            <div class="menu_class" id="admin_class1" onclick="location.href='/Unicorn/classroom.html'">1강의실</div>
+            <div class="menu_class" id="admin_class2" onclick="location.href='/Unicorn/classroom.html'">2강의실</div>
+            <div class="menu_class" id="admin_class3" onclick="location.href='/Unicorn/classroom.html'">3강의실</div>
+            <div class="menu_class" id="admin_class4" onclick="location.href='/Unicorn/classroom.html'">4강의실</div>
+            <div class="menu" id="admin_book" onclick="location.href='/Unicorn/reservation.html'">좌석예약관리</div>
+            <div class="menu" id="admin_place" onclick="location.href='/Unicorn/hotPlace.html'">주변식당</div>
+            <div class="menu" id="admin_user" onclick="location.href='/Unicorn/user.html'">회원관리</div>
+            <div class="logout" id="admin_user" onclick="location.href='#'">로그아웃</div>
+        </div>
+
+        <!--board-->
+        <div class="main">
+            <div class="main_title">공지사항 관리</div>
+            <div class="write" onclick="location.href='/Unicorn/writeNotice.html'">글쓰기</div>
+            <div class="mainBox">
+                <div class="rowBox">
+                    <div class="row" id="number">No.</div>
+                    <div class="row" id="title">제목</div>
+                    <div class="row" id="del">관리</div>
+                </div>
+                <div class="mainBody">
+
+                    <div class="infoBox">
+                        <div class="info" id="noticeNo">1</div>
+                        <div class="info" id="noticeTitle">휴먼교육센터 공지1</div>
+                        <div class="info" id="noticeButtonBox">
+                            <button class="noticeButton">삭제</button>
+                        </div>
+                    </div>
+
+                    <!-- DB 예시-->
+                    <div class="infoBox">
+                        <div class="info" id="noticeNo">2</div>
+                        <div class="info" id="noticeTitle">휴먼교육센터 공지2</div>
+                        <div class="info" id="noticeButtonBox">
+                            <button class="noticeButton">삭제</button>
+                        </div>
+                    </div>
+                    <div class="infoBox">
+                        <div class="info" id="noticeNo">3</div>
+                        <div class="info" id="noticeTitle">휴먼교육센터 공지3</div>
+                        <div class="info" id="noticeButtonBox">
+                            <button class="noticeButton">삭제</button>
+                        </div>
+                    </div>
+                    <div class="infoBox">
+                        <div class="info" id="noticeNo">4</div>
+                        <div class="info" id="noticeTitle">휴먼교육센터 공지4</div>
+                        <div class="info" id="noticeButtonBox">
+                            <button class="noticeButton">삭제</button>
+                        </div>
+                    </div>
+                    <div class="infoBox">
+                        <div class="info" id="noticeNo">5</div>
+                        <div class="info" id="noticeTitle">휴먼교육센터 공지5</div>
+                        <div class="info" id="noticeButtonBox">
+                            <button class="noticeButton">삭제</button>
+                        </div>
+                    </div>
+                    <div class="infoBox">
+                        <div class="info" id="noticeNo">6</div>
+                        <div class="info" id="noticeTitle">휴먼교육센터 공지1</div>
+                        <div class="info" id="noticeButtonBox">
+                            <button class="noticeButton">삭제</button>
+                        </div>
+                    </div>
+                    <div class="infoBox">
+                        <div class="info" id="noticeNo">7</div>
+                        <div class="info" id="noticeTitle">휴먼교육센터 공지1</div>
+                        <div class="info" id="noticeButtonBox">
+                            <button class="noticeButton">삭제</button>
+                        </div>
+                    </div>
+                    <div class="infoBox">
+                        <div class="info" id="noticeNo">8</div>
+                        <div class="info" id="noticeTitle">휴먼교육센터 공지1</div>
+                        <div class="info" id="noticeButtonBox">
+                            <button class="noticeButton">삭제</button>
+                        </div>
+                    </div>
+                    <div class="infoBox">
+                        <div class="info" id="noticeNo">9</div>
+                        <div class="info" id="noticeTitle">휴먼교육센터 공지1</div>
+                        <div class="info" id="noticeButtonBox">
+                            <button class="noticeButton">삭제</button>
+                        </div>
+                    </div>
+                    <div class="infoBox">
+                        <div class="info" id="noticeNo">10</div>
+                        <div class="info" id="noticeTitle">휴먼교육센터 공지1</div>
+                        <div class="info" id="noticeButtonBox">
+                            <button class="noticeButton">삭제</button>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+
+            </div>
+            <div class="pageBox">
+                <div class="pageNum" id="pageNum1"> 1 </div>
+                <div class="pageNum" id="pageNum2">  2 </div>
+                <div class="pageNum" id="pageNum3">  3 </div>
+                <div class="pageNum" id="pageNum4">  4 </div>
+                <div class="pageNum" id="pageNum5">  5 </div>
+           
+            </div>
+        </div>
+
+    </div>
+
+    <script src="/Unicorn/js/administrator.js"></script>
+</body>
+
+</html>
