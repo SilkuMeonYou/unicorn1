@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>주변 맛집</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+
+    <style>
+        
+        .map_wrap {
+            border: 1px solid rgb(216, 215, 215);
+        }
+        .map_wrap,
+        .map_wrap * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;
+            font-size: 12px;
+        }
+        .map_wrap a,
+        .map_wrap a:hover,
+        .map_wrap a:active {
+            color: #000;
+            text-decoration: none;
+        }
+        .map_wrap {
+            display: flex;
+            margin: 0 auto;
+            width: 80%;
+            /* width: 80%; */
+            height: 600px;
+        }
+        #menu_wrap {
+            width: 400px;
+            height: 580px;
+            margin: 10px 0 30px 10px;
+            padding: 5px;
+            overflow-y: auto;
+            background: rgba(255, 255, 255, 0.7);
+            z-index: 1;
+            font-size: 12px;
+            border-radius: 10px;
+        }
+        .bg_white {
+            background: #fff;
+        }
+        #menu_wrap hr {
+            display: block;
+            height: 1px;
+            border: 0;
+            border-top: 2px solid #5F5F5F;
+            margin: 3px 0;
+        }
+        #menu_wrap .option {
+            text-align: center;
+        }
+        #menu_wrap .option p {
+            margin: 10px 0;
+        }
+        #menu_wrap .option button {
+            margin-left: 5px;
+        }
+        #placesList li {
+            list-style: none;
+        }
+        #placesList .item {
+            position: relative;
+            border-bottom: 1px solid #888;
+            overflow: hidden;
+            cursor: pointer;
+            min-height: 65px;
+        }
+        #placesList .item span {
+            display: block;
+            margin-top: 4px;
+        }
+        #placesList .item h5,
+        #placesList .item .info {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        #placesList .item .info {
+            padding: 10px 0 10px 55px;
+            background-color: rgb(245, 248, 250);
+        }
+        #placesList .info .gray {
+            color: #8a8a8a;
+        }
+        #placesList .info .jibun {
+            padding-left: 26px;
+            background: url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_jibun.png) no-repeat;
+        }
+        #placesList .info .tel {
+            color: #009900;
+        }
+        #placesList .item .markerbg {
+            float: left;
+            position: absolute;
+            width: 36px;
+            height: 37px;
+            margin: 10px 0 0 10px;
+            background: url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png) no-repeat;
+        }
+        #placesList .item .marker_1 {
+            background-position: 0 -10px;
+        }
+        #placesList .item .marker_2 {
+            background-position: 0 -56px;
+        }
+        #placesList .item .marker_3 {
+            background-position: 0 -102px
+        }
+        #placesList .item .marker_4 {
+            background-position: 0 -148px;
+        }
+        #placesList .item .marker_5 {
+            background-position: 0 -194px;
+        }
+        #placesList .item .marker_6 {
+            background-position: 0 -240px;
+        }
+        #placesList .item .marker_7 {
+            background-position: 0 -286px;
+        }
+        #placesList .item .marker_8 {
+            background-position: 0 -332px;
+        }
+        #placesList .item .marker_9 {
+            background-position: 0 -378px;
+        }
+        #placesList .item .marker_10 {
+            background-position: 0 -423px;
+        }
+        #placesList .item .marker_11 {
+            background-position: 0 -470px;
+        }
+        #placesList .item .marker_12 {
+            background-position: 0 -516px;
+        }
+        #placesList .item .marker_13 {
+            background-position: 0 -562px;
+        }
+        #placesList .item .marker_14 {
+            background-position: 0 -608px;
+        }
+        #placesList .item .marker_15 {
+            background-position: 0 -654px;
+        }
+
+        #pagination {
+            margin: 10px auto;
+            text-align: center;
+        }
+        #pagination a {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        #pagination .on {
+            font-weight: bold;
+            cursor: default;
+            color: #777;
+        }
+
+        /* div {
+            border: 1px solid orange;
+        } */
+
+
+        /* 메인 css */
+        .main_title{
+            margin: 10px;
+            margin-bottom: 20px;
+            width: 200px;
+            font-size: 30px;
+            font-weight: bold;
+            color: rgb(34, 50, 65);
+            font-family: 'pretendard';
+        }
+  
+        #second {
+            margin: auto;
+            margin-top: 50px;
+            /* width: 100vw; */
+            height: 600px;
+
+            overflow: hidden;
+            position: relative;
+            background-color: rgb(255, 242, 233);
+            font-family: 'pretendard';
+        }
+
+            .recommend {
+                margin-top: 10px 15px;
+                width: 100%;
+                height: 450px;
+                background-color: rgb(255, 242, 233);
+                display: flex;
+                /* box-sizing: content-box; */
+
+                animation: slide 16s linear infinite;
+            }
+
+            @keyframes slide {
+                0% {
+                    transform: translateX(0%);
+                }
+                100% {
+                    transform: translateX(-132.5%);
+                }
+            }
+
+            .slide {
+                /* border: 1px solid orange; */
+                width: 300px;
+                min-width: 300px;
+                height: 425px;
+                margin: 0 15px;
+                /* position: absolute; */
+                box-shadow: 1px 1px 2px 1px rgba(27, 27, 27, 0.5);
+                /* 수평위치, 수직위치, 흐림정도, 확산정도 */
+            }
+            .slide:hover {
+                transform: scale(1.1);
+                transition: transform 0.5s ease-out;
+            }
+            .slide:not(:hover){
+                transition: transform 0.5s ease-out;
+            }
+
+            .img_area {
+                width: 100%;
+                height: 300px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+            }
+            .text_area{
+                position: relative;
+                width: 100%;
+                height: 125px;
+                padding: 20px 25px 0 25px;
+                background-color: white;
+                box-sizing: border-box;
+                font-weight: 700;
+            }
+            .like {
+                padding: 15px;
+                position: absolute;
+                right: 25px;
+                bottom: 20px;
+                font-size: 15px;
+                color: rgba(102,102,102,0.4);
+            }
+            .img_area:hover, .review:hover, .like:hover{
+                cursor: pointer;
+            }
+            .like:hover {
+                animation-name: heart;
+                animation-duration: 1s;
+                animation-iteration-count: infinite;
+            }
+            @keyframes heart {
+                0% {
+                    transform: scale(1.0);
+                }
+                25% {
+                    transform: scale(1.3);
+                }
+                50% {
+                    transform: scale(0.8);
+                }
+                75% {
+                    transform: scale(1.3);
+                }
+                100% {
+                    transform: scale(1.0);
+                }
+            }
+
+
+        /* toast */
+        
+        #toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            padding: 15px 20px;
+            transform: translate(-50%, 10px);
+            border-radius: 30px;
+            overflow: hidden;
+            font-size: .8rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .5s, visibility .5s, transform .5s;
+            background: rgba(0, 0, 0, .35);
+            color: #fff;
+            z-index: 10000;
+        }
+
+        #toast.reveal {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%, 0)
+        }
+
+        @keyframes toast {
+            0% {
+                transform: translateX(0%);
+            }
+            50% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(-200%);
+            }
+        }
+
+</style>
+
+</head>
+
+<body>
+    <!-- map -->
+    <div id="first">
+        <div class="main_title">
+            맛집 지도
+        </div>
+        <div class="map_wrap">
+            <div id="menu_wrap" class="bg_white">
+                <div class="option">
+                    <div>
+                        <form onsubmit="searchPlaces(); return false;">
+                            키워드 : <input type="text" value="천안역 음식점" id="keyword" size="10">
+                            <button type="submit">검색하기</button>
+                        </form>
+                    </div>
+
+                </div>
+                <hr>
+                <ul id="placesList"></ul>
+                <div id="pagination"></div>
+            </div>
+            <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
+        </div>
+    </div>
+    <div id="second">
+        <div class="main_title">
+            추천 맛집
+        </div>
+        <div class="recommend">
+            <div class="slide" name="loc1">
+                <div class="img_area" style="background-image: url('img/김밥천국\ 돌솥비빔밥.jpg')"></div>
+                    <div class="text_area">
+                        <p class="review">김밥천국 돌솥비빔밥!</p>
+                        <span class="like"><img src="img/heart.png" width="20px"></span>
+                    </div>
+                </div>
+            <div class="slide" name="loc2">
+                <div class="img_area" style="background-image: url('img/봉평옹심이메밀칼국수3.jpg')"></div>
+                    <div class="text_area">
+                        <p class="review">봉평옹심이 메밀칼국수</p>
+                        <span class="like"><img src="img/heart.png" width="20px")"></span>
+                    </div>
+                </div>
+            <div class="slide" name="loc3">
+                <div class="img_area" style="background-image: url('img/신포우리만두 돌솥비빔밥1.jpg')"></div>
+                    <div class="text_area">
+                        <p class="review">신포우리만두 돌솥비빔밥!</p>
+                        <span class="like"><img src="img/heart.png" width="20px"></span>
+                    </div>
+                </div>
+            <div class="slide" name="loc4">
+                <div class="img_area" style="background-image: url('img/예산잔치국수1.jpg')"></div>
+                    <div class="text_area">
+                        <p class="review">예산잔치국수</p>
+                        <span class="like"><img src="img/heart.png" width="20px"></span>
+                    </div>
+                </div>
+            <div class="slide" name="loc5">
+                <div class="img_area" style="background-image: url('img/달식당 소바1.jpg')"></div>
+                    <div class="text_area">
+                        <p class="review">달식당 소바..</p>
+                        <span class="like"><img src="img/heart.png" width="20px"></span>
+                    </div>
+                </div>
+            <div class="slide" name="loc6">
+                <div class="img_area" style="background-image: url('img/김밥천국\ 돌솥비빔밥.jpg')"></div>
+                    <div class="text_area">
+                        <p class="review">김밥천국 돌솥비빔밥!</p>
+                        <span class="like"><img src="img/heart.png" width="20px"></span>
+                    </div>
+                </div>
+                <div class="slide" name="loc7">
+                    <div class="img_area" style="background-image: url('img/봉평옹심이메밀칼국수3.jpg')"></div>
+                        <div class="text_area">
+                            <p class="review">봉평옹심이 메밀칼국수</p>
+                            <span class="like"><img src="img/heart.png" width="20px"></span>
+                        </div>
+                    </div>
+                <div class="slide" name="loc8">
+                    <div class="img_area" style="background-image: url('img/신포우리만두 돌솥비빔밥1.jpg')"></div>
+                        <div class="text_area">
+                            <p class="review">신포우리만두 돌솥비빔밥!</p>
+                            <span class="like"><img src="img/heart.png" width="20px"></span>
+                        </div>
+                    </div>
+                <div class="slide" name="loc9">
+                    <div class="img_area" style="background-image: url('img/예산잔치국수1.jpg')"></div>
+                        <div class="text_area">
+                            <p class="review">예산잔치국수</p>
+                            <span class="like"><img src="img/heart.png" width="20px"></span>
+                        </div>
+                    </div>
+                <div class="slide" name="loc10">
+                    <div class="img_area" style="background-image: url('img/달식당 소바1.jpg')"></div>
+                        <div class="text_area">
+                            <p class="review">달식당 소바..</p>
+                            <span class="like"><img src="img/heart.png" width="20px"></span>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+    <div id="toast"></div>
+
+
+
+    <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3d11f28c480bd349414a8b27a4a9cd5d&libraries=services"></script>
+    <script>
+        // 마커를 담을 배열입니다
+        var markers = [];
+
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+            mapOption = {
+                center: new kakao.maps.LatLng(36.80795421801391, 127.14992425459954), // 지도의 중심좌표
+                level: 2 // 지도의 확대 레벨
+            };
+
+        // 지도를 생성합니다    
+        var map = new kakao.maps.Map(mapContainer, mapOption);
+
+        // 장소 검색 객체를 생성합니다
+        var ps = new kakao.maps.services.Places();
+
+        // 검색 결과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
+        var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
+
+        // 키워드로 장소를 검색합니다
+        searchPlaces();
+
+        // 키워드 검색을 요청하는 함수입니다
+        function searchPlaces() {
+
+            var keyword = document.getElementById('keyword').value;
+
+            if (!keyword.replace(/^\s+|\s+$/g, '')) {
+                alert('키워드를 입력해주세요!');
+                return false;
+            }
+
+            // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
+            ps.keywordSearch(keyword, placesSearchCB);
+        }
+
+        // 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
+        function placesSearchCB(data, status, pagination) {
+            if (status === kakao.maps.services.Status.OK) {
+
+                // 정상적으로 검색이 완료됐으면
+                // 검색 목록과 마커를 표출합니다
+                displayPlaces(data);
+
+                // 페이지 번호를 표출합니다
+                displayPagination(pagination);
+
+            } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
+
+                alert('검색 결과가 존재하지 않습니다.');
+                return;
+
+            } else if (status === kakao.maps.services.Status.ERROR) {
+
+                alert('검색 결과 중 오류가 발생했습니다.');
+                return;
+
+            }
+        }
+
+        // 검색 결과 목록과 마커를 표출하는 함수입니다
+        function displayPlaces(places) {
+
+            var listEl = document.getElementById('placesList'),
+                menuEl = document.getElementById('menu_wrap'),
+                fragment = document.createDocumentFragment(),
+                bounds = new kakao.maps.LatLngBounds(),
+                listStr = '';
+
+            // 검색 결과 목록에 추가된 항목들을 제거합니다
+            removeAllChildNods(listEl);
+
+            // 지도에 표시되고 있는 마커를 제거합니다
+            removeMarker();
+
+            for (var i = 0; i < places.length; i++) {
+
+                // 마커를 생성하고 지도에 표시합니다
+                var placePosition = new kakao.maps.LatLng(places[i].y, places[i].x),
+                    marker = addMarker(placePosition, i),
+                    itemEl = getListItem(i, places[i]); // 검색 결과 항목 Element를 생성합니다
+                    itemEl2 = getListItem(i, places[i]); // 검색 결과 항목 Element를 생성합니다
+
+                // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
+                // LatLngBounds 객체에 좌표를 추가합니다
+                bounds.extend(placePosition);
+
+                // 마커와 검색결과 항목에 mouseover 했을때
+                // 해당 장소에 인포윈도우에 장소명을 표시합니다
+                // mouseout 했을 때는 인포윈도우를 닫습니다
+                (function (marker, title) {
+                    kakao.maps.event.addListener(marker, 'mouseover', function () {
+                        displayInfowindow(marker, title);
+                    });
+
+                    kakao.maps.event.addListener(marker, 'mouseout', function () {
+                        infowindow.close();
+                    });
+
+                    itemEl.onmouseover = function () {
+                        displayInfowindow(marker, title);
+                    };
+
+                    itemEl.onmouseout = function () {
+                        infowindow.close();
+                    };
+                })(marker, places[i].place_name);
+
+                fragment.appendChild(itemEl);
+                let result = document.querySelector("#searchResults")
+                // result.appendChild(itemEl2); 
+                // 밑 div에 한번 더 출력하기
+
+            }
+
+            // 검색결과 항목들을 검색결과 목록 Element에 추가합니다
+            listEl.appendChild(fragment);
+            menuEl.scrollTop = 0;
+
+            // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
+            map.setBounds(bounds);
+        }
+
+        // 검색결과 항목을 Element로 반환하는 함수입니다
+        function getListItem(index, places) {
+
+            var el = document.createElement('div'),
+                itemStr = '<span class="markerbg marker_' + (index + 1) + '"></span>' +
+                    '<div class="info">' +
+                    '   <h5>' + places.place_name + '</h5>';
+
+            if (places.road_address_name) {
+                itemStr += '    <span>' + places.road_address_name + '</span>' +
+                    '   <span class="jibun gray">' + places.address_name + '</span>';
+            } else {
+                itemStr += '    <span>' + places.address_name + '</span>';
+            }
+
+            itemStr += '  <span class="tel">' + places.phone + '</span>' +
+                '</div>';
+
+            el.innerHTML = itemStr;
+            el.className = 'item';
+
+            return el;
+        }
+
+        // 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
+        function addMarker(position, idx, title) {
+            var imageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png', // 마커 이미지 url, 스프라이트 이미지를 씁니다
+                imageSize = new kakao.maps.Size(36, 37),  // 마커 이미지의 크기
+                imgOptions = {
+                    spriteSize: new kakao.maps.Size(36, 691), // 스프라이트 이미지의 크기
+                    spriteOrigin: new kakao.maps.Point(0, (idx * 46) + 10), // 스프라이트 이미지 중 사용할 영역의 좌상단 좌표
+                    offset: new kakao.maps.Point(13, 37) // 마커 좌표에 일치시킬 이미지 내에서의 좌표
+                },
+                markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imgOptions),
+                marker = new kakao.maps.Marker({
+                    position: position, // 마커의 위치
+                    image: markerImage
+                });
+
+            marker.setMap(map); // 지도 위에 마커를 표출합니다
+            markers.push(marker);  // 배열에 생성된 마커를 추가합니다
+
+            return marker;
+        }
+
+        // 지도 위에 표시되고 있는 마커를 모두 제거합니다
+        function removeMarker() {
+            for (var i = 0; i < markers.length; i++) {
+                markers[i].setMap(null);
+            }
+            markers = [];
+        }
+
+        // 검색결과 목록 하단에 페이지번호를 표시는 함수입니다
+        function displayPagination(pagination) {
+            var paginationEl = document.getElementById('pagination'),
+                fragment = document.createDocumentFragment(),
+                i;
+
+            // 기존에 추가된 페이지번호를 삭제합니다
+            while (paginationEl.hasChildNodes()) {
+                paginationEl.removeChild(paginationEl.lastChild);
+            }
+
+            for (i = 1; i <= pagination.last; i++) {
+                var el = document.createElement('a');
+                el.href = "#";
+                el.innerHTML = i;
+
+                if (i === pagination.current) {
+                    el.className = 'on';
+                } else {
+                    el.onclick = (function (i) {
+                        return function () {
+                            pagination.gotoPage(i);
+                        }
+                    })(i);
+                }
+
+                fragment.appendChild(el);
+            }
+            paginationEl.appendChild(fragment);
+        }
+
+        // 검색결과 목록 또는 마커를 클릭했을 때 호출되는 함수입니다
+        // 인포윈도우에 장소명을 표시합니다
+        function displayInfowindow(marker, title) {
+            var content = '<div style="padding:5px;z-index:1;">' + title + '</div>';
+
+            infowindow.setContent(content);
+            infowindow.open(map, marker);
+        }
+        // 검색결과 목록의 자식 Element를 제거하는 함수입니다
+        function removeAllChildNods(el) {
+            while (el.hasChildNodes()) {
+                el.removeChild(el.lastChild);
+            }
+        }
+        // map script 끝 
+
+
+        // 마우스 오버시 멈춤
+        let slide = document.querySelector(".recommend")
+        slide.addEventListener("mouseover", function(){
+            console.log("mouseover")
+            const computedStyle = getComputedStyle(slide);
+            const animationPlayState = computedStyle.getPropertyValue("animation-play-state");
+
+        // 동작 확인
+        // console.log(animationPlayState, animationPlayState === "running")    
+        // 애니메이션이 실행 중인 경우에만 일시정지합니다.
+            if (animationPlayState == "running") {
+                slide.style.animationPlayState = "paused";
+                }
+            });
+        // 마우스 아웃시 애니메이션 다시 시작
+        document.querySelector(".recommend").addEventListener("mouseout", function() {
+        let slide = document.querySelector(".recommend")
+        slide.style.animationPlayState = "running";
+        });
+    
+        let toastElement = document.getElementById("toast");
+        // 하트 이미지 클릭 (한번 더 클릭하면 해제)
+        for(let i =1; i<=10; i++){
+            let like = document.querySelector("[name='loc" + i + "'] .like img");
+            let isliked = false;
+                like.addEventListener("click", function(){
+                console.log("click check")
+                
+                if(isliked) {
+                    let img = this;
+                    this.src = "img/heart.png";
+                    toast("즐겨찾기를 해제했습니다")
+                }
+                else {
+                    this.src = "img/heart2.png"; 
+                    toast("즐겨찾기에 추가했습니다")
+                }
+                isliked = !isliked;
+            });
+        }
+        // 토스트 팝업
+            function toast(string) {
+            let toast = document.getElementById("toast");
+
+            toast.classList.contains("reveal") ?
+                (clearTimeout(removeToast), removeToast = setTimeout(function () {
+                    document.getElementById("toast").classList.remove("reveal")
+                }, 1000)) :
+                removeToast = setTimeout(function () {
+                    document.getElementById("toast").classList.remove("reveal")
+                }, 1000)
+            toast.classList.add("reveal"),
+                toast.innerText = string
+
+        }
+  
+    </script>
+</body>
+
+</html>

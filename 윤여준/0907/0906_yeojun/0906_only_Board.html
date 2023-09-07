@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+/* 메인 css */
+.main{
+    width: 89%;  
+    min-width: 800px;
+    padding: 30px 70px 70px 70px;
+    background-color: rgb(243, 243, 243);
+    margin-top: 70px;
+    margin-left: 100px; 
+    display: flex;
+    flex-direction: column;
+}
+.main_title{
+    width: 200px;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(34, 50, 65);
+}
+.mainBox {
+    border-radius: 10px;
+    box-shadow: 2px 2px grey;
+    border: 1px solid grey;
+}
+
+/* 글쓰기 버튼*/
+.write{
+    width: 80px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    background-color: rgb(34, 50, 65);
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-left: 90%;
+    box-shadow: 2px 2px grey;
+    color: white;
+}
+.write:hover{
+    cursor: pointer;
+}
+/* 메인 제목 */
+.rowBox{   
+    border-radius: 10px 10px 0 0 ;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    background-color: #444857;
+}
+.row {
+    float: left;
+    min-width: 180px;
+    text-align: center;
+    background-color: #444857;
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+
+#number{
+    width: 10%;
+}
+#title{
+    width:70%
+}
+#del{
+    width: 20%;
+}
+
+/* 메인 리스트 */
+.mainBody{ 
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.infoBox {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+.info{
+    float: left;
+    min-width: 180px;
+    text-align: center;
+    padding: 1px;
+}
+#noticeNo{
+    width: 10%;
+}
+#noticeTitle{
+    width: 80%;
+}
+#noticeButtonBox{
+    width: 10%;
+    padding-left: 50px;
+}
+.noticeButton{
+    width: 80px;
+    height: 25px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+.noticeButton:hover{
+    cursor: pointer;
+    background-color: rgb(240, 244, 247);
+}
+/* page */
+.pageBox{
+    margin-top: 20px ;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    user-select: none;
+}
+.pageNum{
+    width: 30px;
+    text-align: center;
+    box-shadow: 2px 2px grey;
+    border-radius: 10px;
+    border: 1px solid grey;
+    margin-left: 5px;
+}
+#pageNum1{
+    background-color: rgb(34, 50, 65);
+    border-radius: 10px;
+    box-shadow: 2px 2px grey;
+    color: #ffffff;
+}
+.pageNum:hover{
+    cursor: pointer;
+}
+</style>
+<body>
+        <!--board-->
+        <div class="main">
+            <div class="main_title">공지사항 관리</div>
+            <div class="write" onclick="location.href='0904_sinyoung/writeNotice.html'">글쓰기</div>
+            <div class="mainBox">
+                <div class="rowBox">
+                    <div class="row" id="number">No.</div>
+                    <div class="row" id="title">제목</div>
+                    <div class="row" id="del">관리</div>
+                </div>
+                <div class="mainBody">
+
+                    
+
+                    <div class="infoBox">
+                        <div class="info" id="noticeNo">9</div>
+                        <div class="info" id="noticeTitle">휴먼교육센터 공지1</div>
+                        <div class="info" id="noticeButtonBox">
+                            <button class="noticeButton">삭제</button>
+                        </div>
+                    </div>
+
+                    <!-- DB 예시-->
+                    <div class="infoBox">
+                        <div class="info" id="noticeNo">8</div>
+                        <div class="info" id="noticeTitle">휴먼교육센터 공지2</div>
+                        <div class="info" id="noticeButtonBox">
+                            <button class="noticeButton">삭제</button>
+                        </div>
+                    </div>
+                    <div class="infoBox">
+                        <div class="info" id="noticeNo">7</div>
+                        <div class="info" id="noticeTitle">휴먼교육센터 공지3</div>
+                        <div class="info" id="noticeButtonBox">
+                            <button class="noticeButton">삭제</button>
+                        </div>
+                    </div>
+                    <div class="infoBox">
+                        <div class="info" id="noticeNo">6</div>
+                        <div class="info" id="noticeTitle">휴먼교육센터 공지4</div>
+                        <div class="info" id="noticeButtonBox">
+                            <button class="noticeButton">삭제</button>
+                        </div>
+                    </div>
+                    <div class="infoBox">
+                        <div class="info" id="noticeNo">5</div>
+                        <div class="info" id="noticeTitle">휴먼교육센터 공지5</div>
+                        <div class="info" id="noticeButtonBox">
+                            <button class="noticeButton">삭제</button>
+                        </div>
+                    </div>
+                    <div class="infoBox">
+                        <div class="info" id="noticeNo">4</div>
+                        <div class="info" id="noticeTitle">휴먼교육센터 공지1</div>
+                        <div class="info" id="noticeButtonBox">
+                            <button class="noticeButton">삭제</button>
+                        </div>
+                    </div>
+                    <div class="infoBox">
+                        <div class="info" id="noticeNo">3</div>
+                        <div class="info" id="noticeTitle">휴먼교육센터 공지1</div>
+                        <div class="info" id="noticeButtonBox">
+                            <button class="noticeButton">삭제</button>
+                        </div>
+                    </div>
+                    <div class="infoBox">
+                        <div class="info" id="noticeNo">2</div>
+                        <div class="info" id="noticeTitle">휴먼교육센터 공지1</div>
+                        <div class="info" id="noticeButtonBox">
+                            <button class="noticeButton">삭제</button>
+                        </div>
+                    </div>
+                    <div class="infoBox">
+                        <div class="info" id="noticeNo">1</div>
+                        <div class="info" id="noticeTitle">휴먼교육센터 공지1</div>
+                        <div class="info" id="noticeButtonBox">
+                            <button class="noticeButton">삭제</button>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+            <div class="pageBox">
+                <div class="pageNum" id="pageNum1"> 1 </div>
+                <div class="pageNum" id="pageNum2"> 2 </div>
+                <div class="pageNum" id="pageNum3"> 3 </div>
+                <div class="pageNum" id="pageNum4"> 4 </div>
+                <div class="pageNum" id="pageNum5"> 5 </div>
+           
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

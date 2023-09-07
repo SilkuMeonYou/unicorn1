@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+
+#toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    padding: 15px 20px;
+    transform: translate(-50%, 10px);
+    border-radius: 30px;
+    overflow: hidden;
+    font-size: .8rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s, visibility .5s, transform .5s;
+    background: rgba(0, 0, 0, .35);
+    color: #fff;
+    z-index: 10000;
+}
+
+#toast.reveal {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0)
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(-200%);
+    }
+}
+
+img:hover {
+    cursor: pointer;
+    animation-name: heart;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+            }
+            @keyframes heart {
+                0% {
+                    transform: scale(1.0);
+                }
+                25% {
+                    transform: scale(1.2);
+                }
+                50% {
+                    transform: scale(1.0);
+                }
+                75% {
+                    transform: scale(1.2);
+                }
+                100% {
+                    transform: scale(1.0);
+                }
+            }
+  </style>
+</head>
+<body>
+
+    <button onclick="toast('아아아아아아아아아앙아')">토스트창 띄우기</button>
+    <div id="toast"></div>
+
+    <div class="like"><img src="img/heart.png"></div>
+</div>
+
+<script>
+    function toast(string) {
+    const toast = document.getElementById("toast");
+
+    toast.classList.contains("reveal") ?
+        (clearTimeout(removeToast), removeToast = setTimeout(function () {
+            document.getElementById("toast").classList.remove("reveal")
+        }, 1000)) :
+        removeToast = setTimeout(function () {
+            document.getElementById("toast").classList.remove("reveal")
+        }, 1000)
+    toast.classList.add("reveal"),
+        toast.innerText = string
+}
+</script>
+</body>
+</html>
