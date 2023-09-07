@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ID 찾기</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <style>
+        body {
+            font-family: 'pretendard';
+        }
+
+        #div1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* height: 100vh; */
+            text-align: center;
+        }
+
+        /* div {
+            border: 1px solid red;
+        } */
+
+        .id {
+            border: 2px solid gray;
+            border-radius: 15px;
+            width: 500px;
+            margin: 50px;
+        }
+
+        .pw {
+            border: 2px solid gray;
+            border-radius: 15px;
+            width: 500px;
+            margin: 50px;
+        }
+
+        span {
+            font-size: 30px;
+        }
+
+        input[type=text] {
+            width: 250px;
+            height: 35px;
+        }
+
+        input[type=submit] {
+            width: 60px;
+            height: 35px;
+            margin-left: 20px;
+        }
+
+        .login {
+            padding: 20px;
+        }
+
+        a {
+            color: rgb(7, 171, 221);
+            text-decoration-line: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="div1">
+        <div>
+            <img src="http://www.human.or.kr/images/h_logo.png" style="margin: 80px;">
+        </div>
+        <div class="id">
+            <div style="padding: 20px;">
+                <img style="width:25px;"
+                    src="https://ifh.cc/g/Dkv76s.png">
+                <span>아이디 찾기</span>
+            </div>
+            <div>
+                <input type="text" class="mail1" placeholder="이메일주소 입력">
+                <input type="submit" class="button" value="찾기">
+            </div>
+            <div class="login">
+                <a href="login.html"><strong>로그인하기</strong></a>
+            </div>
+        </div>
+        <div class="pw">
+            <div style="padding: 20px;">
+                <img style="width:25px;"
+                    src="https://ifh.cc/g/Dkv76s.png">
+                <span>비밀번호 찾기</span>
+            </div>
+            <div>
+                <input type="text" class="id1" placeholder="아이디 입력">
+                <input type="submit" class="button1" value="찾기">
+            </div>
+            <div class="login">
+                <a href="login.html"><strong>로그인하기</strong></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        let mail = document.querySelector(".mail1");        // 메일입력필드를 쿼리셀렉터로 불러오기
+        let button = document.querySelector(".button");     // 아이디찾기 버튼 쿼리셀렉터로 불러오기
+
+        button.addEventListener("click", function () {      // 버튼 클릭했을때
+            if (mail.value == '') {                         // 메일 입력필드가 빈값이면
+                alert("이메일을 입력해주세요 !");             // 경고창
+            }
+        });
+
+        let id = document.querySelector(".id1");            // 아이디 입력필드를 쿼리셀렉터로 불러오기
+        let button1 = document.querySelector(".button1");   // 비밀번호찾기 버튼 쿼리셀렉터로 불러오기
+        button1.addEventListener("click", function () {     // 버튼 클릭했을때
+            if (id.value == '') {                           // 아이디 입력필드가 빈값이면
+                alert("아이디를 입력해주세요 !");             // 경고창
+            }
+        });
+
+        // 아이디 값을 정해놓고 아이디 값을 입력했을때 값이 일치하면 입력창 사라지고 아이디 값 뜨게
+        // 비밀번호도 마찬가지로
+
+        var mailvalue = "humun123"; // 아이디값
+        var idvalue = 1234567890; // 비밀번호값
+
+        
+
+
+
+    </script>
+
+</body>
+
+</html>
