@@ -4,7 +4,7 @@
 <head>
     <title>seat</title>
     <link rel="stylesheet" type="text/css"
-    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
     <style>
     /* main head css */
     body {
@@ -276,7 +276,7 @@
     /* ---------------------------------------- */
 
     * {
-        font-family: Pretendard;
+        font-family: 'Pretendard';
     }
 
 
@@ -318,7 +318,6 @@
 /* end main head */
 
 
-
         .bottom {
             margin-top: -150px;
             /* border: 1px solid red; */
@@ -327,11 +326,13 @@
             display: flex;
             /* flex 컨테이너로 설정 */
         }
+
         .leftTop {
             /* border: 1px solid green; */
             margin-top: 13.5%;
             height: 100px;
         }
+
         .leftSelect {
             border: 5px solid rgb(156, 155, 155);
             background-color: aliceblue;
@@ -341,14 +342,16 @@
             margin-left: 3%;
             margin-top: 2%;
         }
+
         .leftSelect select {
             width: 150px;
             height: 30px;
             display: inline-block;
-            
+
             margin: 0 10px;
-            margin-top: 1.3%;            
+            margin-top: 1.3%;
         }
+
         .leftBottom {
             /* border: 1px solid green; */
             width: 1000px;
@@ -361,12 +364,14 @@
             width: 50%;
             height: 100%;
         }
+
         .Bright {
             /* border: 1px solid blue; */
             width: 40%;
             height: 100%;
             margin-left: 5%;
         }
+
         .right {
             /* border: 1px solid black; */
             width: 30%;
@@ -509,58 +514,14 @@
         <div class="left">
             <div class="leftTop">
                 <div class="leftSelect">
-                    <select id="yearSelect">
-                        <option value="2023">2023년</option>
-                        <option value="2022">2022년</option>
-                        <option value="2021">2021년</option>
+                    <select id="yearSelect" onchange="updateDayOptions()">
+            
                     </select>
-
-                    <select id="monthSelect">
-                        <option value="1">1월</option>
-                        <option value="2">2월</option>
-                        <option value="3">3월</option>
-                        <option value="4">4월</option>
-                        <option value="5">5월</option>
-                        <option value="6">6월</option>
-                        <option value="7">7월</option>
-                        <option value="8">8월</option>
-                        <option value="9">9월</option>
-                        <option value="10">10월</option>
-                        <option value="11">11월</option>
-                        <option value="12">12월</option>
+            
+                    <select id="monthSelect" onchange="updateDayOptions()">
+            
                     </select>
-                    <select id="daySelect">
-                        <option value="1">1일</option>
-                        <option value="2">2일</option>
-                        <option value="3">3일</option>
-                        <option value="4">4일</option>
-                        <option value="5">5일</option>
-                        <option value="6">6일</option>
-                        <option value="7">7일</option>
-                        <option value="8">8일</option>
-                        <option value="9">9일</option>
-                        <option value="10">10일</option>
-                        <option value="11">11일</option>
-                        <option value="12">12일</option>
-                        <option value="13">13일</option>
-                        <option value="14">14일</option>
-                        <option value="15">15일</option>
-                        <option value="16">16일</option>
-                        <option value="17">17일</option>
-                        <option value="18">18일</option>
-                        <option value="19">19일</option>
-                        <option value="20">20일</option>
-                        <option value="21">21일</option>
-                        <option value="22">22일</option>
-                        <option value="23">23일</option>
-                        <option value="24">24일</option>
-                        <option value="25">25일</option>
-                        <option value="26">26일</option>
-                        <option value="27">27일</option>
-                        <option value="28">28일</option>
-                        <option value="29">29일</option>
-                        <option value="30">30일</option>
-                        <option value="31">31일</option>
+                    <select id="dateSelect">
                     </select>
                 </div>
             </div>
@@ -657,6 +618,95 @@
     </div>
 
     <script>
+
+       // JavaScript로 현재 날짜를 가져오는 함수
+       function getCurrentDate() {
+                var today = new Date();
+                var year = today.getFullYear();
+                var month = (today.getMonth() + 1).toString().padStart(2, '0'); // 월은 0부터 시작하므로 1을 더하고 두 자리로 만듭니다.
+                var date = today.getDate().toString().padStart(2, '0'); // 일자를 두 자리로 만듭니다.
+    
+                return { year: year, month: month, date: date };
+            }
+    
+            // 연도 옵션 초기화
+            function initializeYearOptions() {
+                var yearSelect = document.getElementById('yearSelect');
+                var currentDate = getCurrentDate();
+    
+                // 현재 연도를 기준으로 과거 5년부터 미래 5년까지의 연도 옵션 초기화
+                for (var i = currentDate.year - 5; i <= currentDate.year + 5; i++) {
+                    var option = document.createElement('option');
+                    option.value = i;
+                    option.textContent = i + '년'; // "년" 추가
+                    yearSelect.appendChild(option);
+                }
+            }
+    
+            // 월별 일자 옵션 초기화
+            function updateDayOptions() {
+                var yearSelect = document.getElementById('yearSelect');
+                var monthSelect = document.getElementById('monthSelect');
+                var dateSelect = document.getElementById('dateSelect');
+    
+                // 선택된 연도와 월 가져오기
+                var selectedYear = parseInt(yearSelect.value);
+                var selectedMonth = parseInt(monthSelect.value);
+    
+                // 해당 월의 일자 옵션 초기화
+                dateSelect.innerHTML = ''; // 기존 옵션 삭제
+    
+                var maxDays;
+                if ([1, 3, 5, 7, 8, 10, 12].includes(selectedMonth)) {
+                    maxDays = 31;
+                } else if ([4, 6, 9, 11].includes(selectedMonth)) {
+                    maxDays = 30;
+                } else {
+                    // 2월은 윤년을 고려하여 28 또는 29일
+                    maxDays = (selectedYear % 4 === 0 && (selectedYear % 100 !== 0 || selectedYear % 400 === 0)) ? 29 : 28;
+                }
+    
+                for (var i = 1; i <= maxDays; i++) {
+                    var option = document.createElement('option');
+                    var date = i.toString().padStart(2, '0');
+                    option.value = date;
+                    option.textContent = date + '일'; // "일" 추가
+                    dateSelect.appendChild(option);
+                }
+            }
+    
+            // 페이지가 로드될 때 초기화
+            window.onload = function () {
+                var yearSelect = document.getElementById('yearSelect');
+                var monthSelect = document.getElementById('monthSelect');
+                var dateSelect = document.getElementById('dateSelect');
+    
+                // 연도 옵션 초기화
+                initializeYearOptions();
+    
+                // 월 옵션 초기화
+                for (var i = 1; i <= 12; i++) {
+                    var option = document.createElement('option');
+                    var month = i.toString().padStart(2, '0');
+                    option.value = month;
+                    option.textContent = month + '월'; // "월" 추가
+                    monthSelect.appendChild(option);
+                }
+    
+                // 현재 날짜 선택
+                var currentDate = getCurrentDate();
+                yearSelect.value = currentDate.year;
+                monthSelect.value = currentDate.month;
+    
+                // 일자 옵션 초기화
+                updateDayOptions();
+    
+                // 현재 일자 선택
+                dateSelect.value = currentDate.date;
+            }
+
+
+
         // 좌석 버튼 클릭 시 동작
         var seatButtons = document.querySelectorAll('.seat-button');
         var seatNum = document.getElementById('seatNum');
@@ -715,6 +765,7 @@
         }
         // 만경 스크립트 끝
 
+        
         // <main head>
         //logo
         var text = document.querySelector(".typing .text");
