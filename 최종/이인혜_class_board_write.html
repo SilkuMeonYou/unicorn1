@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강의실_글쓰기</title>
+
+    <link rel="stylesheet" href="./assets/css/class_board_write.css">
+
+</head>
+
+<body>
+
+    <div class="main1">
+        <div id="main1_container">
+            <img id="logo" src="http://www.human.or.kr/images/h_logo.png">
+        </div>
+    </div>
+
+    <div class="main1_0"></div>
+
+    <div class="main1_1">
+
+        <!-- <div class="main2">
+            <div id="main2_container2">
+                <div>휴먼 님</div>
+                <div>환영합니다!</div>
+            </div>
+
+            <div>
+                <div class="main4" id="tab_info" onclick="location.href='/pjunicorn/class_board.html'">1 강의실
+                </div>
+                <div class="main4" id="tab_calendar" onclick="location.href=''">2 강의실
+                </div>
+                <div class="main4" id="tab_like" onclick="location.href=''">3 강의실
+                </div>
+                <div class="main4" id="tab_todo" onclick="location.href=''">4 강의실
+                </div>
+            </div>
+
+        </div> -->
+
+        <!--글씨 버튼-->
+        <div class="buttonBox">
+            <select class="classnum" title="강의실 선택">
+                <option name="num1" selected>강의실 선택</option>
+                <option name="num2">1강의실</option>
+                <option name="num3">2강의실</option>
+                <option name="num4">3강의실</option>
+                <option name="num5">4강의실</option>
+            </select>
+            <select name="fontSize" class="textButton" id="textSize" title="글자 크기 변경">
+                <option name="size13">13</option>
+                <option name="size15">15</option>
+                <option name="size24">24</option>
+                <option name="size28">28</option>
+            </select>
+            <button class="textButton" id="textWeight" title="굵기 적용">B</button>
+            <button class="textButton" id="textLine" title="밑줄 적용">U</button>
+            <button class="textButton" id="textItalic" title="기울임 적용">I</button>
+            <input type="color" id="textColor"></button>
+            <input type="file" accept="image/*" id="fileUpload">
+            <button class="finishButton" id="finish">저장</button>
+            <button class="finishButton" id="cencle">취소</button>
+        </div>
+
+        <!--글쓰기-->
+        <div class="main">
+
+            <input type="text" class="noticeTitle" placeholder="제목을 입력해주세요">
+
+            <textarea style="resize: none;" id="noticeBoard" placeholder="내용을 입력해주세요"></textarea>
+
+        </div>
+
+    </div>
+
+    <script src="./assets/js/class_board_write.js"></script>
+
+</body>
+
+</html>

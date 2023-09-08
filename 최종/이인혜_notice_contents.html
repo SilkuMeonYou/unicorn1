@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강의실_작성글</title>
+
+    <link rel="stylesheet" href="./assets/css/notice_contents.css">
+
+</head>
+
+<body>
+
+    <div class="main1_main">
+        <div id="main1_container">
+            <img id="logo" src="http://www.human.or.kr/images/h_logo.png">
+        </div>
+    </div>
+
+    <div class="main1_0"></div>
+
+    <div class="main1_1">
+
+        <div class="main2_main">
+            <div id="main2_container2">
+                <div>휴먼 님</div>
+                <div>환영합니다!</div>
+            </div>
+
+            <div>
+                <div class="main4" id="tab_info" onclick="location.href='/pjunicorn/notice_list.html'">공지게시판</div>
+                <div class="main4" id="tab_info" onclick="location.href='/pjunicorn/notice_list.html'">건의게시판</div>
+                
+            </div>
+
+        </div>
+
+        <div class="big">
+            <div class="main">
+                <div class="title">공지사항입니다</div>
+                <div class="detail">공지사항공지사항 시험공지사항</div>
+            </div>
+
+            <div class="button_button">
+                <!-- <input type="button" id="write" value="글쓰기" onclick="location.href='/pjunicorn/class_board_write.html'"> -->
+                <input type="button" id="list" value="목록" onclick="location.href='/pjunicorn/notice_list.html'">
+            </div>
+
+            <div class="comment">
+                <div class="wirteC">
+                    <input class="writeComment" type="text" placeholder="  댓글을 입력하세요." id="commentInput"><!--댓글쓰기 영역-->
+                    <input type="button" value="댓글쓰기" id="addCommentButton"><br>
+                </div>
+                <div class="writedComment" id="commentDisplay"></div><!--써진 영역-->
+            </div>
+
+        </div>
+
+        <script src="/pjunicorn/assets/js/notice_contents.js"></script>
+        
+
+</body>
+
+</html>
