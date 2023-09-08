@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reviseNotice</title>
+    <link rel="stylesheet" href="박신영/assets/css/reviseNotice.css">
+</head>
+
+<body>
+    <div class="head">
+        <img src="http://www.human.or.kr/images/h_logo.png">
+    </div>
+    <div class="body">
+        <!--menu-->
+        <div class="menuBox">
+            <div id="welcome_admin">관리자 님 <br> 환영합니다!</div>
+            <div class="menu" id="admin_notice" onclick="location.href='박신영_administrator.html'">공지사항</div>
+            <div class="menu" id="admin_class">강의실</div>
+            <div class="menu_class" id="admin_class1" onclick="location.href='박신영_classroom.html'">1강의실</div>
+            <div class="menu_class" id="admin_class2" onclick="location.href='박신영_classroom.html'">2강의실</div>
+            <div class="menu_class" id="admin_class3" onclick="location.href='박신영_classroom.html'">3강의실</div>
+            <div class="menu_class" id="admin_class4" onclick="location.href='박신영_classroom.html'">4강의실</div>
+            <div class="menu" id="admin_book" onclick="location.href='박신영_reservation.html'">좌석예약관리</div>
+            <div class="menu" id="admin_place" onclick="location.href='박신영_hotPlace.html'">식당관리</div>
+            <div class="menu" id="admin_user" onclick="location.href='박신영_user.html'">회원관리</div>
+        </div>
+
+
+        <!--글씨 버튼-->
+        <div class="buttonBox">
+            <select name="fontSize" class="textButton" id="textSize" title="글자 크기 변경">
+                <option name="size13">13</option>
+                <option name="size15">15</option>
+                <option name="size24">24</option>
+                <option name="size28">28</option>
+            </select>
+            <button class="textButton" id="textWeight" title="굵기 적용">B</button>
+            <button class="textButton" id="textLine" title="밑줄 적용">U</button>
+            <button class="textButton" id="textItalic" title="기울임 적용">I</button>
+            <input type="color" id="textColor"></button>
+            <input type="file" accept="image/*" id="fileUpload">
+            <button class="finishButton" id="finish">수정하기</button>
+            <button class="finishButton" id="cencle">취소</button>
+        </div>
+
+        <!--글쓰기-->
+        <div class="main">
+              
+                <input type="text" class="noticeTitle" value="휴먼교육센터 공지1">
+
+                <textarea style="resize: none;" id="noticeBoard" placeholder="내용을 입력해주세요">휴먼교육센터 공지1 게시글입니다~~~~~~~~~~~~~~~~~
+                </textarea>
+            
+        </div>
+
+    </div>
+
+    <script src="박신영/assets/js/reviseNotice.js"></script>
+</body>
+
+</html>

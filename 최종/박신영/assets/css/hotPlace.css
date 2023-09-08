@@ -1,0 +1,237 @@
+body{
+    margin: 0;
+    height: 100vh;
+}
+.head {
+    width: 100%;
+    height:50px;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    background-color: white;
+}
+input {
+    outline: none;
+}
+.body{
+    display: flex;   
+    height: 100vh; 
+    background-color: rgb(243, 243, 243);
+}
+
+/* 메뉴 css */
+.menuBox{
+    width: 9%;
+    min-width: 120px;
+    max-width: 120px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 13px;
+    position: fixed;
+    margin-left: 10px;
+    margin-top: 180px;
+    user-select: none;  /* 글씨 선택 안됨 */
+}
+.menu {
+    background-color: rgb(34, 50, 65);
+    height: 35px;
+    color: rgb(255, 255, 255);
+    padding-top: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px grey;
+    margin-bottom: 5px;
+    border: 1px solid grey;
+   
+}
+.menu:hover {
+    background-color: rgb(34, 50, 65);
+    cursor: pointer;
+    color: white;
+    transform: translateX(10px);
+}
+#welcome_admin{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    color: white;
+    border-radius: 10px;
+    background-color: rgb(34, 50, 65);
+    margin-bottom: 5px;
+    box-shadow: 3px 3px grey;
+}
+.menu_class{
+    color: #969696;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+.menu_class:hover {
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(34, 50, 65);
+}
+#admin_class1, #admin_class2, #admin_class3, #admin_class4{
+    display: none;
+}
+
+#admin_place{
+    background-color: rgb(92, 106, 119);
+    box-shadow: 1px 1px grey;
+    color: white;
+}
+
+/* main css */
+.main{
+    width: 89%;  
+    min-width: 950px;
+    padding: 30px 70px 70px 70px;
+    background-color: rgb(243, 243, 243);
+    margin-top: 70px;
+    margin-left: 100px; 
+    display: flex;
+    flex-direction: column;
+}
+
+.main_title{
+    width: 500px;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(34, 50, 65);
+}
+
+.mainBox {
+    border-radius: 10px;
+    box-shadow: 2px 2px grey;
+    border: 1px solid grey;
+}
+
+.searchBox{
+    width: 560px;
+    height: 60px;
+    margin-left: 380px;
+}
+.search{
+    border: 1px solid grey;
+    background-color: rgb(250, 250, 250);
+    width: 500px;
+    height: 25px;
+}
+.searchButton{
+    border: 1px solid rgb(218, 218, 218);
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px;
+    box-shadow: 1px 1px #cfcfcf;
+}
+.searchButton:hover{
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+/* 메인 제목 */
+.rowBox{
+    border-radius: 10px 10px 0 0 ;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    background-color: #444857;
+}
+.row {
+    float: left;
+    min-width: 180px;
+    text-align: center;
+    background-color: #444857;
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+
+#number{
+    width: 5%;
+}
+#title{
+    width:65%
+}
+#writer{
+    width: 20%;
+}
+#del{
+    width: 10%;
+}
+
+/* 메인 리스트 */
+
+.mainBody{
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.postBox {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    
+
+}
+.post{
+    float: left;
+    min-width: 180px;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 1px;
+    
+}
+#postNo{
+    width: 5%;
+}
+#postTitle{
+    width: 65%;
+}
+#postwriter{
+    width:20%
+}
+#postButton{
+    width: 10%;
+}
+
+.delPost{
+    width: 80px;
+    height: 25px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+.delPost:hover{
+    cursor: pointer;
+    background-color: rgb(240, 244, 247);
+}
+
+
+
+/* page */
+.pageBox{
+    margin-top: 20px ;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    user-select: none;
+}
+.pageNum{
+    width: 30px;
+    text-align: center;
+    box-shadow: 2px 2px grey;
+    border-radius: 10px;
+    border: 1px solid grey;
+    margin-left: 5px;
+}
+#pageNum1{
+    background-color: rgb(34, 50, 65);
+    border-radius: 10px;
+    box-shadow: 2px 2px grey;
+    color: #ffffff;
+}
+.pageNum:hover{
+    cursor: pointer;
+}

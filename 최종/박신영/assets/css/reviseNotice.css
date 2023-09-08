@@ -1,0 +1,185 @@
+body{
+    margin: 0;
+    height: 100vh;
+}
+.head {
+    width: 100%;
+    height:50px;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    background-color: white;
+}
+input {
+    outline: none;
+}
+.body{
+    display: flex;   
+    height: 100vh; 
+    background-color: rgb(243, 243, 243);
+}
+
+/* 메뉴 css */
+.menuBox{
+    width: 9%;
+    height: 100vh;
+    min-width: 120px;
+    max-width: 120px;
+    background-color: rgb(243, 243, 243);
+    text-align: center;
+    border-radius: 10px;
+    font-size: 13px;
+    position: fixed;
+    margin-left: 10px;
+    margin-top: 180px;
+    user-select: none;  /* 글씨 선택 안됨 */
+}
+.menu {
+    background-color: rgb(34, 50, 65);
+    height: 35px;
+    color: rgb(255, 255, 255);
+    padding-top: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px grey;
+    margin-bottom: 5px;
+    border: 1px solid grey;
+}
+.menu:hover {
+    background-color: rgb(34, 50, 65);
+    cursor: pointer;
+    color: white;
+    transform: translateX(10px);
+}
+#welcome_admin{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    color: white;
+    border-radius: 10px;
+    background-color: rgb(34, 50, 65);
+    margin-bottom: 5px;
+    box-shadow: 3px 3px grey;
+}
+.menu_class{
+    color: #969696;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    
+}
+.menu_class:hover {
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(34, 50, 65);
+}
+
+#admin_class1, #admin_class2, #admin_class3, #admin_class4{
+    display: none;
+}
+
+#admin_notice{
+    background-color: rgb(92, 106, 119);
+    box-shadow: 1px 1px grey;
+    color: white;
+}
+
+
+
+/* 글쓰는공간css */
+
+.main{
+    width: 89%;  
+    min-width: 800px;
+    height: 100vh;
+    padding: 70px;
+    background-color: rgb(243, 243, 243);
+    margin-top: 80px;
+    margin-left: 100px; 
+    display: flex;
+    flex-direction: column;
+}
+
+.noticeTitle{
+    border: none;
+    border-bottom: 1px solid rgb(218, 218, 218);
+    font-size: 18px;
+    padding: 50px;
+    border-radius: 10px 10px 0 0 ;
+    
+}
+
+textarea{
+    border: none;
+    outline: none;
+    font-size: 15px;
+    padding: 50px;
+    height: 90%;
+    color: #000000;
+    border-radius: 0 0 10px 10px;
+}
+
+/* 글씨 버튼 css */
+.buttonBox{
+
+    width: 100%;
+    min-width: 800px;
+    padding: 10px;
+    padding-left: 50px;
+    margin-bottom: 20px;
+    margin-left: 120px;
+    background-color: rgb(243, 243, 243);
+    position: fixed;
+    top: 70px;
+}
+
+.textButton{
+    min-width: 40px;
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+    margin-right: 5px;
+}
+.textButton:hover{
+    border: none;
+    background-color: rgb(201, 201, 201);
+    border-radius: 10px;
+    cursor: pointer;
+}
+select {
+    border: none;
+    outline: none;
+}
+select option {
+    text-align: center;
+    background-color: rgb(243, 243, 243);
+}
+
+.finishButton{
+    width: 100px;
+    height: 30px;
+    background-color: rgb(34, 50, 65);
+    border-radius: 10px;
+    box-shadow: 2px 2px grey;
+    color: white;
+
+}
+.finishButton:hover{
+  cursor: pointer;
+}
+
+#textColor{ 
+    border: none;
+    width: 25px;
+    height: 25px;   
+}
+#textColor:hover{
+    cursor: pointer;
+}
+#textLine{
+    text-decoration: underline;
+}
+#textWeight{
+    font-weight: bold;
+}
+#textitalic{
+    font-style: italic;
+}

@@ -1,0 +1,261 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: rgb(243, 243, 243);
+}
+
+.head {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    background-color: white;
+}
+
+input {
+    outline: none;
+}
+
+.body {
+    display: flex;
+    height: 100vh;
+
+}
+
+/* 메뉴 css */
+.menuBox {
+    width: 9%;
+    min-width: 120px;
+    max-width: 120px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 13px;
+    position: fixed;
+    margin-left: 10px;
+    margin-top: 180px;
+    user-select: none;
+    /* 글씨 선택 안됨 */
+}
+
+.menu {
+    background-color: rgb(34, 50, 65);
+    height: 35px;
+    color: rgb(255, 255, 255);
+    padding-top: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px grey;
+    margin-bottom: 5px;
+    border: 1px solid grey;
+}
+
+.menu:hover {
+    background-color: rgb(34, 50, 65);
+    cursor: pointer;
+    color: white;
+    transform: translateX(10px);
+}
+
+#welcome_admin {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    color: white;
+    border-radius: 10px;
+    background-color: rgb(34, 50, 65);
+    margin-bottom: 5px;
+    box-shadow: 3px 3px grey;
+
+}
+
+.menu_class {
+    color: #969696;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 8px;
+
+}
+
+.menu_class:hover {
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(34, 50, 65);
+}
+
+#admin_class1,
+#admin_class2,
+#admin_class3,
+#admin_class4 {
+    display: none;
+}
+
+#admin_book {
+    background-color: rgb(92, 106, 119);
+    box-shadow: 1px 1px grey;
+    color: white;
+}
+
+
+/* main css */
+.main {
+    width: 89%;
+    min-width: 800px;
+    padding: 30px 70px 70px 70px;
+    background-color: rgb(243, 243, 243);
+    margin-top: 70px;
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main_title {
+    width: 200px;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(34, 50, 65);
+    margin-bottom: 10px;
+}
+
+/* 예약좌석 관리 css */
+
+.seatBox {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px grey;
+    border: 1px solid grey;
+    margin-bottom: 40px;
+}
+
+.seatList {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+}
+
+.seat {
+    width: 33.33%;
+    text-align: center;
+
+}
+#seat_select{
+    border: none;
+    user-select: none;
+    border-radius: 10px;
+}
+#seat_select:hover{
+    cursor: pointer;
+}
+#seat_input {
+    width: 100px;
+    border: 1px solid grey;
+    height: 20px;
+    margin: 0px 25px 0px 15px;
+    text-align: end;
+    border-radius: 5px;
+}
+
+.seatNumBtn{
+    border: 1px solid #444857;
+    background-color: rgb(34, 50, 65);
+    color: white;
+    border-radius: 5px;
+    margin-left: 10px;
+    width: 25px;
+}
+.seatNumBtn:hover{
+    cursor: pointer;
+}
+
+
+/* 예약내역 css */
+.mainBox {
+    min-width: 900px;
+    border-radius: 10px;
+    box-shadow: 2px 2px grey;
+    border: 1px solid grey;
+    background-color: #ffffff;
+}
+
+.mainBody {
+    background-color: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.rowBox {
+    border-radius: 10px 10px 0px 0px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    background-color: #444857;
+}
+
+.row {
+    width: 20%;
+    float: left;
+    min-width: 180px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.infoBox {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.info {
+    width: 20%;
+    float: left;
+    min-width: 180px;
+    text-align: center;
+    
+
+}
+
+.delBook {
+    width: 80px;
+    height: 25px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.delBook:hover {
+    cursor: pointer;
+    background-color: rgb(240, 244, 247);
+}
+
+
+/* page */
+.pageBox {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    user-select: none;
+}
+
+.pageNum {
+    width: 30px;
+    text-align: center;
+    box-shadow: 2px 2px grey;
+    border-radius: 10px;
+    border: 1px solid grey;
+    margin-left: 5px;
+}
+
+#pageNum1 {
+    background-color: rgb(34, 50, 65);
+    border-radius: 10px;
+    box-shadow: 2px 2px grey;
+    color: #ffffff;
+}
+
+.pageNum:hover {
+    cursor: pointer;
+}
