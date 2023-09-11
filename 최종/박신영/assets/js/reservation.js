@@ -1,13 +1,13 @@
 // 강의실메뉴 열었다 닫기
 document.querySelector("#admin_class").addEventListener("click", function () {
-    console.log("click")
+ 
     let class1 = document.getElementById("admin_class1");
     let class2 = document.getElementById("admin_class2");
     let class3 =  document.getElementById("admin_class3");
     let class4 = document.getElementById("admin_class4"); 
 
     let doBlock = class1.style.display == false && class2.style.display == false && class3.style.display == false && class4.style.display == false;
-
+    console.log(doBlock)
     if(doBlock) {
         class1.style.display = 'block';
         class2.style.display = 'block';
@@ -20,7 +20,6 @@ document.querySelector("#admin_class").addEventListener("click", function () {
         class4.style.display = '';
     }
 })
-
 
 // 페이지 버튼 
 
@@ -47,7 +46,137 @@ for(let i = 0; i < 5; i++){
     })
 }
 
- // <main head>
+// select 요소와 input 요소에 대한 참조 가져오기
+        var selectElement = document.getElementById("seat_select");
+        var inputElement = document.getElementById("seat_input");
+
+
+        // select 요소에 이벤트 리스너 추가하기
+        selectElement.addEventListener("change", function () {
+            // 선택된 옵션 텍스트 가져오기
+            var selectedOptionText = selectElement.options[selectElement.selectedIndex].text;
+
+            // 선택된 옵션 텍스트가 "강의실 선택"이 아닌 경우
+            if (selectedOptionText !== "강의실 선택") {
+                // input 요소의 값을 20으로 설정하기
+                inputElement.value = "20";
+            } else {
+                // "강의실 선택" 옵션이 선택된 경우, input 요소의 값을 0으로 설정하기
+                inputElement.value = "0";
+            }
+        });
+        var plusButton = document.getElementById("plus");
+        var minusButton = document.getElementById("minus");
+
+        // 더하기(+) 버튼과 빼기(-) 버튼 초기 상태: 비활성화
+        plusButton.disabled = true;
+        minusButton.disabled = true;
+
+        // select 요소에 이벤트 리스너 추가
+        selectElement.addEventListener("change", function () {
+            var selectedOptionText = selectElement.options[selectElement.selectedIndex].text;
+
+            // "강의실 선택" 이외의 옵션을 선택하면 버튼 활성화, 그렇지 않으면 비활성화
+            if (selectedOptionText !== "강의실 선택") {
+                plusButton.disabled = false;
+                minusButton.disabled = false;
+            } else {
+                plusButton.disabled = true;
+                minusButton.disabled = true;
+                inputElement.value = "0"; // "강의실 선택"일 때 값 0으로 초기화
+            }
+        });
+
+        // 더하기(+) 버튼 클릭 이벤트 리스너 추가
+        plusButton.addEventListener("click", function () {
+            var currentValue = parseInt(inputElement.value);
+            if (currentValue < 30) {
+                inputElement.value = (currentValue + 1).toString();
+            } else {
+                alert("최대 좌석은 30석 입니다.");
+            }
+        });
+
+        // 빼기(-) 버튼 클릭 이벤트 리스너 추가
+        minusButton.addEventListener("click", function () {
+            var currentValue = parseInt(inputElement.value);
+            if (currentValue > 10) {
+                inputElement.value = (currentValue - 1).toString();
+            } else {
+                alert("최소 좌석은 10석 입니다.");
+            }
+        });
+
+        // seat_input의 값이 변경될 때 이벤트 리스너 추가
+        inputElement.addEventListener("change", function () {
+            var currentValue = parseInt(inputElement.value);
+            if (currentValue > 30) {
+                alert("최대 좌석은 30석 입니다.");
+                inputElement.value = "30"; // 값이 30을 초과하면 30으로 설정
+            } else if (currentValue < 10) {
+                alert("최소 좌석은 10석 입니다.");
+                inputElement.value = "10"; // 값이 10 미만이면 10으로 설정
+            }
+        });
+
+
+
+
+
+        var selectedRoom = ''; // 현재 선택된 강의실 이름
+        var selectedSeats = 0; // 현재 선택된 강의실의 좌석 수
+        var correctionButton = document.getElementById("correction");
+
+
+        // select 요소에 이벤트 리스너 추가하기
+        selectElement.addEventListener("change", function () {
+            // 선택된 옵션 텍스트 가져오기
+            var selectedOptionText = selectElement.options[selectElement.selectedIndex].text;
+
+            // 선택된 옵션 텍스트가 "강의실 선택"이 아닌 경우
+            if (selectedOptionText !== "강의실 선택") {
+                // input 요소의 값을 20으로 설정하기
+                inputElement.value = "20";
+            } else {
+                // "강의실 선택" 옵션이 선택된 경우, input 요소의 값을 0으로 설정하기
+                inputElement.value = "0";
+            }
+        });
+        // 각 강의실에 대한 정보를 객체로 저장
+        var classrooms = {
+            "1강의실": { seats: 20 },
+            "2강의실": { seats: 20 },
+            "3강의실": { seats: 20 },
+            "4강의실": { seats: 20 }
+        };
+
+        // "수정" 버튼 클릭 이벤트 리스너
+        correctionButton.addEventListener("click", function () {
+            var selectedOptionText = selectElement.options[selectElement.selectedIndex].text;
+            var inputValue = parseInt(inputElement.value);
+
+            if (selectedOptionText !== "강의실 선택" && inputValue >= 0) {
+                // 선택된 강의실 정보 업데이트
+                classrooms[selectedOptionText].seats = inputValue;
+
+                // 알림으로 수정된 좌석 수 표시
+                alert(selectedOptionText + " 강의실의 좌석이 " + inputValue + "개로 수정되었습니다.");
+            }
+        });
+
+        // 선택된 강의실이 변경될 때 select 요소에 이벤트 리스너 추가
+        selectElement.addEventListener("change", function () {
+            var selectedOptionText = selectElement.options[selectElement.selectedIndex].text;
+
+            if (selectedOptionText !== "강의실 선택") {
+                // 선택된 강의실의 좌석 수를 입력 필드에 표시
+                inputElement.value = classrooms[selectedOptionText].seats;
+            } else {
+                inputElement.value = "0";
+            }
+        });
+
+          // <main head>
         //logo
         var text = document.querySelector(".typing .text");
         var letters = [
@@ -138,9 +267,7 @@ for(let i = 0; i < 5; i++){
             }
         });
 
-
-
-    // <링크>
+            // <링크>
     // 메인
     document.querySelector(".logo").addEventListener("click", function () {
         console.log("click")

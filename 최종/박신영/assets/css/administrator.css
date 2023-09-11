@@ -1,19 +1,19 @@
-
-
 body {
     margin-top: 0px;
     margin-left: auto;
     margin-right: auto;
     font-family: 'pretendard';
+    height: 1100px;
+    overflow-x: hidden;
     background-color: rgb(243, 243, 243);
-    height: 100vw;
 }
 
 #head {
+    border-top: 1px solid #109ddc;
     background-color: white;
     position: fixed;
     display: flex;
-    width: 1280px;
+    width: 100vw;
     height: 230px;
     flex-wrap: wrap;
     z-index: 1000;
@@ -26,10 +26,13 @@ body {
 }
 
 .logo {
-    /* width: 990px; */
     width: 79%;
     text-align: center;
     height: 180px;
+}
+
+.text:hover {
+    cursor: pointer;
 }
 
 .img1 {
@@ -54,26 +57,32 @@ body {
 .fours {
     display: flex;
     flex-wrap: wrap;
-    width: 260px;
+    /* width: 260px; */
+    width: 21vw;
     height: 180px;
 }
 
 .fours1 {
-    width: 80px;
+    /* width: 80px; */
+    width: 30%;
     height: 89px;
     line-height: 90px;
     text-align: center;
 }
 
 .fours2 {
+    /* width: 176px; */
+    width: 68%;
     font-weight: 700;
     font-size: 18px;
-    width: 176px;
+
     height: 89px;
+    text-align: center;
 }
 
 .fours3 {
-    width: 80px;
+    /* width: 80px; */
+    width: 30%;
     height: 89px;
     line-height: 150px;
     font-size: 14px;
@@ -82,7 +91,8 @@ body {
 }
 
 .fours4 {
-    width: 176px;
+    /* width: 176px; */
+    width: 68%;
     height: 89px;
     line-height: 150px;
     font-size: 14px;
@@ -109,7 +119,7 @@ body {
 }
 
 .buttonsub1 {
-    width: 317px;
+    width: 25vw;
     height: 100%;
     position: relative;
 }
@@ -151,7 +161,8 @@ body {
 .category_2,
 .category_3,
 .category_4 {
-    width: 317px;
+    /* width: 317px; */
+    width: 25vw;
     height: 160px;
     /* 스크립트로 이벤트 줘서 변경할 것 */
     /* opacity: 0; */
@@ -162,24 +173,23 @@ body {
 
 /* 하위버튼 위치 고정 */
 .category_2 {
-    margin-left: 317px;
+    margin-left: 25vw;
 }
 
 .category_3 {
-    margin-left: 634px;
+    margin-left: 50vw;
 }
 
 .category_4 {
-    margin-left: 950px;
+    margin-left: 75vw;
 }
 
 .categorysub1 {
-    width: 317px;
+    width: 25vw;
     height: 40px;
     /* background-color: rgb(215, 242, 250); */
     background-color: white;
     /* 겹쳐지는지 확인여부 */
-
 }
 
 .categorysub1:hover {
@@ -191,42 +201,60 @@ a {
     color: black;
 }
 
+/*logo*/
+.typing {
+    margin-top: 5%;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 1.8rem;
+}
 
+.text {
+    font-size: 2.2rem;
+    margin-left: .6rem;
+}
 
-.head {
+.text::after {
+    content: '';
+    margin-left: .4rem;
+    border-right: 2px solid #777;
+    animation: cursor .9s infinite steps(2);
+}
+
+@keyframes cursor {
+    from {
+        border-right: 2px solid #ffffff;
+    }
+
+    to {
+        border-right: 2px solid #777;
+    }
+}
+
+.bottom {
     width: 100%;
-    height:50px;
-    padding: 10px;
-    text-align: center;
+    display: flex;
     position: fixed;
-    background-color: white;
-}
-input {
-    outline: none;
-}
-.body{
-    display: flex;   
-    height: 700px; 
-    background-color: rgb(243, 243, 243);
-
+    margin-top: -30px;
 }
 
 /* 메뉴 css */
-#mobileMenu{
-    display: none;
-}
-.menuBox{
+
+.menuBox {
     width: 9%;
     min-width: 120px;
     max-width: 120px;
     text-align: center;
     border-radius: 10px;
     font-size: 13px;
-    position: fixed;
+    /* position: fixed; */
     margin-left: 10px;
-
-    user-select: none;  /* 글씨 선택 안됨 */
+    user-select: none;
+    /* 글씨 선택 안됨 */
 }
+
 .menu {
     background-color: rgb(34, 50, 65);
     height: 35px;
@@ -237,13 +265,15 @@ input {
     margin-bottom: 5px;
     border: 1px solid grey;
 }
+
 .menu:hover {
     background-color: rgb(34, 50, 65);
     cursor: pointer;
     color: white;
     transform: translateX(10px);
 }
-#welcome_admin{
+
+#welcome_admin {
     padding-top: 80px;
     padding-bottom: 80px;
     color: white;
@@ -252,23 +282,28 @@ input {
     margin-bottom: 5px;
     box-shadow: 3px 3px grey;
 }
-.menu_class{  
+
+.menu_class {
     color: #969696;
     font-size: 15px;
     font-weight: bold;
     margin-bottom: 8px;
 }
+
 .menu_class:hover {
     font-weight: bold;
     cursor: pointer;
     color: rgb(34, 50, 65);
 }
 
-#admin_class1,#admin_class2,#admin_class3,#admin_class4  {
+#admin_class1,
+#admin_class2,
+#admin_class3,
+#admin_class4 {
     display: none;
 }
 
-#admin_notice{
+#admin_notice {
     background-color: rgb(92, 106, 119);
     box-shadow: 1px 1px grey;
     color: white;
@@ -277,23 +312,27 @@ input {
 
 /* 메인 css */
 
-.main{
-    width: 89%;  
+.main {
+    width: 100%;
     min-width: 800px;
     padding: 30px 70px 70px 70px;
     background-color: rgb(243, 243, 243);
-    margin-left: 100px; 
     display: flex;
     flex-direction: column;
+    margin-left: 10px;
+    margin-top: -50px;
 }
-.main_title{
+
+.main_title {
     width: 200px;
     font-size: 30px;
     font-weight: bold;
     color: rgb(34, 50, 65);
-    margin-top: -50px;
-    margin-bottom: 50px;
+    margin-top: -80px;
+    position: relative;
+    top: 30px;
 }
+
 .mainBox {
     border-radius: 10px;
     box-shadow: 2px 2px grey;
@@ -301,7 +340,7 @@ input {
 }
 
 /* 글쓰기 버튼*/
-.write{
+.write {
     width: 80px;
     border: 1px solid grey;
     border-radius: 10px;
@@ -314,18 +353,21 @@ input {
     color: white;
     margin-bottom: 30px;
 }
-.write:hover{
+
+.write:hover {
     cursor: pointer;
 }
+
 /* 메인 제목 */
-.rowBox{   
-    border-radius: 10px 10px 0 0 ;
+.rowBox {
+    border-radius: 10px 10px 0 0;
     text-align: center;
     display: flex;
     flex-direction: row;
     font-weight: bold;
     background-color: #444857;
 }
+
 .row {
     float: left;
     min-width: 180px;
@@ -336,18 +378,20 @@ input {
 }
 
 
-#number{
+#number {
     width: 10%;
 }
-#title{
-    width:70%
+
+#title {
+    width: 70%
 }
-#del{
+
+#del {
     width: 20%;
 }
 
 /* 메인 리스트 */
-.mainBody{ 
+.mainBody {
     background-color: #ffffff;
     border-radius: 10px;
 }
@@ -357,47 +401,56 @@ input {
     flex-direction: row;
     padding: 10px;
 }
-.info{
+
+.info {
     float: left;
     min-width: 180px;
     text-align: center;
     padding: 1px;
 }
-#noticeNo{
+
+#noticeNo {
     width: 10%;
 }
-#noticeTitle{
+
+#noticeTitle {
     width: 80%;
 }
+
 #noticeTitle:hover {
     cursor: pointer;
     color: rgb(75, 112, 145);
     font-weight: bold;
 }
-#noticeButtonBox{
+
+#noticeButtonBox {
     width: 10%;
     padding-left: 50px;
 }
-.noticeButton{
+
+.noticeButton {
     width: 80px;
     height: 25px;
     border: 1px solid grey;
     border-radius: 5px;
     background-color: #ffffff;
 }
-.noticeButton:hover{
+
+.noticeButton:hover {
     cursor: pointer;
     background-color: rgb(240, 244, 247);
 }
+
 /* page */
-.pageBox{
-    margin-top: 40px ;
+.pageBox {
+    margin-top: 40px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     user-select: none;
 }
-.pageNum{
+
+.pageNum {
     width: 30px;
     text-align: center;
     box-shadow: 2px 2px grey;
@@ -405,15 +458,14 @@ input {
     border: 1px solid grey;
     margin-left: 5px;
 }
-#pageNum1{
+
+#pageNum1 {
     background-color: rgb(34, 50, 65);
     border-radius: 10px;
     box-shadow: 2px 2px grey;
     color: #ffffff;
 }
-.pageNum:hover{
+
+.pageNum:hover {
     cursor: pointer;
 }
-
-
-
