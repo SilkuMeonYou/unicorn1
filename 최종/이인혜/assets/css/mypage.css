@@ -1,0 +1,201 @@
+body {
+margin: 0;
+height: 100vh;
+background-color: rgb(243, 243, 243);
+}
+
+.main1 {
+    /* border: 1px solid red; */
+    /* background-color: rgb(235, 235, 235); */
+    background-color:#fff;
+    width: 100%;
+    height: 100px;
+    font-size: 25px;
+    font-weight: bold;
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    right: 0; 
+    z-index: 999; 
+}
+
+.main1_0{
+    width: 100%;
+    height: 100px;
+    border: none;
+}
+
+.main1_1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+#main1_container {
+    /* text-align: center; */
+    position: absolute;
+    width: 160px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#logo {
+    width: 150px;
+}
+
+.main2 {
+    /* border: 1px solid red; */
+    background-color: rgb(34, 50, 65);
+    color: rgb(218, 218, 218);
+    width: 9%;
+    min-width: 120px;
+    max-width: 120px;
+    text-align: center;
+    height: 100vh;
+    position: relative;
+}
+
+#main2_container3 {
+    /* border: 1px solid red; */
+    filter: opacity(.5) drop-shadow(0 0 0 rgb(218, 218, 218));
+    width: 100px;
+    position: relative;
+    left: 30%;
+    top: 50px;
+}
+
+#main2_container2 {
+    /* border: 1px solid red; */
+    padding-top: 80px;
+    padding-bottom: 80px;
+    text-align: center;
+    font-size: 13px;
+    border-bottom: 1px solid white;
+}
+
+
+.main4 {
+    /* border: 1px solid red; */
+    height: 35px;
+    padding-top: 20px;
+    font-size: 13px;
+}
+
+.main3 {
+    /* border: 1px solid red; */
+    font-size: 13px;
+    padding-top: 300px;
+
+}
+
+/* #main3_container1, #main3_container2 {
+    border: 1px solid red;
+} */
+
+.main5 {
+    /* border: 1px solid blue; */
+    /* background-color: white; */
+    width: 60%;
+    position: relative;
+    left: -13%;
+}
+
+.main5_container {
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    border-bottom: 2px solid gray;
+    position: relative;
+    top: 10%;
+    height: 80%;
+    border-radius: 10px;
+}
+
+/* 여기부터 */
+.tab {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 50%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+#like1.content {
+    /* border: 1px solid red; */
+    height: 500px;
+    color: gray;
+    display: block;
+    padding: 10px;
+}
+
+#like2.content {
+    /* border: 1px solid red; */
+    height: 500px;
+    color: gray;
+    display: none;
+    padding: 10px;
+}
+
+
+p {
+    font-size: 13px;
+}
+
+#btn1 {
+    background-color: gray;
+}
+
+.content {
+    color: gray;
+    padding: 20px;
+    text-align: center;
+}
+
+#like1 {
+    background-color: white;
+}
+
+#like2 {
+    background-color: white;
+}
+
+#btn3 {
+    position: relative;
+    left: 90%;
+    top: 5%;
+}
+
+#checkbox {
+    margin: 10px 10px;
+}
+
+.list1 {
+    /* border: 1px solid blue; */
+    padding: 10px 20px;
+    color: black;
+    width: 90%;
+    height: 100%;
+    text-align: left;
+    display: block;
+}
+
+.list2 {
+    /* border: 1px solid red; */
+    padding: 10px 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#list2_1, #list2_2, #list2_3 {
+    border: 1px solid gray;
+    width: 200px;
+    height: 200px;
+} 
