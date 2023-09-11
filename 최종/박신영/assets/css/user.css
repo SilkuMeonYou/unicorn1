@@ -368,7 +368,8 @@ iframe {
     background-color: rgb(250, 250, 250);
     width: 500px;
     height: 25px;
-    border-radius: 10px;
+    border-radius: 15px;
+    border: 2px solid rgb(34, 50, 65);
     box-shadow: 1px 1px #cfcfcf;
 }
 

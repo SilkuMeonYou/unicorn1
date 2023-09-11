@@ -7,7 +7,7 @@
     <title>reservation</title>
     <link rel="stylesheet" href="박신영/assets/css/reservation.css">
     <link rel="stylesheet" type="text/css"
-    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
 </head>
 
 <body>
@@ -107,107 +107,65 @@
 
             <div class="main_title">예약 내역</div>
 
-            <div class="mainBox">
-                <div class="rowBox">
-                    <div class="row">강의실</div>
-                    <div class="row">좌석번호</div>
-                    <div class="row">시간</div>
-                    <div class="row">이름</div>
-                    <div class="row">관리</div>
-                </div>
-
-                <div class="mainBody">
-                    <div class="infoBox">
-                        <div class="info" id="infoNo">1강의실</div>
-                        <div class="info" id="infoRoom">18</div>
-                        <div class="info" id="infoTime">12:50 - 13:40</div>
-                        <div class="info" id="infoName">이수연</div>
-                        <div class="info" id="infoButton"><button class="delBook">예약취소</button></div>
-
+            <div class="bottom2">
+                <div class="left">
+                    <div class="leftTop">
+                        <div class="leftSelect">
+                            <select id="yearSelect" onchange="updateDayOptions()"> </select>
+                            <select id="monthSelect" onchange="updateDayOptions()"></select>
+                            <select id="dateSelect"></select>
+                        </div>
                     </div>
-                    <div class="infoBox">
-                        <div class="info" id="infoNo">3강의실</div>
-                        <div class="info" id="infoRoom">16</div>
-                        <div class="info" id="infoTime">12:50 - 13:40</div>
-                        <div class="info" id="infoName">김나영</div>
-                        <div class="info" id="infoButton"><button class="delBook">예약취소</button></div>
-
-                    </div>
-                    <div class="infoBox">
-                        <div class="info" id="infoNo">2강의실</div>
-                        <div class="info" id="infoRoom">15</div>
-                        <div class="info" id="infoTime">12:50 - 13:40</div>
-                        <div class="info" id="infoName">최만경</div>
-                        <div class="info" id="infoButton"><button class="delBook">예약취소</button></div>
-
-                    </div>
-                    <div class="infoBox">
-                        <div class="info" id="infoNo">2강의실</div>
-                        <div class="info" id="infoRoom">12</div>
-                        <div class="info" id="infoTime">12:50 - 13:40</div>
-                        <div class="info" id="infoName">이수연</div>
-                        <div class="info" id="infoButton"><button class="delBook">예약취소</button></div>
-
-                    </div>
-                    <div class="infoBox">
-                        <div class="info" id="infoNo">2강의실</div>
-                        <div class="info" id="infoRoom">21</div>
-                        <div class="info" id="infoTime">12:50 - 13:40</div>
-                        <div class="info" id="infoName">김나영</div>
-                        <div class="info" id="infoButton"><button class="delBook">예약취소</button></div>
-
-                    </div>
-                    <div class="infoBox">
-                        <div class="info" id="infoNo">2강의실</div>
-                        <div class="info" id="infoRoom">24</div>
-                        <div class="info" id="infoTime">12:50 - 13:40</div>
-                        <div class="info" id="infoName">최만경</div>
-                        <div class="info" id="infoButton"><button class="delBook">예약취소</button></div>
-
-                    </div>
-                    <div class="infoBox">
-                        <div class="info" id="infoNo">2강의실</div>
-                        <div class="info" id="infoRoom">8</div>
-                        <div class="info" id="infoTime">12:50 - 13:40</div>
-                        <div class="info" id="infoName">최만경</div>
-                        <div class="info" id="infoButton"><button class="delBook">예약취소</button></div>
-
-                    </div>
-                    <div class="infoBox">
-                        <div class="info" id="infoNo">2강의실</div>
-                        <div class="info" id="infoRoom">5</div>
-                        <div class="info" id="infoTime">12:50 - 13:40</div>
-                        <div class="info" id="infoName">김나영</div>
-                        <div class="info" id="infoButton"><button class="delBook">예약취소</button></div>
-
-                    </div>
-                    <div class="infoBox">
-                        <div class="info" id="infoNo">2강의실</div>
-                        <div class="info" id="infoRoom">4</div>
-                        <div class="info" id="infoTime">12:50 - 13:40</div>
-                        <div class="info" id="infoName">최만경</div>
-                        <div class="info" id="infoButton"><button class="delBook">예약취소</button></div>
-
-                    </div>
-                    <div class="infoBox">
-                        <div class="info" id="infoNo">2강의실</div>
-                        <div class="info" id="infoRoom">1</div>
-                        <div class="info" id="infoTime">12:50 - 13:40</div>
-                        <div class="info" id="infoName">최만경</div>
-                        <div class="info" id="infoButton"><button class="delBook">예약취소</button></div>
-
+                    <div class="leftBottom">
+                        <div class="buttonContainer">
+                            <div class="Bleft">
+                                <!-- 좌석 버튼 그룹 -->
+                                <div class="left_1">
+                                    <input type="button" class="seat-button" value="1">
+                                    <input type="button" class="seat-button" value="2">
+                                    <input type="button" class="seat-button" value="3">
+                                    <input type="button" class="seat-button" value="4">
+                                    <input type="button" class="seat-button" value="5">
+                                    <input type="button" class="seat-button" value="6">
+                                    <input type="button" class="seat-button" value="7">
+                                </div>
+                                <div class="left_1">
+                                    <input type="button" class="seat-button" value="8">
+                                    <input type="button" class="seat-button" value="9">
+                                    <input type="button" class="seat-button" value="10">
+                                    <input type="button" class="seat-button" value="11">
+                                    <input type="button" class="seat-button" value="12">
+                                    <input type="button" class="seat-button" value="13">
+                                    <input type="button" class="seat-button" value="14">
+                                </div>
+                                <div class="left_1">
+                                    <input type="button" class="seat-button" value="15">
+                                    <input type="button" class="seat-button" value="16">
+                                    <input type="button" class="seat-button" value="17">
+                                    <input type="button" class="seat-button" value="18">
+                                    <input type="button" class="seat-button" value="19">
+                                    <input type="button" class="seat-button" value="20">
+                                    <input type="button" class="seat-button" value="21">
+                                </div>
+                                <div class="left_1">
+                                    <input type="button" class="seat-button" value="22">
+                                    <input type="button" class="seat-button" value="23">
+                                    <input type="button" class="seat-button" value="24">
+                                    <input type="button" class="seat-button" value="25">
+                                    <input type="button" class="seat-button" value="26">
+                                    <input type="button" class="seat-button" value="27">
+                                    <input type="button" class="seat-button" value="28">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="pageBox">
-                <div class="pageNum" id="pageNum1"> 1 </div>
-                <div class="pageNum" id="pageNum2"> 2 </div>
-                <div class="pageNum" id="pageNum3"> 3 </div>
-                <div class="pageNum" id="pageNum4"> 4 </div>
-                <div class="pageNum" id="pageNum5"> 5 </div>
 
             </div>
+
+
+
+
         </div>
 
     </div>

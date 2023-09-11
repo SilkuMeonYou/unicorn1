@@ -8,7 +8,7 @@
         margin-right: auto;
         font-family: 'pretendard';
         background-color: rgb(243, 243, 243);
-        height: 1000px;
+
     }
     #head {
         border-top: 1px solid #109ddc;
@@ -217,7 +217,6 @@
 .bottom{
     width: 100%;
     display: flex;
-    position: fixed;
     margin-top: -30px;
 }
 
@@ -230,6 +229,7 @@
     border-radius: 10px;
     font-size: 13px;
     margin-left: 10px;
+    position: fixed;
     user-select: none;  /* 글씨 선택 안됨 */
 }
 .menu {
@@ -285,14 +285,14 @@
     min-width: 800px;
     padding: 30px 70px 70px 70px;
     background-color: rgb(243, 243, 243);
-    margin-left: 10px; 
+    margin-left: 100px; 
     margin-top: -130px;
     display: flex;
     flex-direction: column;
 }
 
 .main_title{
-    width: 500px;
+    width: 300px;
     font-size: 30px;
     font-weight: bold;
     color: rgb(34, 50, 65);
@@ -300,19 +300,15 @@
     top: 30px;
 }
 
-.mainBox {
-    border-radius: 10px;
-    box-shadow: 2px 2px grey;
-    border: 1px solid grey;
-}
-
+/* 검색 css */
 .searchBox{
     width: 560px;
     height: 60px;
     margin-left: 380px;
 }
 .search{
-    border: 1px solid grey;
+    border: 2px solid rgb(34, 50, 65);
+    border-radius: 15px;
     background-color: rgb(250, 250, 250);
     width: 500px;
     height: 25px;
@@ -330,91 +326,134 @@
     cursor: pointer;
 }
 
-/* 메인 제목 */
-.rowBox{
-    border-radius: 10px 10px 0 0 ;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    font-weight: bold;
-    background-color: #444857;
-}
-.row {
-    float: left;
-    min-width: 180px;
-    text-align: center;
-    background-color: #444857;
+/* 식당 리스트 (foodBox) */
+.foodBox {
+    min-width: 950px;
+    height: 190px;
+    background-color: white;
     border-radius: 10px;
-    color: #ffffff;
-}
-
-
-#number{
-    width: 5%;
-}
-#title{
-    width:65%
-}
-#writer{
-    width: 20%;
-}
-#del{
-    width: 10%;
-}
-
-/* 메인 리스트 */
-
-.mainBody{
-    background-color: #ffffff;
-    border-radius: 10px;
-}
-
-.postBox {
-    display: flex;
-    flex-direction: row;
-    padding: 10px;
-    
-
-}
-.post{
-    float: left;
-    min-width: 180px;
-    text-align: center;
-    background-color: #ffffff;
-    padding: 1px;
-    
-}
-#postNo{
-    width: 5%;
-}
-#postTitle{
-    width: 65%;
-}
-#postwriter{
-    width:20%
-}
-#postButton{
-    width: 10%;
-}
-
-.delPost{
-    width: 80px;
-    height: 25px;
+    box-shadow: 2px 2px grey;
     border: 1px solid grey;
+    padding:10px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.foodimg{
+    width: 230px;
+    height: 180px;
+}
+.foodTitle{
+    position: relative;
+    left: 250px;
+    bottom: 170px;
+    width: 40%;
+    font-size: 25px;
+    font-weight: bold;
+}
+.foodAddress{
+    width: 70%;
+    position: relative;
+    left: 250px;
+    bottom: 165px;
+}
+.foodDetails{
+    width: 70%;
+    position: relative;
+    left: 250px;
+    bottom: 150px;
+}
+
+.imgfileButton{
+    position: relative;
+    bottom: 110px;
+    left: 250px;
+}
+.reviseButton{
+    width: 50px;
+    height: 20px;
+    padding-top: 2px;
+    border: 1px solid grey;
+    text-align: center;
     border-radius: 5px;
-    background-color: #ffffff;
+    position: relative;
+    bottom: 260px;
+    left: 830px;
 }
-.delPost:hover{
-    cursor: pointer;
+.reviseButton:hover{
     background-color: rgb(240, 244, 247);
+    border: 1px solid rgb(34, 50, 65);
+    cursor: pointer;
+}
+.delButton{
+    width: 50px;
+    height: 20px;
+    padding-top: 2px;
+    border: 1px solid grey;
+    text-align: center;
+    border-radius: 5px;
+    position: relative;
+    bottom: 284px;
+    left: 890px;
+}
+.delButton:hover{
+    background-color: rgb(240, 244, 247);
+    border: 1px solid rgb(34, 50, 65);
+    cursor: pointer;
 }
 
-
+/* 수정버튼 클릭 */
+.input_foodTitle{
+    position: relative;
+    left: 250px;
+    bottom: 315px;
+    width: 40%;
+    font-size: 25px;
+    font-weight: bold;
+    outline: none;
+    visibility: hidden;
+}
+.input_foodAddress{
+    width: 70%;
+    position: relative;
+    left: 250px;
+    bottom: 310px;
+    outline: none;
+    visibility: hidden;
+}
+.input_foodDetails{
+    width: 70%;
+    height: 40px;
+    position: relative;
+    left: 250px;
+    bottom: 300px;
+    resize: none;
+    outline: none;
+    visibility: hidden;
+    
+}
+.finishButton{
+    width: 50px;
+    height: 20px;
+    padding-top: 2px;
+    border: 1px solid grey;
+    text-align: center;
+    border-radius: 5px;
+    position: relative;
+    bottom: 414px;
+    left: 830px;
+    background-color: white;
+    visibility: hidden;
+}
+.finishButton:hover{
+    background-color: rgb(240, 244, 247);
+    border: 1px solid rgb(34, 50, 65);
+    cursor: pointer;
+}
 
 /* page */
 .pageBox{
     margin-top: 20px ;
-    margin-bottom: 20px;
     display: flex;
     flex-direction: row;
     justify-content: center;
