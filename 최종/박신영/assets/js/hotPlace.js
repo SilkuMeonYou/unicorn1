@@ -136,3 +136,34 @@ for(let i = 0; i < 5; i++){
                 category.style.paddingTop = "230px";
             }
         });
+
+            // <링크>
+    // 메인
+    document.querySelector(".logo").addEventListener("click", function () {
+        console.log("click")
+        window.location.href = "윤여준_main.html";
+    });
+
+    // 만경(좌석)
+    document.querySelector(".tmp4").addEventListener("click", function () {
+        console.log("click")
+        window.location.href = "최만경_seat.html"
+    });
+    // 인혜(강의실)
+    document.querySelector(".tmp5").addEventListener("click", function () {
+        console.log("click")
+        window.location.href = "이인혜_class_board.html"
+    });
+    // 여준(맛집)
+    document.querySelector(".tmp3").addEventListener("click", function () {
+        console.log("click")
+        window.location.href = "윤여준_place.html"
+    });
+    document.querySelector(".tmp").addEventListener("click", function () {
+        console.log("click")
+        window.location.href = "이인혜_mypage_main.html"
+    });
+    document.querySelector(".tmp2").addEventListener("click", function () {
+        console.log("click")
+        window.location.href = "이인혜_notice_list.html"
+    });
