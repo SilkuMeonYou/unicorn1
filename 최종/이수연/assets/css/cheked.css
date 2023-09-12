@@ -22,7 +22,7 @@ body {
     padding: 20px;
     overflow: auto;
     /* height: 100px; */
-    height: 30px;
+    height: 40px;
 }
 
 .next-button {
@@ -47,4 +47,16 @@ span {
 
 .div1 {
     font-size: large;
+}
+
+.main {
+    margin-top: 50px;
+    padding-right: 100px;
+    margin-bottom: -50px;
+    text-align: right;
+}
+
+a {
+    color: black;
+    text-decoration-line: none;
 }

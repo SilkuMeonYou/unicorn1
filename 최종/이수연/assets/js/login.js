@@ -61,4 +61,26 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    let idvalue = "human123";              // 아이디값 저장
+    let pwvalue = "human123";             // 비밀번호값 저장
+
+    document.querySelector('.login-input').addEventListener('click', function () { // 로그인버튼 선택시
+        let id = document.querySelector(".id-input");
+        let pw = document.querySelector(".pw-input");
+        let message = document.querySelector(".message");
+
+        if (id.value == '' || pw.value == '') {     // 아이디입력필드가 빈값이거나 비밀번호입력필드가 빈값이면
+            message.style.visibility = "hidden";    // 메세지 숨김
+
+            // 아이디 입력필드가 저장한값과 같거나 비밀번호 입력필드가 저장한값과 같으면 
+        } else if (id.value == idvalue && pw.value == pwvalue) {
+            window.location.href = "윤여준_main_logout.html"       // 메인페이지로 이동 (로그인성공)
+
+            // 비밀번호 입력필드가 저장한값과 다르거나 비밀번호 입력필드가 저장한값과 다르면
+        } else if (id.value != idvalue && pw.value != pwvalue) {
+            message.style.visibility = "visible";           // 메세지 보여줌
+        }
+
+    });
+
 });
