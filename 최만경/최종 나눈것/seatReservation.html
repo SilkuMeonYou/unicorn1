@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>seat</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <link rel="stylesheet" href="seatReservation.css">
+</head>
+
+<body>
+    <!-- main head -->
+    <div id="head">
+        <div class="head1">
+            <div class="logo">
+                <img class="img1" src="http://www.human.or.kr/images/h_logo.png">
+            </div>
+            <div class="fours">
+                <div class="fours1">
+                    <img class="img2" src="http://www.human.or.kr/images/menu_icon.png" width="25px">
+                </div>
+                <div class="fours2">
+                    <img class="img3"
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAkCAYAAAB8DZEQAAAACXBIWXMAAAsTAAALEwEAmpwYAAADGUlEQVRIiaXXTYiWVRQH8N87vo3gjDZYUvYFjUYWmIuyJmgTQQTlonRR4SKQCqFyFRIUiSW4sJZJ0KJFk1BT9gHRJoIgi8oWZYEjMn0RZFqKMvk50+Keh+eZx+e+7zszBx4u9/zPOf/7ce6956GzDOBRjGIc5zCNC5jAGDbh0i5xGmUhtuJoBC2+f/ALjtT0J7EDg70SrMKP4TyFvdiAy2t2Q1iHPcoZTuD2bgR3xGinsQ+rexzYMD4Nv0nclzO8Qbk8r6HdI0EhLWyrEF00ozb2h8Hrswxel4JoQm2PngpgP/rnSdJSLt2OQtnG76Ec6eA8iAfwJB6UNj4nw1IynBTpfXcQfN7B6XEcNzNtJ/FcjLxJ9oTdJtgenScyxluU6fy+tOajOBv6nRm/dYGPkc7BtHQ+6nIF/pOmfm8Nu1Vajinc3OA7pEwAX0fnkgbDzYHtzoz2hcC3Z/AjuNCHxWF4rsFoONovM0H2Rbsig0+ir0/a0JZ0X9XleLRXZYIsj/ZEBl+C8/CuNJM1DUYjynWt37QL8X3g6xt8lwU2Ds9HZ0tmNJ8E/gPux3W4R1rCaXyHvga/DYG/BXdG59sMydJKwPp3ANdk/D4Mm0fEKMZDUU/TQtrYKKX7N/hYyrzcFXSLlNpHsahQbgySg2bx8HQY0FcRb2sVaOGzAPZiwTxIdiv38KKZLsdvYTA6R6Kd4X8MN+aMbsLfcyQqCE5IL2xHWa0sFHolmhVBISvxR49EcyKYDdG8CAak89OJqE7Qki7brrIKb0oP0huhayJqmsFL0mU4httyBE8ri7RTZr6UVaKfGwjgIWXNNoUX6wTrAzyPlzUXCVWi3B4M4FmcDrvNVfCLUD6cm2aF6G2s7WJ3V8Q7VFX+FMqruzj3KoM4Ix694h34KNr35F/BXmWptPn9+KAKLJYutGLTd+m92C5kpVQu/RtxDuNKZhZmS/AqHlOehz+lYuEgfpU2/Kx0nQ/hWqlQH8H1lVjv4Bn8lRvRCinnD2h+DXPfIbyioVbIlZiF9OMyaTkHot+WfufOSCXPKelqP50L8j8DCv9BNrvGdwAAAABJRU5ErkJggg=="
+                        width="20px">
+                    각 지점교육센터
+                </div>
+                <div class="fours3"><a href="0905_suyeon/login.html">로그인</a></div>
+                <div class="fours4"><a href="0905_suyeon/sign_up.html">회원가입</a></div>
+            </div>
+        </div>
+        <div class="button">
+            <div class="buttonsub1" name="buttonsub_1">공지사항</div>
+            <div class="buttonsub1" name="buttonsub_2">강의실</div>
+            <div class="buttonsub1" name="buttonsub_3">주변맛집</div>
+            <div class="buttonsub1" name="buttonsub_4">좌석예약</div>
+        </div>
+    </div>
+
+    <div id="category">
+        <div class="category_1">
+            <div class="categorysub1"><span class="tmp2">공지사항(인혜)</span></div>
+            <div class="categorysub1"><span class="tmp">행사안내(신영)</span></div>
+            <!-- <div class="categorysub1"></div>
+            <div class="categorysub1"></div> -->
+        </div>
+        <div class="category_2">
+            <div class="categorysub1">1강의실</div>
+            <div class="categorysub1">2강의실</div>
+            <div class="categorysub1">3강의실</div>
+            <div class="categorysub1">4강의실</div>
+        </div>
+        <div class="category_3">
+            <div class="categorysub1"><span class="tmp3">맛집지도(여준)</span></div>
+            <div class="categorysub1">맛집랭킹</div>
+            <div class="categorysub1">추천하기</div>
+            <div class="categorysub1"></div>
+        </div>
+        <div class="category_4">
+            <div class="categorysub1"><span class="tmp4">좌석예약(만경)</span></div>
+            <div class="categorysub1">좌석확인</div>
+            <div class="categorysub1">마이페이지</div>
+            <div class="categorysub1"></div>
+        </div>
+    </div>
+    <!-- end main head -->
+
+    <div class="bottom">
+        <div class="left">
+            <div class="leftTop">
+                <div class="leftSelect">
+                    <select id="yearSelect" onchange="updateDayOptions()">
+
+                    </select>
+
+                    <select id="monthSelect" onchange="updateDayOptions()">
+
+                    </select>
+                    <select id="dateSelect">
+                    </select>
+                </div>
+            </div>
+            <div class="leftBottom">
+                <div class="buttonContainer">
+                    <div class="Bleft">
+                        <!-- 좌석 버튼 그룹 -->
+                        <div class="left_1">
+                            <input type="button" class="seat-button" value="1">
+                            <input type="button" class="seat-button" value="2">
+                            <input type="button" class="seat-button" value="3">
+                            <input type="button" class="seat-button" value="4">
+                            <input type="button" class="seat-button" value="5">
+                            <input type="button" class="seat-button" value="6">
+                            <input type="button" class="seat-button" value="7">
+                        </div>
+                        <div class="left_1">
+                            <input type="button" class="seat-button" value="8">
+                            <input type="button" class="seat-button" value="9">
+                            <input type="button" class="seat-button" value="10">
+                            <input type="button" class="seat-button" value="11">
+                            <input type="button" class="seat-button" value="12">
+                            <input type="button" class="seat-button" value="13">
+                            <input type="button" class="seat-button" value="14">
+                        </div>
+                        <div class="left_1">
+                            <input type="button" class="seat-button" value="15">
+                            <input type="button" class="seat-button" value="16">
+                            <input type="button" class="seat-button" value="17">
+                            <input type="button" class="seat-button" value="18">
+                            <input type="button" class="seat-button" value="19">
+                            <input type="button" class="seat-button" value="20">
+                            <input type="button" class="seat-button" value="21">
+                        </div>
+                        <div class="left_1">
+                            <input type="button" class="seat-button" value="22">
+                            <input type="button" class="seat-button" value="23">
+                            <input type="button" class="seat-button" value="24">
+                            <input type="button" class="seat-button" value="25">
+                            <input type="button" class="seat-button" value="26">
+                            <input type="button" class="seat-button" value="27">
+                            <input type="button" class="seat-button" value="28">
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="check">
+                <!-- 좌석 예약 컨테이너 -->
+                <div class="seatReservation">
+                    <img style="width: 60%; height: 40%; margin-bottom: 10px;"
+                        src="https://us.123rf.com/450wm/onston/onston1510/onston151000002/47210861-pc-%EB%AA%A8%EB%8B%88%ED%84%B0-%EB%B2%A1%ED%84%B0-%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8-%EB%A0%88%EC%9D%B4-%EC%85%98.jpg">
+                    <select class="roomNumber">
+                        <option value="1">1강의실</option>
+                        <option value="2">2강의실</option>
+                        <option value="3">3강의실</option>
+                        <option value="4">4강의실</option>
+                    </select>
+                    <div class="seatNumber">
+                        <div id="seatNum">00</div>번
+                    </div>
+                    <select id="useTimeSelect">
+                        <option value="09:00~12:00">09:00~12:00</option>
+                        <option value="13:00~18:00">13:00~18:00</option>
+                    </select>
+                    <input type="button" value="예약하기" style="font-weight: 800;" onclick="updateRoomName()">
+                </div>
+                <!-- 좌석 확인 컨테이너 -->
+                <div class="seatCheck">
+                    <div style="font-weight: 900; font-size: 20px;">예약 확인</div> <br>
+                    <div id="roomName">강의실</div>
+                    <div id="roomTime">시간</div>
+                    <div class="seatNumber">
+                        <div id="seatNumCheck">00</div>번이 <span style="font-weight: 700;">&nbsp;예약</span>되었습니다.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="seatReservation.js"></script>
+
+</body>
+
+</html>
