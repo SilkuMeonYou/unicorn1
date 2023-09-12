@@ -1,3 +1,7 @@
+body {
+    font-family: 'pretendard';
+}
+
 .t1 {
     margin-bottom: 40px;
     margin-top: 50px;
@@ -95,4 +99,21 @@ img {
 
 .a1 {
     color: black;
+}
+
+.message {
+    visibility: hidden;
+    color: red;
+}
+
+.main {
+    margin-top: 50px;
+    padding-right: 100px;
+    margin-bottom: -50px;
+    text-align: right;
+}
+
+a {
+    color: black;
+    text-decoration-line: none;
 }

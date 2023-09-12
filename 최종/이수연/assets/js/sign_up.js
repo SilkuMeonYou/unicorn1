@@ -144,7 +144,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
     numInput.addEventListener('focus', function () { // 핸드폰번호 입력 필드를 선택(포커스)했을때
         if (numInput.value !== '') { // 핸드폰번호 입력 필드가 빈값이 아니면
-            input4.style.visibility = 'hidden'; // 테두리효과 안보이게 설정
+            // input4.style.visibility = 'hidden'; // 테두리효과 안보이게 설정
+        }
+    });
+
+    let idvalue = "human123";              // 아이디값 저장
+    let pwvalue = "human123";             // 비밀번호값 저장
+    let mailvalue = "human123";           // 이메일값 저장
+    let numvalue = "01012345678";           // 핸드폰번호 저장
+
+    document.querySelector('.signup-input').addEventListener('click', function () { // 로그인버튼 선택시
+        let id = document.querySelector(".id-input");
+        let pw = document.querySelector(".pw-input");
+        let mail = document.querySelector(".e-input");
+        let num = document.querySelector(".num-input");
+        let message = document.querySelector(".message");
+
+        if (id.value == '' || pw.value == '' || mail.value == '' || num.value == '') {
+            message.style.visibility = "hidden";
+        }
+        else if (id.value == idvalue && pw.value == pwvalue && mail.value == mailvalue && num.value == numvalue) {
+            message.style.visibility = "hidden";
+            window.location.href = "이수연_login.html"
+        } else if (id.value != idvalue && pw.value != pwvalue && mail.value != mailvalue && num.value != numvalue) {
+            
+            window.location.href = "이수연_login.html"
+        } else {
+            // message.style.visibility = "hidden";
         }
     });
 

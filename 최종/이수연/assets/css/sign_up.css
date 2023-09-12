@@ -52,6 +52,9 @@ body {
     margin-top: 50px;
     font-weight: bold;
     font-size: large;
+    width: 320px;
+    height: 50px;
+    margin-left: 70px;
 }
 
 #id1 {
@@ -80,4 +83,23 @@ body {
     color: red;
     margin-left: 270px;
     font-size: 13px;
+}
+
+.message {
+    visibility: hidden;
+    color: red;
+    margin-left: 80px;
+    font-size: 15px
+}
+
+.main {
+    margin-top: 50px;
+    padding-right: 100px;
+    margin-bottom: -50px;
+    text-align: right;
+}
+
+a {
+    color: black;
+    text-decoration-line: none;
 }

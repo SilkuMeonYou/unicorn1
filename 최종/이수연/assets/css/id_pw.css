@@ -100,3 +100,15 @@ img {
     color: orangered;
     font-weight: bold;
 }
+
+.main {
+    margin-top: 50px;
+    padding-right: 100px;
+    margin-bottom: -50px;
+    text-align: right;
+}
+
+a {
+    color: black;
+    text-decoration-line: none;
+}
