@@ -1,0 +1,102 @@
+body {
+    font-family: 'pretendard';
+}
+
+#div1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100dvh;
+    text-align: center;
+}
+
+.id {
+    border: 2px solid gray;
+    border-radius: 15px;
+    width: 500px;
+    margin: 50px;
+}
+
+.pw {
+    border: 2px solid gray;
+    border-radius: 15px;
+    width: 500px;
+    margin: 50px;
+}
+
+input[type=text] {
+    width: 250px;
+    height: 35px;
+}
+
+input[type=submit] {
+    width: 60px;
+    height: 35px;
+    margin-left: 20px;
+}
+
+.login {
+    padding: 20px;
+}
+
+a {
+    color: rgb(7, 171, 221);
+    text-decoration-line: none;
+}
+
+.mail1 {
+    margin-top: 15px;
+}
+
+.id1 {
+    margin-top: 15px;
+}
+
+.success {
+    display: none;
+    margin-top: 10px;
+}
+
+.success1 {
+    display: none;
+    margin-top: 10px;
+    color: orangered;
+    font-weight: bold;
+}
+
+.success div {
+    display: flex;
+    justify-content: center;
+}
+
+.success1 div {
+    display: flex;
+    justify-content: center;
+}
+
+.button,
+.button1 {
+    font-weight: bold;
+    background-color: rgb(190, 231, 243);
+    border: 1px solid rgb(190, 231, 243);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.div2 {
+    padding: 20px;
+}
+
+img {
+    width: 25px;
+}
+
+.span1 {
+    font-size: 30px;
+}
+
+.span2 {
+    color: orangered;
+    font-weight: bold;
+}

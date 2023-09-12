@@ -1,0 +1,50 @@
+body {
+    font-family: 'pretendard';
+}
+
+#all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.logo {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.chk {
+    border: 1px solid gray;
+    width: 500px;
+    padding: 20px;
+    overflow: auto;
+    /* height: 100px; */
+    height: 30px;
+}
+
+.next-button {
+    width: 300px;
+    height: 50px;
+    font-size: large;
+}
+
+.c1 {
+    margin: 20px;
+    border: 1px solid gray;
+
+}
+
+span {
+    color: blue;
+}
+
+.next-button {
+    font-weight: bold;
+}
+
+.div1 {
+    font-size: large;
+}

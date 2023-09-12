@@ -1,0 +1,83 @@
+body {
+    font-family: 'pretendard';
+}
+
+.t2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 50px;
+    /* visibility: hidden;  안보이게 */
+    /* visibility: visible;  보이게 */
+}
+
+.logo {
+    color: rgb(76, 153, 224);
+}
+
+.t2 input[type=text],
+.t2 input[type=password] {
+    width: 315px;
+    height: 40px;
+    margin-left: 10px;
+
+}
+
+.t2 input[type=button] {
+    width: 325px;
+    height: 60px;
+}
+
+.pwpw,
+.t3,
+.t4 {
+    margin-top: 30px;
+}
+
+.b {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    text-align: center;
+}
+
+.e-input {
+    width: 315px;
+}
+
+.signup-input {
+    background-color: rgb(121, 224, 255);
+    margin-top: 50px;
+    font-weight: bold;
+    font-size: large;
+}
+
+#id1 {
+    visibility: hidden;
+    color: red;
+    margin-left: 270px;
+    font-size: 13px;
+}
+
+#pw1 {
+    visibility: hidden;
+    color: red;
+    margin-left: 270px;
+    font-size: 13px;
+}
+
+#e1 {
+    visibility: hidden;
+    color: red;
+    margin-left: 300px;
+    font-size: 13px;
+}
+
+#num1 {
+    visibility: hidden;
+    color: red;
+    margin-left: 270px;
+    font-size: 13px;
+}

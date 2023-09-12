@@ -1,0 +1,98 @@
+.t1 {
+    margin-bottom: 40px;
+    margin-top: 50px;
+    color: rgb(76, 153, 224);
+}
+
+.t2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.pwpw {
+    margin-top: 30px;
+}
+
+.t2 input[type=text],
+.t2 input[type=password] {
+    width: 300px;
+    height: 60px;
+    margin-left: 10px;
+}
+
+.t2 input[type=button] {
+    /* 클래스 t2 내의 버튼 유형 입력 필드에 스타일 적용 */
+    width: 310px;
+    height: 60px;
+}
+
+.t3 {
+    margin-top: 50px;
+}
+
+.b {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.t3_1,
+.t3_2 {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+a {
+    color: rgb(7, 171, 221);
+    text-decoration-line: none;
+}
+
+.login-input {
+    background-color: rgb(121, 224, 255);
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: large;
+}
+
+.id-input,
+.pw-input {
+    font-size: 15px;
+}
+
+img {
+    width: 30px;
+    height: 30px;
+}
+
+.idid {
+    visibility: hidden;
+    color: red;
+    font-size: 13px;
+}
+
+#pw1 {
+    visibility: hidden;
+    color: red;
+    font-size: 13px;
+}
+
+.save {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.save input[type=checkbox] {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.a1 {
+    color: black;
+}
