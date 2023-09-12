@@ -7,7 +7,7 @@ document.querySelector("#admin_class").addEventListener("click", function () {
     let class4 = document.getElementById("admin_class4"); 
 
     let doBlock = class1.style.display == false && class2.style.display == false && class3.style.display == false && class4.style.display == false;
-
+    console.log(doBlock)
     if(doBlock) {
         class1.style.display = 'block';
         class2.style.display = 'block';
@@ -20,8 +20,6 @@ document.querySelector("#admin_class").addEventListener("click", function () {
         class4.style.display = '';
     }
 })
-
-
 
 // 페이지 버튼 
 
@@ -48,14 +46,42 @@ for(let i = 0; i < 5; i++){
     })
 }
 
-// 삭제 버튼
-let delButtonAll = document.querySelectorAll('#delButton');
+// HTML에서 검색 버튼과 검색 입력 필드를 가져옵니다.
+let searchButton = document.querySelector(".searchButton");
+let searchInput = document.querySelector(".search");
 
-for(let i = 0; i < delButtonAll.length; i++){
-    delButtonAll[i].addEventListener("click", function(){
+// 검색 버튼에 클릭 이벤트 리스너를 추가합니다.
+searchButton.addEventListener("click", function () {
+    filterUserInfo();
+});
 
-       delButtonAll[i].parentNode.remove();
-    })
+// 검색 입력 필드에서 Enter 키를 눌렀을 때도 검색하도록 합니다.
+searchInput.addEventListener("keyup", function (event) {
+    if (event.key === "Enter") {
+        filterUserInfo();
+    }
+});
+
+// 사용자 정보를 필터링하고 보여줄 함수를 정의합니다.
+function filterUserInfo() {
+    // 검색어를 입력 필드에서 가져옵니다.
+    let searchKeyword = searchInput.value.toLowerCase(); // 입력된 검색어를 소문자로 변환합니다.
+
+    // 모든 정보 상자(infoBox) 엘리먼트를 가져옵니다.
+    let infoBoxes = document.querySelectorAll(".infoBox");
+
+    // 각 정보 상자를 순회하며 검색어와 일치하는 이름을 가진 엘리먼트만 보여주거나 숨깁니다.
+    infoBoxes.forEach((infoBox) => {
+        let userName = infoBox.querySelector(".userinfo#userName").textContent.toLowerCase(); // userName을 소문자로 변환합니다.
+
+        if (userName.includes(searchKeyword)) {
+            infoBox.style.display = "block";
+            infoBox.style.padding = '10px';
+            
+        } else {
+            infoBox.style.display = "none";
+        }
+    });
 }
 
 //logo
@@ -179,4 +205,3 @@ document.querySelector(".tmp2").addEventListener("click", function () {
     console.log("click")
     window.location.href = "이인혜_notice_list.html"
 });
-

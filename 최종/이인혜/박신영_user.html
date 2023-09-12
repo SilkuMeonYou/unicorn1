@@ -4,11 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>administrator</title>
-    <link rel="stylesheet" href="박신영/assets/css/administrator.css">
-       <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
-
+    <title>user</title>
+    <link rel="stylesheet" href="박신영/assets/css/user.css">
+    <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
 </head>
 
 <body>
@@ -70,10 +69,10 @@
             <div class="categorysub1"></div>
         </div>
     </div>
-  
+    
     <div class="bottom">
         <!--menu-->
-        <div class="menuBox" id="menuBox">
+        <div class="menuBox">
             <div id="welcome_admin">관리자 님 <br> 환영합니다!</div>
             <div class="menu" id="admin_notice" onclick="location.href='박신영_administrator.html'">공지사항</div>
             <div class="menu" id="admin_class">강의실</div>
@@ -84,90 +83,121 @@
             <div class="menu" id="admin_book" onclick="location.href='박신영_reservation.html'">좌석예약관리</div>
             <div class="menu" id="admin_place" onclick="location.href='박신영_hotPlace.html'">식당관리</div>
             <div class="menu" id="admin_user" onclick="location.href='박신영_user.html'">회원관리</div>
-
         </div>
 
-        <!--board-->
+        <!--main-->
         <div class="main">
-            <div class="main_title">공지사항 관리</div>
-            <div class="write" onclick="location.href='/Unicorn/박신영_writeNotice.html'">글쓰기</div>
+            <div class="main_title">유저 관리</div>
+            <div class="searchBox">
+                <input type="text" class="search" placeholder=" 이름 검색">
+                <span class="searchButton">검색</span>
+            </div>
+
             <div class="mainBox">
                 <div class="rowBox">
-                    <div class="row" id="number">No.</div>
-                    <div class="row" id="title">제목</div>
-                    <div class="row" id="del">관리</div>
+                    
+                    <div class="row" id="rowNo">No</div>
+                    <div class="row" id="rowClass">수강내역</div>
+                    <div class="row" id="rowName">이름</div>
+                    <div class="row" id="rowId">아이디</div>
+                    <div class="row" id="rowEmail">이메일</div>
+                    <div class="row" id="rowPhone">핸드폰 번호</div>
+                    
                 </div>
+
                 <div class="mainBody">
-
-                    <div class="infoBox">
-                        <div class="info" id="noticeNo">1</div>
-                        <div class="info" id="noticeTitle" onclick="location.href='/Unicorn/박신영_reviseNotice.html'">휴먼교육센터
-                            공지1</div>
-                            <button class="info" id="delButton">삭제</button>
-                    </div>
-
-                    <!-- DB 예시-->
                    
                     <div class="infoBox">
-                        <div class="info" id="noticeNo">1</div>
-                        <div class="info" id="noticeTitle" onclick="location.href='/Unicorn/박신영_reviseNotice.html'">휴먼교육센터
-                            공지1</div>
-                            <button class="info" id="delButton">삭제</button>
+                        <div class="userinfo" id="userNo">1</div>
+                        <div class="userinfo" id="userClass">자바 및 스프링기반 풀스택 개발자</div>
+                        <div class="userinfo" id="userName">윤여준</div>
+                        <div class="userinfo" id="userId">id1sdfsef</div>
+                        <div class="userinfo" id="userEmail">human@human.com</div>
+                        <div class="userinfo" id="userPhone">010-0000-0000</div>
+                    
                     </div>
                     <div class="infoBox">
-                        <div class="info" id="noticeNo">1</div>
-                        <div class="info" id="noticeTitle" onclick="location.href='/Unicorn/박신영_reviseNotice.html'">휴먼교육센터
-                            공지1</div>
-                            <button class="info" id="delButton">삭제</button>
+                        <div class="userinfo" id="userNo">2</div>
+                        <div class="userinfo" id="userClass">자바 및 스프링기반 풀스택 개발자</div>
+                        <div class="userinfo" id="userName">이인혜</div>
+                        <div class="userinfo" id="userId">id2dfdsfef</div>
+                        <div class="userinfo" id="userEmail">human@human.com</div>
+                        <div class="userinfo" id="userPhone">010-0000-0000</div>
+                    
                     </div>
                     <div class="infoBox">
-                        <div class="info" id="noticeNo">1</div>
-                        <div class="info" id="noticeTitle" onclick="location.href='/Unicorn/박신영_reviseNotice.html'">휴먼교육센터
-                            공지1</div>
-                            <button class="info" id="delButton">삭제</button>
+                        <div class="userinfo" id="userNo">2</div>
+                        <div class="userinfo" id="userClass">자바 및 스프링기반 풀스택 개발자</div>
+                        <div class="userinfo" id="userName">이인혜</div>
+                        <div class="userinfo" id="userId">id2dfdsfef</div>
+                        <div class="userinfo" id="userEmail">human@human.com</div>
+                        <div class="userinfo" id="userPhone">010-0000-0000</div>
+                    
                     </div>
                     <div class="infoBox">
-                        <div class="info" id="noticeNo">1</div>
-                        <div class="info" id="noticeTitle" onclick="location.href='/Unicorn/박신영_reviseNotice.html'">휴먼교육센터
-                            공지1</div>
-                            <button class="info" id="delButton">삭제</button>
+                        <div class="userinfo" id="userNo">2</div>
+                        <div class="userinfo" id="userClass">자바 및 스프링기반 풀스택 개발자</div>
+                        <div class="userinfo" id="userName">최만경</div>
+                        <div class="userinfo" id="userId">id2dfdsfef</div>
+                        <div class="userinfo" id="userEmail">human@human.com</div>
+                        <div class="userinfo" id="userPhone">010-0000-0000</div>
+                    
                     </div>
                     <div class="infoBox">
-                        <div class="info" id="noticeNo">1</div>
-                        <div class="info" id="noticeTitle" onclick="location.href='/Unicorn/박신영_reviseNotice.html'">휴먼교육센터
-                            공지1</div>
-                            <button class="info" id="delButton">삭제</button>
+                        <div class="userinfo" id="userNo">2</div>
+                        <div class="userinfo" id="userClass">자바 및 스프링기반 풀스택 개발자</div>
+                        <div class="userinfo" id="userName">김나영</div>
+                        <div class="userinfo" id="userId">id2dfdsfef</div>
+                        <div class="userinfo" id="userEmail">human@human.com</div>
+                        <div class="userinfo" id="userPhone">010-0000-0000</div>
+                    
                     </div>
                     <div class="infoBox">
-                        <div class="info" id="noticeNo">1</div>
-                        <div class="info" id="noticeTitle" onclick="location.href='/Unicorn/박신영_reviseNotice.html'">휴먼교육센터
-                            공지1</div>
-                            <button class="info" id="delButton">삭제</button>
+                        <div class="userinfo" id="userNo">2</div>
+                        <div class="userinfo" id="userClass">자바 및 스프링기반 풀스택 개발자</div>
+                        <div class="userinfo" id="userName">이인혜</div>
+                        <div class="userinfo" id="userId">id2dfdsfef</div>
+                        <div class="userinfo" id="userEmail">human@human.com</div>
+                        <div class="userinfo" id="userPhone">010-0000-0000</div>
+                    
                     </div>
                     <div class="infoBox">
-                        <div class="info" id="noticeNo">1</div>
-                        <div class="info" id="noticeTitle" onclick="location.href='/Unicorn/박신영_reviseNotice.html'">휴먼교육센터
-                            공지1</div>
-                            <button class="info" id="delButton">삭제</button>
+                        <div class="userinfo" id="userNo">2</div>
+                        <div class="userinfo" id="userClass">자바 및 스프링기반 풀스택 개발자</div>
+                        <div class="userinfo" id="userName">이수연</div>
+                        <div class="userinfo" id="userId">id2dfdsfef</div>
+                        <div class="userinfo" id="userEmail">human@human.com</div>
+                        <div class="userinfo" id="userPhone">010-0000-0000</div>
+                    
                     </div>
                     <div class="infoBox">
-                        <div class="info" id="noticeNo">1</div>
-                        <div class="info" id="noticeTitle" onclick="location.href='/Unicorn/박신영_reviseNotice.html'">휴먼교육센터
-                            공지1</div>
-                            <button class="info" id="delButton">삭제</button>
+                        <div class="userinfo" id="userNo">2</div>
+                        <div class="userinfo" id="userClass">자바 및 스프링기반 풀스택 개발자</div>
+                        <div class="userinfo" id="userName">이인혜</div>
+                        <div class="userinfo" id="userId">id2dfdsfef</div>
+                        <div class="userinfo" id="userEmail">human@human.com</div>
+                        <div class="userinfo" id="userPhone">010-0000-0000</div>
+                    
                     </div>
                     <div class="infoBox">
-                        <div class="info" id="noticeNo">1</div>
-                        <div class="info" id="noticeTitle" onclick="location.href='/Unicorn/박신영_reviseNotice.html'">휴먼교육센터
-                            공지10</div>
-                            <button class="info" id="delButton">삭제</button>
+                        <div class="userinfo" id="userNo">2</div>
+                        <div class="userinfo" id="userClass">자바 및 스프링기반 풀스택 개발자</div>
+                        <div class="userinfo" id="userName">이인혜</div>
+                        <div class="userinfo" id="userId">id2dfdsfef</div>
+                        <div class="userinfo" id="userEmail">human@human.com</div>
+                        <div class="userinfo" id="userPhone">010-0000-0000</div>
+                    
                     </div>
-
-
+                    <div class="infoBox">
+                        <div class="userinfo" id="userNo">2</div>
+                        <div class="userinfo" id="userClass">자바 및 스프링기반 풀스택 개발자</div>
+                        <div class="userinfo" id="userName">이인혜</div>
+                        <div class="userinfo" id="userId">id2dfdsfef</div>
+                        <div class="userinfo" id="userEmail">human@human.com</div>
+                        <div class="userinfo" id="userPhone">010-0000-0000</div>
+                    
+                    </div>
                 </div>
-
-
-
             </div>
             <div class="pageBox">
                 <div class="pageNum" id="pageNum1"> 1 </div>
@@ -181,7 +211,8 @@
 
     </div>
 
-    <script src="박신영/assets/js/administrator.js"></script>
+
+    <script src="박신영/assets/js/user.js"></script>
 </body>
 
 </html>

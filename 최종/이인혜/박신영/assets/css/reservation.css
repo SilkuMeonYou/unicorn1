@@ -1,0 +1,531 @@
+ /* main head css */
+ /* div {
+        border: 1px solid orange;
+    } */
+ body {
+     margin-top: 0px;
+     margin-left: auto;
+     margin-right: auto;
+     font-family: 'pretendard';
+     background-color: rgb(243, 243, 243);
+     height: 1000px;
+ }
+
+ #head {
+     border-top: 1px solid #109ddc;
+     background-color: white;
+     position: fixed;
+     display: flex;
+     width: 100vw;
+     height: 230px;
+     flex-wrap: wrap;
+     z-index: 1000;
+     transition: transform 0.5s ease;
+ }
+
+ .head1 {
+     display: flex;
+     width: 100%;
+ }
+
+ .logo {
+     width: 79%;
+     text-align: center;
+     height: 180px;
+ }
+
+ .text:hover {
+     cursor: pointer;
+ }
+
+ .img1 {
+     margin-top: 60px;
+     margin-left: 150px;
+ }
+
+ .img1:hover,
+ .img2:hover,
+ .img3:hover {
+     cursor: pointer;
+ }
+
+ .img2 {
+     margin-top: 40px;
+ }
+
+ .img3 {
+     margin-top: 30px;
+ }
+
+ .fours {
+     display: flex;
+     flex-wrap: wrap;
+     /* width: 260px; */
+     width: 21vw;
+     height: 180px;
+ }
+
+ .fours1 {
+     /* width: 80px; */
+     width: 30%;
+     height: 89px;
+     line-height: 90px;
+     text-align: center;
+ }
+
+ .fours2 {
+     /* width: 176px; */
+     width: 68%;
+     font-weight: 700;
+     font-size: 18px;
+
+     height: 89px;
+     text-align: center;
+ }
+
+ .fours3 {
+     /* width: 80px; */
+     width: 30%;
+     height: 89px;
+     line-height: 150px;
+     font-size: 14px;
+     /* border: 1px solid orange; */
+     text-align: end;
+ }
+
+ .fours4 {
+     /* width: 176px; */
+     width: 68%;
+     height: 89px;
+     line-height: 150px;
+     font-size: 14px;
+     text-align: center;
+ }
+
+ .button {
+     border-top: 1px solid rgb(216, 215, 215);
+     border-bottom: 1px solid rgb(216, 215, 215);
+     text-align: center;
+     display: flex;
+     flex-wrap: wrap;
+     width: 100%;
+     height: 20%;
+     line-height: 40px;
+     font-weight: 700;
+     font-size: 20px;
+ }
+
+ .button:hover,
+ #category:hover,
+ .room:hover {
+     cursor: pointer;
+ }
+
+ .buttonsub1 {
+     width: 25vw;
+     height: 100%;
+     position: relative;
+ }
+
+ /* menubutton hover */
+ .buttonsub1::before {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     display: block;
+     width: 100%;
+     height: 100%;
+     z-index: -1;
+     background-color: #6098FF;
+     transform: scaleY(0.3);
+     opacity: 0;
+     transition: transform 0.8s cubic-bezier(0.08, 0.35, 0.13, 1.02), opacity 0.4s;
+     /* transition: transform 0.8s cubic-bezier(0.71, 0.11, 0.13, 1.02), opacity 0.4s; */
+ }
+
+ .buttonsub1:hover::before {
+     opacity: 1;
+     background-color: #6098FF;
+     transform: scaleY(1);
+ }
+
+ /*  end menubutton hover */
+
+ #category {
+     padding-top: 230px;
+     display: 100%;
+     height: 160px;
+     display: flex;
+     text-align: center;
+ }
+
+ .category_1,
+ .category_2,
+ .category_3,
+ .category_4 {
+     /* width: 317px; */
+     width: 25vw;
+     height: 160px;
+     /* 스크립트로 이벤트 줘서 변경할 것 */
+     /* opacity: 0; */
+     display: none;
+     z-index: 1000;
+     position: fixed;
+ }
+
+ /* 하위버튼 위치 고정 */
+ .category_2 {
+     margin-left: 25vw;
+ }
+
+ .category_3 {
+     margin-left: 50vw;
+ }
+
+ .category_4 {
+     margin-left: 75vw;
+ }
+
+ .categorysub1 {
+     width: 25vw;
+     height: 40px;
+     /* background-color: rgb(215, 242, 250); */
+     background-color: white;
+     /* 겹쳐지는지 확인여부 */
+ }
+
+ .categorysub1:hover {
+     background-color: rgb(171, 228, 245);
+ }
+
+ a {
+     text-decoration-line: none;
+     color: black;
+ }
+
+ /*logo*/
+ .typing {
+     margin-top: 5%;
+     height: 55px;
+     display: flex;
+     justify-content: center;
+     align-items: flex-end;
+     font-size: 1.8rem;
+ }
+
+ .text {
+     font-size: 2.2rem;
+     margin-left: .6rem;
+ }
+
+ .text::after {
+     content: '';
+     margin-left: .4rem;
+     border-right: 2px solid #777;
+     animation: cursor .9s infinite steps(2);
+ }
+
+ @keyframes cursor {
+     from {
+         border-right: 2px solid #ffffff;
+     }
+
+     to {
+         border-right: 2px solid #777;
+     }
+ }
+
+ #contents_area {
+     position: fixed;
+     margin-top: -230px;
+     /* margin-top: -200px; */
+     width: 100vw;
+     height: 100vh;
+ }
+
+ iframe {
+     width: 100%;
+     height: 100%;
+     border: none;
+     /* 테두리 제거 */
+ }
+
+ /* main_head css end */
+
+
+ .bottom {
+     width: 100%;
+     display: flex;
+     margin-top: -100px;
+ }
+
+ /* 메뉴 css */
+ .menuBox {
+     width: 9%;
+     min-width: 120px;
+     max-width: 120px;
+     text-align: center;
+     border-radius: 10px;
+     font-size: 13px;
+     margin-left: 10px;
+     margin-top: 70px;
+     user-select: none;
+     /* 글씨 선택 안됨 */
+ }
+
+ .menu {
+     background-color: rgb(34, 50, 65);
+     height: 35px;
+     color: rgb(255, 255, 255);
+     padding-top: 20px;
+     border-radius: 10px;
+     box-shadow: 3px 3px grey;
+     margin-bottom: 5px;
+     border: 1px solid grey;
+ }
+
+ .menu:hover {
+     background-color: rgb(34, 50, 65);
+     cursor: pointer;
+     color: white;
+     transform: translateX(10px);
+ }
+
+ #welcome_admin {
+     padding-top: 80px;
+     padding-bottom: 80px;
+     color: white;
+     border-radius: 10px;
+     background-color: rgb(34, 50, 65);
+     margin-bottom: 5px;
+     box-shadow: 3px 3px grey;
+
+ }
+
+ .menu_class {
+     color: #969696;
+     font-size: 15px;
+     font-weight: bold;
+     margin-bottom: 8px;
+
+ }
+
+ .menu_class:hover {
+     font-weight: bold;
+     cursor: pointer;
+     color: rgb(34, 50, 65);
+ }
+
+ #admin_class1,
+ #admin_class2,
+ #admin_class3,
+ #admin_class4 {
+     display: none;
+ }
+
+ #admin_book {
+     background-color: rgb(92, 106, 119);
+     box-shadow: 1px 1px grey;
+     color: white;
+ }
+
+
+ /* main css */
+ .main {
+     width: 100%;
+     min-width: 800px;
+     padding: 0px 0px 0px 70px;
+     background-color: rgb(243, 243, 243);
+     margin-left: 10px;
+     display: flex;
+     flex-direction: column;
+
+ }
+
+ .main_title {
+     width: 200px;
+     font-size: 30px;
+     font-weight: bold;
+     color: rgb(34, 50, 65);
+     margin-bottom: 10px;
+ }
+
+ /* 예약좌석 관리 css */
+
+ .seatBox {
+     width: 50%;
+     display: flex;
+     flex-direction: column;
+     padding: 10px;
+     background-color: white;
+     border-radius: 10px;
+     box-shadow: 2px 2px grey;
+     border: 1px solid grey;
+     margin-bottom: 40px;
+ }
+
+ .seatList {
+     display: flex;
+     flex-direction: row;
+     margin-bottom: 5px;
+ }
+
+ .seat {
+     width: 33.33%;
+     text-align: center;
+
+ }
+
+ #seat_select {
+     border: none;
+     user-select: none;
+     border-radius: 10px;
+ }
+
+ #seat_select:hover {
+     cursor: pointer;
+ }
+
+ #seat_input {
+     width: 100px;
+     border: 1px solid grey;
+     height: 20px;
+     margin: 0px 25px 0px 15px;
+     text-align: end;
+     border-radius: 5px;
+ }
+
+ .seatNumBtn {
+     border: 1px solid #444857;
+     background-color: rgb(34, 50, 65);
+     color: white;
+     border-radius: 5px;
+     margin-left: 10px;
+     width: 25px;
+ }
+
+ .seatNumBtn:hover {
+     cursor: pointer;
+ }
+
+
+ /* 예약내역 css */
+ /* bottom */
+ .bottom2 {
+     /* border: 1px solid red; */
+     width: 100%;
+     display: flex;
+     /* flex 컨테이너로 설정 */
+ }
+
+ .leftTop {
+     /* border: 1px solid green; */
+     height: 100px;
+ }
+
+ .leftSelect {
+     border: 5px solid rgb(156, 155, 155);
+     background-color: aliceblue;
+     width: 89%;
+     height: 50px;
+     text-align: center;
+
+
+ }
+
+ .leftSelect select {
+     width: 150px;
+     height: 30px;
+     display: inline-block;
+
+     margin: 0 10px;
+     margin-top: 1.3%;
+ }
+
+ .leftBottom {
+     /* border: 1px solid green; */
+     width: 1000px;
+     display: flex;
+ }
+
+ .Bleft {
+     /* border: 1px solid blue; */
+
+     width: 100%;
+     height: 100%;
+
+ }
+
+ .Bright {
+     /* border: 1px solid blue; */
+     width: 40%;
+     height: 100%;
+     margin-left: 5%;
+ }
+
+
+ /* 버튼 컨테이너 스타일 */
+ .buttonContainer {
+     border: 5px solid rgb(156, 155, 155);
+     background-color: aliceblue;
+     width: 100%;
+     height: 250%;
+
+     display: flex;
+     justify-content: center;
+ }
+
+ /* 버튼 스타일 */
+ .buttonContainer input[type=button] {
+     border: none;
+     font-size: 25px;
+     font-weight: 700;
+ }
+
+ /* 좌석 이미지 버튼 스타일 */
+ .seat-button {
+     background: url('https://us.123rf.com/450wm/onston/onston1510/onston151000002/47210861-pc-%EB%AA%A8%EB%8B%88%ED%84%B0-%EB%B2%A1%ED%84%B0-%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8-%EB%A0%88%EC%9D%B4-%EC%85%98.jpg');
+     background-size: 100% 100%;
+     width: 110px;
+     height: 100px;
+     cursor: pointer;
+     margin: 10px;
+     margin-top: 10px;
+     margin-bottom: 10px;
+
+ }
+
+ /* 좌석 번호 스타일 */
+ .seatNumber {
+     display: flex;
+ }
+
+
+ /* 좌석 확인 버튼 스타일 */
+ .check input[type="button"] {
+     margin-top: 30px;
+     padding: 10px 20px;
+     cursor: pointer;
+     background-color: transparent;
+ }
+
+ /* 좌석 확인 컨테이너 스타일 */
+ .check {
+     align-items: center;
+     width: 250px;
+     height: 530px;
+     border: 5px solid rgb(156, 155, 155);
+     background-color: aliceblue;
+ }
+
+ /* 좌석 예약 및 확인 컨테이너 스타일 */
+ .seatReservation,
+ .seatCheck {
+     align-items: center;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     text-align: center;
+     margin-top: 20%;
+ }

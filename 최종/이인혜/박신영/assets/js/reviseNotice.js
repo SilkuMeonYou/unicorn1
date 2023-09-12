@@ -1,19 +1,19 @@
 // 강의실메뉴 열었다 닫기
 document.querySelector("#admin_class").addEventListener("click", function () {
-    console.log("click")
+
     let class1 = document.getElementById("admin_class1");
     let class2 = document.getElementById("admin_class2");
-    let class3 =  document.getElementById("admin_class3");
-    let class4 = document.getElementById("admin_class4"); 
+    let class3 = document.getElementById("admin_class3");
+    let class4 = document.getElementById("admin_class4");
 
     let doBlock = class1.style.display == false && class2.style.display == false && class3.style.display == false && class4.style.display == false;
-
-    if(doBlock) {
+    console.log(doBlock)
+    if (doBlock) {
         class1.style.display = 'block';
         class2.style.display = 'block';
         class3.style.display = 'block';
         class4.style.display = 'block';
-    } else if(doBlock == false) {
+    } else if (doBlock == false) {
         class1.style.display = '';
         class2.style.display = '';
         class3.style.display = '';
@@ -22,43 +22,100 @@ document.querySelector("#admin_class").addEventListener("click", function () {
 })
 
 
-// 페이지 버튼 
-
-for(let i = 0; i < 5; i++){
-    let pagedom = document.querySelectorAll(".pageNum");
-    pagedom[i].addEventListener("click",function(event){
-        let j = i +1;
-           if(event.target == pagedom[i]){
-            document.getElementById("pageNum"+1).style.backgroundColor='rgb(243, 243, 243)';    
-            document.getElementById("pageNum"+1).style.color='#000000';
-            document.getElementById("pageNum"+2).style.backgroundColor='';    
-            document.getElementById("pageNum"+2).style.color='#000000';
-            document.getElementById("pageNum"+3).style.backgroundColor='';    
-            document.getElementById("pageNum"+3).style.color='#000000';
-            document.getElementById("pageNum"+4).style.backgroundColor='';    
-            document.getElementById("pageNum"+4).style.color='#000000';
-            document.getElementById("pageNum"+5).style.backgroundColor='';    
-            document.getElementById("pageNum"+5).style.color='#000000';
-
-            document.getElementById("pageNum"+j).style.backgroundColor='rgb(34, 50, 65)';    
-            document.getElementById("pageNum"+j).style.color='#ffffff';  
-           } 
-            
-    })
-}
 
 
-// 삭제 버튼
-let delPost = document.querySelectorAll('.delPost');
 
-for(let i = 0; i < delPost.length; i++){
-    delPost[i].addEventListener("click", function(){
+let boardStyle = document.getElementById("noticeBoard").style;
 
-       delPost[i].parentNode.remove();
-    })
-}
+// font size
+document.querySelector("#textSize").addEventListener("click", function (event) {
 
- // <main head>
+    let size = event.target;
+
+    if(size.value == '13') {
+        boardStyle.fontSize = '13px';
+
+    }
+    else if(size.value == '15') {
+        boardStyle.fontSize = '15px';
+
+        
+    }else if(size.value == '24') {
+        boardStyle.fontSize = '24px';
+        
+    }else if(size.value == '28') {
+        boardStyle.fontSize = '28px';
+        
+    }
+})
+
+// font Bold
+document.querySelector("#textWeight").addEventListener("click", function(){
+    
+    if( boardStyle.fontWeight != 'bold'){
+        document.getElementById('textWeight').style.backgroundColor = 'rgb(201, 201, 201)';
+        document.getElementById('textWeight').style.borderRadius = '10px';
+        boardStyle.fontWeight = 'bold';
+    } else {
+        document.getElementById('textWeight').style.backgroundColor = 'rgb(243, 243, 243)';
+        boardStyle.fontWeight = '100';
+    }
+    
+})
+
+// font color   
+document.querySelector("#textColor").addEventListener("input",function(event){
+
+    boardStyle.color = event.target.value;
+
+})
+
+// font underline  
+document.querySelector("#textLine").addEventListener("click",function(){
+    if(boardStyle.textDecoration != 'underline') {
+        document.getElementById('textLine').style.backgroundColor = 'rgb(201, 201, 201)';
+        document.getElementById('textLine').style.borderRadius = '10px';
+        boardStyle.textDecoration = 'underline';
+    } else {
+        document.getElementById('textLine').style.backgroundColor = 'rgb(243, 243, 243)';
+        boardStyle.textDecoration = '';
+    }
+ 
+ })
+
+ // font italic 
+document.querySelector("#textItalic").addEventListener("click",function(){
+    if(boardStyle.fontStyle != 'italic') {
+        document.getElementById('textItalic').style.backgroundColor = 'rgb(201, 201, 201)';
+        document.getElementById('textItalic').style.borderRadius = '10px';
+        boardStyle.fontStyle = 'italic';
+    } else {
+        document.getElementById('textItalic').style.backgroundColor = 'rgb(243, 243, 243)';
+        boardStyle.fontStyle = '';
+    }
+ 
+ })
+
+
+
+// 수정하기 버튼
+
+document.querySelector("#finish").addEventListener("click", function () {
+    if(confirm("수정을 완료하시겠습니까?")){
+        location = '박신영_administrator.html';
+    }
+    
+})
+
+// 취소 버튼
+document.querySelector("#cencle").addEventListener("click", function () {
+
+    if(confirm("취소하시겠습니까? 작성중인 글은 저장되지 않습니다.")){
+        location = '박신영_administrator.html';
+    }
+})
+
+  // <main head>
         //logo
         var text = document.querySelector(".typing .text");
         var letters = [
@@ -150,8 +207,7 @@ for(let i = 0; i < delPost.length; i++){
         });
 
 
-
-    // <링크>
+            // <링크>
     // 메인
     document.querySelector(".logo").addEventListener("click", function () {
         console.log("click")
