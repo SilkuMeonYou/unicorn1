@@ -1,5 +1,4 @@
-
-    /* main head css */
+   /* main head css */
        /* div {
         border: 1px solid orange;
     } */
@@ -8,9 +7,8 @@
         margin-left: auto;
         margin-right: auto;
         font-family: 'pretendard';
-        height: 1000px;
-        overflow-x: hidden;
         background-color: rgb(243, 243, 243);
+
     }
     #head {
         border-top: 1px solid #109ddc;
@@ -214,11 +212,11 @@
         height: 100%;
         border: none; /* 테두리 제거 */
     }
+    /* main_head css end */
 
 .bottom{
     width: 100%;
-    display: flex;   
-    position: fixed;
+    display: flex;
     margin-top: -30px;
 }
 
@@ -231,6 +229,7 @@
     border-radius: 10px;
     font-size: 13px;
     margin-left: 10px;
+    position: fixed;
     user-select: none;  /* 글씨 선택 안됨 */
 }
 .menu {
@@ -242,6 +241,7 @@
     box-shadow: 3px 3px grey;
     margin-bottom: 5px;
     border: 1px solid grey;
+   
 }
 .menu:hover {
     background-color: rgb(34, 50, 65);
@@ -263,154 +263,226 @@
     font-size: 15px;
     font-weight: bold;
     margin-bottom: 8px;
-    
 }
 .menu_class:hover {
     font-weight: bold;
     cursor: pointer;
     color: rgb(34, 50, 65);
 }
-
 #admin_class1, #admin_class2, #admin_class3, #admin_class4{
     display: none;
 }
 
-#admin_class{
+#admin_place{
     background-color: rgb(92, 106, 119);
     box-shadow: 1px 1px grey;
     color: white;
 }
 
-
-
-/* 메인 css */
-.main{
-    height: 800px;
+/* main css */
+.main{ 
     width: 100%;
     min-width: 800px;
     padding: 30px 70px 70px 70px;
     background-color: rgb(243, 243, 243);
-    margin-left: 10px; 
+    margin-left: 100px; 
+    margin-top: -130px;
     display: flex;
     flex-direction: column;
-    margin-top: -105px;
 }
+
 .main_title{
-    width: 200px;
+    width: 300px;
     font-size: 30px;
     font-weight: bold;
     color: rgb(34, 50, 65);
-    margin-bottom: 30px;
-}
-.mainBox {
-    border-radius: 10px;
-    box-shadow: 2px 2px grey;
-    border: 1px solid grey;
+    position: relative;
+    top: 30px;
 }
 
-
-/* 메인 제목 */
-.rowBox{
-    border-radius: 10px 10px 0 0 ;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    font-weight: bold;
-    background-color: #444857;
+/* 검색 css */
+.searchBox{
+    width: 560px;
+    height: 60px;
+    margin-left: 250px;
 }
-.row {
-    float: left;
-    text-align: center;
-    background-color: #444857;
-    border-radius: 10px;
-    color: #ffffff;
-}
-
-
-#number{
-    width: 10%;
-}
-#title{
-    width:65%
-}
-#writer{
-    width: 15%;
-}
-#del{
-    width: 10%;
-}
-
-/* 메인 리스트 */
-.mainBody{
-    background-color: #ffffff;
-    border-radius: 10px;
-
-}
-
-.postBox {
-    display: flex;
-    flex-direction: row;
-    padding: 10px;
-
-}
-.post{
-    float: left;
-    text-align: center;
-    padding: 1px;
-}
-#postNo{
-    width: 10%;
-}
-#postTitle{
-    width: 65%;
-}
-#postTitle:hover {
-    cursor: pointer;
-    color: rgb(75, 112, 145);
-    font-weight: bold;
-}
-#postwriter{
-    width:15%
-}
-#postButton{
-    width: 10%;
-}
-
-.delPost{
-    width: 80px;
+.search{
+    border: 2px solid rgb(34, 50, 65);
+    border-radius: 15px;
+    background-color: rgb(250, 250, 250);
+    width: 500px;
     height: 25px;
-    border: 1px solid grey;
-    border-radius: 5px;
-    background-color: #ffffff;
 }
-.delPost:hover{
+.searchButton{
+    border: 1px solid rgb(218, 218, 218);
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px;
+    box-shadow: 1px 1px #cfcfcf;
+}
+.searchButton:hover{
+    background-color: #f0f0f0;
     cursor: pointer;
-    background-color: rgb(240, 244, 247);
 }
 
-/* page */
-.pageBox{
-    margin-top: 20px ;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.addHotple{
+    position: relative;
+    bottom: 20px;
+    left: 690px;
+    border: 1px solid grey;
+    padding: 8px;
+    border-radius: 5px;
+    background-color:rgb(34, 50, 65);
+    color: white;
+    box-shadow: 2px 2px grey;
     user-select: none;
 }
-.pageNum{
-    width: 30px;
-    text-align: center;
-    box-shadow: 2px 2px grey;
+.addHotple{
+    cursor: pointer;
+}
+
+/* 식당 리스트 (foodBox) */
+.foodBox {
+    min-width: 950px;
+    height: 190px;
+    background-color: white;
     border-radius: 10px;
+    box-shadow: 2px 2px grey;
     border: 1px solid grey;
-    margin-left: 5px;
+    padding:10px;
+    position: relative;
+    margin-bottom: 30px;
 }
-#pageNum1{
-    background-color: rgb(34, 50, 65);
-    border-radius: 10px;
-    box-shadow: 2px 2px grey;
-    color: #ffffff;
+
+.foodimg{
+    border: 1px solid grey;
+    width: 230px;
+    height: 180px;
 }
-.pageNum:hover{
+.foodTitle{
+    position: relative;
+    left: 250px;
+    bottom: 170px;
+    width: 40%;
+    font-size: 25px;
+    font-weight: bold;
+}
+.foodAddress{
+    width: 70%;
+    position: relative;
+    left: 250px;
+    bottom: 165px;
+}
+.foodDetails{
+    width: 70%;
+    position: relative;
+    left: 250px;
+    bottom: 150px;
+}
+
+.imgfileButton{
+    position: relative;
+    bottom: 110px;
+    left: 250px;
+}
+.reviseButton{
+    width: 50px;
+    height: 20px;
+    padding-top: 2px;
+    border: 1px solid grey;
+    text-align: center;
+    border-radius: 5px;
+    position: relative;
+    bottom: 260px;
+    left: 830px;
+}
+.reviseButton:hover{
+    background-color: rgb(240, 244, 247);
+    border: 1px solid rgb(34, 50, 65);
+    cursor: pointer;
+}
+.delButton{
+    width: 50px;
+    height: 20px;
+    padding-top: 2px;
+    border: 1px solid grey;
+    text-align: center;
+    border-radius: 5px;
+    position: relative;
+    bottom: 284px;
+    left: 890px;
+}
+.delButton:hover{
+    background-color: rgb(240, 244, 247);
+    border: 1px solid rgb(34, 50, 65);
+    cursor: pointer;
+}
+
+/* 수정버튼 클릭 */
+.input_foodTitle{
+    position: relative;
+    left: 250px;
+    bottom: 315px;
+    width: 40%;
+    font-size: 25px;
+    font-weight: bold;
+    outline: none;
+    visibility: hidden;
+}
+.input_foodAddress{
+    width: 70%;
+    position: relative;
+    left: 250px;
+    bottom: 310px;
+    outline: none;
+    visibility: hidden;
+}
+.input_foodDetails{
+    width: 70%;
+    height: 40px;
+    position: relative;
+    left: 250px;
+    bottom: 300px;
+    resize: none;
+    outline: none;
+    visibility: hidden;
+    
+}
+.finishButton{
+    width: 50px;
+    height: 20px;
+    padding-top: 2px;
+    border: 1px solid grey;
+    text-align: center;
+    border-radius: 5px;
+    position: relative;
+    bottom: 414px;
+    left: 830px;
+    background-color: white;
+    visibility: hidden;
+}
+.finishButton:hover{
+    background-color: rgb(240, 244, 247);
+    border: 1px solid rgb(34, 50, 65);
+    cursor: pointer;
+}
+.cencleButton{
+    width: 50px;
+    height: 20px;
+    padding-top: 2px;
+    border: 1px solid grey;
+    text-align: center;
+    border-radius: 5px;
+    position: relative;
+    bottom: 438px;
+    left: 890px;
+    background-color: white;
+    visibility: hidden;
+}
+.cencleButton:hover{
+    background-color: rgb(240, 244, 247);
+    border: 1px solid rgb(34, 50, 65);
     cursor: pointer;
 }
 

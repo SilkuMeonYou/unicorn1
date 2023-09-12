@@ -4,15 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>administrator</title>
-    <link rel="stylesheet" href="박신영/assets/css/administrator.css">
-       <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
-
+    <title>reservation</title>
+    <link rel="stylesheet" href="박신영/assets/css/reservation.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
 </head>
 
 <body>
-
     <div id="head">
         <div class="head1">
             <div class="logo">
@@ -70,10 +68,10 @@
             <div class="categorysub1"></div>
         </div>
     </div>
-  
+
     <div class="bottom">
         <!--menu-->
-        <div class="menuBox" id="menuBox">
+        <div class="menuBox">
             <div id="welcome_admin">관리자 님 <br> 환영합니다!</div>
             <div class="menu" id="admin_notice" onclick="location.href='박신영_administrator.html'">공지사항</div>
             <div class="menu" id="admin_class">강의실</div>
@@ -84,104 +82,96 @@
             <div class="menu" id="admin_book" onclick="location.href='박신영_reservation.html'">좌석예약관리</div>
             <div class="menu" id="admin_place" onclick="location.href='박신영_hotPlace.html'">식당관리</div>
             <div class="menu" id="admin_user" onclick="location.href='박신영_user.html'">회원관리</div>
-
         </div>
 
-        <!--board-->
         <div class="main">
-            <div class="main_title">공지사항 관리</div>
-            <div class="write" onclick="location.href='/Unicorn/박신영_writeNotice.html'">글쓰기</div>
-            <div class="mainBox">
-                <div class="rowBox">
-                    <div class="row" id="number">No.</div>
-                    <div class="row" id="title">제목</div>
-                    <div class="row" id="del">관리</div>
-                </div>
-                <div class="mainBody">
+            <div class="main_title">좌석 관리</div>
 
-                    <div class="infoBox">
-                        <div class="info" id="noticeNo">1</div>
-                        <div class="info" id="noticeTitle" onclick="location.href='/Unicorn/박신영_reviseNotice.html'">휴먼교육센터
-                            공지1</div>
-                            <button class="info" id="delButton">삭제</button>
-                    </div>
+            <div class="seatBox">
 
-                    <!-- DB 예시-->
-                   
-                    <div class="infoBox">
-                        <div class="info" id="noticeNo">1</div>
-                        <div class="info" id="noticeTitle" onclick="location.href='/Unicorn/박신영_reviseNotice.html'">휴먼교육센터
-                            공지1</div>
-                            <button class="info" id="delButton">삭제</button>
-                    </div>
-                    <div class="infoBox">
-                        <div class="info" id="noticeNo">1</div>
-                        <div class="info" id="noticeTitle" onclick="location.href='/Unicorn/박신영_reviseNotice.html'">휴먼교육센터
-                            공지1</div>
-                            <button class="info" id="delButton">삭제</button>
-                    </div>
-                    <div class="infoBox">
-                        <div class="info" id="noticeNo">1</div>
-                        <div class="info" id="noticeTitle" onclick="location.href='/Unicorn/박신영_reviseNotice.html'">휴먼교육센터
-                            공지1</div>
-                            <button class="info" id="delButton">삭제</button>
-                    </div>
-                    <div class="infoBox">
-                        <div class="info" id="noticeNo">1</div>
-                        <div class="info" id="noticeTitle" onclick="location.href='/Unicorn/박신영_reviseNotice.html'">휴먼교육센터
-                            공지1</div>
-                            <button class="info" id="delButton">삭제</button>
-                    </div>
-                    <div class="infoBox">
-                        <div class="info" id="noticeNo">1</div>
-                        <div class="info" id="noticeTitle" onclick="location.href='/Unicorn/박신영_reviseNotice.html'">휴먼교육센터
-                            공지1</div>
-                            <button class="info" id="delButton">삭제</button>
-                    </div>
-                    <div class="infoBox">
-                        <div class="info" id="noticeNo">1</div>
-                        <div class="info" id="noticeTitle" onclick="location.href='/Unicorn/박신영_reviseNotice.html'">휴먼교육센터
-                            공지1</div>
-                            <button class="info" id="delButton">삭제</button>
-                    </div>
-                    <div class="infoBox">
-                        <div class="info" id="noticeNo">1</div>
-                        <div class="info" id="noticeTitle" onclick="location.href='/Unicorn/박신영_reviseNotice.html'">휴먼교육센터
-                            공지1</div>
-                            <button class="info" id="delButton">삭제</button>
-                    </div>
-                    <div class="infoBox">
-                        <div class="info" id="noticeNo">1</div>
-                        <div class="info" id="noticeTitle" onclick="location.href='/Unicorn/박신영_reviseNotice.html'">휴먼교육센터
-                            공지1</div>
-                            <button class="info" id="delButton">삭제</button>
-                    </div>
-                    <div class="infoBox">
-                        <div class="info" id="noticeNo">1</div>
-                        <div class="info" id="noticeTitle" onclick="location.href='/Unicorn/박신영_reviseNotice.html'">휴먼교육센터
-                            공지10</div>
-                            <button class="info" id="delButton">삭제</button>
-                    </div>
-
-
+                <div class="seatList">
+                    <select name="classSelect" class="seat" id="seat_select">
+                        <option name="default" class="classNum">강의실 선택</option>
+                        <option name="class1" class="classNum">1강의실</option>
+                        <option name="class2" class="classNum">2강의실</option>
+                        <option name="class3" class="classNum">3강의실</option>
+                        <option name="class4" class="classNum">4강의실</option>
+                    </select>
+                    <input type="text" value="0" id="seat_input">
+                    <button class="seatNumBtn" id="plus"> + </button>
+                    <button class="seatNumBtn" id="minus"> - </button>
+                    <button class="seatNumBtn" id="correction" style="width: 50px;">수정</button>
                 </div>
 
+            </div>
 
+            <div class="main_title">예약 내역</div>
+
+            <div class="bottom2">
+                <div class="left">
+                    <div class="leftTop">
+                        <div class="leftSelect">
+                            <select id="yearSelect" onchange="updateDayOptions()"> </select>
+                            <select id="monthSelect" onchange="updateDayOptions()"></select>
+                            <select id="dateSelect"></select>
+                        </div>
+                    </div>
+                    <div class="leftBottom">
+                        <div class="buttonContainer">
+                            <div class="Bleft">
+                                <!-- 좌석 버튼 그룹 -->
+                                <div class="left_1">
+                                    <input type="button" class="seat-button" value="1">
+                                    <input type="button" class="seat-button" value="2">
+                                    <input type="button" class="seat-button" value="3">
+                                    <input type="button" class="seat-button" value="4">
+                                    <input type="button" class="seat-button" value="5">
+                                    <input type="button" class="seat-button" value="6">
+                                    <input type="button" class="seat-button" value="7">
+                                </div>
+                                <div class="left_1">
+                                    <input type="button" class="seat-button" value="8">
+                                    <input type="button" class="seat-button" value="9">
+                                    <input type="button" class="seat-button" value="10">
+                                    <input type="button" class="seat-button" value="11">
+                                    <input type="button" class="seat-button" value="12">
+                                    <input type="button" class="seat-button" value="13">
+                                    <input type="button" class="seat-button" value="14">
+                                </div>
+                                <div class="left_1">
+                                    <input type="button" class="seat-button" value="15">
+                                    <input type="button" class="seat-button" value="16">
+                                    <input type="button" class="seat-button" value="17">
+                                    <input type="button" class="seat-button" value="18">
+                                    <input type="button" class="seat-button" value="19">
+                                    <input type="button" class="seat-button" value="20">
+                                    <input type="button" class="seat-button" value="21">
+                                </div>
+                                <div class="left_1">
+                                    <input type="button" class="seat-button" value="22">
+                                    <input type="button" class="seat-button" value="23">
+                                    <input type="button" class="seat-button" value="24">
+                                    <input type="button" class="seat-button" value="25">
+                                    <input type="button" class="seat-button" value="26">
+                                    <input type="button" class="seat-button" value="27">
+                                    <input type="button" class="seat-button" value="28">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
-            <div class="pageBox">
-                <div class="pageNum" id="pageNum1"> 1 </div>
-                <div class="pageNum" id="pageNum2"> 2 </div>
-                <div class="pageNum" id="pageNum3"> 3 </div>
-                <div class="pageNum" id="pageNum4"> 4 </div>
-                <div class="pageNum" id="pageNum5"> 5 </div>
 
-            </div>
+
+
+
         </div>
 
     </div>
 
-    <script src="박신영/assets/js/administrator.js"></script>
+
+    <script src="박신영/assets/js/reservation.js"></script>
 </body>
 
 </html>

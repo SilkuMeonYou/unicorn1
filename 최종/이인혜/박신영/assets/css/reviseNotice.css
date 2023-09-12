@@ -3,7 +3,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     font-family: 'pretendard';
-    height: 1100px;
+    height: 100vh;
     overflow-x: hidden;
     background-color: rgb(243, 243, 243);
 }
@@ -233,24 +233,29 @@ a {
     }
 }
 
-.bottom {
-    width: 100%;
+
+input {
+    outline: none;
+}
+
+.body {
     display: flex;
-    position: fixed;
-    margin-top: -30px;
+    margin-top: -100px;
 }
 
 /* 메뉴 css */
-
 .menuBox {
     width: 9%;
+    height: 100vh;
     min-width: 120px;
     max-width: 120px;
+    background-color: rgb(243, 243, 243);
     text-align: center;
     border-radius: 10px;
     font-size: 13px;
-    /* position: fixed; */
+    position: fixed;
     margin-left: 10px;
+    top: 250px;
     user-select: none;
     /* 글씨 선택 안됨 */
 }
@@ -288,6 +293,7 @@ a {
     font-size: 15px;
     font-weight: bold;
     margin-bottom: 8px;
+
 }
 
 .menu_class:hover {
@@ -310,160 +316,112 @@ a {
 }
 
 
-/* 메인 css */
+
+/* 글쓰는공간css */
 
 .main {
-    width: 100%;
+    width: 89%;
     min-width: 800px;
-    padding: 30px 70px 70px 70px;
+    height: 100vh;
+    padding: 70px;
     background-color: rgb(243, 243, 243);
+    margin-left: 100px;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
-    margin-left: 10px;
-    margin-top: -50px;
 }
 
-.main_title {
-    width: 200px;
-    font-size: 30px;
-    font-weight: bold;
-    color: rgb(34, 50, 65);
-    margin-top: -80px;
-    position: relative;
-    top: 30px;
+.noticeTitle {
+    border: none;
+    border-bottom: 1px solid rgb(218, 218, 218);
+    font-size: 18px;
+    padding: 50px;
+    border-radius: 10px 10px 0 0;
+
 }
 
-.mainBox {
+textarea {
+    border: none;
+    outline: none;
+    font-size: 15px;
+    padding: 50px;
+    height: 90%;
+    color: #000000;
+    border-radius: 0 0 10px 10px;
+}
+
+/* 글씨 버튼 css */
+.buttonBox {
+    width: 80%;
+    min-width: 800px;
+    padding: 10px;
+    padding-left: 50px;
+    margin-left: 120px;
+    background-color: rgb(243, 243, 243);
+    position: fixed;
+    margin-top: -60px;
+    left: 50px;
+}
+
+.textButton {
+    min-width: 40px;
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.textButton:hover {
+    border: none;
+    background-color: rgb(201, 201, 201);
     border-radius: 10px;
-    box-shadow: 2px 2px grey;
-    border: 1px solid grey;
+    cursor: pointer;
 }
 
-/* 글쓰기 버튼*/
-.write {
-    width: 80px;
-    border: 1px solid grey;
-    border-radius: 10px;
-    background-color: rgb(34, 50, 65);
-    padding: 5px;
+select {
+    border: none;
+    outline: none;
+}
+
+select option {
     text-align: center;
-    margin-bottom: 20px;
-    margin-left: 90%;
+    background-color: rgb(243, 243, 243);
+}
+
+.finishButton {
+    width: 100px;
+    height: 30px;
+    background-color: rgb(34, 50, 65);
+    border-radius: 10px;
     box-shadow: 2px 2px grey;
     color: white;
-    margin-bottom: 30px;
+    margin-right: 10px;
+
 }
 
-.write:hover {
+.finishButton:hover {
     cursor: pointer;
 }
 
-/* 메인 제목 */
-.rowBox {
-    border-radius: 10px 10px 0 0;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    font-weight: bold;
-    background-color: #444857;
-}
-
-.row {
-    float: left;
-    text-align: center;
-    background-color: #444857;
-    border-radius: 10px;
-    color: #ffffff;
-}
-
-
-#number {
-    width: 10%;
-}
-
-#title {
-    width: 80%
-}
-
-#del {
-    width: 10%;
-}
-
-/* 메인 리스트 */
-.mainBody {
-    background-color: #ffffff;
-    border-radius: 10px;
-}
-
-.infoBox {
-    display: flex;
-    flex-direction: row;
-    padding: 10px;
-}
-
-.info {
-    float: left;
-    text-align: center;
-    padding: 1px;
-}
-
-#noticeNo {
-    width: 10%;
-}
-
-#noticeTitle {
-    width: 80%;
-}
-
-#noticeTitle:hover {
-    cursor: pointer;
-    color: rgb(75, 112, 145);
-    font-weight: bold;
-}
-
-#noticeButtonBox {
-   
-    padding-left: 50px;
-}
-
-#delButton {
-    width: 10%;
+#textColor {
+    border: none;
+    width: 25px;
     height: 25px;
-    border: 1px solid grey;
-    border-radius: 5px;
-    background-color: #ffffff;
+    margin-right: 30px;
 }
 
-#delButton:hover {
+#textColor:hover {
     cursor: pointer;
-    background-color: rgb(240, 244, 247);
 }
 
-/* page */
-.pageBox {
-    margin-top: 40px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    user-select: none;
+#textLine {
+    text-decoration: underline;
 }
 
-.pageNum {
-    width: 30px;
-    text-align: center;
-    box-shadow: 2px 2px grey;
-    border-radius: 10px;
-    border: 1px solid grey;
-    margin-left: 5px;
+#textWeight {
+    font-weight: bold;
 }
 
-#pageNum1 {
-    background-color: rgb(34, 50, 65);
-    border-radius: 10px;
-    box-shadow: 2px 2px grey;
-    color: #ffffff;
-}
-
-.pageNum:hover {
-    cursor: pointer;
+#textitalic {
+    font-style: italic;
 }
