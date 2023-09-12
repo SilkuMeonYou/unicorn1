@@ -1,0 +1,336 @@
+body {
+    background-color: rgb(255, 242, 233)
+}
+
+.bottom {
+    width: 100%;
+    display: flex;
+    margin-top: -30px;
+}
+
+
+/* main css */
+.main {
+    width: 100%;
+    min-width: 800px;
+    padding: 30px 70px 70px 70px;
+    background-color: rgb(255, 242, 233);
+    margin-left: 100px;
+    margin-top: -130px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main_title {
+    width: 300px;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(34, 50, 65);
+    position: relative;
+    top: 30px;
+}
+
+/* 검색 css */
+.searchBox {
+    width: 560px;
+    height: 60px;
+    margin-left: 380px;
+}
+
+.search {
+    border: 2px solid rgb(34, 50, 65);
+    border-radius: 15px;
+    background-color: rgb(250, 250, 250);
+    width: 500px;
+    height: 25px;
+}
+
+.searchButton {
+    border: 1px solid rgb(218, 218, 218);
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px;
+    box-shadow: 1px 1px #cfcfcf;
+}
+
+.searchButton:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+/* 식당 리스트 (foodBox) */
+.foodBox {
+    min-width: 950px;
+    height: 190px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px grey;
+    border: 1px solid grey;
+    padding: 10px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.foodimg {
+    width: 230px;
+    height: 180px;
+}
+
+.foodTitle {
+    margin-top: -10px;
+    position: relative;
+    left: 250px;
+    bottom: 170px;
+    width: 40%;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.foodAddress {
+    width: 70%;
+    position: relative;
+    left: 250px;
+    bottom: 165px;
+}
+
+.foodDetails {
+    width: 70%;
+    position: relative;
+    left: 250px;
+    bottom: 150px;
+}
+
+.foodInfo {
+    width: 70%;
+    position: relative;
+    left: 250px;
+    bottom: 150px;
+    font-weight: 700;
+}
+
+.foodLike {
+    width: 70%;
+    position: relative;
+    left: 250px;
+    bottom: 150px;
+    font-size: 14px;
+}
+
+.foodAdd {
+    width: 50%;
+    position: relative;
+    left: 250px;
+    bottom: 150px;
+    font-size: 14px;
+}
+
+.imgfileButton {
+    position: relative;
+    bottom: 110px;
+    left: 250px;
+}
+
+.reviseButton {
+    width: 50px;
+    height: 20px;
+    padding-top: 2px;
+    border: 1px solid grey;
+    text-align: center;
+    border-radius: 5px;
+    position: relative;
+    bottom: 260px;
+    left: 830px;
+}
+
+.reviseButton:hover {
+    background-color: rgb(240, 244, 247);
+    border: 1px solid rgb(34, 50, 65);
+    cursor: pointer;
+}
+
+.delButton {
+    width: 50px;
+    height: 20px;
+    padding-top: 2px;
+    border: 1px solid grey;
+    text-align: center;
+    border-radius: 5px;
+    position: relative;
+    bottom: 284px;
+    left: 890px;
+}
+
+.delButton:hover {
+    background-color: rgb(240, 244, 247);
+    border: 1px solid rgb(34, 50, 65);
+    cursor: pointer;
+}
+
+/* 수정버튼 클릭 */
+.input_foodTitle {
+    position: relative;
+    left: 250px;
+    bottom: 315px;
+    width: 40%;
+    font-size: 25px;
+    font-weight: bold;
+    outline: none;
+    visibility: hidden;
+}
+
+.input_foodAddress {
+    width: 70%;
+    position: relative;
+    left: 250px;
+    bottom: 310px;
+    outline: none;
+    visibility: hidden;
+}
+
+.input_foodDetails {
+    width: 70%;
+    height: 40px;
+    position: relative;
+    left: 250px;
+    bottom: 300px;
+    resize: none;
+    outline: none;
+    visibility: hidden;
+
+}
+
+.finishButton {
+    width: 50px;
+    height: 20px;
+    padding-top: 2px;
+    border: 1px solid grey;
+    text-align: center;
+    border-radius: 5px;
+    position: relative;
+    bottom: 414px;
+    left: 830px;
+    background-color: white;
+    visibility: hidden;
+}
+
+.finishButton:hover {
+    background-color: rgb(240, 244, 247);
+    border: 1px solid rgb(34, 50, 65);
+    cursor: pointer;
+}
+
+/* page */
+.pageBox {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    user-select: none;
+}
+
+.pageNum {
+    width: 30px;
+    text-align: center;
+    box-shadow: 2px 2px grey;
+    border-radius: 10px;
+    border: 1px solid grey;
+    margin-left: 5px;
+}
+
+#pageNum1 {
+    background-color: rgb(34, 50, 65);
+    border-radius: 10px;
+    box-shadow: 2px 2px grey;
+    color: #ffffff;
+}
+
+.pageNum:hover {
+    cursor: pointer;
+
+
+}
+
+.like {
+    position: absolute;
+    font-size: 15px;
+    color: rgba(102, 102, 102, 0.4);
+}
+
+.img_area:hover,
+.review:hover,
+.like:hover {
+    cursor: pointer;
+}
+
+.like:hover {
+    animation-name: heart;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes heart {
+    0% {
+        transform: scale(1.0);
+    }
+
+    25% {
+        transform: scale(1.3);
+    }
+
+    50% {
+        transform: scale(0.8);
+    }
+
+    75% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1.0);
+    }
+}
+
+.more {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+/* toast */
+
+#toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    padding: 15px 20px;
+    transform: translate(-50%, 10px);
+    border-radius: 30px;
+    overflow: hidden;
+    font-size: .8rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s, visibility .5s, transform .5s;
+    background: rgba(0, 0, 0, .35);
+    color: #fff;
+    z-index: 10000;
+}
+
+#toast.reveal {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0)
+}
+
+@keyframes toast {
+    0% {
+        transform: translateX(0%);
+    }
+
+    50% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(-200%);
+    }
+}
