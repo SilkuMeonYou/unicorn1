@@ -1,0 +1,368 @@
+/* main head css */
+    /* div {
+        border: 1px solid orange;
+    } */
+    body {
+        margin-top: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: 'pretendard';
+        width: 100vw;
+        height: 1100px;
+        overflow-x: hidden;
+        background-color: rgb(243, 243, 243);
+    }
+    #head {
+        border-top: 1px solid #109ddc;
+        background-color: white;
+        position: fixed;
+        display: flex;
+        width: 100vw;
+        height: 230px;
+        flex-wrap: wrap;
+        z-index: 1000;
+        transition: transform 0.5s ease;
+    }
+    .head1 {
+        display: flex;
+        width: 100%;
+    }
+    .logo {
+        width: 79%;
+        text-align: center;
+        height: 180px;
+    }
+    .text:hover {
+        cursor: pointer;
+    }
+    .img1 {
+        margin-top: 60px;
+        margin-left: 150px;
+    }
+    .img1:hover, .img2:hover, .img3:hover {
+        cursor: pointer;
+    }
+    .img2 {
+        margin-top: 40px;
+    }
+    .img3 {
+        margin-top: 30px;
+    }
+    .fours {
+        display: flex;
+        flex-wrap: wrap;
+        /* width: 260px; */
+        width: 21vw;
+        height: 180px;
+    }
+    .fours1 {
+        /* width: 80px; */
+        width: 30%;
+        height: 89px;
+        line-height: 90px;
+        text-align: center;
+    }
+    .fours2 {
+        /* width: 176px; */
+        width: 68%;
+        font-weight: 700;
+        font-size: 18px;
+        
+        height: 89px;
+        text-align: center;
+    }
+    .fours3 {
+        /* width: 80px; */
+        width: 30%;
+        height: 89px;
+        line-height: 150px;
+        font-size: 14px;
+        /* border: 1px solid orange; */
+        text-align: end;
+    }
+    .fours4 {
+        /* width: 176px; */
+        width: 68%;
+        height: 89px;
+        line-height: 150px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .button {
+        border-top: 1px solid rgb(216, 215, 215);
+        border-bottom: 1px solid rgb(216, 215, 215);
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 20%;
+        line-height: 40px;
+        font-weight: 700;
+        font-size: 20px;
+    }
+    .button:hover, #category:hover, .room:hover {
+        cursor: pointer;
+    }
+    .buttonsub1 {
+        width: 25vw;
+        height: 100%;
+        position: relative;
+    }
+    /* menubutton hover */
+    .buttonsub1::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-color: #6098FF;
+        transform: scaleY(0.3);
+        opacity: 0;
+        transition: transform 0.8s cubic-bezier(0.08, 0.35, 0.13, 1.02), opacity 0.4s;
+        /* transition: transform 0.8s cubic-bezier(0.71, 0.11, 0.13, 1.02), opacity 0.4s; */
+    }
+    .buttonsub1:hover::before {
+        opacity: 1;
+        background-color: #6098FF;
+        transform: scaleY(1);
+    }
+    /*  end menubutton hover */
+
+    #category {
+        padding-top: 230px;
+        display: 100%;
+        height: 160px;
+        display: flex;
+        text-align: center;
+    }
+    .category_1, .category_2, .category_3, .category_4 {
+        /* width: 317px; */
+        width: 25vw;
+        height: 160px;
+        /* 스크립트로 이벤트 줘서 변경할 것 */
+        /* opacity: 0; */
+        display: none;
+        z-index: 1000;
+        position: fixed;
+    }
+    /* 하위버튼 위치 고정 */
+    .category_2 {
+        margin-left: 25vw;
+    }
+    .category_3 {
+        margin-left: 50vw;
+    }
+    .category_4 {
+        margin-left: 75vw;
+    }
+    .categorysub1 {
+        width: 25vw;
+        height: 40px;
+        /* background-color: rgb(215, 242, 250); */
+        background-color: white;
+        /* 겹쳐지는지 확인여부 */
+    }
+    .categorysub1:hover {
+        background-color: rgb(171, 228, 245);
+    }
+    a {
+        text-decoration-line: none;
+        color: black;
+    }
+
+    /*logo*/
+    .typing {
+        margin-top: 5%;
+        height: 55px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        font-size: 1.8rem;
+    }
+    .text {
+        font-size: 2.2rem;
+        margin-left: .6rem;
+    }
+    .text::after {
+        content: '';
+        margin-left: .4rem;
+        border-right: 2px solid #777;
+        animation: cursor .9s infinite steps(2);
+    }
+    @keyframes cursor {
+        from {
+            border-right: 2px solid #ffffff;
+        }
+        to {
+            border-right: 2px solid #777;
+        }
+    }
+
+    /* #contents_area {
+        position: fixed;
+        margin-top: -230px;
+        margin-top: -200px;
+        width: 100vw;
+        height: 100vh;
+    }
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: none; 
+    } */
+    /* main_head css end */
+
+
+    .main1 {
+        /* border: 1px solid red; */
+        /* background-color: rgb(235, 235, 235); */
+        background-color: #fff;
+        width: 100%;
+        height: 100px;
+        font-size: 25px;
+        font-weight: bold;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+    }
+
+    .main1_0 {
+        
+        width: 100%;
+        height: 100px;
+        border: none;
+    }
+
+    .main1_1 {
+        margin-top: -150px;
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+    }
+
+    #main1_container {
+        /* text-align: center; */
+        position: absolute;
+        width: 160px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #logo {
+        width: 150px;
+    }
+
+    .main2 {
+        /* border: 1px solid red; */
+        /* background-color: rgb(34, 50, 65); */
+        color: rgb(218, 218, 218);
+        width: 9%;
+        min-width: 120px;
+        max-width: 120px;
+        text-align: center;
+        height: 100vh;
+        position: relative;
+        margin-left: 10px;
+        margin-top: 85px;
+    }
+
+    #main2_container2 {
+        /* border: 1px solid red; */
+        background-color: rgb(34, 50, 65);
+        padding-top: 80px;
+        padding-bottom: 80px;
+        margin-bottom: 5px;
+        /* border-bottom: 1px solid white; */
+        text-align: center;
+        font-size: 13px;
+        border-radius: 10px;
+        box-shadow: 3px 3px gray;
+    }
+
+    #main2_container2 {
+        /* border: 1px solid red; */
+        padding-top: 80px;
+        padding-bottom: 80px;
+        text-align: center;
+        font-size: 13px;
+        /* border-bottom: 1px solid white; */
+    }
+
+    .main4 {
+        /* border: 1px solid red; */
+        background-color: rgb(34, 50, 65);
+        margin-bottom: 5px;
+        height: 35px;
+        padding-top: 20px;
+        font-size: 13px;
+        border-radius: 10px;
+        box-shadow: 3px 3px gray;
+
+        transition: transform 0.3s;
+    }
+    
+    .main4:hover {
+        background-color: rgb(68, 89, 109);
+        cursor: pointer;
+        
+        transform: translateX(10px);
+    }
+
+    .main3 {
+        /* border: 1px solid red; */
+        font-size: 13px;
+        padding-top: 300px;
+
+    }
+
+    .main3_2 {
+     /* border: 1px solid red; */
+     background-color: rgb(34, 50, 65);
+     margin-bottom: 5px;
+     height: 30px;
+     padding-top: 10px;
+     font-size: 13px;
+     border-radius: 10px;
+     box-shadow: 3px 3px gray;
+     margin-top: 59px;
+     cursor: pointer;
+}
+
+
+    .main5 {
+        /* border: 1px solid blue; */
+        /* background-color: white; */
+        width: 60%;
+        position: relative;
+        left: -13%;
+        top: 100px;
+    }
+
+    .page {
+        /* border: 1px solid red; */
+        width: 30%;
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        left: 35%;
+        font-size: 13px;
+    }
+
+    .prinfo {
+
+        width: 800%;
+        height: 600px;
+        margin-left: 220px;
+        margin-top: -440%;
+    }
+
+    .main3 {
+        padding-top: 100px;
+    }
