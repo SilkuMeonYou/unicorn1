@@ -5,380 +5,28 @@
     <title>seat</title>
     <link rel="stylesheet" type="text/css"
         href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
-    <style>
-    /* main head css */
-       /* div {
-        border: 1px solid orange;
-    } */
-    body {
-        margin-top: 0px;
-        margin-left: auto;
-        margin-right: auto;
-        font-family: 'pretendard';
-        width: 100vw;
-        height: 1100px;
-        overflow-x: hidden;
-    }
-    #head {
-        border-top: 1px solid #109ddc;
-        background-color: white;
-        position: fixed;
-        display: flex;
-        width: 100vw;
-        height: 230px;
-        flex-wrap: wrap;
-        z-index: 1000;
-        transition: transform 0.5s ease;
-    }
-    .head1 {
-        display: flex;
-        width: 100%;
-    }
-    .logo {
-        width: 79%;
-        text-align: center;
-        height: 180px;
-    }
-    .text:hover {
-        cursor: pointer;
-    }
-    .img1 {
-        margin-top: 60px;
-        margin-left: 150px;
-    }
-    .img1:hover, .img2:hover, .img3:hover {
-        cursor: pointer;
-    }
-    .img2 {
-        margin-top: 40px;
-    }
-    .img3 {
-        margin-top: 30px;
-    }
-    .fours {
-        display: flex;
-        flex-wrap: wrap;
-        /* width: 260px; */
-        width: 21vw;
-        height: 180px;
-    }
-    .fours1 {
-        /* width: 80px; */
-        width: 30%;
-        height: 89px;
-        line-height: 90px;
-        text-align: center;
-    }
-    .fours2 {
-        /* width: 176px; */
-        width: 68%;
-        font-weight: 700;
-        font-size: 18px;
-        
-        height: 89px;
-        text-align: center;
-    }
-    .fours3 {
-        /* width: 80px; */
-        width: 30%;
-        height: 89px;
-        line-height: 150px;
-        font-size: 14px;
-        /* border: 1px solid orange; */
-        text-align: end;
-    }
-    .fours4 {
-        /* width: 176px; */
-        width: 68%;
-        height: 89px;
-        line-height: 150px;
-        font-size: 14px;
-        text-align: center;
-    }
-
-    .button {
-        border-top: 1px solid rgb(216, 215, 215);
-        border-bottom: 1px solid rgb(216, 215, 215);
-        text-align: center;
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-        height: 20%;
-        line-height: 40px;
-        font-weight: 700;
-        font-size: 20px;
-    }
-    .button:hover, #category:hover, .room:hover {
-        cursor: pointer;
-    }
-    .buttonsub1 {
-        width: 25vw;
-        height: 100%;
-        position: relative;
-    }
-    /* menubutton hover */
-    .buttonsub1::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: block;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        background-color: #6098FF;
-        transform: scaleY(0.3);
-        opacity: 0;
-        transition: transform 0.8s cubic-bezier(0.08, 0.35, 0.13, 1.02), opacity 0.4s;
-        /* transition: transform 0.8s cubic-bezier(0.71, 0.11, 0.13, 1.02), opacity 0.4s; */
-    }
-    .buttonsub1:hover::before {
-        opacity: 1;
-        background-color: #6098FF;
-        transform: scaleY(1);
-    }
-    /*  end menubutton hover */
-
-    #category {
-        padding-top: 230px;
-        display: 100%;
-        height: 160px;
-        display: flex;
-        text-align: center;
-    }
-    .category_1, .category_2, .category_3, .category_4 {
-        /* width: 317px; */
-        width: 25vw;
-        height: 160px;
-        /* 스크립트로 이벤트 줘서 변경할 것 */
-        /* opacity: 0; */
-        display: none;
-        z-index: 1000;
-        position: fixed;
-    }
-    /* 하위버튼 위치 고정 */
-    .category_2 {
-        margin-left: 25vw;
-    }
-    .category_3 {
-        margin-left: 50vw;
-    }
-    .category_4 {
-        margin-left: 75vw;
-    }
-    .categorysub1 {
-        width: 25vw;
-        height: 40px;
-        /* background-color: rgb(215, 242, 250); */
-        background-color: white;
-        /* 겹쳐지는지 확인여부 */
-    }
-    .categorysub1:hover {
-        background-color: rgb(171, 228, 245);
-    }
-    a {
-        text-decoration-line: none;
-        color: black;
-    }
-
-    /*logo*/
-    .typing {
-        margin-top: 5%;
-        height: 55px;
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        font-size: 1.8rem;
-    }
-    .text {
-        font-size: 2.2rem;
-        margin-left: .6rem;
-    }
-    .text::after {
-        content: '';
-        margin-left: .4rem;
-        border-right: 2px solid #777;
-        animation: cursor .9s infinite steps(2);
-    }
-    @keyframes cursor {
-        from {
-            border-right: 2px solid #ffffff;
-        }
-        to {
-            border-right: 2px solid #777;
-        }
-    }
-
-    /* #contents_area {
-        position: fixed;
-        margin-top: -230px;
-        margin-top: -200px;
-        width: 100vw;
-        height: 100vh;
-    }
-    iframe {
-        width: 100%;
-        height: 100%;
-        border: none; 
-    } */
-    /* main_head css end */
-
-
-        .bottom {
-            position: fixed;
-            margin-top: -150px;
-            /* border: 1px solid red; */
-            width: 100%;
-            height: 800px;
-            display: flex;
-            /* flex 컨테이너로 설정 */
-        }
-
-        .leftTop {
-            /* border: 1px solid green; */
-            margin-top: 13.5%;
-            height: 100px;
-        }
-
-        .leftSelect {
-            border: 5px solid rgb(156, 155, 155);
-            background-color: aliceblue;
-            width: 89%;
-            height: 50px;
-            text-align: center;
-            margin-left: 3%;
-            margin-top: 2%;
-        }
-
-        .leftSelect select {
-            width: 150px;
-            height: 30px;
-            display: inline-block;
-
-            margin: 0 10px;
-            margin-top: 1.3%;
-        }
-
-        .leftBottom {
-            /* border: 1px solid green; */
-            width: 1000px;
-            margin-top: 2.5%;
-            display: flex;
-        }
-
-        .Bleft {
-            /* border: 1px solid blue; */
-            width: 50%;
-            height: 100%;
-        }
-
-        .Bright {
-            /* border: 1px solid blue; */
-            width: 40%;
-            height: 100%;
-            margin-left: 5%;
-        }
-
-        .right {
-            /* border: 1px solid black; */
-            width: 30%;
-            height: 100%;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* 버튼 컨테이너 스타일 */
-        .buttonContainer {
-            border: 5px solid rgb(156, 155, 155);
-            background-color: aliceblue;
-            width: 90%;
-            height: 200%;
-            margin-left: 2%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* 버튼 스타일 */
-        .buttonContainer input[type=button] {
-            border: none;
-            font-size: 25px;
-            font-weight: 700;
-        }
-
-        /* 좌석 이미지 버튼 스타일 */
-        .seat-button {
-            background: url('https://us.123rf.com/450wm/onston/onston1510/onston151000002/47210861-pc-%EB%AA%A8%EB%8B%88%ED%84%B0-%EB%B2%A1%ED%84%B0-%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8-%EB%A0%88%EC%9D%B4-%EC%85%98.jpg');
-            background-size: 100% 100%;
-            width: 95px;
-            height: 80px;
-            cursor: pointer;
-            margin: 5px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-
-        /* 좌석 번호 스타일 */
-        .seatNumber {
-            display: flex;
-        }
-
-
-        /* 좌석 확인 버튼 스타일 */
-        .check input[type="button"] {
-            margin-top: 10px;
-            padding: 10px 20px;
-            cursor: pointer;
-            background-color: transparent;
-        }
-
-        /* 좌석 확인 컨테이너 스타일 */
-        .check {
-            align-items: center;
-            width: 250px;
-            height: 530px;
-            border: 5px solid rgb(156, 155, 155);
-            background-color: aliceblue;
-        }
-
-        /* 좌석 예약 및 확인 컨테이너 스타일 */
-        .seatReservation,
-        .seatCheck {
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-            margin-top: 20%;
-        }
-    </style>
+    <link rel="stylesheet" href="seatReservation.css">
 </head>
 
 <body>
+    <!-- main head -->
     <div id="head">
         <div class="head1">
             <div class="logo">
-                <!-- <img class="img1" src="http://www.human.or.kr/images/h_logo.png"> -->
-                <div class='typing'>
-                    <h1 class="text"></h1>
-                </div>
+                <img class="img1" src="http://www.human.or.kr/images/h_logo.png">
             </div>
             <div class="fours">
                 <div class="fours1">
-                    <!-- <img class="img2" src="http://www.human.or.kr/images/menu_icon.png" width="25px"> -->
+                    <img class="img2" src="http://www.human.or.kr/images/menu_icon.png" width="25px">
                 </div>
                 <div class="fours2">
-                    <img class="img2" src="http://www.human.or.kr/images/menu_icon.png" width="25px">
-                    <!-- <img class="img3"
+                    <img class="img3"
                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAkCAYAAAB8DZEQAAAACXBIWXMAAAsTAAALEwEAmpwYAAADGUlEQVRIiaXXTYiWVRQH8N87vo3gjDZYUvYFjUYWmIuyJmgTQQTlonRR4SKQCqFyFRIUiSW4sJZJ0KJFk1BT9gHRJoIgi8oWZYEjMn0RZFqKMvk50+Keh+eZx+e+7zszBx4u9/zPOf/7ce6956GzDOBRjGIc5zCNC5jAGDbh0i5xGmUhtuJoBC2+f/ALjtT0J7EDg70SrMKP4TyFvdiAy2t2Q1iHPcoZTuD2bgR3xGinsQ+rexzYMD4Nv0nclzO8Qbk8r6HdI0EhLWyrEF00ozb2h8Hrswxel4JoQm2PngpgP/rnSdJSLt2OQtnG76Ec6eA8iAfwJB6UNj4nw1IynBTpfXcQfN7B6XEcNzNtJ/FcjLxJ9oTdJtgenScyxluU6fy+tOajOBv6nRm/dYGPkc7BtHQ+6nIF/pOmfm8Nu1Vajinc3OA7pEwAX0fnkgbDzYHtzoz2hcC3Z/AjuNCHxWF4rsFoONovM0H2Rbsig0+ir0/a0JZ0X9XleLRXZYIsj/ZEBl+C8/CuNJM1DUYjynWt37QL8X3g6xt8lwU2Ds9HZ0tmNJ8E/gPux3W4R1rCaXyHvga/DYG/BXdG59sMydJKwPp3ANdk/D4Mm0fEKMZDUU/TQtrYKKX7N/hYyrzcFXSLlNpHsahQbgySg2bx8HQY0FcRb2sVaOGzAPZiwTxIdiv38KKZLsdvYTA6R6Kd4X8MN+aMbsLfcyQqCE5IL2xHWa0sFHolmhVBISvxR49EcyKYDdG8CAak89OJqE7Qki7brrIKb0oP0huhayJqmsFL0mU4httyBE8ri7RTZr6UVaKfGwjgIWXNNoUX6wTrAzyPlzUXCVWi3B4M4FmcDrvNVfCLUD6cm2aF6G2s7WJ3V8Q7VFX+FMqruzj3KoM4Ix694h34KNr35F/BXmWptPn9+KAKLJYutGLTd+m92C5kpVQu/RtxDuNKZhZmS/AqHlOehz+lYuEgfpU2/Kx0nQ/hWqlQH8H1lVjv4Bn8lRvRCinnD2h+DXPfIbyioVbIlZiF9OMyaTkHot+WfufOSCXPKelqP50L8j8DCv9BNrvGdwAAAABJRU5ErkJggg=="
                         width="20px">
-                    각 지점교육센터 -->
+                    각 지점교육센터
                 </div>
-                <div class="fours3"><a href="이수연_login.html">로그인</a></div>
-                <div class="fours4"><a href="이수연_sign_up.html">회원가입</a></div>
+                <div class="fours3"><a href="0905_suyeon/login.html">로그인</a></div>
+                <div class="fours4"><a href="0905_suyeon/sign_up.html">회원가입</a></div>
             </div>
         </div>
         <div class="button">
@@ -391,42 +39,42 @@
 
     <div id="category">
         <div class="category_1">
-            <div class="categorysub1"><span class="tmp2">공지사항</span></div>
-            <div class="categorysub1"><span class="tmp">마이페이지</span></div>
+            <div class="categorysub1"><span class="tmp2">공지사항(인혜)</span></div>
+            <div class="categorysub1"><span class="tmp">행사안내(신영)</span></div>
             <!-- <div class="categorysub1"></div>
             <div class="categorysub1"></div> -->
         </div>
         <div class="category_2">
-            <div class="categorysub1"><span class="tmp5">강의실</span></div>
-            <div class="categorysub1"></div>
-            <div class="categorysub1"></div>
-            <div class="categorysub1"></div>
+            <div class="categorysub1">1강의실</div>
+            <div class="categorysub1">2강의실</div>
+            <div class="categorysub1">3강의실</div>
+            <div class="categorysub1">4강의실</div>
         </div>
         <div class="category_3">
-            <div class="categorysub1"><span class="tmp3">주변맛집</span></div>
-            <div class="categorysub1"></div>
-            <div class="categorysub1"></div>
+            <div class="categorysub1"><span class="tmp3">맛집지도(여준)</span></div>
+            <div class="categorysub1">맛집랭킹</div>
+            <div class="categorysub1">추천하기</div>
             <div class="categorysub1"></div>
         </div>
         <div class="category_4">
-            <div class="categorysub1"><span class="tmp4">좌석예약</span></div>
-            <div class="categorysub1"></div>
-            <div class="categorysub1"></div>
+            <div class="categorysub1"><span class="tmp4">좌석예약(만경)</span></div>
+            <div class="categorysub1">좌석확인</div>
+            <div class="categorysub1">마이페이지</div>
             <div class="categorysub1"></div>
         </div>
     </div>
-
+    <!-- end main head -->
 
     <div class="bottom">
         <div class="left">
             <div class="leftTop">
                 <div class="leftSelect">
                     <select id="yearSelect" onchange="updateDayOptions()">
-            
+
                     </select>
-            
+
                     <select id="monthSelect" onchange="updateDayOptions()">
-            
+
                     </select>
                     <select id="dateSelect">
                     </select>
@@ -435,58 +83,46 @@
             <div class="leftBottom">
                 <div class="buttonContainer">
                     <div class="Bleft">
-
                         <!-- 좌석 버튼 그룹 -->
                         <div class="left_1">
                             <input type="button" class="seat-button" value="1">
                             <input type="button" class="seat-button" value="2">
                             <input type="button" class="seat-button" value="3">
                             <input type="button" class="seat-button" value="4">
+                            <input type="button" class="seat-button" value="5">
+                            <input type="button" class="seat-button" value="6">
+                            <input type="button" class="seat-button" value="7">
                         </div>
                         <div class="left_1">
                             <input type="button" class="seat-button" value="8">
                             <input type="button" class="seat-button" value="9">
                             <input type="button" class="seat-button" value="10">
                             <input type="button" class="seat-button" value="11">
+                            <input type="button" class="seat-button" value="12">
+                            <input type="button" class="seat-button" value="13">
+                            <input type="button" class="seat-button" value="14">
                         </div>
                         <div class="left_1">
                             <input type="button" class="seat-button" value="15">
                             <input type="button" class="seat-button" value="16">
                             <input type="button" class="seat-button" value="17">
                             <input type="button" class="seat-button" value="18">
+                            <input type="button" class="seat-button" value="19">
+                            <input type="button" class="seat-button" value="20">
+                            <input type="button" class="seat-button" value="21">
                         </div>
                         <div class="left_1">
                             <input type="button" class="seat-button" value="22">
                             <input type="button" class="seat-button" value="23">
                             <input type="button" class="seat-button" value="24">
                             <input type="button" class="seat-button" value="25">
-                        </div>
-                    </div>
-
-                    <!-- 오른쪽 좌석 버튼 컨테이너 -->
-                    <div class="Bright">
-                        <!-- 오른쪽 좌석 버튼 그룹 -->
-                        <div class="right_1">
-                            <input type="button" class="seat-button" value="5">
-                            <input type="button" class="seat-button" value="6">
-                            <input type="button" class="seat-button" value="7">
-                        </div>
-                        <div class="right_1">
-                            <input type="button" class="seat-button" value="12">
-                            <input type="button" class="seat-button" value="13">
-                            <input type="button" class="seat-button" value="14">
-                        </div>
-                        <div class="right_1">
-                            <input type="button" class="seat-button" value="19">
-                            <input type="button" class="seat-button" value="20">
-                            <input type="button" class="seat-button" value="21">
-                        </div>
-                        <div class="right_1">
                             <input type="button" class="seat-button" value="26">
                             <input type="button" class="seat-button" value="27">
                             <input type="button" class="seat-button" value="28">
                         </div>
                     </div>
+
+
                 </div>
             </div>
         </div>
@@ -524,280 +160,10 @@
         </div>
     </div>
 
-    <script>
-
-       // JavaScript로 현재 날짜를 가져오는 함수
-       function getCurrentDate() {
-                var today = new Date();
-                var year = today.getFullYear();
-                var month = (today.getMonth() + 1).toString().padStart(2, '0'); // 월은 0부터 시작하므로 1을 더하고 두 자리로 만듭니다.
-                var date = today.getDate().toString().padStart(2, '0'); // 일자를 두 자리로 만듭니다.
-    
-                return { year: year, month: month, date: date };
-            }
-    
-            // 연도 옵션 초기화
-            function initializeYearOptions() {
-                var yearSelect = document.getElementById('yearSelect');
-                var currentDate = getCurrentDate();
-    
-                // 현재 연도를 기준으로 과거 5년부터 미래 5년까지의 연도 옵션 초기화
-                for (var i = currentDate.year - 5; i <= currentDate.year + 5; i++) {
-                    var option = document.createElement('option');
-                    option.value = i;
-                    option.textContent = i + '년'; // "년" 추가
-                    yearSelect.appendChild(option);
-                }
-            }
-    
-            // 월별 일자 옵션 초기화
-            function updateDayOptions() {
-                var yearSelect = document.getElementById('yearSelect');
-                var monthSelect = document.getElementById('monthSelect');
-                var dateSelect = document.getElementById('dateSelect');
-    
-                // 선택된 연도와 월 가져오기
-                var selectedYear = parseInt(yearSelect.value);
-                var selectedMonth = parseInt(monthSelect.value);
-    
-                // 해당 월의 일자 옵션 초기화
-                dateSelect.innerHTML = ''; // 기존 옵션 삭제
-    
-                var maxDays;
-                if ([1, 3, 5, 7, 8, 10, 12].includes(selectedMonth)) {
-                    maxDays = 31;
-                } else if ([4, 6, 9, 11].includes(selectedMonth)) {
-                    maxDays = 30;
-                } else {
-                    // 2월은 윤년을 고려하여 28 또는 29일
-                    maxDays = (selectedYear % 4 === 0 && (selectedYear % 100 !== 0 || selectedYear % 400 === 0)) ? 29 : 28;
-                }
-    
-                for (var i = 1; i <= maxDays; i++) {
-                    var option = document.createElement('option');
-                    var date = i.toString().padStart(2, '0');
-                    option.value = date;
-                    option.textContent = date + '일'; // "일" 추가
-                    dateSelect.appendChild(option);
-                }
-            }
-    
-            // 페이지가 로드될 때 초기화
-            window.onload = function () {
-                var yearSelect = document.getElementById('yearSelect');
-                var monthSelect = document.getElementById('monthSelect');
-                var dateSelect = document.getElementById('dateSelect');
-    
-                // 연도 옵션 초기화
-                initializeYearOptions();
-    
-                // 월 옵션 초기화
-                for (var i = 1; i <= 12; i++) {
-                    var option = document.createElement('option');
-                    var month = i.toString().padStart(2, '0');
-                    option.value = month;
-                    option.textContent = month + '월'; // "월" 추가
-                    monthSelect.appendChild(option);
-                }
-    
-                // 현재 날짜 선택
-                var currentDate = getCurrentDate();
-                yearSelect.value = currentDate.year;
-                monthSelect.value = currentDate.month;
-    
-                // 일자 옵션 초기화
-                updateDayOptions();
-    
-                // 현재 일자 선택
-                dateSelect.value = currentDate.date;
-            }
 
 
+    <script src="seatReservation.js"></script>
 
-        // 좌석 버튼 클릭 시 동작
-        var seatButtons = document.querySelectorAll('.seat-button');
-        var seatNum = document.getElementById('seatNum');
-        var seatNumCheck = document.getElementById('seatNumCheck');
-        var reserveButton = document.querySelector('input[value="예약하기"]');
-
-        // 좌석 버튼 클릭 시 동작
-        seatButtons.forEach(function (button) {
-            button.addEventListener('click', function () {
-                var selectedSeat = button.value;
-                var buttonColor = window.getComputedStyle(button).color;
-
-                if (buttonColor === 'rgb(255, 0, 0)') {
-                    alert('이미 예약된 좌석 ' + selectedSeat + '번입니다.');
-                } else {
-                    seatNum.textContent = selectedSeat;
-
-                    // 모든 좌석 버튼의 글씨 색상을 검정색으로 초기화
-                    seatButtons.forEach(function (resetButton) {
-                        if (window.getComputedStyle(resetButton).color !== 'rgb(255, 0, 0)') {
-                            resetButton.style.color = 'black';
-                        }
-                    });
-
-                    button.style.color = 'blue';
-                }
-            });
-        });
-
-        // 예약하기 버튼 클릭 시 동작
-        reserveButton.addEventListener('click', function () {
-            var selectedSeat = seatNum.textContent;
-            if (selectedSeat !== '00') {
-                seatNumCheck.textContent = selectedSeat;
-                alert('좌석 ' + selectedSeat + '번이 예약되었습니다.');
-
-                // 선택한 좌석의 글씨 색상을 빨간색으로 변경
-                seatButtons.forEach(function (button) {
-                    if (button.value === selectedSeat) {
-                        button.style.color = 'red';
-                    }
-                });
-            } else {
-                alert('좌석을 선택해주세요.');
-            }
-        });
-
-        // 선택한 강의실과 사용 시간 업데이트
-        function updateRoomName() {
-            var selectedRoomNumber = document.querySelector('.roomNumber').value;
-            var selectedUseTime = document.getElementById('useTimeSelect').value;
-            var roomName = selectedRoomNumber + '강의실';
-
-            document.getElementById('roomName').textContent = roomName;
-            document.getElementById('roomTime').textContent = selectedUseTime;
-        }
-        // 만경 스크립트 끝
-
-        
-        // <main head>
-        //logo
-        var text = document.querySelector(".typing .text");
-        var letters = [
-            "Human",
-        ];
-        // 글자 입력 속도
-        var speed = 100;
-        let i = 0;
-        // 타이핑 효과
-        var typing = async () => {
-            var letter = letters[i].split("");
-            while (letter.length) {
-                await wait(speed);
-                text.innerHTML += letter.shift();
-            }
-            // 잠시 대기
-            await wait(3200);
-            // 지우는 효과
-            remove();
-        }
-        // 글자 지우는 효과
-        var remove = async () => {
-            var letter = letters[i].split("");
-            while (letter.length) {
-                await wait(speed);
-                letter.pop();
-                text.innerHTML = letter.join("");
-            }
-
-            // 다음 순서의 글자로 지정, 타이핑 함수 다시 실행
-            i = !letters[i + 1] ? 0 : i + 1;
-            typing();
-        }
-
-        // 딜레이 기능 ( 마이크로초 )
-        function wait(ms) {
-            return new Promise(res => setTimeout(res, ms))
-        }
-
-        // 초기 실행
-        setTimeout(typing, 1000);
-
-        // logo end
-
-        window.addEventListener("load", function () {
-            bind();
-        })
-        function bind() {
-            console.log("check")
-            for (let i = 1; i < 5; i++) {
-                let button = document.querySelector("[name='buttonsub_" + i + "']");
-                let category = document.querySelector("#category .category_" + i);
-
-                // 하위버튼 마우스오버 상태에서 마우스 빼도 안 사라지는 것 방지(사라지게)
-                button.addEventListener("mouseover", function () {
-                    console.log("mouseover");
-                    category.style.display = "block";
-                });
-                button.addEventListener("mouseout", function () {
-                    console.log("mouseout");
-                    category.style.display = "none";
-                });
-                // 버튼에서 바로 마우스 빼면 사라짐. 하위버튼으로 마우스오버해도 사라지지 않게
-                category.addEventListener("mouseover", function () {
-                    console.log("category mouseover");
-                    category.style.display = "block";
-                });
-                category.addEventListener("mouseout", function () {
-                    console.log("category mouseout");
-                    category.style.display = "none";
-                });
-            }
-        }
-        // 버튼 마우스오버 이벤트 끝 
-
-        // 스크롤 이벤트
-        window.addEventListener("scroll", function () {
-            let head = document.querySelector("#head");
-            let category = document.querySelector("#category");
-            let button = document.querySelector(".button");
-
-            if (window.scrollY > 10) {
-                head.style.transform = "translateY(-80%)";
-                category.style.paddingTop = "45px";
-            } else {
-                head.style.transform = "translateY(0)";
-                category.style.paddingTop = "230px";
-            }
-        });
-
-        // <링크>
-        // 메인
-        document.querySelector(".logo").addEventListener("click", function () {
-            console.log("click")
-            window.location.href = "윤여준_main.html";
-        });
-
-        // 만경(좌석)
-        document.querySelector(".tmp4").addEventListener("click", function () {
-            console.log("click")
-            window.location.href = "최만경_seat.html"
-        });
-        // 인혜(강의실)
-        document.querySelector(".tmp5").addEventListener("click", function () {
-            console.log("click")
-            window.location.href = "이인혜_class_board.html"
-        });
-        // 여준(맛집)
-        document.querySelector(".tmp3").addEventListener("click", function () {
-            console.log("click")
-            window.location.href = "윤여준_place.html"
-        });
-        document.querySelector(".tmp").addEventListener("click", function () {
-            console.log("click")
-            window.location.href = "이인혜_mypage_main.html"
-        });
-        document.querySelector(".tmp2").addEventListener("click", function () {
-            console.log("click")
-            window.location.href = "이인혜_notice_list.html"
-        });
-
-
-        // <main head end>
-    </script>
 </body>
 
 </html>
