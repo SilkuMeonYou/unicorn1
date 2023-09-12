@@ -117,6 +117,10 @@ let reviseButtonAll = document.querySelectorAll('.reviseButton');
 let cencleButtonAll = document.querySelectorAll('.cencleButton');
 let delButtonAll = document.querySelectorAll('.delButton');
 
+let foodTitleAll = document.querySelectorAll('.foodTitle');
+let foodAddressAll = document.querySelectorAll('.foodAddress');
+let foodDetailsAll = document.querySelectorAll('.foodDetails');
+
 // 전체 수정버튼 수만큼 반복
 
 for (let i = 0; i < reviseButtonAll.length; i++) {
