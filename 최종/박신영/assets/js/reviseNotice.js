@@ -96,30 +96,13 @@ document.querySelector("#textItalic").addEventListener("click",function(){
  
  })
 
- // 사진 업로드
 
- var fileInput = document.getElementById("fileUpload");
-
- // input 요소의 값(선택한 파일)이 변경될 때 이벤트 리스너를 등록합니다.
- fileInput.addEventListener("change", function() {
-     // 선택한 파일을 가져옵니다.
-     var selectedFile = fileInput.files[0]; // 여기서는 첫 번째 선택한 파일을 가져옵니다.
- 
-     if (selectedFile) {
-         // 파일 정보 출력 예제
-         console.log("파일 이름: " + selectedFile.name);
-         console.log("파일 크기: " + selectedFile.size + " 바이트");
-         console.log("파일 유형: " + selectedFile.type);
-     } else {
-         console.log("파일을 선택하지 않았습니다.");
-     }
- });
 
 // 수정하기 버튼
 
 document.querySelector("#finish").addEventListener("click", function () {
     if(confirm("수정을 완료하시겠습니까?")){
-        location = '/Unicorn/administrator.html';
+        location = '박신영_administrator.html';
     }
     
 })
@@ -128,7 +111,7 @@ document.querySelector("#finish").addEventListener("click", function () {
 document.querySelector("#cencle").addEventListener("click", function () {
 
     if(confirm("취소하시겠습니까? 작성중인 글은 저장되지 않습니다.")){
-        location = '/Unicorn/administrator.html';
+        location = '박신영_administrator.html';
     }
 })
 

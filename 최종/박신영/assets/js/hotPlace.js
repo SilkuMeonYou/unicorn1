@@ -21,55 +21,148 @@ document.querySelector("#admin_class").addEventListener("click", function () {
     }
 })
 
-// 페이지 버튼 
 
-for (let i = 0; i < 5; i++) {
-    let pagedom = document.querySelectorAll(".pageNum");
-    pagedom[i].addEventListener("click", function (event) {
-        let j = i + 1;
-        if (event.target == pagedom[i]) {
-            document.getElementById("pageNum" + 1).style.backgroundColor = 'rgb(243, 243, 243)';
-            document.getElementById("pageNum" + 1).style.color = '#000000';
-            document.getElementById("pageNum" + 2).style.backgroundColor = '';
-            document.getElementById("pageNum" + 2).style.color = '#000000';
-            document.getElementById("pageNum" + 3).style.backgroundColor = '';
-            document.getElementById("pageNum" + 3).style.color = '#000000';
-            document.getElementById("pageNum" + 4).style.backgroundColor = '';
-            document.getElementById("pageNum" + 4).style.color = '#000000';
-            document.getElementById("pageNum" + 5).style.backgroundColor = '';
-            document.getElementById("pageNum" + 5).style.color = '#000000';
 
-            document.getElementById("pageNum" + j).style.backgroundColor = 'rgb(34, 50, 65)';
-            document.getElementById("pageNum" + j).style.color = '#ffffff';
+// 맛집 추가
+let addHotple = document.querySelector('.addHotple');
+
+addHotple.addEventListener("click", function () {
+    console.log("click")
+    let foodboxWrap = document.querySelector('.foodboxWrap');
+
+    let foodboxHtml = "";
+
+    foodboxHtml += "<div class='foodimg'></div>";
+    foodboxHtml += "<div class='foodTitle'>제목을 입력해주세요</div>";
+    foodboxHtml += "<div class='foodAddress'>주소를 입력해주세요</div>";
+    foodboxHtml += "<div class='foodDetails'>상세정보를 입력해주세요</div>";
+    foodboxHtml += "<input type='file' class='imgfileButton'>";
+    foodboxHtml += "<div class='reviseButton'>수정</div>";
+    foodboxHtml += "<div class='delButton'>삭제</div>";
+
+    foodboxHtml += "<input type='text' class='input_foodTitle' placeholder='제목 입력'>";
+    foodboxHtml += "<input type='text' class='input_foodAddress' placeholder='주소 입력'>";
+    foodboxHtml += "<textarea placeholder='상세정보입력' class='input_foodDetails'></textarea>";
+    foodboxHtml += "<div class='finishButton>확인</div>";
+    foodboxHtml += "<div class='cencleButton>취소</div>";
+
+    let html = document.createElement('div');
+    html.setAttribute("class", "foodBox");
+    html.innerHTML = foodboxHtml;
+    foodboxWrap.append(html);
+
+})
+
+// foodBox dom All 변수선언
+let input_foodTitleAll = document.querySelectorAll('.input_foodTitle');
+let input_foodAddressAll = document.querySelectorAll('.input_foodAddress');
+let input_foodDetailsAll = document.querySelectorAll('.input_foodDetails');
+let finishButtonAll = document.querySelectorAll('.finishButton');
+let reviseButtonAll = document.querySelectorAll('.reviseButton');
+let cencleButtonAll = document.querySelectorAll('.cencleButton');
+let delButtonAll = document.querySelectorAll('.delButton');
+
+let foodTitleAll = document.querySelectorAll('.foodTitle');
+let foodAddressAll = document.querySelectorAll('.foodAddress');
+let foodDetailsAll = document.querySelectorAll('.foodDetails');
+
+
+
+// 전체 수정버튼 수만큼 반복
+for (let i = 0; i < reviseButtonAll.length; i++) {
+
+    // foodBox 수정버튼 클릭
+    reviseButtonAll[i].addEventListener("click", function () {
+        console.log("click")
+        input_foodTitleAll[i].style.visibility = 'visible';
+        input_foodAddressAll[i].style.visibility = 'visible';
+        input_foodDetailsAll[i].style.visibility = 'visible';
+        finishButtonAll[i].style.visibility = 'visible';
+        reviseButtonAll[i].style.visibility = 'hidden';
+        cencleButtonAll[i].style.visibility = 'visible';
+    })
+
+
+    // foodBox 수정버튼 클릭 후 확인 버튼 
+    finishButtonAll[i].addEventListener("click", function () {
+        if (confirm("수정하시겠습니까?")) {
+            input_foodTitleAll[i].style.visibility = 'hidden';
+            input_foodAddressAll[i].style.visibility = 'hidden';
+            input_foodDetailsAll[i].style.visibility = 'hidden';
+            finishButtonAll[i].style.visibility = 'hidden';
+            reviseButtonAll[i].style.visibility = 'visible';
+            cencleButtonAll[i].style.visibility = 'hidden';
+
+            foodTitleAll[i].innerHTML = input_foodTitleAll[i].value;
+            foodAddressAll[i].innerHTML = input_foodAddressAll[i].value;
+            foodDetailsAll[i].innerHTML = input_foodDetailsAll[i].value;
+        }
+    })
+
+    // foodBox 수정버튼 클릭 후 취소 버튼
+    cencleButtonAll[i].addEventListener("click", function () {
+
+        if(confirm("수정을 취소하시겠습니까?")){
+            input_foodTitleAll[i].style.visibility = 'hidden';
+            input_foodAddressAll[i].style.visibility = 'hidden';
+            input_foodDetailsAll[i].style.visibility = 'hidden';
+            finishButtonAll[i].style.visibility = 'hidden';
+            reviseButtonAll[i].style.visibility = 'visible';
+            cencleButtonAll[i].style.visibility = 'hidden';
         }
 
     })
+
+
+    // foodBox 삭제 버튼 
+    delButtonAll[i].addEventListener("click", function () {
+        if (confirm("삭제하시겠습니까?")) {
+            delButtonAll[i].parentNode.remove();
+        }
+    })
+
 }
 
-// foodBox dom
-let input_foodTitle = document.querySelector('.input_foodTitle');
-let input_foodAddress = document.querySelector('.input_foodAddress');
-let input_foodDetails = document.querySelector('.input_foodDetails');
-let finishButton = document.querySelector('.finishButton');
-let reviseButton = document.querySelector('.reviseButton');
 
-// foodBox 수정버튼 클릭
-document.querySelector(".reviseButton").addEventListener("click", function () {
-    input_foodTitle.style.visibility = 'visible';
-    input_foodAddress.style.visibility = 'visible';
-    input_foodDetails.style.visibility = 'visible';
-    finishButton.style.visibility = 'visible';
-    reviseButton.style.visibility = 'hidden';
-})
+// 검색기능
+// HTML에서 검색 버튼과 검색 입력 필드를 가져옵니다.
+let searchButton = document.querySelector(".searchButton");
+let searchInput = document.querySelector(".search");
 
-// foodBox 수정버튼 클릭 후 확인 버튼 
-document.querySelector(".finishButton").addEventListener("click", function () {
-    input_foodTitle.style.visibility = 'hidden';
-    input_foodAddress.style.visibility = 'hidden';
-    input_foodDetails.style.visibility = 'hidden';
-    finishButton.style.visibility = 'hidden';
-    reviseButton.style.visibility = 'visible';
-})
+// 검색 버튼에 클릭 이벤트 리스너를 추가합니다.
+searchButton.addEventListener("click", function () {
+    filterUserInfo();
+});
+
+// 검색 입력 필드에서 Enter 키를 눌렀을 때도 검색하도록 합니다.
+searchInput.addEventListener("keyup", function (event) {
+    if (event.key === "Enter") {
+        filterUserInfo();
+    }
+});
+
+// 사용자 정보를 필터링하고 보여줄 함수를 정의합니다.
+function filterUserInfo() {
+    // 검색어를 입력 필드에서 가져옵니다.
+    let searchKeyword = searchInput.value.toLowerCase(); // 입력된 검색어를 소문자로 변환합니다.
+
+    // 모든 정보 상자(infoBox) 엘리먼트를 가져옵니다.
+    let foodBoxes = document.querySelectorAll(".foodBox");
+
+    // 각 정보 상자를 순회하며 검색어와 일치하는 이름을 가진 엘리먼트만 보여주거나 숨깁니다.
+    foodBoxes.forEach((foodBox) => {
+        let foodtitle = foodBox.querySelector(".foodTitle").textContent.toLowerCase(); // userName을 소문자로 변환합니다.
+
+        if (foodtitle.includes(searchKeyword)) {
+            console.log("ok")
+            foodBox.style.display = "block";
+            foodBox.style.padding = '10px';
+            
+        } else {
+            foodBox.style.display = "none";
+        }
+    });
+}
 
 
 

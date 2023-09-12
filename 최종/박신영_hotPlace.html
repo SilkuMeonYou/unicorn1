@@ -7,7 +7,7 @@
     <title>hotPlace</title>
     <link rel="stylesheet" href="박신영/assets/css/hotPlace.css">
     <link rel="stylesheet" type="text/css"
-    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
 </head>
 
 <body>
@@ -31,7 +31,7 @@
                     각 지점교육센터 -->
                 </div>
                 <div class="fours3"><a href="이수연_login.html">로그인</a></div>
-                <div class="fours4"><a href="이수연_cheked.html">회원가입</a></div>
+                <div class="fours4"><a href="이수연_checked.html">회원가입</a></div>
             </div>
         </div>
         <div class="button">
@@ -88,36 +88,95 @@
             <div class="searchBox">
                 <input type="text" class="search" placeholder=" 이름 검색">
                 <span class="searchButton">검색</span>
-            </div>
-           
-            <div class="foodBox">
-                <img src="/img/달식당 김밥.jpg" class="foodimg">
-                <div class="foodTitle">달식당 김밥</div>
-                <div class="foodAddress">천안시 동남구 대흥동</div>
-                <div class="foodDetails">달식당 치돈 메밀 JJJJJJJMMMMMMTTTTT</div>
-                <input type="file" class="imgfileButton">
-                <div class="reviseButton">수정</div>
-                <div class="delButton">삭제</div>
-
-                <input type="text" class="input_foodTitle" placeholder="제목 입력">
-                <input type="text" class="input_foodAddress" placeholder="주소 입력">
-                <textarea placeholder="상세정보 입력" class="input_foodDetails" ></textarea>
-                <div class="finishButton">확인</div>
+                <span class="addHotple">맛집 추가</span>
             </div>
 
+            <div class="foodboxWrap">
+                <div class="foodBox">
+                    <div class="foodimg"><img src="https://ifh.cc/g/30CG96.jpg" class="foodimg"></div>
+                    <div class="foodTitle">김밥천국</div>
+                    <div class="foodAddress">천안시 동남구 대흥동 234-1</div>
+                    <div class="foodDetails">돌솥비빔밥, 김밥, 라면, 순두부찌개 등</div>
+                    <input type="file" class="imgfileButton">
+                    <div class="reviseButton">수정</div>
+                    <div class="delButton">삭제</div>
 
-            <!-- 페이지 -->
-            <div class="pageBox">
-                <div class="pageNum" id="pageNum1"> 1 </div>
-                <div class="pageNum" id="pageNum2"> 2 </div>
-                <div class="pageNum" id="pageNum3"> 3 </div>
-                <div class="pageNum" id="pageNum4"> 4 </div>
-                <div class="pageNum" id="pageNum5"> 5 </div>
+                    <input type="text" class="input_foodTitle" placeholder="제목 입력"  value="김밥천국">
+                    <input type="text" class="input_foodAddress" placeholder="주소 입력" value="천안시 동남구 대흥동 234-1">
+                    <textarea placeholder="상세정보 입력" class="input_foodDetails">돌솥비빔밥, 김밥, 라면, 순두부찌개 등</textarea>
+                    <div class="finishButton">확인</div>
+                    <div class="cencleButton">취소</div>
+                </div>
+
+                <div class="foodBox">
+                    <div class="foodimg"><img src="https://ifh.cc/g/TOaMTC.jpg" class="foodimg"></div>
+                    <div class="foodTitle">봉평옹심이 메밀칼국수</div>
+                    <div class="foodAddress">천안시 동남구 대흥로 215 백자빌딩 104호</div>
+                    <div class="foodDetails">봉평옹심이 메밀칼국수, 꽁보리밥 등</div>
+                    <input type="file" class="imgfileButton">
+                    <div class="reviseButton">수정</div>
+                    <div class="delButton">삭제</div>
+
+                    <input type="text" class="input_foodTitle" placeholder="제목 입력" value="봉평옹심이 메밀칼국수">
+                    <input type="text" class="input_foodAddress" placeholder="주소 입력" value="천안시 동남구 대흥로 215 백자빌딩 104호">
+                    <textarea placeholder="상세정보 입력" class="input_foodDetails">봉평옹심이 메밀칼국수, 꽁보리밥 등</textarea>
+                    <div class="finishButton">확인</div>
+                    <div class="cencleButton">취소</div>
+                </div>
+
+                <div class="foodBox">
+                    <div class="foodimg"><img src="https://ifh.cc/g/FVlGox.jpg" class="foodimg"></div>
+                    <div class="foodTitle">신포우리만두</div>
+                <div class="foodAddress">천안시 동남구 은행길 5</div>
+                <div class="foodDetails">돌솥비빔밥, 김치볶음밥, 치즈돈가스 등</div>
+                    <input type="file" class="imgfileButton">
+                    <div class="reviseButton">수정</div>
+                    <div class="delButton">삭제</div>
+
+                    <input type="text" class="input_foodTitle" placeholder="제목 입력" value="신포우리만두">
+                    <input type="text" class="input_foodAddress" placeholder="주소 입력" value="천안시 동남구 은행길 5">
+                    <textarea placeholder="상세정보 입력" class="input_foodDetails">돌솥비빔밥, 김치볶음밥, 치즈돈가스 등</textarea>
+                    <div class="finishButton">확인</div>
+                    <div class="cencleButton">취소</div>
+                </div>
+
+                <div class="foodBox">
+                    <div class="foodimg"><img src="https://ifh.cc/g/mGTLaO.jpg" class="foodimg"></div>
+                    <div class="foodTitle">예산잔치국수</div>
+                    <div class="foodAddress">천안시 동남구 버들로 8</div>
+                    <div class="foodDetails">잔치국수, 비빔국수, 쌀떡볶이 등</div>
+                    <input type="file" class="imgfileButton">
+                    <div class="reviseButton">수정</div>
+                    <div class="delButton">삭제</div>
+
+                    <input type="text" class="input_foodTitle" placeholder="제목 입력" value="예산잔치국수">
+                    <input type="text" class="input_foodAddress" placeholder="주소 입력" value="천안시 동남구 버들로 8">
+                    <textarea placeholder="상세정보 입력" class="input_foodDetails">잔치국수, 비빔국수, 쌀떡볶이 등</textarea>
+                    <div class="finishButton">확인</div>
+                    <div class="cencleButton">취소</div>
+                </div>
+
+                <div class="foodBox">
+                    <div class="foodimg"><img src="https://ifh.cc/g/TNgHLd.jpg" class="foodimg"></div>
+                    <div class="foodTitle">달식당</div>
+                    <div class="foodAddress">천안시 동남구 대흥로 215 백자빌딩 102호 달식당</div>
+                    <div class="foodDetails">달 돈까스, 김밥, 냉모밀 등</div>
+                    <input type="file" class="imgfileButton">
+                    <div class="reviseButton">수정</div>
+                    <div class="delButton">삭제</div>
+
+                    <input type="text" class="input_foodTitle" placeholder="제목 입력" value="달식당">
+                    <input type="text" class="input_foodAddress" placeholder="주소 입력" value="천안시 동남구 대흥로 215 백자빌딩 102호 달식당">
+                    <textarea placeholder="상세정보 입력" class="input_foodDetails">달 돈까스, 김밥, 냉모밀 등</textarea>
+                    <div class="finishButton">확인</div>
+                    <div class="cencleButton">취소</div>
+                </div>
+
+
 
             </div>
+
         </div>
-
-    </div>
     </div>
     <script src="박신영/assets/js/hotPlace.js"></script>
 </body>

@@ -119,7 +119,7 @@ document.querySelector("#textItalic").addEventListener("click",function(){
 
 document.querySelector("#finish").addEventListener("click", function () {
     if(confirm("작성을 완료하시겠습니까?")){
-        location = '/Unicorn/administrator.html';
+        location = '박신영_administrator.html';
     }
     
 })
@@ -128,7 +128,7 @@ document.querySelector("#finish").addEventListener("click", function () {
 document.querySelector("#cencle").addEventListener("click", function () {
 
     if(confirm("취소하시겠습니까? 작성중인 글은 저장되지 않습니다.")){
-        location = '/Unicorn/administrator.html';
+        location = '박신영_administrator.html';
     }
 })
 
