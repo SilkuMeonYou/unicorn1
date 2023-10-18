@@ -148,11 +148,12 @@
             margin-top: 50px;
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            /* justify-content: space-between; */
+            gap: 30px;
         }
 
         .productList {
-            width: calc(33% - 10px);
+            width: 300px;
             height: 250px;
             border: 1px solid #ccc;
             margin-bottom: 50px;
@@ -165,7 +166,19 @@
 
 
 
+        .moreButton {
+            text-align: right;
+            margin-right: 10%;
+        }
 
+        
+        #moreButton,.listButton {
+            width: 100px;
+            height: 40px;
+            border: none;
+            background-color: #d8c69c;
+            font-size: 17px;
+        }
 
 
 
@@ -307,13 +320,13 @@
         </div>
 
         <div class="listUP">
-            <input type="button" value="높은 가격순" id="highprice">
-            <input type="button" value="낮은 가격순" id="lowprice">
-            <input type="button" value="인기순" id="popularity">
+            <input type="button" value="높은 가격순" id="highprice" class="listButton">
+            <input type="button" value="낮은 가격순" id="lowprice" class="listButton">
+            <input type="button" value="인기순" id="popularity" class="listButton">
         </div>
         <div class="productContainer">
             <div class="productList" data-popularity="4" data-pdNum="1">
-                <img src="https://p.turbosquid.com/ts-thumb/L5/fPVQZK/iDOJc13R/051/jpg/1586284136/300x300/sharp_fit_q85/ab90986ec5711097a91bbe97e84ea97ca9aa6dd4/051.jpg"
+                <img src="https://p.turbosquid.com/ts-thumb/Gy/YjE1S2/EW8FhVnx/2/jpg/1484822727/1920x1080/fit_q87/9bfebf34e4e063bf52e3f14a86ebf5649768be28/2.jpg"
                     alt=" ">
                 <div>제품1</div>
                 <div>3만원</div>
@@ -424,9 +437,9 @@
 
         </div>
 
-
-        <input type="button" value="+더보기" id="moreButton">
-
+        <div class="moreButton">
+            <input type="button" value="+더보기" id="moreButton">
+        </div>
 
 
         <!-- footer -->
