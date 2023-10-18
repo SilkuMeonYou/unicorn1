@@ -148,12 +148,14 @@
     }
 
     .write_QnA {
-      width: 100px;
+      width: 200px;
       background-color: #d0ac88;
       padding: 5px;
       text-align: center;
       float: right;
+      border: 1px solid white;
       color: white;
+      
     }
 
 
@@ -254,29 +256,20 @@
             width: 100%;
             height: 100%;
         }
-        .slider-button-pr,.slider-button-ne {
-            position: absolute;
-            bottom: 10px;
-           background-color: #8d8b8b;
-            color: #fff;
-            padding: 5px 10px;
-            cursor: pointer;
+        .button-pakage{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
-        .slider-button-ne{
-            left: 55%;
-            transform: translateX(-55%);
-        }
-        .slider-button-pr{
-            left: 45%;
-            transform: translateX(-45%);
-        }
+       
    
  /* 작은 이미지 호버 효과*/
- 
+
         .small-image:hover {
     border: 3px solid #d0ac88; 
     border-radius: 7px;
 }
+
 
 
 
@@ -396,11 +389,13 @@
                     </div>
                     <br>
                     <div class="quantity-selection">
-                      <label for="quantity-select">수량:</label>
-                      <input type="number" id="quantity-select" value="1" min="1" onchange="updateTotalPrice()">
+                      <label  for="quantity-select">수량:</label>
+                      <input style="width: 50px;"type="number" id="quantity-select" value="1" min="1" onchange="updateTotalPrice()">
                       <h5><br>총 결제금액: <span id="total-price">500,000원</span></h5><br>
-                      <button id="buy-button">구매</button>
-                      <button id="cart-button">장바구니에 담기</button>
+                      <div class=" button-pakage">
+                      <button class="write_QnA" id="buy-button">구매</button>
+                      <button class="write_QnA" id="cart-button">장바구니에 담기</button>
+                    </div>
                     </div>
         
                   </div>
