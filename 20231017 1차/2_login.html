@@ -40,6 +40,13 @@
             margin-right: 150px;
         }
 
+        .message {
+            visibility: hidden;
+            color: red;
+            margin: auto;
+            margin-left: 60px;
+        }
+
         /* 체크박스 스타일 */
         input[type="checkbox"] {
             /* 체크박스 기본 스타일 제거 */
@@ -128,6 +135,7 @@
             height: 30px;
             width: 200px;
             background-color: white;
+            cursor: pointer;
             /* color: white; */
         }
 
@@ -138,6 +146,7 @@
             height: 30px;
             width: 200px;
             background-color: white;
+            cursor: pointer;
             /* color: white; */
         }
 
@@ -195,6 +204,7 @@
                 비밀번호를 입력해주세요
             </div>
         </div>
+        <div class="message">아이디 또는 비밀번호가 일치하지 않습니다.</div>
         <div class="save">
             <div class="check_wrap">
                 <input type="checkbox">
@@ -217,15 +227,39 @@
                 <a href="이수연_cheked.html">회원가입</a>
             </div>
         </div>
+        <!-- 0fcb47a5d7823a96616fdbc6a560cd5e -->
         <div class="kakao">
-            <span class="k1">KAKAO</span><input type="button" value="카카오로 로그인">
+            <span><a class="k1" href="javascript:kakaoLogin();">KAKAO</a></span>
+            <a href="javascript:kakaoLogin();"><input type="button" value="카카오로 로그인"></a>
         </div>
+
         <div class="naver">
             <span class="n1">NAVER</span><input type="button" value="네이버로 로그인">
         </div>
     </div>
 </body>
 
+<script src="http://developers.kakao.com/sdk/js/kakao.js"></script>
+<script>
+    window.Kakao.init("0fcb47a5d7823a96616fdbc6a560cd5e");
+
+    function kakaoLogin() {
+        window.Kakao.Auth.login({
+            scope: 'profile_nickname, profile_image',
+            success: function (authObj) {
+                console.log(authObj);
+                window.Kakao.API.request({
+                    url: '/v2/user/me',
+                    success: res => {
+                        const kakao_account = res.kakao_account;
+                        console.log(kakao_account);
+                    }
+                });
+            }
+        });
+    }
+
+</script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         let idInput = document.querySelector('.input input[type="text"]');
@@ -289,6 +323,28 @@
                 input1.style.border = "1px solid gray"; // 아이디 입력필드 검정색 테두리 효과
             }
         })
+
+        let idvalue = "123";              // 아이디값 저장
+        let pwvalue = "123";             // 비밀번호값 저장
+
+        document.querySelector('.login-input').addEventListener('click', function () { // 로그인버튼 선택시
+            let id = document.querySelector(".id-input");
+            let pw = document.querySelector(".pw-input");
+            let message = document.querySelector(".message");
+
+            if (id.value == '' || pw.value == '') {     // 아이디입력필드가 빈값이거나 비밀번호입력필드가 빈값이면
+                message.style.visibility = "hidden";    // 메세지 숨김
+
+                // 아이디 입력필드가 저장한값과 같거나 비밀번호 입력필드가 저장한값과 같으면 
+            } else if (id.value == idvalue && pw.value == pwvalue) {
+                window.location.href = "윤여준_main_logout.html"       // 메인페이지로 이동 (로그인성공)
+
+                // 아니면
+            } else {
+                message.style.visibility = "visible";           // 메세지 보여줌
+            }
+
+        });
 
     });
 </script>

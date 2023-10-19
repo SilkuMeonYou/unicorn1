@@ -24,43 +24,30 @@
             text-align: center;
         }
 
-        /* .allchk {
-            display: flex;
-        } */
-
         h2 {
             display: flex;
-            /* margin: 30px; */
-            margin-top: 50px;
+            margin: 10px;
+            margin-top: 70px;
             margin-bottom: 80px;
         }
-
-        /* .m {
-            margin: auto;
-        } */
 
         hr {
             border: 2px solid #d0ac88;
         }
 
         .chk {
-            border: 1px solid gray;
             width: 500px;
             padding: 20px;
             overflow: auto;
             height: 40px;
+            font-size: 14px;
         }
-
-        /* .essential {
-            display: flex;
-        } */
 
         .next-button {
             width: 300px;
             height: 50px;
             font-size: medium;
             margin: 30px;
-            margin-left: 80px;
             border-radius: 5px;
             border: 2px solid #d0ac88;
             background-color: white;
@@ -68,27 +55,16 @@
 
         .c1 {
             margin: 20px;
-            /* border: 1px solid gray; */
             display: flex;
         }
-
-        /* .c2 {
-            margin: 30px;
-        } */
 
         .c3 {
-            /* border: 1px solid gray; */
             display: flex;
         }
-
-        /* span {
-            font-weight: bold;
-        } */
 
         label {
             margin-top: 3px;
         }
-
 
         .div1 {
             display: flex;
@@ -102,17 +78,12 @@
             margin-top: 30px;
         }
 
-        /* .button1 {
-            margin-left: 350px;
-        } */
-        .button2 {
+        .button2,
+        .button3,
+        .close1,
+        .close2 {
             display: flex;
-            margin-left: 310px;
-            cursor: pointer;
-        }
-
-        .button3 {
-            margin-left: 260px;
+            margin-left: 320px;
             cursor: pointer;
         }
 
@@ -120,6 +91,8 @@
             color: black;
             text-decoration-line: none;
         }
+
+        
 
         /* 체크박스 스타일 */
         input[type="checkbox"] {
@@ -147,7 +120,6 @@
             border-color: #d0ac88;
             /* 체크된 상태일 때의 테두리 색상 */
         }
-
     </style>
 </head>
 
@@ -161,80 +133,92 @@
             <div>
                 <div class="c1">
                     <div class="div1">
-                        <!-- <input type="checkbox" class="allchk" name="allchk1"> 전체동의하기 -->
                         <div class="check_wrap">
                             <input type="checkbox" class="allchk">
                         </div>
                         <label>&nbsp;전체동의하기</label>
                     </div>
-                    <!-- <div class="chk">
-                    이용약관(필수), 개인정보 수집 및 이용(필수), 위치기반서비스 이용약관(선택), 이벤트 • 혜택 정보 수신(선택) 동의를 포함합니다.
-                </div> -->
                 </div>
             </div>
             <div>
                 <div class="c2">
                     <div class="c1">
                         <div class="div1">
-                            <!-- <input type="checkbox" class="essential" id="e1"> <span>[필수]</span> 이용약관 동의 -->
                             <div class="check_wrap">
                                 <input type="checkbox" class="essential" id="check_btn1" />
                             </div>
                             <label><span>&nbsp;[필수]</span>&nbsp;이용약관 동의</label>
                         </div>
-                        <div class="button2">자세히</div>
-                        <div class="close1">접기</div>
-                        <!-- <div class="chk">
-                    여러분을 환영합니다.
-                    어쩌구저쩌구
-                </div> -->
+                        <div class="button2" id="showButton1">보기</div>
+                        <div class="close1" id="hideButton1">접기</div>
+                    </div>
+                    <div class="chk" id="content1">
+                        여러분을 환영합니다. 개인정보보호법에 따라 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 동의 거부권 및 동의 거부 시 불이익에 관한
+                        사항을
+                        안내 드리오니
+                        자세히 읽은 후 동의하여 주시기 바랍니다.
+                        어쩌구저쩌구
+                        여러분을 환영합니다. 개인정보보호법에 따라 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 동의 거부권 및 동의 거부 시 불이익에 관한
+                        사항을
+                        안내 드리오니
+                        자세히 읽은 후 동의하여 주시기 바랍니다.
+                        어쩌구저쩌구
                     </div>
                     <div class="c1">
                         <div class="div1">
-                            <!-- <input type="checkbox" class="essential" id="e2"> <span>[필수]</span> 개인정보 수집 및 이용 -->
                             <div class="check_wrap">
                                 <input type="checkbox" class="essential" id="check_btn2" />
                             </div>
-                            <label><span>&nbsp;[필수]</span>&nbsp;개인정보 수집 및 이용</label>
+                            <label><span>&nbsp;[필수]</span>&nbsp;정보수집 동의</label>
                         </div>
-                        <div class="button3">자세히</div>
-                        <div class="close1">접기</div>
-                        <!-- <div class="chk">
-                            개인정보보호법에 따라 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 동의 거부권 및 동의 거부 시 불이익에 관한 사항을 안내 드리오니
-                            자세히 읽은 후 동의하여 주시기 바랍니다.
-                        </div> -->
+                        <div class="button3" id="showButton2">보기</div>
+                        <div class="close2" id="hideButton2">접기</div>
+                    </div>
+
+                    <div class="chk" id="content2">
+                        여러분을 환영합니다. 개인정보보호법에 따라 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 동의 거부권 및 동의 거부 시 불이익에 관한
+                        사항을
+                        안내 드리오니
+                        자세히 읽은 후 동의하여 주시기 바랍니다.
+                        어쩌구저쩌구
+                        여러분을 환영합니다. 개인정보보호법에 따라 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 동의 거부권 및 동의 거부 시 불이익에 관한
+                        사항을
+                        안내 드리오니
+                        자세히 읽은 후 동의하여 주시기 바랍니다.
+                        어쩌구저쩌구
                     </div>
                 </div>
-                <hr>
-                <div class="chk2">[선택] 마케팅 정보 동의</div>
-                <div class="c3">
-                    <div class="c1">
-                        <div class="div1">
-                            <!-- <input type="checkbox" class="select"> 이메일 -->
-                            <div class="check_wrap">
-                                <input type="checkbox" class="select">
-                            </div>
-                            <label>&nbsp;이메일</label>
+            </div>
+            <hr>
+            <div class="chk2">[선택] 마케팅 정보 동의</div>
+            <div class="c3">
+                <div class="c1">
+                    <div class="div1">
+                        <div class="check_wrap">
+                            <input type="checkbox" class="select">
                         </div>
+                        <label>&nbsp;이메일</label>
                     </div>
-                    <div class="c1">
-                        <div class="div1">
-                            <!-- <input type="checkbox" class="select"> SMS / 알림톡 -->
-                            <div class="check_wrap">
-                                <input type="checkbox" class="select">
-                            </div>
-                            <label>&nbsp;SMS / 알림톡</label>
+                </div>
+                <div class="c1">
+                    <div class="div1">
+                        <div class="check_wrap">
+                            <input type="checkbox" class="select">
                         </div>
+                        <label>&nbsp;SMS / 알림톡</label>
                     </div>
                 </div>
             </div>
         </div>
 
         <div>
-            <a href="이수연_sign_up.html">
-                <button type="submit" class="next-button" disabled>다음</button>
-            </a>
+            <div>
+                <a href="이수연_sign_up.html">
+                    <button type="submit" class="next-button" disabled>다음</button>
+                </a>
+            </div>
         </div>
+    </div>
 </body>
 <script>
     let checkAll = document.querySelector(".allchk"); // 전체동의 쿼리셀렉터로 불러오기
@@ -283,10 +267,54 @@
     e1.addEventListener("change", updateSubmitButton);
     e2.addEventListener("change", updateSubmitButton);
 
-    let close1 = document.querySelector(".close1"); // 접기 쿼리셀렉터로 불러오기
-    let close2 = document.querySelector(".close2"); // 접기 쿼리셀렉터로 불러오기
 
-    
+
+    // 보기 버튼을 눌렀을때 약관동의 보이고 접기버튼 이벤트
+    let showButton1 = document.getElementById('showButton1'); // 보기버튼 불러오기
+    let showButton2 = document.getElementById('showButton2'); // 보기버튼 불러오기
+    let content1 = document.getElementById('content1'); // 내용 불러오기
+
+    let hideButton1 = document.getElementById('hideButton1'); // 접기버튼 불러오기
+    let hideButton2 = document.getElementById('hideButton2'); // 접기버튼 쿼리셀렉터로 불러오기
+    let content2 = document.getElementById('content2'); // 내용불러오기
+
+
+    // 초기에는 접기 버튼을 숨김
+    hideButton1.style.display = 'none';
+    hideButton2.style.display = 'none';
+    // 초기에는 약관내용 숨김
+    content1.style.display = 'none';
+    content2.style.display = 'none';
+
+    // 보기 1
+    showButton1.addEventListener('click', function () {
+        console.log("click");
+        content1.style.display = 'block'; // 내용을 보이게 함
+        showButton1.style.display = 'none'; // 보기 버튼을 숨김
+        hideButton1.style.display = 'block'; // 접기 버튼을 보이게 함
+    });
+
+    hideButton1.addEventListener('click', function () {
+        console.log("click");
+        content1.style.display = 'none'; // 내용을 보이게 함
+        showButton1.style.display = 'block'; // 보기 버튼을 숨김
+        hideButton1.style.display = 'none'; // 접기 버튼을 보이게 함
+    });
+
+    // 보기 2
+    showButton2.addEventListener('click', function () {
+        console.log("click");
+        content2.style.display = 'block'; // 내용을 보이게 함
+        showButton2.style.display = 'none'; // 보기 버튼을 숨김
+        hideButton2.style.display = 'block'; // 접기 버튼을 보이게 함
+    });
+
+    hideButton2.addEventListener('click', function () {
+        console.log("click");
+        content2.style.display = 'none'; // 내용을 보이게 함
+        showButton2.style.display = 'block'; // 보기 버튼을 숨김
+        hideButton2.style.display = 'none'; // 접기 버튼을 보이게 함
+    });
 
 </script>
 
