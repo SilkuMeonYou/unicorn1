@@ -55,8 +55,7 @@
 
     
 
-    /*왼쪽 메뉴 -----------------------------------------------------------------*/
-  
+    /* 고정 사이드메뉴 ====================*/  
     #container {
       /* border: 1px solid blue; */
       margin: 50px auto;
@@ -76,18 +75,24 @@
       width: 250px;
     }
 
-    .wish_list {
-      width: 900px
-    }
-
     .menubar_title {
       font-weight: bold;
       margin-top: 70px;
       margin-bottom: 10px;
     }
-
+    
     .menubar_item {
       margin-bottom: 10px;
+    }
+
+    .menubar:hover {
+    cursor: pointer;
+    }
+
+    /* ==================== 고정 사이드메뉴*/
+    
+    .wish_list {
+      width: 900px
     }
 
     .wish_list_title {
@@ -184,7 +189,7 @@
         
           <ul>
           <li class="menubar_title">활동 정보</li>
-          <li class="menubar_item"><a href="#none"></a>최근 본 상품</li>
+          <li class="menubar_item"><a href="#none"></a>나의 장바구니</li>
           <li class="menubar_item"><a href="#none"></a>나의 위시리스트</li>
           <li class="menubar_item"><a href="#none"></a>나의 게시글</li>
           </ul>

@@ -87,8 +87,11 @@
       margin-bottom: 10px;
     }
 
+    .menubar:hover {
+    cursor: pointer;
+    }
+    
     /* ==================== 고정 사이드메뉴*/
-
 
     .board_list {
       /* border: 1px solid red; */
@@ -131,17 +134,19 @@
     .board_num,
     .board_category,
     .board_date {
-      width: 100px;
       height: 50px;
       text-align: center;
       border-bottom: 1px solid rgb(190, 190, 190);
     }
 
     .board_title {
-      width: 600px;
       height: 50px;
       text-align: left;
       border-bottom: 1px solid rgb(190, 190, 190);
+    }
+
+    .board_title:hover {
+      cursor: pointer;
     }
 
     /* 페이지 넘버 ====================*/
@@ -158,6 +163,10 @@
       height: 30px;
       margin: 5px;
       text-align: center;
+    }
+
+    .allcheck, .check {
+      margin: 5px;
     }
   </style>
 </head>
@@ -230,7 +239,7 @@
 
             <ul>
               <li class="menubar_title">활동 정보</li>
-              <li class="menubar_item"><a href="#none"></a>최근 본 상품</li>
+              <li class="menubar_item"><a href="#none"></a>나의 장바구니</li>
               <li class="menubar_item"><a href="#none"></a>나의 위시리스트</li>
               <li class="menubar_item"><a href="#none"></a>나의 게시글</li>
             </ul>
@@ -251,6 +260,13 @@
               <div class="board_btn"><input class="delete_btn" type="button" value="삭제"></div>
               <div class="board_list_table">
                 <table>
+                  <colgroup>
+                    <col width="50px">
+                    <col width="50px">
+                    <col width="100px">
+                    <col width="600px">
+                    <col width="100px">
+                  </colgroup>
                   <tr>
                     <td class="board_top"><input class="allcheck" type="checkbox"></td>
                     <td class="board_top">번호</td>
@@ -371,7 +387,10 @@
 
     // 전체선택 체크박스
     let allcheck = document.querySelector(".allcheck");
+    // 항목별 체크박스
     let check = document.querySelector(".check");
+    // 삭제버튼
+    let delete_btn = document.querySelector(".delete_btn")
 
     allcheck.addEventListener("click", function () {
 
@@ -393,27 +412,24 @@
       }
     })
 
-    
-    // del에 배열로 저장해서 addEventListener 실행
-    let del = document.querySelectorAll(".delete_btn");
-    console.log(del);
-    
-    for (let i = 0; i < del.length; i++) {
-      del[i].addEventListener("click", function () {
-        console.log("del 실행")
-        
-        //null 이 아닐경우 삭제
-        //parentNode 로 부모값 찾아 삭제
-        if (del != null) {
-          del[i].parentNode.remove();
-          console.log("remove");
+    // 삭제버튼
+    let delete_checkes = document.querySelectorAll(".check");
+
+    for(let i=0; i < delete_checkes.length; i++){
+
+      delete_btn.addEventListener("click", function(){
+
+        if (delete_checkes[i].checked){
+          delete_checkes[i].parentNode.parentNode.remove();
+
         }
-        
       })
     }
-    
+
+
 
     
+
 
     </script>
 
