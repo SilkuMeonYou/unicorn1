@@ -168,7 +168,7 @@
       transform: rotate(45deg);
     }
 
-    .tableContainer {
+    .infoContainer {
       min-width: 1000px;
       border: 1px solid #a6a8aa;
       border-radius: 10px;
@@ -332,7 +332,7 @@
         </div>
 
         <!-- ============= 주문리스트 ================-->
-        <div class="tableContainer" id="tbContainer1">
+        <div class="infoContainer" id="infoContainer1">
           <table width="100%" class="orderTable">
             <col width="5%">
             <col width="20%">
@@ -373,10 +373,10 @@
             <tr>
               <td class="orderDetails">
                 <select class="sizeBox" id="size1">
-                  <option value="s">S</option>
-                  <option value="ss">SS</option>
-                  <option value="q">Q</option>
-                  <option value="k">K</option>
+                  <option value="s" data-price="1550000">S</option>
+                  <option value="ss" data-price="1750000">SS</option>
+                  <option value="q" data-price="1900000">Q</option>
+                  <option value="k" data-price="2000000">K</option>
                 </select>
               </td>
               <td class="orderDetails" id="order_amount">
@@ -396,7 +396,7 @@
         </div>
         <!-- ============= 주문리스트 끝 ================-->
         <!-- 주문리스트 복붙 -->
-        <div class="tableContainer" id="tbContainer2">
+        <div class="infoContainer" id="infoContainer2">
           <table width="100%" class="orderTable">
             <col width="5%">
             <col width="20%">
@@ -437,10 +437,10 @@
             <tr>
               <td class="orderDetails">
                 <select class="sizeBox" id="size2">
-                  <option value="s">S</option>
-                  <option value="ss">SS</option>
-                  <option value="q">Q</option>
-                  <option value="k">K</option>
+                  <option value="s" data-price="900000">S</option>
+                  <option value="ss" data-price="1000000">SS</option>
+                  <option value="q" data-price="1200000">Q</option>
+                  <option value="k" data-price="1400000">K</option>
                 </select>
               </td>
               <td class="orderDetails" id="order_amount">
@@ -530,151 +530,144 @@
   </div>
 
   <script>
-    //id를 이용해서 값 가져오는 방법
-    // let order_fee = document.getElementById("order_fee").textContent;
-    // console.log(order_fee);
 
-    // //쉼표제거 후 숫자로 변환
-    // let order_fee1 = parseInt(order_fee.replace(/,/g, ""));
-    // console.log(order_fee1 + order_fee1)
+let infoContainers = document.querySelectorAll(".infoContainer");
 
+infoContainers.forEach((currentContainer, index) => {
+  let i = index + 1; // 1부터 시작하는 인덱스
 
+      // 수량 변경하기 관련
+      let plus = document.getElementById("plus" + i);
+      let minus = document.getElementById("minus" + i);
+      let orderAmount = document.getElementById("orderAmount" + i);
 
+      let amount = parseInt(orderAmount.textContent);
 
-    // total 금액 문자 -> 숫자 변환
-    let checkedFee = 0;
-    let deliveryFee = 0;
-    let discountFee = 0;
-    let totalFee = 0;
-
-    // 선택한 체크박스 이벤트 ( 테두리 변경, total 금액 변경 )
-    let boxNum = document.querySelectorAll(".tableContainer").length;
-
-    // total 변수 선언
-    let total_checkedFee = document.getElementById("total_checkedFee");
-    let total_deliveryFee = document.getElementById("total_deliveryFee");
-    let total_discountFee = document.getElementById("total_discountFee");
-    let total_fee = document.getElementById("total_fee");
-
-    // 수량 변수 선언
-    let amount = 1;
-
-    for (let i = 1; i <= boxNum; i++) {
-      // 체크박스 및 tableContainer 요소에 대한 ID 생성
-      let checkboxId = "chkbox" + i;
-      let tableContainerId = "tbContainer" + i;
-      let removeBtnId = "removeBtn" + i;
-
-      let checkbox = document.getElementById(checkboxId);
-      let tableContainer = document.getElementById(tableContainerId);
-      let removeBtn = document.getElementById(removeBtnId);
-
-      // 체크된 비용 ID 생성 
-      let order_feeId = "order_fee" + i;
-      let order_discountFeeId = "order_discountFee" + i;
-      let order_deliveryFeeId = "order_deliveryFee" + i;
-
-      let order_fee = document.getElementById(order_feeId);
-      let order_discountFee = document.getElementById(order_discountFeeId);
-      let order_deliveryFee = document.getElementById(order_deliveryFeeId);
-
-      //숫자 변환
-      let orderFee = parseInt(order_fee.textContent.replace(/,/g, ""));
-      let orderDeliveryFee = parseInt(order_deliveryFee.textContent.replace(/,/g, ""));
-      let orderDiscountFee = parseInt(order_discountFee.textContent.replace(/,/g, ""));
-
-      // 수량변경요소 ID생성
-      let minusId = "minus" + i;
-      let plusId = "plus" + i;
-      let orderAmountId = "orderAmount" + i;
-      let order_exAmountId = "order_ex-amount" + i;
-
-      let minus = document.getElementById(minusId);
-      let plus = document.getElementById(plusId);
-      let orderAmount = document.getElementById(orderAmountId);
-      let order_exAmount = document.getElementById(order_exAmountId);
-
-      // 수량 ( 더하기 ) 이벤트
       plus.addEventListener("click", function () {
-        console.log("클릭" + i)
-        amount = parseInt(orderAmount.textContent) + 1;
-        orderAmount.innerHTML = "" + amount;
-        updateTotal();
+        amount += 1;
+        orderAmount.innerHTML = amount;
+        doOrderPrice()
+        doOrderTotal()
+        doTotal()
 
       });
-
-      // 수량 ( 빼기 ) 이벤트
       minus.addEventListener("click", function () {
-
-        if (parseInt(orderAmount.textContent) > 1) {
-          amount = parseInt(orderAmount.textContent) - 1;
+        if (amount > 1) {
+          amount -= 1;
           orderAmount.innerHTML = amount;
-          updateTotal();
+          doOrderPrice()
+          doOrderTotal()
+          doTotal()
         }
       });
 
 
-      function updateTotal() {
-        let newTotal = (orderFee * amount).toLocaleString();
-        order_fee.innerHTML = newTotal;
-        order_exAmount.innerHTML = (((orderFee * amount) + orderDeliveryFee) - orderDiscountFee).toLocaleString();
 
-      }
-      // 삭제하기 이벤트
-      removeBtn.addEventListener("click", function () {
-        alert("삭제되었습니다.");
-        tableContainer.remove();
+      // 사이즈 변경 관련
+      let sizeSelect = document.getElementById("size" + i);
+      let sizePrice = parseInt(sizeSelect.options[sizeSelect.selectedIndex].getAttribute("data-price"));
+
+      // 처음 장바구니에 담긴 사이즈의 금액을 저장하기위한 변수
+      let size_fee = sizePrice;
+
+      sizeSelect.addEventListener("change", function () {
+        sizePrice = parseInt(sizeSelect.options[sizeSelect.selectedIndex].getAttribute("data-price"));
+        size_fee = sizePrice;
+        doOrderPrice()
+        doOrderTotal()
+        doTotal()
+
       });
 
-      // 체크박스 선택 이벤트
+
+
+      // 상품금액 함수
+      function doOrderPrice() {
+        let order_fee = document.getElementById("order_fee" + i);
+        order_fee.innerHTML = (sizePrice * amount).toLocaleString();
+      }
+
+      // 결제예상 함수
+      function doOrderTotal() {
+        let order_exAmount = document.getElementById("order_ex-amount" + i)
+        let order_deliveryFee = parseInt(document.getElementById("order_deliveryFee" + i).textContent.replace(/,/g, ""));
+        let order_discountFee = parseInt(document.getElementById("order_discountFee" + i).textContent.replace(/,/g, ""));
+
+        console.log(order_deliveryFee);
+        order_exAmount.innerHTML = ((sizePrice * amount) + order_deliveryFee - order_discountFee).toLocaleString();
+      }
+
+
+      // 체크박스 관련
+      let checkbox = document.getElementById("chkbox" + i);
+      let infoContainer = document.getElementById("infoContainer" + i);
+      let removeBtn = document.getElementById("removeBtn" + i);
+
+
+      // total 박스 관련
+      let total_checkedFee = document.getElementById("total_checkedFee");
+
       checkbox.addEventListener("change", function () {
+
+
         if (this.checked) {
           // 테두리 색상 변경
-          tableContainer.style.border = "3px solid #d0ac88";
+          infoContainer.style.border = "3px solid #d0ac88";
           removeBtn.style.borderColor = "#d0ac88";
           removeBtn.style.color = "#d0ac88";
-
-          // 선택된 금액
-          checkedFee += orderFee;
-          total_checkedFee.innerHTML = checkedFee.toLocaleString() + " 원";
-
-          // 총 배송비
-          deliveryFee += orderDeliveryFee;
-          total_deliveryFee.innerHTML = deliveryFee.toLocaleString() + " 원";
-
-          // 총 할인
-          discountFee += orderDiscountFee;
-          total_discountFee.innerHTML = discountFee.toLocaleString() + " 원";
-
-          //총 비용
-          totalFee = (checkedFee + deliveryFee) - discountFee;
-          total_fee.innerHTML = totalFee.toLocaleString() + " 원";
+          doTotal()
 
 
         } else {
-          tableContainer.style.border = "1px solid #a6a8aa";
+          infoContainer.style.border = "1px solid #a6a8aa";
           removeBtn.style.borderColor = "#a6a8aa";
           removeBtn.style.color = "#6c757d";
-
-
-          checkedFee -= orderFee;
-          total_checkedFee.innerHTML = checkedFee.toLocaleString() + " 원";
-
-          deliveryFee -= orderDeliveryFee;
-          total_deliveryFee.innerHTML = deliveryFee.toLocaleString() + " 원";
-
-          discountFee -= orderDiscountFee;
-          total_discountFee.innerHTML = discountFee.toLocaleString() + " 원";
-
-          totalFee = (checkedFee + deliveryFee) - discountFee;
-          total_fee.innerHTML = totalFee.toLocaleString() + " 원";
+          doTotal()
         }
+
       });
 
 
-    }
+       // 삭제하기 이벤트
+       removeBtn.addEventListener("click", function () {
+        alert("삭제되었습니다.");
+        infoContainer.remove();
+        
+        doTotal()
+      });
 
+      // total박스 메소드
+      function doTotal() {
+        let total_checkedFee = document.getElementById("total_checkedFee");
+        let total_deliveryFee = 0;
+        let total_discountFee = 0; 
+        let totalFee = 0; 
 
+        infoContainers.forEach((Container, idx) => {
+          let checkbox = document.getElementById("chkbox" +  (idx + 1));
+
+          if (checkbox.checked) {
+            let order_fee = document.getElementById("order_fee" +  (idx + 1));
+            let order_deliveryFee = document.getElementById("order_deliveryFee" +  (idx + 1));
+            let order_discountFee = document.getElementById("order_discountFee" +  (idx + 1));
+
+            let orderFee = parseInt(order_fee.textContent.replace(/,/g, ""));
+            let deliveryFee = parseInt(order_deliveryFee.textContent.replace(/,/g, ""));
+            let discountFee = parseInt(order_discountFee.textContent.replace(/,/g, ""));
+
+            totalFee += orderFee;
+            total_deliveryFee += deliveryFee;
+            total_discountFee += discountFee;
+          }
+        });
+     
+        total_checkedFee.innerHTML = totalFee.toLocaleString() + " 원";
+        document.getElementById("total_deliveryFee").innerHTML = total_deliveryFee.toLocaleString() + " 원";
+        document.getElementById("total_discountFee").innerHTML = total_discountFee.toLocaleString() + " 원";
+        document.getElementById("total_fee").innerHTML = (totalFee + total_deliveryFee - total_discountFee).toLocaleString() + " 원";
+      }
+
+    });
 
   </script>
 

@@ -113,14 +113,43 @@
       font-weight: 300;
       margin-right: 30px;
     }
+    /*왼쪽 메뉴 -----------------------------------------------------------------*/
 
-    /* 섹션 css */
-    .sectionContainer {
-      padding: 100px;
+    #container {
+      /* border: 1px solid blue; */
+      margin: 50px auto;
+
     }
 
-    .titleArea {
-      text-align: center;
+    .mainbar2 {
+      /* border: 1px solid red; */
+      width: 1200px;
+      display: flex;
+     flex-direction: row;
+      /* margin-top: 50px; */
+      margin: auto;
+    }
+
+    .menubar {
+      width: 250px;
+    }
+
+
+    .menubar_title {
+      font-weight: bold;
+      margin-top: 0px;
+      margin-bottom: 10px;
+    }
+
+    .menubar_item {
+      margin-bottom: 10px;
+    }
+
+    /*-----------------------------------------------------------------*/
+
+
+    .sectionContainer {
+      width: 950px;
       margin-bottom: 50px;
     }
 
@@ -156,6 +185,7 @@
       border-bottom: 1px solid #cacaca;
       padding-top: 15px;
       padding-bottom: 20px;
+      min-height: 200px;
     }
 
     /* 그외 */
@@ -236,66 +266,79 @@
     </header>
     <!-- header end -->
     <!-- section -->
-    <section id="section" class="sectionbody">
-      <div class="sectionContainer">
-        <div class="titleArea">
-          <h1>공지사항</h1>
-          <p>공지사항입니다.</p>
+
+    <div id="container">
+
+      <div class="mainbar2">
+        <div class="menubar">
+          <ul>
+            <li class="menubar_title">고객지원</li>
+            <li class="menubar_item"><a href="notice.html">공지사항</a></li>
+            <li class="menubar_item"><a href="QnA.html">Q&A</a></li>
+          </ul>
         </div>
 
-        <div class="titleWrap">
-          <h4>공지사항입니다</h4>
+        <section id="section" class="sectionbody">
+          <div class="sectionContainer">
 
-          <div class="titleDetail">
-            <div id="userid">noop noop (noop123) </div>
-            <div id="time">2023-10-17 28:57:52</div>
-            <div id="views">조회 1</div>
+            <div class="titleWrap">
+              <h4>공지사항입니다</h4>
+
+              <div class="titleDetail">
+                <div id="userid">noop noop (noop123) </div>
+                <div id="time">2023-10-17 28:57:52</div>
+                <div id="views">조회 1</div>
+              </div>
+            </div>
+
+            <div class="mainArea">
+              이것은 공지입니다.
+            </div>
+            <div class="buttonWrap">
+              <div class="listButton">목록</div>
+            </div>
           </div>
-        </div>
-
-        <div class="mainArea">
-          이것은 공지입니다.
-        </div>
-        <div class="buttonWrap">
-          <div class="listButton">목록</div>
-        </div>
-      </div>
-    </section>
-    <!-- section end -->
-
-    <hr class="hr mt-5" style="color: #d0ac88;">
-    <footer id="footer" class="footer">
-      <div class="toparea">
-        <ul class="topbar">
-          <li class="top-item"><a href="#none" class="top-link" style="margin-right: 50px;">이용안내</a></li>
-          <li class="top-item"><a href="#none" class="top-link">개인정보처리방침</a></li>
-          <li class="top-item"><a href="#none" class="top-link">이용약관</a></li>
-          <li class="top-item"><a href="#none" class="top-link">인재채용</a></li>
-          <li class="top-item"><a href="#none" class="top-link">회사소개</a></li>
-        </ul>
-      </div>
-      <div class="logo" style="margin-top: -70px;">
-        <a class="logo" href="#" style="font-family:'ImcreSoojin';">
-          <h2> Noop Noop </h2>
-        </a>
-      </div>
-      <div class="footer container">
-        쇼핑몰 기본정보 <br>
-        상호명 <span class="footercontent"> Noop Noop </span>
-        대표 <span class="footercontent"> Unicorn </span>
-        대표전화 <span class="footercontent"> 000-000-0000 </span>
-        사업자등록번호 <span class="footercontent"> 000-000-0000 </span><br>
-        통신판매업 신고번호 개인정보보호책임자 <span class="footercontent"> 유니콘 </span>
-
       </div>
 
+    </div>
 
-    </footer>
+  </div>
+  </section>
+  <!-- section end -->
+
+  <hr class="hr mt-5" style="color: #d0ac88;">
+  <footer id="footer" class="footer">
+    <div class="toparea">
+      <ul class="topbar">
+        <li class="top-item"><a href="#none" class="top-link" style="margin-right: 50px;">이용안내</a></li>
+        <li class="top-item"><a href="#none" class="top-link">개인정보처리방침</a></li>
+        <li class="top-item"><a href="#none" class="top-link">이용약관</a></li>
+        <li class="top-item"><a href="#none" class="top-link">인재채용</a></li>
+        <li class="top-item"><a href="#none" class="top-link">회사소개</a></li>
+      </ul>
+    </div>
+    <div class="logo" style="margin-top: -70px;">
+      <a class="logo" href="#" style="font-family:'ImcreSoojin';">
+        <h2> Noop Noop </h2>
+      </a>
+    </div>
+    <div class="footer container">
+      쇼핑몰 기본정보 <br>
+      상호명 <span class="footercontent"> Noop Noop </span>
+      대표 <span class="footercontent"> Unicorn </span>
+      대표전화 <span class="footercontent"> 000-000-0000 </span>
+      사업자등록번호 <span class="footercontent"> 000-000-0000 </span><br>
+      통신판매업 신고번호 개인정보보호책임자 <span class="footercontent"> 유니콘 </span>
+
+    </div>
+
+
+  </footer>
   </div>
 
   <script>
-    document.querySelector(".listButton").addEventListener("click", function() {
-      window.location.href="notice.html"
+    document.querySelector(".listButton").addEventListener("click", function () {
+      window.location.href = "notice.html"
     });
   </script>
 </body>

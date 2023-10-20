@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>상품 Q&A</title>
+  <title>index</title>
   <!-- bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -51,13 +51,15 @@
       font-style: normal;
     }
 
-
-
     /* =========================
 	  헤더
     ========================= */
+    #header {
+      background: #fff;
+    }
+
     header .toparea {
-      height: 50px;
+      height: 30px;
     }
 
     header .topbar {
@@ -72,12 +74,14 @@
     }
 
     header .container-fluid {
-      height: 100px;
+      height: 70px;
     }
 
     /* =========================
 	  섹션 캐러셀 슬라이드
     ========================= */
+
+
 
     /* =========================
 	  푸터
@@ -113,14 +117,45 @@
       margin-right: 30px;
     }
 
-    /* 섹션 css */
-    .sectionContainer {
-      padding: 100px;
+
+
+    /*왼쪽 메뉴 -----------------------------------------------------------------*/
+
+    #container {
+      /* border: 1px solid blue; */
+      margin: 50px auto;
+
     }
+
+    .mainbar2 {
+      /* border: 1px solid red; */
+      width: 1200px;
+      display: flex;
+      justify-content: row;
+      /* margin-top: 50px; */
+      margin: auto;
+    }
+
+    .menubar {
+      width: 250px;
+    }
+
+
+    .menubar_title {
+      font-weight: bold;
+      margin-top: 130px;
+      margin-bottom: 10px;
+    }
+
+    .menubar_item {
+      margin-bottom: 10px;
+    }
+
+    /*-----------------------------------------------------------------*/
 
     .titleArea {
       text-align: center;
-      margin-bottom: 50px;
+      /* margin-bottom: 50px; */
     }
 
     th {
@@ -134,7 +169,7 @@
     td {
       text-align: center;
       border-bottom: 1px solid rgb(221, 221, 221);
-      padding: 12px;
+      padding: 10px;
     }
 
     /* 페이지 css*/
@@ -205,7 +240,7 @@
       </div>
       <!-- top area end-->
       <!-- nav bar -->
-      <nav class="navbar navbar-expand-lg ">
+      <nav class="navbar navbar-expand-lg">
         <!-- expand-lg 지점에 도달하면 메뉴 사라지고 버튼 나타남 -->
         <div class="container-fluid">
           <a class="navbar-brand" href="#" style="font-family:'ImcreSoojin';">
@@ -219,7 +254,7 @@
 
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <!-- collapse -->
-            <div class="navbar-nav ms-5 hstack gap-4">
+            <div class="navbar-nav ms-5 hstack gap-4 ">
               <a class="nav-link active" aria-current="page" href="#">
                 <h6> Home </h6>
               </a>
@@ -251,132 +286,149 @@
       </nav>
     </header>
     <!-- header end -->
+
     <!-- section -->
     <section id="section" class="sectionbody">
-      <div class="sectionContainer">
 
+      <div id="container">
 
-        <div class="titleArea">
-          <h1>Q&A</h1>
-          <p>Q&A 입니다.</p>
-        </div>
-
-        <table width="100%">
-          <colgroup>
-            <col width="50px">
-            <col width="500px">
-            <col width="100px">
-            <col width="120px">
-            <col width="50px">
-          </colgroup>
-
-          <th>번호</th>
-          <th>제목</th>
-          <th>작성자</th>
-          <th>작성일</th>
-          <th>조회수</th>
-
-          <tr>
-            <td>10</td>
-            <td class="qnaTitle" id="qna10">상품 Q&A 입니다..</td>
-            <td>Noop Noop</td>
-            <td>2023-10-17</td>
-            <td>0</td>
-          </tr>
-
-          <tr>
-            <td>9</td>
-            <td class="qnaTitle" id="qna9">상품 Q&A 입니다..</td>
-            <td>Noop Noop</td>
-            <td>2023-10-17</td>
-            <td>0</td>
-          </tr>
-
-          <tr>
-            <td>8</td>
-            <td class="qnaTitle" id="qna8">상품 Q&A 입니다..</td>
-            <td>Noop Noop</td>
-            <td>2023-10-17</td>
-            <td>0</td>
-          </tr>
-
-          <tr>
-            <td>7</td>
-            <td class="qnaTitle" id="qna7">상품 Q&A 입니다..</td>
-            <td>Noop Noop</td>
-            <td>2023-10-17</td>
-            <td>0</td>
-          </tr>
-
-          <tr>
-            <td>6</td>
-            <td class="qnaTitle" id="qna6">상품 Q&A 입니다..</td>
-            <td>Noop Noop</td>
-            <td>2023-10-17</td>
-            <td>0</td>
-          </tr>
-
-          <tr>
-            <td>5</td>
-            <td class="qnaTitle" id="qna5">상품 Q&A 입니다..</td>
-            <td>Noop Noop</td>
-            <td>2023-10-17</td>
-            <td>0</td>
-          </tr>
-
-          <tr>
-            <td>4</td>
-            <td class="qnaTitle" id="qna4">상품 Q&A 입니다..</td>
-            <td>Noop Noop</td>
-            <td>2023-10-17</td>
-            <td>0</td>
-          </tr>
-
-          <tr>
-            <td>3</td>
-            <td class="qnaTitle" id="qna3">상품 Q&A 입니다..</td>
-            <td>Noop Noop</td>
-            <td>2023-10-17</td>
-            <td>0</td>
-          </tr>
-
-          <tr>
-            <td>2</td>
-            <td class="qnaTitle" id="qna2">상품 Q&A 입니다..</td>
-            <td>Noop Noop</td>
-            <td>2023-10-17</td>
-            <td>0</td>
-          </tr>
-
-          <tr>
-            <td>1</td>
-            <td class="qnaTitle" id="qna1">상품 Q&A 입니다..</td>
-            <td>Noop Noop</td>
-            <td>2023-10-17</td>
-            <td>0</td>
-          </tr>
-
-        </table>
-        <div class="writeWrap">
-          <div class="write_QnA">
-            글쓰기
+        <div class="mainbar2">
+          <div class="menubar">
+            <ul>
+              <li class="menubar_title">고객지원</li>
+              <li class="menubar_item"><a href="notice.html">공지사항</a></li>
+              <li class="menubar_item"><a href="QnA.html">Q&A</a></li>
+            </ul>
           </div>
 
-        </div>
+          <div class="sectionContainer">
 
-        <!-- 페이지버튼 -->
-        <div class="pageWrap">
-          <div class="page_sidebutton">
-            < </div>
 
-              <div class="page_button" id="page_1">
-                1
+            <div class="titleArea">
+              <h2>Q&A</h2>
+              <p>Q&A 입니다.</p>
+            </div>
+    
+            <table width="100%">
+              <colgroup>
+                <col width="50px">
+                <col width="500px">
+                <col width="120px">
+                <col width="120px">
+                <col width="50px">
+              </colgroup>
+    
+              <th>번호</th>
+              <th>제목</th>
+              <th>작성자</th>
+              <th>작성일</th>
+              <th>조회수</th>
+    
+              <tr>
+                <td>10</td>
+                <td class="qnaTitle" id="qna10"> Q&A 입니다..</td>
+                <td>Noop Noop</td>
+                <td>2023-10-17</td>
+                <td>0</td>
+              </tr>
+    
+              <tr>
+                <td>9</td>
+                <td class="qnaTitle" id="qna9"> Q&A 입니다..</td>
+                <td>Noop Noop</td>
+                <td>2023-10-17</td>
+                <td>0</td>
+              </tr>
+    
+              <tr>
+                <td>8</td>
+                <td class="qnaTitle" id="qna8"> Q&A 입니다..</td>
+                <td>Noop Noop</td>
+                <td>2023-10-17</td>
+                <td>0</td>
+              </tr>
+    
+              <tr>
+                <td>7</td>
+                <td class="qnaTitle" id="qna7"> Q&A 입니다..</td>
+                <td>Noop Noop</td>
+                <td>2023-10-17</td>
+                <td>0</td>
+              </tr>
+    
+              <tr>
+                <td>6</td>
+                <td class="qnaTitle" id="qna6"> Q&A 입니다..</td>
+                <td>Noop Noop</td>
+                <td>2023-10-17</td>
+                <td>0</td>
+              </tr>
+    
+              <tr>
+                <td>5</td>
+                <td class="qnaTitle" id="qna5"> Q&A 입니다..</td>
+                <td>Noop Noop</td>
+                <td>2023-10-17</td>
+                <td>0</td>
+              </tr>
+    
+              <tr>
+                <td>4</td>
+                <td class="qnaTitle" id="qna4"> Q&A 입니다..</td>
+                <td>Noop Noop</td>
+                <td>2023-10-17</td>
+                <td>0</td>
+              </tr>
+    
+              <tr>
+                <td>3</td>
+                <td class="qnaTitle" id="qna3"> Q&A 입니다..</td>
+                <td>Noop Noop</td>
+                <td>2023-10-17</td>
+                <td>0</td>
+              </tr>
+    
+              <tr>
+                <td>2</td>
+                <td class="qnaTitle" id="qna2"> Q&A 입니다..</td>
+                <td>Noop Noop</td>
+                <td>2023-10-17</td>
+                <td>0</td>
+              </tr>
+    
+              <tr>
+                <td>1</td>
+                <td class="qnaTitle" id="qna1"> Q&A 입니다..</td>
+                <td>Noop Noop</td>
+                <td>2023-10-17</td>
+                <td>0</td>
+              </tr>
+    
+            </table>
+            <div class="writeWrap">
+              <div class="write_QnA">
+                글쓰기
               </div>
-
-              <div class="page_sidebutton"> > </div>
+    
+            </div>
+    
+            <!-- 페이지버튼 -->
+            <div class="pageWrap">
+              <div class="page_sidebutton">
+                < </div>
+    
+                  <div class="page_button" id="page_1">
+                    1
+                  </div>
+    
+                  <div class="page_sidebutton"> > </div>
+              </div>
+    
+            </div>
           </div>
 
         </div>
+
 
     </section>
     <!-- section end -->
@@ -392,7 +444,7 @@
           <li class="top-item"><a href="#none" class="top-link">회사소개</a></li>
         </ul>
       </div>
-      <div class="logo" style="margin-top: -70px;">
+      <div class="logo">
         <a class="logo" href="#" style="font-family:'ImcreSoojin';">
           <h2> Noop Noop </h2>
         </a>
@@ -424,8 +476,6 @@
       window.location.href = "QnA_write.html"
     });
   </script>
-
-
 </body>
 
 </html>
