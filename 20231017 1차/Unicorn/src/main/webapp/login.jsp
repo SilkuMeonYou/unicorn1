@@ -196,10 +196,10 @@ input[type="submit"] {
 				</div>
 				<div id="pw1">비밀번호를 입력해주세요</div>
 		</div>
-<!-- 		<div class="message" name="message">아이디 또는 비밀번호가 일치하지 않습니다.</div> -->
+		<!-- 		<div class="message" name="message">아이디 또는 비밀번호가 일치하지 않습니다.</div> -->
 		<div class="save">
 			<div class="check_wrap">
-				<input type="checkbox">
+				<input type="checkbox" class="chk">
 			</div>
 			<label>&nbsp;아이디 저장</label>
 		</div>
@@ -295,7 +295,31 @@ input[type="submit"] {
             // let input1 = document.querySelector(".id-input")
             //   input1.style.border = "1px solid red"
         });
+        
+     // 아이디 저장 체크박스 이벤트
+        document.querySelector('.chk').addEventListener('focus', function () { // 아이디 저장 체크박스 선택시
+            let input1 = document.querySelector(".id-input")
+            if (idInput.value == '' ) { // 아이디 입력 필드가 빈값이면
+                idMessage.style.visibility = 'visible'; // 아이디는 필수입니다 보이게 설정
+                input1.style.border = "1px solid red"; // 아이디 입력필드 빨간색 테두리 효과
+            } else  {
+                idMessage.style.visibility = 'hidden'; // 아이디는 필수입니다 보이게 설정
+                input1.style.border = "1px solid gray"; // 아이디 입력필드 회색 테두리 효과
+            }
+        });
 
+        document.querySelector('.chk').addEventListener('focus', function () { // 아이디 저장 체크박스 선택시
+            let input2 = document.querySelector(".pw-input")
+            if (pwInput.value == '') { // 비밀번호 입력 필드가 빈값이거나 아이디 입력 필드가 빈값이면
+                pwMessage.style.visibility = 'visible'; // 비밀번호는 필수입니다 보이게 설정
+                input2.style.border = "1px solid red"; // 비밀번호 입력필드 빨간색 테두리 효과
+            } else  {
+                pwMessage.style.visibility = 'hidden'; // 아니면 안보이게 설정
+                input2.style.border = "1px solid gray"; // 아이디 입력필드 회색 테두리 효과
+            }
+        });
+
+        // 로그인버튼 이벤트
         document.querySelector('.login-input').addEventListener('focus', function () { // 로그인버튼 선택시
             let input2 = document.querySelector(".pw-input")
             if (pwInput.value == '') { // 비밀번호 입력 필드가 빈값이면
@@ -306,6 +330,13 @@ input[type="submit"] {
                 input2.style.border = "1px solid gray"; // 아이디 입력필드 검정색 테두리 효과
             }
         });
+        
+//         // 로그인 버튼 
+//         document.querySelector('login-input').addEventListener('click', function () {
+//             if(idInput == null || pwInput == null) {
+//                 alert("아이디 또는 비밀번호를 입력해주세요.")
+//             }
+//         });
 
         document.querySelector('.login-input').addEventListener('focus', function () { // 로그인버튼 선택시
             let input1 = document.querySelector(".id-input")
