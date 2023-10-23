@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/loginservlet")
 public class loginservlet extends HttpServlet {
@@ -17,35 +18,33 @@ public class loginservlet extends HttpServlet {
 		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 
+		HttpSession session = request.getSession();
+		
 		String id = "suuu";
 		String pw = "123";
 
 		String inputId = request.getParameter("id");
 		String inputPw = request.getParameter("pw");
+		
 
 		if (id.equals(inputId) && pw.equals(inputPw)) {
 			// 아이디와 비밀번호가 일치하는 경우
+			session.setAttribute("id", id);
 			System.out.println("id, pw 일치");
 			response.sendRedirect("main.jsp");
-		} else {
+		} else if (inputId == null || inputPw == null || inputId.isEmpty() || inputPw.isEmpty()) {
 			// 아이디 또는 비밀번호를 입력하지 않은 경우
-			if (inputId.isEmpty() || inputPw.isEmpty()) {
-				PrintWriter out = response.getWriter();
-				out.println("<script>");
-				out.println("alert('아이디 또는 비밀번호를 입력해주세요.');");
-				out.println("location.href = 'login.jsp';");
-				out.println("</script>");
-			}
-
+			PrintWriter out = response.getWriter();
+			out.println("<script>");
+			out.println("alert('아이디 또는 비밀번호를 입력해주세요.');");
+			out.println("location.href = 'login.jsp';");
+			out.println("</script>");
+		} else {
 			// 아이디 또는 비밀번호가 일치하지 않는 경우
 			PrintWriter out = response.getWriter();
 			out.println("<script>");

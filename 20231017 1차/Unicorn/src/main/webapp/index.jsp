@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="javax.servlet.http.HttpSession"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -247,39 +246,22 @@ footer .logo {
 </style>
 </head>
 
-<%
-String id = (String) session.getAttribute("id");
-%>
-
 <body class="main" style="margin-top: 0;">
 
 	<div id="wrap">
-		<header id="header" class="head">
+		<header id="header" class="head fixed-top">
 			<div class="toparea">
-				<form method="get" action="loginStart">
-					<ul class="topbar">
-						<li class="top-item"><a href="supportCustomer.html"
-							class="top-link" style="margin-right: 50px;">고객지원</a></li>
-						<li class="top-item"><a href="mypage_main.html"
-							class="top-link">마이페이지</a></li>
-						<li class="top-item"><a href="#" class="top-link">최근본상품</a></li>
-						<li class="top-item"><a href="#" class="top-link">주문조회</a></li>
-						<%
-						if (session.getAttribute("id") == null) {
-						%>
-						<li class="top-item" name="login"><a
-							href="/Unicorn/login.jsp" class="top-link">로그인</a></li>
-						<%
-						} else {
-						%>
-						<li class="top-item" name="logout"><a
-							href="/Unicorn/logout.jsp" class="top-link">로그아웃</a></li>
-						<li class="top-item"><a href="/Unicorn/login.jsp"
-							class="top-link"><%=session.getAttribute("id")%>님 환영합니다 !</a></li>
-						<%
-						}
-						%>
-					</ul>
+			<form method="get" action="loginStart">
+				<ul class="topbar">
+					<li class="top-item"><a href="supportCustomer.html"
+						class="top-link" style="margin-right: 50px;">고객지원</a></li>
+					<li class="top-item"><a href="mypage_main.html"
+						class="top-link">마이페이지</a></li>
+					<li class="top-item"><a href="#" class="top-link">최근본상품</a></li>
+					<li class="top-item"><a href="2_login.html" class="top-link">주문조회</a></li>
+					<li class="top-item" name="login"><a href="2_login.html" class="top-link">로그인</a></li>
+					<li class="top-item" name="logout"><a href="2_login.html" class="top-link">로그아웃</a></li>
+				</ul>
 				</form>
 			</div>
 			<!-- top area end-->
@@ -449,7 +431,7 @@ String id = (String) session.getAttribute("id");
 	</section>
 	<!-- section end -->
 
-	<hr class="hr mt-5 style="color:#d0ac88;">
+	<hr class="hr mt-5 style=" color:#d0ac88;">
 	<footer id="footer" class="footer">
 		<div class="toparea">
 			<ul class="topbar">

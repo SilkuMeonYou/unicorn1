@@ -196,7 +196,7 @@ input[type="submit"] {
 				</div>
 				<div id="pw1">비밀번호를 입력해주세요</div>
 		</div>
-		<!-- 		<div class="message" name="message">아이디 또는 비밀번호가 일치하지 않습니다.</div> -->
+<!-- 				<div class="message" name="message">아이디 또는 비밀번호가 일치하지 않습니다.</div> -->
 		<div class="save">
 			<div class="check_wrap">
 				<input type="checkbox" class="chk">
@@ -331,12 +331,12 @@ input[type="submit"] {
             }
         });
         
-//         // 로그인 버튼 
-//         document.querySelector('login-input').addEventListener('click', function () {
-//             if(idInput == null || pwInput == null) {
-//                 alert("아이디 또는 비밀번호를 입력해주세요.")
-//             }
-//         });
+//          // 로그인 버튼 
+//          document.querySelector('login-input').addEventListener('click', function () {
+//              if(idInput == null || pwInput == null) {
+//                  alert("아이디 또는 비밀번호를 입력해주세요.")
+//              }
+//          });
 
         document.querySelector('.login-input').addEventListener('focus', function () { // 로그인버튼 선택시
             let input1 = document.querySelector(".id-input")
