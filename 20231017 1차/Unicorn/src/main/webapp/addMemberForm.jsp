@@ -1,12 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-	request.setCharacterEncoding("UTF-8");
-%>
-<jsp:useBean id="memb" class="w"/>
-<jsp:setProperty name="member" property="*"/>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,25 +7,30 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<form method="get" action="addMember.jsp">
 <table>
 	<tr>
 		<td> 아이디 </td>
-		<td><jsp:getProperty name="member" property="userid"/></td>
+		<td><input type="text" name="userid"></td>
 	</tr>
 	<tr>
 		<td> 비밀번호 </td>
-		<td><jsp:getProperty name="member" property="pwd"/></td>
+		<td><input type="text" name="pwd"></td>
 	</tr>
 	<tr>
 		<td> 이메일 </td>
-		<td><jsp:getProperty name="member" property="email"/></td>
+		<td><input type="text" name="email"></td>
 	</tr>
 	<tr>
 		<td> 전화번호 </td>
-		<td><jsp:getProperty name="member" property="phone"/></td>
+		<td><input type="text" name="phone"></td>
 	</tr>
+	<tr>
+		<td><input type="submit" value="전송"></td>
+		<td><input type="submit" value="취소"></td>
+	</tr>
+	
 </table>
-
+</form>
 </body>
 </html>
