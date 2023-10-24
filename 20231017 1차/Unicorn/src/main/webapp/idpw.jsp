@@ -22,8 +22,9 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	min-height: 100dvh;
+	/* min-height: 100dvh; */
 	text-align: center;
+	margin-top: 100px;
 }
 
 .id {
@@ -45,17 +46,21 @@ input[type=text] {
 	height: 35px;
 	border: 1px solid gray;
 	border-radius: 5px;
+	/* margin-right: 150px; */
 }
 
 input[type=submit] {
 	width: 60px;
 	height: 35px;
-	margin-left: 50px;
+	margin: 10px;
+	/* margin-left: 50px; */
 }
 
 .login {
 	padding: 20px;
 	cursor: pointer;
+	display: flex;
+	justify-content: center;
 }
 
 a {
@@ -63,7 +68,7 @@ a {
 	text-decoration-line: none;
 }
 
-.mail1 {
+.mail1, .name1 {
 	margin-top: 15px;
 }
 
@@ -127,43 +132,47 @@ a {
 </head>
 
 <body>
-	<div id="div1">
 	<form method="get" action="idpwservlet">
-		<div class="id">
-			<div class="div2">
-				<span class="span">아이디 찾기</span>
-			</div>
-			<hr>
-			<div class="idid">
-				<input type="text" class="mail1" placeholder="이메일주소 입력">
-				<!-- <div> -->
-				<input type="submit" class="button" value="찾기">
-				<!-- </div> -->
+		<div id="div1">
+			<div class="id">
+				<div class="div2">
+					<span class="span">아이디 찾기</span>
+				</div>
+				<hr>
+				<div class="idid">
+					<input type="text" class="name1" placeholder="이름 입력"> <input
+						type="text" class="mail1" placeholder="이메일주소 입력">
+				</div>
+				<div>
+					<input type="submit" class="button" value="찾기">
+				</div>
+
 				<div class="success">
 					<div>아이디는 &nbsp;"&nbsp;123&nbsp; "&nbsp;입니다</div>
 				</div>
-			</div>
-			<!-- <div class="login">
+				<!-- <div class="login">
                 <a href="이수연_login.html">로그인하기</a>
             </div> -->
-		</div>
-		<div class="pw">
-			<div class="div2">
-				<span class="span">비밀번호 찾기</span>
 			</div>
-			<hr>
-			<div class="pwpw">
-				<input type="text" class="id1" placeholder="아이디 입력">
-				<!-- <div> -->
-				<input type="submit" class="button1" value="찾기">
-				<!-- </div> -->
+			<div class="pw">
+				<div class="div2">
+					<span class="span">비밀번호 찾기</span>
+				</div>
+				<hr>
+				<div class="pwpw">
+					<input type="text" class="name1" placeholder="이름 입력"> <input
+						type="text" class="id1" placeholder="아이디 입력">
+				</div>
+				<div>
+					<input type="submit" class="button1" value="찾기">
+				</div>
 				<div class="success1">가입하신 이메일로 비밀번호를 전송했습니다</div>
 			</div>
-			</form>
 		</div>
-		<div class="login">
-			<a href="이수연_login.html">로그인하기</a>
-		</div>
+	</form>
+	<div class="login">
+		<a href="이수연_login.html">로그인하기</a>
+	</div>
 	</div>
 </body>
 
@@ -173,20 +182,21 @@ a {
 	})
 
 	function search() {
+		let name = document.querySelector(".name1"); // 이름입력필드를 쿼리셀렉터로 불러오기
 		let mail = document.querySelector(".mail1"); // 메일입력필드를 쿼리셀렉터로 불러오기
 		let button = document.querySelector(".button"); // 아이디찾기 버튼 쿼리셀렉터로 불러오기
 
 		button.addEventListener("click", function() { // 버튼 클릭했을때
-			if (mail.value == '') { // 메일 입력필드가 빈값이면
-				alert("이메일을 입력해주세요 !"); // 경고창
+			if (mail.value == '' && name.value == '') { // 메일 입력필드 또는 이름 입력필드가 빈값이면
+				alert("정보를 입력해주세요 !"); // 경고창
 			}
 		});
 
 		let id = document.querySelector(".id1"); // 아이디 입력필드를 쿼리셀렉터로 불러오기
 		let button1 = document.querySelector(".button1"); // 비밀번호찾기 버튼 쿼리셀렉터로 불러오기
 		button1.addEventListener("click", function() { // 버튼 클릭했을때
-			if (id.value == '') { // 아이디 입력필드가 빈값이면
-				alert("아이디를 입력해주세요 !"); // 경고창
+			if (id.value == '' && name.value == '') { // 아이디 입력필드 또는 이름 입력필드가 빈값이면
+				alert("정보를 입력해주세요 !"); // 경고창
 			}
 		});
 

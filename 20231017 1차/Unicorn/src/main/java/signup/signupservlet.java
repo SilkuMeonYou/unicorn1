@@ -16,6 +16,9 @@ import javax.servlet.http.HttpSession;
 public class signupservlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	// 입력 값을 저장할 ArrayList 생성
+	List<SignUp> list = new ArrayList<>();
+
 	public signupservlet() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -32,9 +35,6 @@ public class signupservlet extends HttpServlet {
 		String inputMail = request.getParameter("email");
 		String inputNum = request.getParameter("phone");
 		String inputAd = request.getParameter("address");
-		
-		// 입력 값을 저장할 ArrayList 생성
-		List<SignUp> list = new ArrayList<>();
 
 		SignUp signup = new SignUp();
 
@@ -48,17 +48,15 @@ public class signupservlet extends HttpServlet {
 		list.add(signup);
 
 		System.out.println("list" + list);
+		
 		// 세션을 가져옴
 		HttpSession session = request.getSession();
 		session.setAttribute("signup", signup);
-		
+
 		// 모든 입력필드가 빈값이 아니면
-		if (inputName != null && !inputName.isEmpty() 
-				&& inputId != null && !inputId.isEmpty() 
-				&& inputPw != null && !inputPw.isEmpty() 
-				&& inputMail != null && !inputMail.isEmpty() 
-				&& inputNum != null && !inputNum.isEmpty() 
-				&& inputAd != null && !inputAd.isEmpty()) {
+		if (inputName != null && !inputName.isEmpty() && inputId != null && !inputId.isEmpty() && inputPw != null
+				&& !inputPw.isEmpty() && inputMail != null && !inputMail.isEmpty() && inputNum != null
+				&& !inputNum.isEmpty() && inputAd != null && !inputAd.isEmpty()) {
 			// 로그인 페이지로 이동
 			System.out.println("회원가입 완료");
 			response.sendRedirect("loginStart");
