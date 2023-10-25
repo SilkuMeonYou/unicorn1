@@ -79,9 +79,9 @@
           <% 
           	if(session.getAttribute("id")==null){
      		%> 
-     		<li class="top-item"><a href="loginStart" class="top-link">로그인</a></li>		
+     		<li class="top-item"><a href="login" class="top-link">로그인</a></li>		
          	<% } else { %>
-         		<li class="top-item"><a href="logout" class="top-link">로그아웃</a></li>
+         		<li class="top-item"><a href="logout.jsp" class="top-link">로그아웃</a></li>
          		<li class="top-item"><a href="#" class="top-link"><Strong>${ id }</Strong>&nbsp; 님</a>&nbsp; 환영합니다</li>
          	<% }
           %>

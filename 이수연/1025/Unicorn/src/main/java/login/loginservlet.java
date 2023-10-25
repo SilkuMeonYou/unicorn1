@@ -25,8 +25,8 @@ public class loginservlet extends HttpServlet {
 
 		HttpSession session = request.getSession();
 		
-		String id = "suuu";
-		String pw = "123";
+		String id = "unicorn";
+		String pw = "1234";
 
 		String inputId = request.getParameter("id");
 		String inputPw = request.getParameter("pw");

@@ -137,7 +137,7 @@
 </head>
 
 <body>
-    <form method="get" action="idpwservlet">
+    <form method="get" action="find_id">
         <div id="div1">
             <div class="id">
                 <div class="div2">
@@ -161,6 +161,8 @@
                 <a href="이수연_login.html">로그인하기</a>
             </div> -->
             </div>
+            </form>
+            <form method="get" action="find_pw">
             <div class="pw">
                 <div class="div2">
                     <span class="span">비밀번호 찾기</span>
