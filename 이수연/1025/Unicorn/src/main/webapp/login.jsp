@@ -209,15 +209,15 @@ input[type="submit"] {
 		</form>
 		<div class="idpw">
 			<div class="ids">
-				<a href="이수연_id_pw.html">아이디 찾기</a>
+				<a href="idpw.jsp">아이디 찾기</a>
 			</div>
 			<div class="l">|</div>
 			<div class="pws">
-				<a href="이수연_id_pw.html">비밀번호 찾기</a>
+				<a href="idpw.jsp">비밀번호 찾기</a>
 			</div>
 			<div class="l">|</div>
 			<div class="join">
-				<a href="이수연_cheked.html">회원가입</a>
+				<a href="cheked.jsp">회원가입</a>
 			</div>
 		</div>
 
@@ -349,27 +349,27 @@ input[type="submit"] {
             }
         })
 
-        let idvalue = "123";              // 아이디값 저장
-        let pwvalue = "123";             // 비밀번호값 저장
+//         let idvalue = "123";              // 아이디값 저장
+//         let pwvalue = "123";             // 비밀번호값 저장
 
-        document.querySelector('.login-input').addEventListener('click', function () { // 로그인버튼 선택시
-            let id = document.querySelector(".id-input");
-            let pw = document.querySelector(".pw-input");
-            let message = document.querySelector(".message");
+//         document.querySelector('.login-input').addEventListener('click', function () { // 로그인버튼 선택시
+//             let id = document.querySelector(".id-input");
+//             let pw = document.querySelector(".pw-input");
+//             let message = document.querySelector(".message");
 
-            if (id.value == '' || pw.value == '') {     // 아이디입력필드가 빈값이거나 비밀번호입력필드가 빈값이면
-                message.style.visibility = "hidden";    // 메세지 숨김
+//             if (id.value == '' || pw.value == '') {     // 아이디입력필드가 빈값이거나 비밀번호입력필드가 빈값이면
+//                 message.style.visibility = "hidden";    // 메세지 숨김
 
-                // 아이디 입력필드가 저장한값과 같거나 비밀번호 입력필드가 저장한값과 같으면 
-            } else if (id.value == idvalue && pw.value == pwvalue) {
-                window.location.href = "윤여준_main_logout.html"       // 메인페이지로 이동 (로그인성공)
+//                 // 아이디 입력필드가 저장한값과 같거나 비밀번호 입력필드가 저장한값과 같으면 
+//             } else if (id.value == idvalue && pw.value == pwvalue) {
+//                 window.location.href = "윤여준_main_logout.html"       // 메인페이지로 이동 (로그인성공)
 
-                // 아니면
-            } else {
-                message.style.visibility = "visible";           // 메세지 보여줌
-            }
+//                 // 아니면
+//             } else {
+//                 message.style.visibility = "visible";           // 메세지 보여줌
+//             }
 
-        });
+//         });
 
     });
 </script>

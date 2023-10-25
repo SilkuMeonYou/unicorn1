@@ -22,7 +22,7 @@ public class login extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 로그인 페이지를 불러옴
 //		HttpSession session = request.getSession();
-		
+		System.out.println("login check");
 		request.getRequestDispatcher("login.jsp").forward(request, response);
 //		response.sendRedirect("login.jsp");
 	}

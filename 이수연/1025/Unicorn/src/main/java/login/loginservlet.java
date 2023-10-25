@@ -2,6 +2,8 @@ package login;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,14 +25,83 @@ public class loginservlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 
-		HttpSession session = request.getSession();
+		List<loginList> list = new ArrayList<>();
+
+		loginList loginList = new loginList();
+
+		loginList.setName("윤여준");
+		loginList.setId("unicorn1");
+		loginList.setPw("1234");
+		loginList.setEmail("unicorn1@naver.com");
+		loginList.setPhone("010-1234-5678");
+		loginList.setAddress("천안시 동남구 대흥동");
+		list.add(loginList);
+
+		loginList = new loginList();
+
+		loginList.setName("이인혜");
+		loginList.setId("unicorn2");
+		loginList.setPw("1234");
+		loginList.setEmail("unicorn2@naver.com");
+		loginList.setPhone("010-1234-5678");
+		loginList.setAddress("천안시 동남구 대흥동");
+		list.add(loginList);
+
+		loginList = new loginList();
+
+		loginList.setName("김나영");
+		loginList.setId("unicorn3");
+		loginList.setPw("1234");
+		loginList.setEmail("unicorn3@naver.com");
+		loginList.setPhone("010-1234-5678");
+		loginList.setAddress("천안시 동남구 대흥동");
+		list.add(loginList);
+
+		loginList = new loginList();
+
+		loginList.setName("박신영");
+		loginList.setId("unicorn4");
+		loginList.setPw("1234");
+		loginList.setEmail("unicorn4@naver.com");
+		loginList.setPhone("010-1234-5678");
+		loginList.setAddress("천안시 동남구 대흥동");
+		list.add(loginList);
 		
+		loginList = new loginList();
+		
+		loginList.setName("이수연");
+		loginList.setId("unicorn5");
+		loginList.setPw("1234");
+		loginList.setEmail("unicorn5@naver.com");
+		loginList.setPhone("010-1234-5678");
+		loginList.setAddress("천안시 동남구 대흥동");
+		list.add(loginList);
+		
+		loginList = new loginList();
+		
+		loginList.setName("최만경");
+		loginList.setId("unicorn6");
+		loginList.setPw("1234");
+		loginList.setEmail("unicorn6@naver.com");
+		loginList.setPhone("010-1234-5678");
+		loginList.setAddress("천안시 동남구 대흥동");
+		list.add(loginList);
+
+
+		request.setAttribute("list", list);
+
+		request.setAttribute("loginList", loginList);
+
+		System.out.println("loginservlet check");
+		HttpSession session = request.getSession();
+		// list 데이터를 세션에 저장
+		session.setAttribute("list", list);
+
 		String id = "unicorn";
 		String pw = "1234";
 
 		String inputId = request.getParameter("id");
 		String inputPw = request.getParameter("pw");
-		
 
 		if (id.equals(inputId) && pw.equals(inputPw)) {
 			// 아이디와 비밀번호가 일치하는 경우

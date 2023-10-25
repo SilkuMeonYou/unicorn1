@@ -127,71 +127,72 @@ input[type="checkbox"]:checked {
 				<h2 class="logo">이용약관 및 동의</h2>
 			</div>
 			<hr>
-			<div>
-				<div class="c1">
-					<div class="div1">
-						<div class="check_wrap">
-							<input type="checkbox" class="allchk">
+			<form method="get" action="signupStart">
+				<div>
+					<div class="c1">
+						<div class="div1">
+							<div class="check_wrap">
+								<input type="checkbox" class="allchk">
+							</div>
+							<label>&nbsp;전체동의하기</label>
 						</div>
-						<label>&nbsp;전체동의하기</label>
 					</div>
 				</div>
-			</div>
-			<div>
-				<div class="c2">
-					<div class="c1">
-						<div class="div1">
-							<div class="check_wrap">
-								<input type="checkbox" class="essential" id="check_btn1" />
+				<div>
+					<div class="c2">
+						<div class="c1">
+							<div class="div1">
+								<div class="check_wrap">
+									<input type="checkbox" class="essential" id="check_btn1" />
+								</div>
+								<label><span>&nbsp;[필수]</span>&nbsp;이용약관 동의</label>
 							</div>
-							<label><span>&nbsp;[필수]</span>&nbsp;이용약관 동의</label>
+							<div class="button2" id="showButton1">보기</div>
+							<div class="close1" id="hideButton1">접기</div>
 						</div>
-						<div class="button2" id="showButton1">보기</div>
-						<div class="close1" id="hideButton1">접기</div>
-					</div>
-					<div class="chk" id="content1">여러분을 환영합니다. 개인정보보호법에 따라 개인정보의
-						항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 동의 거부권 및 동의 거부 시 불이익에 관한 사항을
-						안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다. 어쩌구저쩌구 여러분을 환영합니다. 개인정보보호법에 따라
-						개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 동의 거부권 및 동의 거부 시 불이익에
-						관한 사항을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다. 어쩌구저쩌구</div>
-					<div class="c1">
-						<div class="div1">
-							<div class="check_wrap">
-								<input type="checkbox" class="essential" id="check_btn2" />
+						<div class="chk" id="content1">여러분을 환영합니다. 개인정보보호법에 따라 개인정보의
+							항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 동의 거부권 및 동의 거부 시 불이익에 관한
+							사항을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다. 어쩌구저쩌구 여러분을 환영합니다. 개인정보보호법에
+							따라 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 동의 거부권 및 동의 거부 시
+							불이익에 관한 사항을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다. 어쩌구저쩌구</div>
+						<div class="c1">
+							<div class="div1">
+								<div class="check_wrap">
+									<input type="checkbox" class="essential" id="check_btn2" />
+								</div>
+								<label><span>&nbsp;[필수]</span>&nbsp;정보수집 동의</label>
 							</div>
-							<label><span>&nbsp;[필수]</span>&nbsp;정보수집 동의</label>
+							<div class="button3" id="showButton2">보기</div>
+							<div class="close2" id="hideButton2">접기</div>
 						</div>
-						<div class="button3" id="showButton2">보기</div>
-						<div class="close2" id="hideButton2">접기</div>
-					</div>
 
-					<div class="chk" id="content2">여러분을 환영합니다. 개인정보보호법에 따라 개인정보의
-						항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 동의 거부권 및 동의 거부 시 불이익에 관한 사항을
-						안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다. 어쩌구저쩌구 여러분을 환영합니다. 개인정보보호법에 따라
-						개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 동의 거부권 및 동의 거부 시 불이익에
-						관한 사항을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다. 어쩌구저쩌구</div>
-				</div>
-			</div>
-			<hr>
-			<div class="chk2">[선택] 마케팅 정보 동의</div>
-			<div class="c3">
-				<div class="c1">
-					<div class="div1">
-						<div class="check_wrap">
-							<input type="checkbox" class="select">
-						</div>
-						<label>&nbsp;이메일</label>
+						<div class="chk" id="content2">여러분을 환영합니다. 개인정보보호법에 따라 개인정보의
+							항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 동의 거부권 및 동의 거부 시 불이익에 관한
+							사항을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다. 어쩌구저쩌구 여러분을 환영합니다. 개인정보보호법에
+							따라 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 동의 거부권 및 동의 거부 시
+							불이익에 관한 사항을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다. 어쩌구저쩌구</div>
 					</div>
 				</div>
-				<div class="c1">
-					<div class="div1">
-						<div class="check_wrap">
-							<input type="checkbox" class="select">
+				<hr>
+				<div class="chk2">[선택] 마케팅 정보 동의</div>
+				<div class="c3">
+					<div class="c1">
+						<div class="div1">
+							<div class="check_wrap">
+								<input type="checkbox" class="select">
+							</div>
+							<label>&nbsp;이메일</label>
 						</div>
-						<label>&nbsp;SMS / 알림톡</label>
+					</div>
+					<div class="c1">
+						<div class="div1">
+							<div class="check_wrap">
+								<input type="checkbox" class="select">
+							</div>
+							<label>&nbsp;SMS / 알림톡</label>
+						</div>
 					</div>
 				</div>
-			</div>
 		</div>
 
 		<div>
@@ -201,6 +202,7 @@ input[type="checkbox"]:checked {
 				</a>
 			</div>
 		</div>
+		</form>
 	</div>
 </body>
 <script>

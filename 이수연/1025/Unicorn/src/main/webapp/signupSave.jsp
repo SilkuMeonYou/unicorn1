@@ -195,6 +195,7 @@ String email = (String) session.getAttribute("email");
 String phone = (String) session.getAttribute("phone");
 String address = (String) session.getAttribute("address");
 %>
+
 <body class="main" style="margin-top: 0;">
 
 	<div id="wrap">

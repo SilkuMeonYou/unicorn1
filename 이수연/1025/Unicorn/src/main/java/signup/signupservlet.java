@@ -29,14 +29,15 @@ public class signupservlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 
+		SignUp signup = new SignUp();
+		
+		
 		String inputName = request.getParameter("name");
 		String inputId = request.getParameter("id");
 		String inputPw = request.getParameter("pw");
 		String inputMail = request.getParameter("email");
 		String inputNum = request.getParameter("phone");
 		String inputAd = request.getParameter("address");
-
-		SignUp signup = new SignUp();
 
 		signup.setName(inputName);
 		signup.setId(inputId);
@@ -52,6 +53,7 @@ public class signupservlet extends HttpServlet {
 		// 세션을 가져옴
 		HttpSession session = request.getSession();
 		session.setAttribute("signup", signup);
+//		session.setAttribute("signup", list);
 
 		// 모든 입력필드가 빈값이 아니면
 		if (inputName != null && !inputName.isEmpty() && inputId != null && !inputId.isEmpty() && inputPw != null
@@ -59,7 +61,7 @@ public class signupservlet extends HttpServlet {
 				&& !inputNum.isEmpty() && inputAd != null && !inputAd.isEmpty()) {
 			// 로그인 페이지로 이동
 			System.out.println("회원가입 완료");
-			response.sendRedirect("loginStart");
+			response.sendRedirect("login");
 		} else {
 			System.out.println("회원가입 실패");
 			PrintWriter out = response.getWriter();
