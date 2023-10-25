@@ -36,7 +36,7 @@ public class loginservlet extends HttpServlet {
 			// 아이디와 비밀번호가 일치하는 경우
 			session.setAttribute("id", id);
 			System.out.println("id, pw 일치");
-			response.sendRedirect("main.jsp");
+			response.sendRedirect("index.jsp");
 		} else if (inputId == null || inputPw == null || inputId.isEmpty() || inputPw.isEmpty()) {
 			// 아이디 또는 비밀번호를 입력하지 않은 경우
 			PrintWriter out = response.getWriter();
