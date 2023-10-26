@@ -36,8 +36,16 @@ public class find_pw extends HttpServlet {
 			out.println("alert('정보를 입력해주세요.');");
 			out.println("location.href = 'idpw.jsp';");
 			out.println("</script>");
+			
+		} else if (!inputPwname.equals(pwname) || !inputId.equals(id)) {
+			out.println("<script>");
+			out.println("alert('이름 또는 아이디가 틀립니다.');");
+			out.println("location.href = 'idpw.jsp';");
+			out.println("</script>");
 
-		} else {
+		}
+		
+		else {
 			out.println("<script>alert('비밀번호 재설정 링크를 이메일로 전송했습니다.'); location.href='idpw.jsp';</script>");
 		}
 
