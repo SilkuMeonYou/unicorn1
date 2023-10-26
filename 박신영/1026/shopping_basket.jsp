@@ -293,9 +293,9 @@ td {
 				<tr>
 					<td class="orderDetails"><%=cart.getSize()%></td>
 					<td class="orderDetails" id="order_amount">
-						<button class="amountNum" id="minus<%=count%>">-</button> <span
+						<button type="button" class="amountNum" id="minus<%=count%>">-</button> <span
 						id="orderAmount<%=count%>"><%=cart.getAmount()%></span>
-						<button class="amountNum" id="plus<%=count%>">+</button> <%
+						<button type="button" class="amountNum" id="plus<%=count%>">+</button> <%
 					session.setAttribute("deliveryPrice", "5,000");
 					session.setAttribute("dcPrice", "10,000");
 			%>

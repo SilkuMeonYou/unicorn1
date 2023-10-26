@@ -25,8 +25,9 @@ public class shopping_basketServlet extends HttpServlet {
 		String productSize = request.getParameter("productSize");
 		String amount = request.getParameter("amount");
 		response.setContentType("text/html; charset=UTF-8");
-		List<CartDTO> list = (List<CartDTO>) session.getAttribute("cartIndex");
-		if (list == null) {
+		
+		List<CartDTO> list = (List<CartDTO>) session.getAttribute("cartList");
+		if (list == null || list.isEmpty()) {
 			list = new ArrayList<>();
 		}
 		
@@ -37,7 +38,9 @@ public class shopping_basketServlet extends HttpServlet {
 		list.add(cart);
 
 		session.setAttribute("cartList", list);
-		out.print("<script>alert('장바구니에 상품이 추가되었습니다.'); history.go(-1);</script>");
+		out.print("<script> if(confirm('상품이 등록되었습니다. 장바구니로 이동하시겠습니까?')){"
+				+ "window.location='shopping_basket.jsp';}"
+				+ "else { history.go(-1);};</script>");
 		
 		
 	}

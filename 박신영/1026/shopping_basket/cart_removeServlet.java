@@ -23,12 +23,19 @@ public class cart_removeServlet extends HttpServlet {
 		String index = request.getParameter("cartProductIndex");
 		
 		List<CartDTO> cartList = (List<CartDTO>) session.getAttribute("cartList");
-		cartList.remove(Integer.parseInt(index));
 		
-		session.setAttribute("cartList", cartList);
+		if(index != null) {
+			cartList.remove(Integer.parseInt(index));
+			
+			session.setAttribute("cartList", cartList);
+			
+			out.print("<script> alert('삭제되었습니다'); window.location='shopping_basket.jsp';"
+	        		+ "</script>");
+		} else {
+			out.print("<script> alert('새로고침 해주세요'); history.go(-1);"
+	        		+ "</script>");
+		}
 		
-		out.print("<script> alert('삭제되었습니다'); window.location='shopping_basket.jsp';"
-        		+ "</script>");
 	}
 
 }
