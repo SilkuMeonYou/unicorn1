@@ -201,7 +201,7 @@ td {
 
 										List<QnADTO> list = (List<QnADTO>) session.getAttribute("QnA_list");
 										int count = 1;
-										if (list.isEmpty()) {
+										if (list==null ||list.isEmpty()) {
 											%>
 											<tr>
 												<td></td>
