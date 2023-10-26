@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+
+
 /**
  * Servlet implementation class orderServlet
  */
@@ -22,10 +24,7 @@ public class orderServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		
-		List<OrderDTO> list = (List<OrderDTO>) session.getAttribute("orderList");
-		if(list == null) {
-			list = new ArrayList<>();
-		}
+		
 		
 		OrderDTO orderList = new OrderDTO();
 		orderList.setCheckedAmount("1");
@@ -35,9 +34,10 @@ public class orderServlet extends HttpServlet {
 		orderList.setCheckedSize("S");
 		orderList.setTotalPrice("550,000");
 		
-		list.add(orderList);
-		
 		session.setAttribute("orderList", orderList);
+		
+		
+		
 	}
 
 }

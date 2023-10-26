@@ -6,6 +6,7 @@
 <%@ page import="productList.ProductInfo"%>
 <%@ page import="shopping_basket.CartDTO"%>
 <%@ page import="java.util.*"%>
+<%@ page import="java.text.NumberFormat" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +28,7 @@
 <!-- font -->
 <link rel="stylesheet" type="text/css"
 	href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
-
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 
 <style>
 /* div { border: 1px solid orange; } */
@@ -235,7 +236,7 @@ td {
 			%> 로그인 후 이용가능한 페이지입니다. <%
 			} else {
 					
-				
+				 NumberFormat numberFormat = NumberFormat.getNumberInstance(java.util.Locale.US);
 				
 				List<CartDTO> cartList = (List<CartDTO>) session.getAttribute("cartList");
 				List<ProductInfo> list = (List<ProductInfo>) session.getAttribute("list");
@@ -251,6 +252,8 @@ td {
 				
 				for (CartDTO cart : cartList) {
 					ProductInfo info = list.get(cart.getNum()-1);
+					int dcPrice = info.getSalePrice();
+					
 		%>
 
 		<div class="infoContainer" id="infoContainer<%=count%>">
@@ -259,15 +262,14 @@ td {
 			<table width="100%" class="orderTable">
 				<col width="5%">
 				<col width="20%">
-				<col width="10%">
 				<col width="15%">
-				<col width="10%">
 				<col width="15%">
-				<col width="10%">
+				<col width="15%">
+				<col width="15%">
 				<col width="15%">
 				<tr>
 					<td class="orderHead"></td>
-					<td colspan="6" class="orderHead" id="order_title"><%=info.getProductName()%></td>
+					<td colspan="5" class="orderHead" id="order_title"><%=info.getProductName()%></td>
 					
 					
 					<td><input type="submit" name="delete" value="삭제" class="removeButton" id="removeBtn<%=count%>"> </td>
@@ -284,7 +286,7 @@ td {
 					<td>사이즈</td>
 					<td>수량</td>
 					<td>상품금액</td>
-					<td>배송비</td>
+					
 					<td>할인금액</td>
 					<td>결제예상</td>
 
@@ -296,13 +298,12 @@ td {
 						<button type="button" class="amountNum" id="minus<%=count%>">-</button> <span
 						id="orderAmount<%=count%>"><%=cart.getAmount()%></span>
 						<button type="button" class="amountNum" id="plus<%=count%>">+</button> <%
-					session.setAttribute("deliveryPrice", "5,000");
-					session.setAttribute("dcPrice", "10,000");
+					
 			%>
 					</td>
 					<td class="orderDetails" id="order_fee<%=count%>"><%=info.getProductPrice()%></td>
-					<td class="orderDetails" id="order_deliveryFee<%=count%>"><%=session.getAttribute("deliveryPrice")%></td>
-					<td class="orderDetails" id="order_discountFee<%=count%>"><%=session.getAttribute("dcPrice")%></td>
+					
+					<td class="orderDetails" id="order_discountFee<%=count%>"><%=numberFormat.format(dcPrice)%>원</td>
 					<td class="orderDetails" id="order_ex-amount<%=count%>"></td>
 
 				</tr>
@@ -347,7 +348,8 @@ td {
 					<td>할인</td>
 					<td rowspan="2" class="operator">=</td>
 					<td>총 주문금액</td>
-					<td rowspan="2"><button class="orderButton" onclick="placeOrder()">주문하기</button></td>
+					<td rowspan="2"><button class="orderButton" id="deletBtn">주문하기</button></td>
+					
 				</tr>
 
 				<tr>
@@ -425,12 +427,13 @@ td {
       // 결제예상 함수
       function doOrderTotal() {
     	  let order_fee = document.getElementById("order_fee" + i);
-        let order_exAmount = document.getElementById("order_ex-amount" + i)
-        let order_deliveryFee = parseInt(document.getElementById("order_deliveryFee" + i).textContent.replace(/,/g, ""));
-        let order_discountFee = parseInt(document.getElementById("order_discountFee" + i).textContent.replace(/,/g, ""));
+        let order_exAmount = document.getElementById("order_ex-amount" + i);
+        let order_discountFee = document.getElementById("order_discountFee" + i);
+        let order_dcFee = parseInt(order_discountFee.textContent.replace(/,/g, ""));
         let orderFee = parseInt(order_fee.textContent.replace(/,/g, ""));
    
-        order_exAmount.innerHTML = ((unitPrice* amount) + order_deliveryFee - order_discountFee).toLocaleString() + "원";
+       
+        order_exAmount.innerHTML = ((unitPrice* amount)- order_dcFee).toLocaleString() + "원";
       }
 
       doOrderTotal();
@@ -443,6 +446,7 @@ td {
       // total 박스 관련
       let total_checkedFee = document.getElementById("total_checkedFee");
 
+      // 체크했을때 이벤트
       checkbox.addEventListener("change", function () {
 
 
@@ -466,7 +470,7 @@ td {
       // total박스 메소드
       function doTotal() {
         let total_checkedFee = document.getElementById("total_checkedFee");
-        let total_deliveryFee = 0;
+        let total_deliveryFee = 50000;
         let total_discountFee = 0; 
         let totalFee = 0; 
 
@@ -475,21 +479,31 @@ td {
 
           if (checkbox.checked) {
             let order_fee = document.getElementById("order_fee" +  (idx + 1));
-            let order_deliveryFee = document.getElementById("order_deliveryFee" +  (idx + 1));
+            
             let order_discountFee = document.getElementById("order_discountFee" +  (idx + 1));
 
             let orderFee = parseInt(order_fee.textContent.replace(/,/g, ""));
-            let deliveryFee = parseInt(order_deliveryFee.textContent.replace(/,/g, ""));
+          
             let discountFee = parseInt(order_discountFee.textContent.replace(/,/g, ""));
 
             totalFee += orderFee;
-            total_deliveryFee += deliveryFee;
             total_discountFee += discountFee;
+            
+            console.log("메소드 안: " + totalFee);
+            console.log("메소드 안 배달: " + total_deliveryFee);
+            
           }
         });
-     
+        
+        console.log("메소드 밖: " + totalFee);
+        if(totalFee >= 1000000){
+        	total_deliveryFee = 0;
+        	console.log("메소드 밖 배달: " + total_deliveryFee);
+        	}
+        
         total_checkedFee.innerHTML = totalFee.toLocaleString() + " 원";
-        document.getElementById("total_deliveryFee").innerHTML = total_deliveryFee.toLocaleString() + " 원";
+     
+        document.getElementById("total_deliveryFee").innerHTML = total_deliveryFee.toLocaleString() + "원";
         document.getElementById("total_discountFee").innerHTML = total_discountFee.toLocaleString() + " 원";
         document.getElementById("total_fee").innerHTML = (totalFee + total_deliveryFee - total_discountFee).toLocaleString() + " 원";
       }
@@ -498,7 +512,24 @@ td {
       
     });
 	
-
+// 	function doOrder() {
+		
+		
+		
+// 		$.ajax({
+// 			type: "get",
+// 			url: "/Unicorn/orderServlet",
+// 			date: { tptalPrice: }}
+// 		})
+// 	}
+	
+// 	document.getElementById("deleteBtn").addEventListener("click", function(){
+// 		doOrder();
+// 	});
+	
+	
+	
+	
   </script>
 
 
