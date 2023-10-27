@@ -108,10 +108,10 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <!-- collapse -->
             <div class="navbar-nav ms-5 hstack gap-4">
-              <a class="nav-link active" aria-current="page" href="index.jsp"><h6> Home </h6></a>
+<!--               <a class="nav-link active" aria-current="page" href="index.jsp"><h6> Home </h6></a> -->
               <a class="nav-link" href="eventServlet"><h6> Event </h6></a>
-              <a class="nav-link" href="ProductList"><h6> Best </h6></a>
               <a class="nav-link" href="ProductList"><h6> Product </h6></a>
+              <a class="nav-link" href="ProductBestList.jsp"><h6> Best </h6></a>
               <div class="vr"></div>
               <a class="nav-link" href="AboutUs.jsp"><h6> About us </h6></a>
             </div>

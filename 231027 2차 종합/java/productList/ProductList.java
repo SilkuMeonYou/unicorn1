@@ -355,6 +355,7 @@ public class ProductList extends HttpServlet {
 
 		// 세션을 가져옴
 		HttpSession session = request.getSession();
+		
 
 		// list 데이터를 세션에 저장
 		session.setAttribute("list", list);
@@ -365,9 +366,11 @@ public class ProductList extends HttpServlet {
 
 		// 리스트를 상위 10개만 선택
 		List<ProductInfoDTO> top10List = sortedList.subList(0, Math.min(10, sortedList.size()));
-
+		System.out.println(top10List.size());
 		// request에 상위 10개 리스트를 추가
 		request.setAttribute("top10List", top10List);
+		// top10List를 세션에 저장
+		session.setAttribute("top10List", top10List);
 
 		request.getRequestDispatcher("/ProductList.jsp").forward(request, response);
 	}
