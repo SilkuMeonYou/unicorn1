@@ -26,54 +26,21 @@
 <meta charset="UTF-8">
 <title>제품 목록</title>
 <style>
-body {
-	font-family: pretendard;
-}
+    /* div { border: 1px solid orange; } */
 
-ul, ol, dl, li {
-	list-style: none;
-}
+    /* common */
+    body { font-family: pretendard; }
+    ul, ol, dl, li { list-style: none; }
+    a { text-decoration: none; color: none; color: #000; }
+    /* common end */
+    a:hover, a:active, a:focus { text-decoration: none; }
 
-a {
-	text-decoration: none;
-	color: none;
-	color: #000;
-}
-
-a:hover, a:active, a:focus {
-	text-decoration: none;
-}
-
-@font-face {
-	font-family: 'ImcreSoojin';
-	src:
-		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.3/ImcreSoojin.woff')
-		format('woff');
-	font-weight: normal;
-	font-style: normal;
-}
-
-/* =========================
-	  헤더
-    ========================= */
-header .toparea {
-	height: 50px;
-}
-
-header .topbar {
-	vertical-align: middle;
-}
-
-header .top-item {
-	float: right;
-	margin-right: 20px;
-	margin-top: 10px;
-	font-size: 12px;
-}
-
-header .container-fluid {
-	height: 100px;
-}
+    @font-face {
+      font-family: 'ImcreSoojin';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.3/ImcreSoojin.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
 
 .bestText {
 	font-weight: 900;
@@ -204,38 +171,7 @@ header .container-fluid {
 	transition: transform 0.5s ease;
 }
 
-/* =========================
-	  푸터
-    ========================= */
-footer .toparea {
-	height: 50px;
-}
 
-footer .topbar {
-	vertical-align: middle;
-}
-
-footer .top-item {
-	float: right;
-	margin-right: 20px;
-	margin-top: 0px;
-	font-size: 12px;
-}
-
-footer .logo {
-	padding-left: 15px;
-}
-
-.footer .container {
-	font-size: 11px;
-	font-weight: 1000;
-	line-height: 2;
-}
-
-.footercontent {
-	color: rgb(59, 59, 59);
-	font-weight: 300;
-}
 </style>
 </head>
 <%@ include file="indexheader.jsp" %>
