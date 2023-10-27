@@ -3,6 +3,9 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page import="notice.NoticeDTO"%>
+<%@ page import="java.util.*"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -73,6 +76,9 @@
     }
 
     /*-----------------------------------------------------------------*/
+	.sectionContainer{
+	width: 800px;
+	}
 	table{width:100%;}
     .titleArea {text-align: center;}
 
@@ -142,9 +148,19 @@
           <div class="sectionContainer">
             <div class="titleArea">
               <h2>공지사항</h2>
-              <p>공지사항입니다.</p>
-            </div>
+             
 
+
+<% 
+	int count = 1;
+	List<NoticeDTO> list = (List<NoticeDTO>) session.getAttribute("noticeList"); 
+	if(list == null){ %>
+		 <p>작성된 공지사항이 없습니다.</p>
+           
+	<% } else {%>
+
+<p>공지사항입니다.</p>
+ </div>
             <table>
               <colgroup>
                 <col width="50px">
@@ -160,89 +176,25 @@
               <th class="thead">작성일</th>
               
 
+<% for(NoticeDTO notice : list) {
+	%>
+
               <tr>
-                <td>10</td>
-                <td class="noticeTitle" id="notice10">공지사항입니다.</td>
-                <td>Noop Noop</td>
-                <td>2023-10-17</td>
+                <td><%= count %></td>
+                <td class="noticeTitle" id="notice<%= count %>">
+                <a href="notice_view.jsp?index=<%=count - 1%>"><%= notice.getNoticeTitle() %></a></td>
+                <td><%= notice.getNoticeWriter() %></td>
+                <td><%= notice.getNoticeDate() %></td>
                 
               </tr>
 
-              <tr>
-                <td>9</td>
-                <td class="noticeTitle" id="notice9">공지사항입니다.</td>
-                <td>Noop Noop</td>
-                <td>2023-10-17</td>
-               
-              </tr>
-
-              <tr>
-                <td>8</td>
-                <td class="noticeTitle" id="notice8">공지사항입니다.</td>
-                <td>Noop Noop</td>
-                <td>2023-10-17</td>
-               
-              </tr>
-
-              <tr>
-                <td>7</td>
-                <td class="noticeTitle" id="notice7">공지사항입니다.</td>
-                <td>Noop Noop</td>
-                <td>2023-10-17</td>
-                
-              </tr>
-
-              <tr>
-                <td>6</td>
-                <td class="noticeTitle" id="notice6">공지사항입니다.</td>
-                <td>Noop Noop</td>
-                <td>2023-10-17</td>
-                
-              </tr>
-
-              <tr>
-                <td>5</td>
-                <td class="noticeTitle" id="notice5">공지사항입니다.</td>
-                <td>Noop Noop</td>
-                <td>2023-10-17</td>
-                
-              </tr>
-
-              <tr>
-                <td>4</td>
-                <td class="noticeTitle" id="notice4">공지사항입니다.</td>
-                <td>Noop Noop</td>
-                <td>2023-10-17</td>
-                
-              </tr>
-
-              <tr>
-                <td>3</td>
-                <td class="noticeTitle" id="notice3">공지사항입니다.</td>
-                <td>Noop Noop</td>
-                <td>2023-10-17</td>
-               
-              </tr>
-
-              <tr>
-                <td>2</td>
-                <td class="noticeTitle" id="notice2">공지사항입니다.</td>
-                <td>Noop Noop</td>
-                <td>2023-10-17</td>
-               
-              </tr>
-
-              <tr>
-                <td>1</td>
-                <td class="noticeTitle" id="notice1">공지사항입니다.</td>
-                <td>Noop Noop</td>
-                <td>2023-10-17</td>
-               
-              </tr>
+ <%
+	count++; 
+} %>
 
             </table>
-
             <div class="pageWrap">
+ 
               <div class="page_sidebutton"> <
                  </div>
 
@@ -251,29 +203,22 @@
                   </div>
 
                   <div class="page_sidebutton"> > </div>
+                  
               </div>
+           
+<% } %>
+            
 
             </div>
           </div>
 
         </div>
-
     
 
  
 
 <jsp:include page="indexfooter.jsp" flush="true"/>
   </section>
-	<script>
-    let noticeTitle = document.querySelectorAll(".noticeTitle");
 
-    for (let i = 1; i <= noticeTitle.length; i++) {
-
-      document.querySelector("#notice" + i).addEventListener("click", function () {
-        window.location.href = "notice_view.jsp"
-      });
-    }
-
-  </script>
 </body>
 </html>

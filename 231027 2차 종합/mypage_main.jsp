@@ -80,6 +80,7 @@
     #container { margin: auto; }
     .mypage { padding: 50px; font-size: 30px; font-weight: bold; text-align: center; color: white; background-color: #d8c69c; }
     .mypage2 { font-size: 20px; text-align: center; margin-top: 20px; }
+	.none_id { text-align: center; color : gray; font-size : 20px; padding : 20px; }    
 
     /* 총 주문, 적립금, 쿠폰====================*/
     .mainbar { display: flex; justify-content: space-around; width: 1000px; margin: 70px auto; text-align: center; }
@@ -121,6 +122,12 @@
       <div id="container"> 
 
        <div class="mypage">마이페이지</div>
+       
+       <%
+       if(session.getAttribute("id") == null){%>
+       		<p class="none_id">로그인 후 이용가능합니다.</p>  
+       <%}else{	%>
+
        <div class="mypage2">안녕하세요, 이인혜님!</div>
 
        <div class="mainbar_wrap">
@@ -230,13 +237,22 @@
       </div>
         
     </div>
-
-          
+    
+          <%}%>
     </section>
     <!-- section end -->
 
     
   </div>
+  <script>
+  
+  // 자세히보기 버튼 클릭 시 주문내역조회로 이동
+  let detail_btn = document.querySelector(".detail_btn");
+  
+  detail_btn.addEventListener("click",function() {
+		window.location.href = "mypage_orderlist.jsp";
+	});
+  </script>
 </body>
 <c:import url="indexfooter.jsp"/>
 

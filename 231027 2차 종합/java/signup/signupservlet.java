@@ -67,7 +67,7 @@ public class signupservlet extends HttpServlet {
 			PrintWriter out = response.getWriter();
 			out.println("<script>");
 			out.println("alert('모든정보를 입력해주세요.');");
-			out.println("location.href = 'signupStart';");
+			out.println("history.back();");
 			out.println("</script>");
 		}
 

@@ -24,7 +24,7 @@ public class find_pw extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 
 		String pwname = "ÀÌ¼ö¿¬";
-		String id = "123";
+		String id = "unicorn";
 
 		String inputPwname = request.getParameter("pwname");
 		String inputId = request.getParameter("id");

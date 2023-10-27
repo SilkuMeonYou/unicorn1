@@ -133,6 +133,11 @@
     .board_title:hover {
       cursor: pointer;
     }
+    
+    .nolist {
+    	padding-top : 20px;
+    	text-align: center;
+    }
 
     /* 페이지 넘버 ====================*/
     .oderbar_num {
@@ -196,16 +201,12 @@
               나의 게시글
             </div>
             
-		<form method="get" action="boardServlet">
+		<form method="get" action="boardremove">
 		
             <div class="board_list_item">
               <div class="board_btn"><input class="delete_btn" type="submit" value="삭제"></div>
               <div class="board_list_table">
-              <% List<QnADTO> list = (List<QnADTO>) session.getAttribute("QnA_list");
-              	
-              
-              %>
-              
+              	 
                 <table>
                   <colgroup>
                     <col width="50px">
@@ -221,63 +222,49 @@
                     <td class="board_top">제목</td>
                     <td class="board_top">날짜</td>
                   </tr>
+                  
+                  <% List<QnADTO> board_list = (List<QnADTO>)request.getAttribute("board_list"); 
+
+                  if(board_list == null || board_list.isEmpty()){ %>
+                  	<td class="nolist" colspan="5">작성한 글이 없습니다.</td>
+                  <%}
+              	 	int count = 1;
+              	 	for(QnADTO qnadto : board_list){	
+              	 	%>
                   <tr>
-                    <td><input class="check" name="checked" value="0" type="checkbox"></td>
-                    <td class="board_num">8</td>
-                    <td class="board_category">문의</td>
-                    <td class="board_title">문의합니다</td>
-                    <td class="board_date">10-31</td>
+                    <td><input class="check" name="list_remove" value=<%= count %> type="checkbox"></td>
+                    <td class="board_num"><%= count %></td>
+                    <td class="board_category">
+                    <%
+                   	if(qnadto.getInquiryTitle() != null){ %>
+  						QnA
+                   	<%} %>
+                    </td>
+                    <td class="board_title"><%=qnadto.getInquiryTitle() %></td>
+                    <td class="board_date"><%=qnadto.getInquiryDate() %></td>
                   </tr>
-                  <tr>
-                    <td><input class="check" name="checked" value="1" type="checkbox"></td>
-                    <td class="board_num">7</td>
-                    <td class="board_category">문의</td>
-                    <td class="board_title">문의합니다</td>
-                    <td class="board_date">10-31</td>
-                  </tr>
-                  <tr>
-                    <td><input class="check" name="checked" type="checkbox"></td>
-                    <td class="board_num">6</td>
-                    <td class="board_category">문의</td>
-                    <td class="board_title">문의합니다</td>
-                    <td class="board_date">10-31</td>
-                  </tr>
-                  <tr>
-                    <td><input class="check" name="checked" type="checkbox"></td>
-                    <td class="board_num">5</td>
-                    <td class="board_category">문의</td>
-                    <td class="board_title">문의합니다</td>
-                    <td class="board_date">10-31</td>
-                  </tr>
-                  <tr>
-                    <td><input class="check" name="checked" type="checkbox"></td>
-                    <td class="board_num">4</td>
-                    <td class="board_category">문의</td>
-                    <td class="board_title">문의합니다</td>
-                    <td class="board_date">10-30</td>
-                  </tr>
-                  <tr>
-                    <td><input class="check" name="checked" type="checkbox"></td>
-                    <td class="board_num">3</td>
-                    <td class="board_category">후기</td>
-                    <td class="board_title">후기입니다</td>
-                    <td class="board_date">10-20</td>
-                  </tr>
-                  <tr>
-                    <td><input class="check" name="checked" type="checkbox"></td>
-                    <td class="board_num">2</td>
-                    <td class="board_category">문의</td>
-                    <td class="board_title">문의합니다</td>
-                    <td class="board_date">10-01</td>
-                  </tr>
-                  <tr>
-                    <td><input class="check" name="checked" type="checkbox"></td>
-                    <td class="board_num">1</td>
-                    <td class="board_category">후기</td>
-                    <td class="board_title">후기</td>
-                    <td class="board_date">10-01</td>
-                  </tr>
+<!--                   <tr> -->
+<!--                     <td><input class="check" name="checked" type="checkbox"></td> -->
+<!--                     <td class="board_num">2</td> -->
+<!--                     <td class="board_category">문의</td> -->
+<!--                     <td class="board_title">문의합니다</td> -->
+<!--                     <td class="board_date">10-01</td> -->
+<!--                   </tr> -->
+<!--                   <tr> -->
+<!--                     <td><input class="check" name="checked" type="checkbox"></td> -->
+<!--                     <td class="board_num">1</td> -->
+<!--                     <td class="board_category">후기</td> -->
+<!--                     <td class="board_title">후기</td> -->
+<!--                     <td class="board_date">10-01</td> -->
+<!--                   </tr> -->
+				<%	 
+              	 	count++;
+
+                 }
+             	 %>
                 </table>
+                
+                
 		</form>
 
                 <div class="oderbar_num">
