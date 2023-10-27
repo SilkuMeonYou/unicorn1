@@ -169,10 +169,10 @@ a {
 </head>
 
 <body>
-	<form method="get" action="find_id">
 		<h3>
 			<a href="index.jsp" style="font-family: 'ImcreSoojin';"> Noop Noop </a>
 		</h3>
+	<form method="get" action="find_id">
 		<div id="div1">
 			<div class="id">
 				<div class="div2">
@@ -196,7 +196,7 @@ a {
             </div> -->
 			</div>
 	</form>
-	<form method="get" action="find_id"></form>
+	<form method="get" action="find_pw">
 	<div class="pw">
 		<div class="div2">
 			<span class="span">비밀번호 찾기</span>
@@ -230,56 +230,56 @@ a {
 		let mail = document.querySelector(".mail1"); // 메일입력필드를 쿼리셀렉터로 불러오기
 		let button = document.querySelector(".button"); // 아이디찾기 버튼 쿼리셀렉터로 불러오기
 
-		button.addEventListener("click", function() { // 버튼 클릭했을때
-			if (mail.value == '' && name1.value == '') { // 메일 입력필드 또는 이름 입력필드가 빈값이면
-				alert("정보를 입력해주세요 !"); // 경고창
-			}
-		});
+// 		button.addEventListener("click", function() { // 버튼 클릭했을때
+// 			if (mail.value == '' && name1.value == '') { // 메일 입력필드 또는 이름 입력필드가 빈값이면
+// 				alert("정보를 입력해주세요 !"); // 경고창
+// 			}
+// 		});
 
-		let id = document.querySelector(".id1"); // 아이디 입력필드를 쿼리셀렉터로 불러오기
-		let button1 = document.querySelector(".button1"); // 비밀번호찾기 버튼 쿼리셀렉터로 불러오기
-		button1.addEventListener("click", function() { // 버튼 클릭했을때
-			if (id.value == '' && name2.value == '') { // 아이디 입력필드 또는 이름 입력필드가 빈값이면
-				alert("정보를 입력해주세요 !"); // 경고창
-			}
-		});
+// 		let id = document.querySelector(".id1"); // 아이디 입력필드를 쿼리셀렉터로 불러오기
+// 		let button1 = document.querySelector(".button1"); // 비밀번호찾기 버튼 쿼리셀렉터로 불러오기
+// 		button1.addEventListener("click", function() { // 버튼 클릭했을때
+// 			if (id.value == '' && name2.value == '') { // 아이디 입력필드 또는 이름 입력필드가 빈값이면
+// 				alert("정보를 입력해주세요 !"); // 경고창
+// 			}
+// 		});
 
 		// 이메일 값을 정해놓고 이메일 값을 입력했을때 값이 일치하면 입력창 사라지고 아이디 값 뜨게
 		// 비밀번호도 마찬가지로
-		var mailvalue = "123"; // 이메일값 지정
-		var namevalue = "이수연"; // 이름값 지정
-		var idvalue = "123"; // 아이디값 지정
+// 		var mailvalue = "123"; // 이메일값 지정
+// 		var namevalue = "이수연"; // 이름값 지정
+// 		var idvalue = "123"; // 아이디값 지정
 
-		let idid = document.querySelector(".idid"); // 아이디찾기 입력필드를 쿼리셀렉터로 불러오기
-		let pwpw = document.querySelector(".pwpw"); // 비밀번호찾기 입력필드를 쿼리셀렉터로 불러오기
-		let bt1 = document.querySelector(".bt1"); // 아이디찾기 버튼 쿼리셀렉터로 불러오기
-		let bt2 = document.querySelector(".bt2"); // 비밀번호찾기 버튼 쿼리셀렉터로 불러오기
-		let success = document.querySelector(".success"); // 아이디 문구 쿼리셀렉터로 불러오기
-		let success1 = document.querySelector(".success1"); // 아이디 문구 쿼리셀렉터로 불러오기
+// 		let idid = document.querySelector(".idid"); // 아이디찾기 입력필드를 쿼리셀렉터로 불러오기
+// 		let pwpw = document.querySelector(".pwpw"); // 비밀번호찾기 입력필드를 쿼리셀렉터로 불러오기
+// 		let bt1 = document.querySelector(".bt1"); // 아이디찾기 버튼 쿼리셀렉터로 불러오기
+// 		let bt2 = document.querySelector(".bt2"); // 비밀번호찾기 버튼 쿼리셀렉터로 불러오기
+// 		let success = document.querySelector(".success"); // 아이디 문구 쿼리셀렉터로 불러오기
+// 		let success1 = document.querySelector(".success1"); // 아이디 문구 쿼리셀렉터로 불러오기
 
-		button.addEventListener("click", function() { // 아이디찾기 버튼을 클릭했을때
+// 		button.addEventListener("click", function() { // 아이디찾기 버튼을 클릭했을때
 
-			if (mailvalue == mail.value && namevalue == name1.value) { // 이메일값이 입력한 값과 이름값이 입력한 값이 같으면
+// 			if (mailvalue == mail.value && namevalue == name1.value) { // 이메일값이 입력한 값과 이름값이 입력한 값이 같으면
 
-				idid.querySelector(".name1").style.display = "none" // 이름입력필드,
-				idid.querySelector(".mail1").style.display = "none" // 이메일 입력필드,
-				bt1.querySelector(".button").style.display = "none" // 아이디 찾기버튼이 안보이게하고
+// 				idid.querySelector(".name1").style.display = "none" // 이름입력필드,
+// 				idid.querySelector(".mail1").style.display = "none" // 이메일 입력필드,
+// 				bt1.querySelector(".button").style.display = "none" // 아이디 찾기버튼이 안보이게하고
 
-				success.style.display = "block"; // 문구가 보이게
-			}
-		});
+// 				success.style.display = "block"; // 문구가 보이게
+// 			}
+// 		});
 
-		button1.addEventListener("click", function() { // 비밀번호찾기 버튼을 클릭했을때
-			console.log("click")
-			if (idvalue == id.value && namevalue == name2.value) { // 아이디값이 입력한 값과 이름값이 입력한 값이 같으면
+// 		button1.addEventListener("click", function() { // 비밀번호찾기 버튼을 클릭했을때
+// 			console.log("click")
+// 			if (idvalue == id.value && namevalue == name2.value) { // 아이디값이 입력한 값과 이름값이 입력한 값이 같으면
 
-				pwpw.querySelector(".name2").style.display = "none" // 이름 입력필드,
-				pwpw.querySelector(".id1").style.display = "none" // 아이디 입력필드,
-				bt2.querySelector(".button1").style.display = "none" // 비밀번호 찾기버튼이 안보이게하고
+// 				pwpw.querySelector(".name2").style.display = "none" // 이름 입력필드,
+// 				pwpw.querySelector(".id1").style.display = "none" // 아이디 입력필드,
+// 				bt2.querySelector(".button1").style.display = "none" // 비밀번호 찾기버튼이 안보이게하고
 
-				success1.style.display = "block"; // 문구가 보이게
-			}
-		});
+// 				success1.style.display = "block"; // 문구가 보이게
+// 			}
+// 		});
 	}
 </script>
 </html>

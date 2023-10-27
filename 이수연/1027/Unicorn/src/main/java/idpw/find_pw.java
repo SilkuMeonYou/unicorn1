@@ -24,20 +24,22 @@ public class find_pw extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 
 		String pwname = "이수연";
-		String id = "123";
+		String id = "unicorn";
 
-		String inputId = request.getParameter("id");
 		String inputPwname = request.getParameter("pwname");
+		String inputId = request.getParameter("id");
 
 		PrintWriter out = response.getWriter();
 		
 		if (inputPwname == null || inputId == null || inputPwname.isEmpty() || inputId.isEmpty()) {
+			System.out.println("정보 미입력");
 			out.println("<script>");
 			out.println("alert('정보를 입력해주세요.');");
 			out.println("location.href = 'idpw.jsp';");
 			out.println("</script>");
 			
 		} else if (!inputPwname.equals(pwname) || !inputId.equals(id)) {
+			System.out.println("정보 불일치");
 			out.println("<script>");
 			out.println("alert('이름 또는 아이디가 틀립니다.');");
 			out.println("location.href = 'idpw.jsp';");
@@ -46,6 +48,7 @@ public class find_pw extends HttpServlet {
 		}
 		
 		else {
+			System.out.println("정보 일치");
 			out.println("<script>alert('비밀번호 재설정 링크를 이메일로 전송했습니다.'); location.href='idpw.jsp';</script>");
 		}
 

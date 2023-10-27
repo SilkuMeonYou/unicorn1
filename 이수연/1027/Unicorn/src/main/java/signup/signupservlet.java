@@ -17,7 +17,7 @@ public class signupservlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	// 입력 값을 저장할 ArrayList 생성
-	List<SignUp> list = new ArrayList<>();
+	List<SignUpDTO> list = new ArrayList<>();
 
 	public signupservlet() {
 		super();
@@ -29,7 +29,7 @@ public class signupservlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 
-		SignUp signup = new SignUp();
+		SignUpDTO signup = new SignUpDTO();
 		
 		
 		String inputName = request.getParameter("name");
@@ -67,7 +67,7 @@ public class signupservlet extends HttpServlet {
 			PrintWriter out = response.getWriter();
 			out.println("<script>");
 			out.println("alert('모든정보를 입력해주세요.');");
-			out.println("location.href = 'signupStart';");
+			out.println("history.back();");
 			out.println("</script>");
 		}
 
