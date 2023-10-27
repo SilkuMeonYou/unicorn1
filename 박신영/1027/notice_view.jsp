@@ -3,6 +3,9 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page import="notice.NoticeDTO"%>
+<%@ page import="java.util.*"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -153,22 +156,28 @@ body {
             <li class="menubar_item"><a href="QnA.jsp">Q&A</a></li>
           </ul>
         </div>
-
+        
+<% 
+	
+	List<NoticeDTO> list = (List<NoticeDTO>) session.getAttribute("noticeList"); 
+	int index = Integer.parseInt(request.getParameter("index"));
+	NoticeDTO notice = list.get(index);
+	%>
       
           <div class="sectionContainer">
 
             <div class="titleWrap">
-              <h4>공지사항입니다</h4>
+              <h4><%= notice.getNoticeTitle() %></h4>
 
               <div class="titleDetail">
-                <div id="userId"> noop noop  </div>
-                <div id="time">2023-10-17 28:57:52</div>
+                <div id="userId"> <%= notice.getNoticeWriter() %>  </div>
+                <div id="time"><%= notice.getNoticeDate() %></div>
   
               </div>
             </div>
 
             <div class="mainArea">
-              이것은 공지입니다.
+              <%= notice.getNoticeDetails() %>
             </div>
             <div class="buttonWrap">
               <div class="listButton">목록</div>
