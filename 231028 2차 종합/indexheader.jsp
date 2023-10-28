@@ -79,7 +79,7 @@
           <% 
           	if(session.getAttribute("id")==null){
      		%> 
-     		<li class="top-item"><a href="login" class="top-link">로그인</a></li>		
+     		<li class="top-item"><a href="login.jsp" class="top-link">로그인</a></li>		
      		<li class="top-item"><a href="cheked.jsp" class="top-link">회원가입</a></li>
          	<% } else { %>
          		<li class="top-item"><a href="logout.jsp" class="top-link">로그아웃</a></li>

@@ -47,6 +47,8 @@
     .menubar_title { font-weight: bold; margin-top: 70px; margin-bottom: 10px; }
     .menubar_item { margin-bottom: 10px; }
     .menubar:hover { cursor: pointer; }
+    
+    .none_id { text-align: center; color : gray; font-size : 15px; padding : 20px; }  
     /*==================== 고정 사이드메뉴*/
 
     .tab-content{ margin-top: 50px; }
@@ -79,6 +81,12 @@
     <!-- header end -->
 
     <!-- section -->
+    	<%
+    	
+       if(session.getAttribute("id") == null){%>
+       	<div class="none_id">로그인 후 이용가능합니다<div>  
+       <%}else{	%>
+       
     <section id="section" class="sectionbody">
 
       <div class="headerarea"></div>
@@ -125,6 +133,7 @@
               <div class="tab-pane container active" id="home">
 
                 <div class="orderlist">
+
                   <table>
                     <colgroup>
                     <col width="300px">
@@ -253,7 +262,7 @@
         </div>
       </div>
 
-
+	<%}%>
     </section>
     <!-- section end -->
 

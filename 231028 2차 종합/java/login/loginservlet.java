@@ -125,6 +125,7 @@ public class loginservlet extends HttpServlet {
 			session.setAttribute("review", review);
 			System.out.println("id, pw 일치");
 			response.sendRedirect("index.jsp");
+			
 		} else if (inputId == null || inputPw == null || inputId.isEmpty() || inputPw.isEmpty()) {
 			// 아이디 또는 비밀번호를 입력하지 않은 경우
 			PrintWriter out = response.getWriter();

@@ -80,7 +80,7 @@
     #container { margin: auto; }
     .mypage { padding: 50px; font-size: 30px; font-weight: bold; text-align: center; color: white; background-color: #d8c69c; }
     .mypage2 { font-size: 20px; text-align: center; margin-top: 20px; }
-	.none_id { text-align: center; color : gray; font-size : 20px; padding : 20px; }    
+	.none_id { text-align: center; color : gray; font-size : 15px; padding : 20px; }    
 
     /* 총 주문, 적립금, 쿠폰====================*/
     .mainbar { display: flex; justify-content: space-around; width: 1000px; margin: 70px auto; text-align: center; }
@@ -125,7 +125,7 @@
        
        <%
        if(session.getAttribute("id") == null){%>
-       		<p class="none_id">로그인 후 이용가능합니다.</p>  
+       		<div class="none_id">로그인 후 이용가능합니다</div>  
        <%}else{	%>
 
        <div class="mypage2">안녕하세요, 이인혜님!</div>

@@ -36,6 +36,8 @@ public class shopping_basketServlet extends HttpServlet {
 		cart.setNum(Integer.parseInt(num));
 		cart.setSize(productSize);
 		cart.setAmount(Integer.parseInt(amount));
+		System.out.println(cart.getAmount());
+		
 		list.add(cart);
 
 		session.setAttribute("cartList", list);
@@ -59,6 +61,6 @@ public class shopping_basketServlet extends HttpServlet {
 	   }
 
 
-	}
+	} 
 
 }
