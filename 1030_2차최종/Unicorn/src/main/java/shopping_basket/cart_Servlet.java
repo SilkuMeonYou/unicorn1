@@ -43,8 +43,8 @@ public class cart_Servlet extends HttpServlet {
 			
 			for(String chkIndex : indexArr ) {
 				System.out.println(chkIndex);
-				int num = Integer.parseInt(chkIndex)-1;
-				
+				int num = Integer.parseInt(chkIndex);
+				System.out.println(num);
 				List<ProductInfoDTO> productList = (List<ProductInfoDTO>) session.getAttribute("list");
 				List<OrderDTO> orderList = (List<OrderDTO>) session.getAttribute("orderList");
 				
