@@ -29,7 +29,7 @@ public class cart_Servlet extends HttpServlet {
 		
 		// 선택한 상품 인덱스 (삭제하기 전용)
 		String index = request.getParameter("cartProductIndex");
-		
+		System.out.println("index" + index);
 		
 		// 선택한 상품들의 상품인덱스 번호 배열 ( 주문하기 전용)
 		String[] indexArr = request.getParameterValues("checkedProduct");
@@ -68,7 +68,7 @@ public class cart_Servlet extends HttpServlet {
 			
 			}
 			
-			response.sendRedirect("payment.jsp");
+			response.sendRedirect("payment");
 
 			
 		} else if( button.equals("삭제") ) {
