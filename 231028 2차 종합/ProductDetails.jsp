@@ -219,6 +219,7 @@ td { text-align: center; border-bottom: 1px solid #d8c69c; padding: 5px; font-si
 					<input type = "hidden" name = "productName" value = "${info.productName}">
 					<div class="price mb-2">${info.productPrice}</div>
 					<input type = "hidden" name = "productPrice" value = "${info.productPrice}">
+					<input type="hidden" name="productNum" value="${info.productNum}">
 					
 					<div class="salePrice mb-5" style="font-size: 15px">할인 금액
 						${info.salePrice}원</div>
@@ -241,7 +242,7 @@ td { text-align: center; border-bottom: 1px solid #d8c69c; padding: 5px; font-si
 
 						<label for="quantity-select"> 수량을 입력해주세요 </label> <input
 							type="number" id="quantity-select" class="form-control mt-2"
-							value="1" min="1" onchange="updateTotalPrice()">
+							value="1" min="1" onchange="updateTotalPrice()" name="amount">
 
 						<h5 style="text-align: right; margin-right: 20px;">
 							<br>총 결제금액 : <span id="total-price">
@@ -252,9 +253,9 @@ td { text-align: center; border-bottom: 1px solid #d8c69c; padding: 5px; font-si
 						<br>
 						<button type="submit" class="btn btn-outline-success" style="width: 130px; height:60px;" value=1 name="type">장바구니에
 							담기</button>
-						<button type="button" class="btn btn-outline-success"style="width: 130px; height:60px;" >
+						<button type="submit" class="btn btn-outline-success"style="width: 130px; height:60px;" value=2 name="type">
 							관심상품에 담기</button>
-						<button type="button" class="btn btn-outline-success"style="width: 150px; height:60px;" >구매</button>
+						<button type="submit" class="btn btn-outline-success"style="width: 150px; height:60px;" value=3 name="type">구매</button>
 					</div>
 					</form>
 

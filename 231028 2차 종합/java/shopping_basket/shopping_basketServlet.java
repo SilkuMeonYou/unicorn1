@@ -56,7 +56,7 @@ public class shopping_basketServlet extends HttpServlet {
 	         
 	      }else if("3".equals(typenumber)){
 	         
-	         response.sendRedirect("payment.jsp?productNum="+num+"&a=a");
+	         response.sendRedirect("payment");
 	   } else {
 		   System.out.println("¿À·ù");
 	   }
