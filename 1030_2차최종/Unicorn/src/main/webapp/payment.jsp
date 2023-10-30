@@ -508,7 +508,7 @@ a:hover, a:active, a:focus {
 												<tr>
 													<td class="pricecounttitle">할인/부가결제</td>
 													<td class="pricecount" style="padding-right: 30px;">
-														0원</td>
+														50,000원</td>
 												</tr>
 											</tbody>
 										</table>
@@ -519,7 +519,7 @@ a:hover, a:active, a:focus {
 									<div class="totalPrice">
 										<div class="title">최종결제금액</div>
 										<div class="totalFee-item">
-											<span class="totalFee"><strong><%=numberFormat.format(list.get(0).getProductPrice() + list.get(0).getDeleveryFee())%></span>
+											<span class="totalFee"><strong><%=numberFormat.format(list.get(0).getProductPrice() )%></span>
 											원</strong>
 										</div>
 									</div>
@@ -632,7 +632,7 @@ a:hover, a:active, a:focus {
 						<div class="paymentcheck">
 							<a href="paymentComplete.jsp">
 								<div class="totalpricecheck">
-									<span class="totalprice"> 520,000</span>원 결제하기
+									<span class="totalprice"> 500,000</span>원 결제하기
 								</div>
 							</a>
 							 <%}
