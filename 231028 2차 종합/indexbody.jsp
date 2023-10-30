@@ -184,7 +184,7 @@
                     </div>
                   </div>
                   <div class="button d-flex justify-content-center">
-                     <a href="ProductDetails.jsp">
+                     <a href="ProductBestList.jsp">
                     <button type="button" class="btn btn-outline-secondary">더보기</button></a>
                   </div>
                    
@@ -203,7 +203,7 @@
       <div class="new-detail" id="new-detail1">
         모던함을 더한 세미클래식 스타일
        </div>
-       <a class="new-readmore" id="new-readmore1" href="ProductDetails">더보기</a>
+       <a class="new-readmore" id="new-readmore1" href="productDetail?productNum=3">더보기</a>
         
        </div>
     </div>
@@ -216,7 +216,7 @@
       <div class="new-detail" id="new-detail2">
        최고 퀄리티의 천연 가죽인 톱 그레인 적용
        </div>
-       <a class="new-readmore" id="new-readmore2" href="ProductDetails">더보기</a>
+       <a class="new-readmore" id="new-readmore2" href="productDetail?productNum=8">더보기</a>
        </div>
       </div>
     </section>
