@@ -2,7 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>    
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ page import="java.util.List" %>
     
 <!DOCTYPE html>
 <html lang="en">
@@ -210,10 +211,12 @@
             <tr>
               <td class="coupon_list_view">
  				<%
- 				if(session.getAttribute("temp") == null){ %>
+ 				List<String> temp = (List<String>)session.getAttribute("temp");
+ 				if(temp == null){ %>
  					등록된 쿠폰이 없습니다.
  				<%}else{ %>
- 					<%=session.getAttribute("temp")%>
+ 					<% for(String coupon : temp) {%>
+ 					<%= coupon %> <br>
  				<%}%>
  			 </td>
            
@@ -224,6 +227,7 @@
               } else{ %>  
               50,000원
               <%}
+ 				}
             	%>
               </td>
             </tr>
