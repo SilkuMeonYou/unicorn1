@@ -34,66 +34,184 @@
 /* div { border: 1px solid orange; } */
 
 /* common */
-body { font-family: pretendard; }
-ul, ol, dl, li { list-style: none; }
-a { text-decoration: none; color: none; color: #000; }
+body {
+	font-family: pretendard;
+}
+
+ul, ol, dl, li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: none;
+	color: #000;
+}
 /* common end */
-a:hover, a:active, a:focus { text-decoration: none; }
+a:hover, a:active, a:focus {
+	text-decoration: none;
+}
 
 @font-face {
-  font-family: 'ImcreSoojin';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.3/ImcreSoojin.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+	font-family: 'ImcreSoojin';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.3/ImcreSoojin.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
 }
 
 /* 섹션 css */
-td { text-align: center; }
+td {
+	text-align: center;
+}
 
-.sectionContainer { padding: 30px 80px 50px 80px; background-color: #ffffff; }
+.sectionContainer {
+	padding: 30px 80px 50px 80px;
+	background-color: #ffffff;
+}
 
-.basketHead { font-size: 32px; margin-bottom: 20px; color: black; }
+.basketHead {
+	font-size: 32px;
+	margin-bottom: 20px;
+	color: black;
+}
 
 /* 체크박스 */
-.custom-checkbox { position: relative; padding-left: 30px; padding-bottom: 30px; cursor: pointer; }
+.custom-checkbox {
+	position: relative;
+	padding-left: 30px;
+	padding-bottom: 30px;
+	cursor: pointer;
+}
 
-.custom-checkbox input { position: absolute; opacity: 0; cursor: pointer; }
+.custom-checkbox input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
 
-.checkmark { position: absolute; top: 0; left: 0; height: 25px; width: 25px; background-color: #ffffff; border: 1px solid #a6a8aa; border-radius: 5px; }
+.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	background-color: #ffffff;
+	border: 1px solid #a6a8aa;
+	border-radius: 5px;
+}
 
-.checkmark:after { content: ""; position: absolute; display: none; }
+.checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
 
-.custom-checkbox input:checked ~.checkmark:after { display: block; }
+.custom-checkbox input:checked ~.checkmark:after {
+	display: block;
+}
 
-.custom-checkbox .checkmark:after { left: 7px; top: 2px; width: 10px; height: 14px; border: solid #8f775f; border-width: 0 3px 3px 0; transform: rotate(45deg); }
+.custom-checkbox .checkmark:after {
+	left: 7px;
+	top: 2px;
+	width: 10px;
+	height: 14px;
+	border: solid #8f775f;
+	border-width: 0 3px 3px 0;
+	transform: rotate(45deg);
+}
 
-.infoContainer { min-width: 1000px; border: 1px solid #a6a8aa; border-radius: 10px; padding: 2px; margin-bottom: 10px; }
+.infoContainer {
+	min-width: 1000px;
+	border: 1px solid #a6a8aa;
+	border-radius: 10px;
+	padding: 2px;
+	margin-bottom: 10px;
+}
 
 /* order css */
-.orderTable { background-color: white; margin-bottom: 5px; }
+.orderTable {
+	background-color: white;
+	margin-bottom: 5px;
+}
 
-.goodsimg { width: 100%; height: 130px; }
+.goodsimg {
+	width: 100%;
+	height: 130px;
+}
 
-#order_title { text-align: left; font-size: 24px; font-weight: bold; }
+#order_title {
+	text-align: left;
+	font-size: 24px;
+	font-weight: bold;
+}
 
-.orderDetails { font-weight: bold; padding-bottom: 10px; font-size: 18px; }
+.orderDetails {
+	font-weight: bold;
+	padding-bottom: 10px;
+	font-size: 18px;
+}
 
-.removeButton { width: 70px; border-radius: 5px; background-color: white; border: 1px solid #a6a8aa; color: #6c757d; }
+.removeButton {
+	width: 70px;
+	border-radius: 5px;
+	background-color: white;
+	border: 1px solid #a6a8aa;
+	color: #6c757d;
+}
 
-.amountNum { border-radius: 5px; border: 1px solid #d0ac88; background-color: white; font-size: 15px; margin-left: 10px; margin-right: 10px; font-weight: bold; color: #d0ac88; }
+.amountNum {
+	border-radius: 5px;
+	border: 1px solid #d0ac88;
+	background-color: white;
+	font-size: 15px;
+	margin-left: 10px;
+	margin-right: 10px;
+	font-weight: bold;
+	color: #d0ac88;
+}
 
-.sizeBox { width: 60px; border: 1px solid #d0ac88; border-radius: 5px; font-size: 15px; outline: none; }
+.sizeBox {
+	width: 60px;
+	border: 1px solid #d0ac88;
+	border-radius: 5px;
+	font-size: 15px;
+	outline: none;
+}
 
 /* 총 비용 박스 */
-.totalBody { position: relative; }
+.totalBody {
+	position: relative;
+}
 
-.totalContainer { width: 100%; position: fixed; background-color: #d0ac88; height: 120px; bottom: 10px; padding-top: 20px; z-index: 99; }
+.totalContainer {
+	width: 100%;
+	position: fixed;
+	background-color: #d0ac88;
+	height: 120px;
+	bottom: 10px;
+	padding-top: 20px;
+	z-index: 99;
+}
 
-.totalCost { font-size: 22px; font-weight: bold; }
+.totalCost {
+	font-size: 22px;
+	font-weight: bold;
+}
 
-.orderButton { width: 80%; height: 60px; background-color: white; border-radius: 5px; border: 1px solid black; font-weight: bold; }
+.orderButton {
+	width: 80%;
+	height: 60px;
+	background-color: white;
+	border-radius: 5px;
+	border: 1px solid black;
+	font-weight: bold;
+}
 
-.operator { font-size: 30px; }
+.operator {
+	font-size: 30px;
+}
 </style>
 </head>
 
@@ -298,20 +416,20 @@ td { text-align: center; }
       plus.addEventListener("click", function () {
         amount += 1;
         orderAmount.innerHTML = amount;
-        doOrderPrice()
+        doOrderPrice();
         doDcPrice();
-        doOrderTotal()
-        doTotal()
+        doOrderTotal();
+        doTotal();
        
       });
       minus.addEventListener("click", function () {
         if (amount > 1) {
           amount -= 1;
           orderAmount.innerHTML = amount;
-          doOrderPrice()
+          doOrderPrice();
           doDcPrice();
-          doOrderTotal()
-          doTotal()
+          doOrderTotal();
+          doTotal();
           
         }
       });
@@ -387,47 +505,34 @@ td { text-align: center; }
 		
     	
         infoContainers.forEach((Container, idx) => {
-        	
-
-        	
-        	
-          let checkbox = document.getElementById("chkbox" +  (idx + 1));
+	
+        	 let checkbox = document.getElementById("chkbox" + (idx + 1));
+        	 let order_fee = document.getElementById("order_fee" + (idx + 1));
+       	     let order_discountFee = document.getElementById("order_discountFee" + (idx + 1));
 
           if (checkbox.checked) {
-            let order_fee = document.getElementById("order_fee" +  (idx + 1));
-            
-            let order_discountFee = document.getElementById("order_discountFee" +  (idx + 1));
-
-            let orderFee = parseInt(order_fee.textContent.replace(/,/g, ""));
-          
-            let discountFee = parseInt(order_discountFee.textContent.replace(/,/g, ""));
-
-            totalFee += orderFee;
-            total_discountFee += 50000*amount;
+        	  let orderFee = parseInt(order_fee.textContent.replace(/,/g, ""));
+              let discountFee = parseInt(order_discountFee.textContent.replace(/,/g, ""));
+              totalFee += orderFee;
+              total_discountFee += discountFee;
             
             if(totalFee <= 1000000){
             	total_deliveryFee = 50000;
             	
+            	} else {
+            		total_deliveryFee = 0;
             	}
-          
-            
-          
+
             
           }
         });
-        
-       
-       
-      	
+
         total_checkedFee.innerHTML = totalFee.toLocaleString() + " 원";
         document.getElementById("total_deliveryFee").innerHTML = total_deliveryFee.toLocaleString() + "원";
         document.getElementById("total_discountFee").innerHTML = total_discountFee.toLocaleString() + " 원";
         document.getElementById("total_fee").innerHTML = (totalFee + total_deliveryFee - total_discountFee).toLocaleString() + " 원";
       	totalAll = totalFee + total_deliveryFee - total_discountFee;
-    	
-    	 
-    	
-    	
+
       }
 
       
