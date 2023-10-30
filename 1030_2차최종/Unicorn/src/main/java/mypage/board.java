@@ -45,6 +45,10 @@ public class board extends HttpServlet {
 		
 		// 세션에서 QnA_list 리스트를 가져온다
 		List<QnADTO> list = (List<QnADTO>)session.getAttribute("QnA_list");
+		
+		if(list == null) {
+			list = new ArrayList<>();
+		}
 
 		// 새로운 리스트
 		List<QnADTO> board_list = new ArrayList<>();
