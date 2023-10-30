@@ -23,6 +23,7 @@ public class shopping_basketServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		String num = request.getParameter("productNum");
+		
 		String productSize = request.getParameter("productSize");
 		String amount = request.getParameter("amount");
 	

@@ -23,9 +23,13 @@ public class ProductDetail extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String num = request.getParameter("productNum");
-		System.out.println(num);
+		
 		System.out.println("ProductDetail check");
+		
+		String num = request.getParameter("productNum");
+		System.out.println("num :" +  num);
+
+		
 		HttpSession session = request.getSession();
 
 		List<ProductInfoDTO> list = (List) session.getAttribute("list");
@@ -38,13 +42,11 @@ public class ProductDetail extends HttpServlet {
 
 		session.setAttribute("info", info);
 		
-		String productnum = request.getParameter("productNum");
+		String productNum = request.getParameter("productNum");
 		String productName = request.getParameter("productName");
 		String imageUrl = request.getParameter("imageUrl");
 		String imageSub1 = request.getParameter("imageSub1");
 		String imageSub2 = request.getParameter("imageSub2");
-		
-		
 		
 		
 		
