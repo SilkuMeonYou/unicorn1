@@ -10,6 +10,4 @@ public interface ProductDAO {
 
 	List<ProductDTO> selectTop10List();
 
-	
-
 }

@@ -25,6 +25,4 @@ public class ProductDAOImpl implements ProductDAO {
         List<ProductDTO> top10List = sqlSession.selectList("product.selectTop10Products");
         return top10List;
     }
-    
-    
 }
