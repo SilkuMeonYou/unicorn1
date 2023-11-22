@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+
+        <setting name="jdbcTypeForNull" value="NULL" />
+<!-- 								value=null -> DTO에서 NULL값이 넘어올때 에러가 안나게 해주는 것  -->
+    </settings>
+    
+	<typeAliases>
+		<typeAlias type="com.human.unicorn.Productdto.ProductDTO" alias="productDTO" />
+<!-- 							EmpDTO -> 사용할 DTO name으로 변경 요망 -->
+		<typeAlias type="com.human.unicorn.memberdto.MemberDTO" alias="memberDTO" />
+		<typeAlias type="com.human.unicorn.dto.NoticeDTO" alias="noticeDTO" />
+	</typeAliases>
+	
+	
+
+</configuration>
