@@ -1,28 +1,30 @@
-package com.human.unicorn.dto;
+package com.human.unicorn.memberdto;
 
 import java.sql.Date;
 
 public class MemberDTO {
 	
-	private int user_no;
+	private int userno;
 	private String name;
 	private String id;
 	private String pw;
 	private String email;
 	private String tel;
 	private String address;
-	private String address_details;
-	private int postcode;
+	private String addressdetails;
+	private String postcode;
 	private int userpoint;
 	private int grade;
 	private Date signupdate;
+	private int startNum;
+	private int endNum;
 	
 	
-	public int getUser_no() {
-		return user_no;
+	public int getUserno() {
+		return userno;
 	}
-	public void setUser_no(int user_no) {
-		this.user_no = user_no;
+	public void setUserno(int userno) {
+		this.userno = userno;
 	}
 	public String getName() {
 		return name;
@@ -60,16 +62,16 @@ public class MemberDTO {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getAddress_details() {
-		return address_details;
+	public String getAddressdetails() {
+		return addressdetails;
 	}
-	public void setAddress_details(String address_details) {
-		this.address_details = address_details;
+	public void setAddressdetails(String addressdetails) {
+		this.addressdetails = addressdetails;
 	}
-	public int getPostcode() {
+	public String getPostcode() {
 		return postcode;
 	}
-	public void setPostcode(int postcode) {
+	public void setPostcode(String postcode) {
 		this.postcode = postcode;
 	}
 	public int getuserpoint() {
@@ -90,5 +92,22 @@ public class MemberDTO {
 	public void setSignupdate(Date signupdate) {
 		this.signupdate = signupdate;
 	}
+	public void setStartNum(int startNum) {
+		this.startNum = startNum;
+		
+	}
+	public void setEndNum(int endNum) {
+		this.endNum = endNum;
+		
+	}
+	public int getStartNum() {
+        // 해당 프로퍼티의 값을 리턴하는 코드 작성
+        return startNum;
+    }
+
+    public int getEndNum() {
+        // 해당 프로퍼티의 값을 리턴하는 코드 작성
+        return endNum;
+    }
 	
 }
