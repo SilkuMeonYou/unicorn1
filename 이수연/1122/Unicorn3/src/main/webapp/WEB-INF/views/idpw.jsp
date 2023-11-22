@@ -119,21 +119,12 @@ a {
 
 .success {
 	display: none;
-	/* 	margin-top: 10px; */
-}
-
-.success1 {
-	display: none;
-	/* 	margin-top: 10px; */
-	/* color: orangered; */
-}
-
-.success {
 	display: flex;
 	justify-content: center;
 }
 
 .success1 {
+	display: none;
 	display: flex;
 	justify-content: center;
 }
@@ -184,6 +175,7 @@ a {
 		let name2 = document.querySelector(".name2"); // 비밀번호찾기 이름입력필드를 쿼리셀렉터로 불러오기
 		let mail = document.querySelector(".mail1"); // 메일입력필드를 쿼리셀렉터로 불러오기
 		let button = document.querySelector(".button"); // 아이디찾기 버튼 쿼리셀렉터로 불러오기
+		let button1 = document.querySelector(".button1"); // 아이디찾기 버튼 쿼리셀렉터로 불러오기
 
 		let idid = document.querySelector(".idid"); // 아이디찾기 입력필드를 쿼리셀렉터로 불러오기
 		let pwpw = document.querySelector(".pwpw"); // 비밀번호찾기 입력필드를 쿼리셀렉터로 불러오기
@@ -192,39 +184,23 @@ a {
 		let success = document.querySelector(".success"); // 아이디 문구 쿼리셀렉터로 불러오기
 		let success1 = document.querySelector(".success1"); // 아이디 문구 쿼리셀렉터로 불러오기
 
-		button.addEventListener("click", function() { // 아이디찾기 버튼을 클릭했을때
-
-			if (success.append) { // 이메일값이 입력한 값과 이름값이 입력한 값이 같으면
-
-				// idid.querySelector(".name1").style.display = "none" // 이름입력필드,
-				// idid.querySelector(".mail1").style.display = "none" // 이메일 입력필드,
-				// bt1.querySelector(".button").style.display = "none" // 아이디 찾기버튼이 안보이게하고
-
-				success.style.display = "block"; // 문구가 보이게
-			}
-		});
-
-		button1.addEventListener("click", function() { // 비밀번호찾기 버튼을 클릭했을때
-			console.log("click")
-			if (success1.append) { // 아이디값이 입력한 값과 이름값이 입력한 값이 같으면
-
-				// pwpw.querySelector(".name2").style.display = "none" // 이름 입력필드,
-				// pwpw.querySelector(".id1").style.display = "none" // 아이디 입력필드,
-				// bt2.querySelector(".button1").style.display = "none" // 비밀번호 찾기버튼이 안보이게하고
-
-				success1.style.display = "block"; // 문구가 보이게
-			}
-		});
-
 		var error5 = "${error5}";
 		if (error5 !== "") {
 			alert(error5);
 		}
+		var error6 = "${error6}";
+		if (error6 !== "") {
+			alert(error6);
+		}
 
 		var id = "${id}";
-		if (id !== "") {
-			alert(id);
-		}
+		// 		if (id !== "") {
+		// 			alert(id);
+		// 		}
+
+		var pw = "${pw}";
+		if (pw !== "") {
+			alert(pw);
 	}
 </script>
 
@@ -268,7 +244,7 @@ a {
 			<div class="bt2">
 				<input type="submit" class="button1" value="찾기">
 			</div>
-			<div class="success1"></div>
+<%-- 			<div class="success1">${pw}</div> --%>
 		</div>
 		</div>
 	</form>

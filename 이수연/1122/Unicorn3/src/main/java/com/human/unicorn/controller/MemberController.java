@@ -11,7 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.human.unicorn.memberdto.MemberDTO;
+import com.human.unicorn.dto.MemberDTO;
 import com.human.unicorn.service.MemberService;
 
 @Controller
@@ -131,19 +131,20 @@ public class MemberController {
 			System.out.println("Name : " + dto.getName());
 			System.out.println("Email : " + dto.getEmail());
 
-			MemberDTO list = memberService.loginUsers(dto);
+			MemberDTO list = memberService.findid(dto);
 
-			if (list == null) {
-//				model.addAttribute("id", "아이디는" + user_list.getId() + "입니다");
+			if (list != null) {
+				model.addAttribute("id", "아이디는 [ " + list.getId() + " ] 입니다");
 				return "idpw";
 
 			} else {
+				model.addAttribute("error6", "일치하는 정보가 없습니다");
 				return "idpw";
 			}
 		} else {
 			model.addAttribute("error5", "정보를 입력해주세요");
-				return "idpw";
-			
+			return "idpw";
+
 		}
 	}
 
@@ -152,17 +153,45 @@ public class MemberController {
 	public String find_pw(HttpServletRequest request, Model model, @ModelAttribute MemberDTO dto) {
 		System.out.println("/find_pw 실행");
 
-		System.out.println("Name : " + dto.getName());
-		System.out.println("Email : " + dto.getEmail());
+		if (dto.getName() != null && !dto.getName().equals("") && dto.getId() != null && !dto.getId().equals("")) {
 
-		MemberDTO user_list = memberService.loginUsers(dto);
+			System.out.println("Name : " + dto.getName());
+			System.out.println("Email : " + dto.getId());
 
-		if (user_list == null) {
+			MemberDTO list = memberService.findpw(dto);
+
+			if (list != null) {
+				model.addAttribute("pw", "비밀번호 재설정 페이지로 이동합니다");
+				return "reset";
+
+			} else {
+				model.addAttribute("error6", "일치하는 정보가 없습니다");
+				return "idpw";
+			}
+		} else {
 			model.addAttribute("error5", "정보를 입력해주세요");
 			return "idpw";
-		}
 
-		return "idpw";
+		}
+	}
+
+	// 비밀번호 재설정 페이지 열기
+	@RequestMapping("/reset")
+	public String reset() {
+		System.out.println("/reset 실행");
+
+		return "reset";
+	}
+	
+	// 비밀번호 재설정
+	@RequestMapping("/pw_reset")
+	public String pw_reset(HttpServletRequest request, Model model, @ModelAttribute MemberDTO dto) {
+		System.out.println("/pw_reset 실행");
+		
+		if (dto.getPw() != null && !dto.getPw().equals("")) {
+			
+			System.out.println("Name : " + dto.getPw());
+		}
 	}
 
 	// 약관동의 페이지 열기

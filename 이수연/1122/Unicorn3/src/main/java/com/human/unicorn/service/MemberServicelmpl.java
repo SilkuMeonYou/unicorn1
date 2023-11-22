@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.human.unicorn.dao.MemberDAO;
-import com.human.unicorn.memberdto.MemberDTO;
+import com.human.unicorn.dto.MemberDTO;
 
 @Service
 public class MemberServicelmpl implements MemberService {
@@ -34,5 +34,19 @@ public class MemberServicelmpl implements MemberService {
 		
 		return userList;
 	}
+	
+	@Override
+	 public MemberDTO findid(MemberDTO dto) {
+		MemberDTO findid = memberDAO.findid(dto);
+		
+		return findid;
+	 }
+	
+	@Override
+	 public MemberDTO findpw(MemberDTO dto) {
+		MemberDTO findpw = memberDAO.findpw(dto);
+		
+		return findpw;
+	 }
 
 }  

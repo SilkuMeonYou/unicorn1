@@ -2,7 +2,7 @@ package com.human.unicorn.service;
 
 import java.util.List;
 
-import com.human.unicorn.memberdto.MemberDTO;
+import com.human.unicorn.dto.MemberDTO;
 
 public interface MemberService{
 	
@@ -11,4 +11,8 @@ public interface MemberService{
 	List getselectusers(MemberDTO dto);
 
 	int signup(MemberDTO dto);
+
+	MemberDTO findid(MemberDTO dto);
+
+	MemberDTO findpw(MemberDTO dto);
 }

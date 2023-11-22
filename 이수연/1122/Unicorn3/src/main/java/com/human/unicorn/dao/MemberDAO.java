@@ -2,7 +2,7 @@ package com.human.unicorn.dao;
 
 import java.util.List;
 
-import com.human.unicorn.memberdto.MemberDTO;
+import com.human.unicorn.dto.MemberDTO;
 
 public interface MemberDAO {
 
@@ -11,4 +11,8 @@ public interface MemberDAO {
 	List selectusers(MemberDTO dto);
 
 	int signup(MemberDTO dto);
+
+	MemberDTO findid(MemberDTO dto);
+
+	MemberDTO findpw(MemberDTO dto);
 }

@@ -6,7 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.human.unicorn.memberdto.MemberDTO;
+import com.human.unicorn.dto.MemberDTO;
 
 @Repository
 public class MemberDAOlmpl implements MemberDAO {
@@ -33,5 +33,19 @@ public class MemberDAOlmpl implements MemberDAO {
 		List userList = sqlSession.selectList("id_users.selectusers", dto);
 
 		return userList;
+	}
+	
+	@Override
+	public MemberDTO findid(MemberDTO dto) {
+		MemberDTO findid = sqlSession.selectOne("id_users.findid", dto);
+
+		return findid;
+	}
+	
+	@Override
+	public MemberDTO findpw(MemberDTO dto) {
+		MemberDTO findpw = sqlSession.selectOne("id_users.findpw", dto);
+		
+		return findpw;
 	}
 }

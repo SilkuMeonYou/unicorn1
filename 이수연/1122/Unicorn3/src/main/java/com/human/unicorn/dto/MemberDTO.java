@@ -1,4 +1,4 @@
-package com.human.unicorn.memberdto;
+package com.human.unicorn.dto;
 
 import java.sql.Date;
 
