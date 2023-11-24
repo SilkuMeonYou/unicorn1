@@ -42,7 +42,7 @@ public class MemberController {
 
 			// 세션에 담기
 			HttpSession session = request.getSession();
-			session.setAttribute("list", user_list);
+			session.setAttribute("user_list", user_list);
 			
 			String id = (String) request.getAttribute("id");
 
@@ -122,6 +122,7 @@ public class MemberController {
 	public String find_id(Model model, @ModelAttribute MemberDTO dto) {
 		System.out.println("/find_id 실행");
 
+		// 입력필드가 비어있지 않은경우
 		if (dto.getName() != null && !dto.getName().equals("") && dto.getEmail() != null
 				&& !dto.getEmail().equals("")) {
 
@@ -130,15 +131,17 @@ public class MemberController {
 
 			MemberDTO id = memberService.findid(dto);
 
+			// 조회된 정보가 있으면
 			if (id != null) {
 				model.addAttribute("message", id.getName() + "님의 아이디는 [ " + id.getId() + " ] 입니다");
 				return "idpw";
 
+			// 조회된 정보가 없으면
 			} else {
 				model.addAttribute("error", "일치하는 정보가 없습니다");
 				return "idpw";
 			}
-			
+		// 입력필드가 비어있는 경우
 		} else {
 			model.addAttribute("error", "정보를 입력해주세요");
 			return "idpw";
@@ -152,6 +155,7 @@ public class MemberController {
 	public String find_pw(Model model, @ModelAttribute MemberDTO dto) {
 		System.out.println("/find_pw 실행");
 
+		// 입력필드가 비어있지 않은경우
 		if (dto.getName() != null && !dto.getName().equals("") && dto.getId() != null && !dto.getId().equals("") && dto.getEmail() != null && !dto.getEmail().equals("")) {
 
 			System.out.println("Name : " + dto.getName());
@@ -160,15 +164,18 @@ public class MemberController {
 
 			MemberDTO pw = memberService.findpw(dto);
 
+			// 조회된 정보가 있으면
 			if (pw != null) {
 				model.addAttribute("pwmessage", pw.getName() + "님의 비밀번호는 [ " + pw.getPw() + " ] 입니다");
 				return "idpw";
 
+			// 조회된 정보가 없으면
 			} else {
 				model.addAttribute("error", "일치하는 정보가 없습니다");
 				return "idpw";
 			}
 			
+		// 입력필드가 비어있는 경우
 		} else {
 			model.addAttribute("error", "정보를 입력해주세요");
 			return "idpw";

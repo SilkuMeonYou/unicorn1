@@ -56,12 +56,21 @@
       <div class="toparea">
       
 				<c:choose>
-						<c:when test="${not empty list.name }">
+						<c:when test="${not empty user_list.name }">
 						<ul class="topbar">
 							<li class="top-item"><a href="/unicorn/support"
 								class="top-link" style="margin-right: 20px;">고객지원</a></li>
+							<% MemberDTO dto = (MemberDTO)request.getAttribute("user_list");
+							if(dto.getGrade() == 2){
+								%>
 							<li class="top-item"><a href="mypage_main.jsp"
-								class="top-link">마이페이지</a></li>
+								class="top-link">관리자페이지</a></li>
+								<%
+							} else { %>
+								<li class="top-item"><a href="mypage_main.jsp"
+										class="top-link">마이페이지</a></li>
+							<% }
+							%>
 							<li class="top-item"><a href="/unicorn/cart"
 								class="top-link">장바구니</a></li>
 							<li class="top-item"><a href="mypage_orderlist.jsp"
