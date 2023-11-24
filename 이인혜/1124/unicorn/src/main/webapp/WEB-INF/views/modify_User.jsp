@@ -90,7 +90,7 @@ a:hover, a:active, a:focus { text-decoration: none; }
 }
 
 .profile_item {
-	/* border: 1px solid red; */
+/* 	border: 1px solid red; */
 	/* border-bottom: 1px solid gray; */
 	/* margin-top: 30px; */
 	padding: 80px;
@@ -107,10 +107,14 @@ a:hover, a:active, a:focus { text-decoration: none; }
 	width: 500px;
 	height: 40px;
 }
+.profile_table_item2 {
+	text-align: left;
+}
+
 
 /* 저장 버튼 ====================*/
 .savebtn {
-	margin-top: 50px;
+	margin: 50px auto;
 	width: 100px;
 	background-color: #d8c69c;
 	color: white;
@@ -120,7 +124,7 @@ a:hover, a:active, a:focus { text-decoration: none; }
 
 
 
-<%@ include file="indexheader.jsp" %>
+<%-- <%@ include file="indexheader.jsp" %> --%>
 <body class="main" style="margin-top: 0;">
 
 
@@ -134,44 +138,38 @@ a:hover, a:active, a:focus { text-decoration: none; }
 					<div class="menubar">
 						<ul>
 							<li class="menubar_title">나의 쇼핑정보</li>
-							<li class="menubar_item"><a href="mypage_orderlist.jsp">주문내역 조회</a></li>
-							<li class="menubar_item"><a href="mypage_point.jsp">적립금 내역</a></li>
-							<li class="menubar_item"><a href="coupon">쿠폰 내역</a></li>
+							<li class="menubar_item"><a href="mypage">HOME</a></li>
+							<li class="menubar_item"><a href="orderlist">주문조회</a></li>
+							<li class="menubar_item"><a href="coupon">나의 쿠폰</a></li>
 						  </ul>
 			  
 						  <ul>
 							<li class="menubar_title">활동 정보</li>
 							<li class="menubar_item"><a href="shopping_basket.jsp">나의 장바구니</a></li>
-							<li class="menubar_item"><a href="wishlistServlet">나의 위시리스트</a></li>
-							<li class="menubar_item"><a href="board">나의 게시글</a></li>
+							<li class="menubar_item"><a href="wishlist">나의 위시리스트</a></li>
+							<li class="menubar_item"><a href="inquiry">나의 게시글</a></li>
 						  </ul>
 			  
 						  <ul>
 							<li class="menubar_title">나의 정보</li>
-							<li class="menubar_item"><a href="signupSave">회원정보 수정</a></li>
+							<li class="menubar_item"><a href="modifyList">회원정보 수정</a></li>
 							<li class="menubar_item"><a href="logout.jsp">로그아웃</a></li>
 						  </ul>
 
 					</div>
 
-					<form method="get" action="signupservlet">
+					<form method="POST" action="modifyList">
 						<div class="profile">
 							<div class="profile_title">회원정보</div>
 							<div class="profile_item">
-
 								<table class="profile_table">
 									<tr>
 										<td class="profile_table_title">이름</td>
-										<td><input class="profile_table_item" type="text"
-											name="name" value="${name}">
-											</td>
+										<td class="profile_table_item2">${userDTO.name}</td>
 									</tr>
 									<tr>
-
 										<td class="profile_table_title">아이디</td>
-										<td><input class="profile_table_item" type="text"
-											name="id" value="${id}"></td>
-
+										<td class="profile_table_item2">${userDTO.id}</td>
 									</tr>
 									<tr>
 										<td class="profile_table_title">비밀번호 변경</td>
@@ -181,28 +179,37 @@ a:hover, a:active, a:focus { text-decoration: none; }
 									<tr>
 										<td class="profile_table_title">핸드폰 번호</td>
 										<td><input class="profile_table_item" type="text"
-											name="phoneNumber" id="phoneNumber" value="${phoneNumber}"></td>
+											name="tel" id="tel" value="${userDTO.tel}"></td>
 									</tr>
 									<tr>
 										<td class="profile_table_title">이메일</td>
 										<td><input class="profile_table_item" type="text"
-											name="email" id="email" value="${email}"></td>
+											name="email" id="email" value="${userDTO.email}"></td>
 									</tr>
 									<tr>
 										<td class="profile_table_title">주소</td>
 										<td><input class="profile_table_item" type="text"
-											name="address" id="address" value="${address}"></td>
+											name="address" id="address" value="${userDTO.address}"></td>
+									</tr>
+									<tr>
+										<td class="profile_table_title"></td>
+										<td><input class="profile_table_item" type="text"
+											name="addressdetails" id="addressdetails" value="${userDTO.addressdetails}"></td>
 									</tr>
 								</table>
-
 								<div>
-									<input class="savebtn" type="button" value="저장">
+									<input class="savebtn" type="submit" value="저장">
+									<input type="hidden" name="userno" value=${userDTO.userno }>
 								</div>
 
 							</div>
 						</div>
+						
+						
+						
+						
+					</div>
 				</div>
-			</div>
 			</form>
 
 
@@ -213,43 +220,30 @@ a:hover, a:active, a:focus { text-decoration: none; }
 	</div>
 	
 </body>
-<c:import url="indexfooter.jsp"/>
+<%-- <c:import url="indexfooter.jsp"/> --%>
 
 <script>
 let savebtn = document.querySelector(".savebtn"); //저장 버튼
 let pw = document.querySelector("#pw");
-let phoneNumber = document.querySelector("#phoneNumber");
+let phoneNumber = document.querySelector("#tel");
 let email = document.querySelector("#email");
-
 let address = document.querySelector("#address");
 
-
 function modifyInfo() {
-	if(address.value === "" || email.value === "" || phoneNumber.value === "") {
-		alert("올바른 정보를 입력해주세요");
+	if(pw.value === "" || address.value === "" || email.value === "" 
+			|| tel.value === "" || addressdetails.value === "") {
+		alert("올바른 정보를 입력해주세요.");
 	} else {
-		$.ajax({
-			type:"get",
-			url: "/Unicorn/modifyInfo",
-			data: { address: address.value, email: email.value, phoneNumber: phoneNumber.value },
-			
-			success: function(response) {
-				alert("정보가 수정되었습니다.");
-				
-			},
-			error: function() {
-				alert("정보 수정 중 오류가 발생했습니다.");
-			}
-		
-		});
+	alert("저장되었습니다.");
 	}
 }
+
 
 savebtn.addEventListener("click", function(){
 	modifyInfo();
 });
 
-	
+
 
 </script>
 </html>
