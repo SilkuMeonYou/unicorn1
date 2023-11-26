@@ -128,7 +128,7 @@ a:hover, a:active, a:focus {
 	<script>
 		document.querySelector(".listButton").addEventListener("click",
 				function() {
-					window.location.href = "event"
+					window.location.href = "eventList"
 				});
 	</script>
 </body>

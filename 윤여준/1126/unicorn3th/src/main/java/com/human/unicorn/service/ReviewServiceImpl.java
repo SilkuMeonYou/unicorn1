@@ -7,7 +7,9 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.human.unicorn.dto.InquiryDTO;
 import com.human.unicorn.dto.ReviewDTO;
+import com.human.unicorn.dao.InquiryDAO;
 import com.human.unicorn.dao.ReviewDAO;
 
 @Service
@@ -15,8 +17,7 @@ public class ReviewServiceImpl implements ReviewService {
 
 	@Autowired
 	ReviewDAO reviewDAO;
-	
-	
+
 	@Override
 	public List reviewTable() {
 		System.out.println("reviewService check");
@@ -68,6 +69,18 @@ public class ReviewServiceImpl implements ReviewService {
 		System.out.println("deleteService result check : " + result);
 		return result;
 	}
+	
+	public List<InquiryDTO>  viewInquiry(int productNo) {
+		List<InquiryDTO> list = reviewDAO.viewInquiry(productNo);
+		return list;
+	}
+	
+	public int insertInquiry(InquiryDTO dto) {
+		int result = reviewDAO.insertInquiry(dto);;
+		return result;
+	}
+	
+
 	
 
 }

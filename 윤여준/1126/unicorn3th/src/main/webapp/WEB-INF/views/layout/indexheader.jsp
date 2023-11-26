@@ -1,4 +1,4 @@
-<%@page import="org.apache.commons.collections.bag.SynchronizedSortedBag"%>
+<%-- <%@page import="org.apache.commons.collections.bag.SynchronizedSortedBag"%> --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -54,43 +54,58 @@
   <div id="wrap">
     <header id="header" class="head">
       <div class="toparea">
-        <ul class="topbar">
-          <li class="top-item"><a href="/unicorn/support" class="top-link" style="margin-right: 20px;">고객지원</a></li>
-          <li class="top-item"><a href="mypage_main.jsp" class="top-link">마이페이지</a></li>
-          <li class="top-item"><a href="/unicorn/cart" class="top-link">장바구니</a></li>
-          <li class="top-item"><a href="mypage_orderlist.jsp" class="top-link">주문조회</a></li>
-<%
-// MemberDTO dto = (MemberDTO)session.getAttribute("dto");
-// if (dto != null) {
-//     String memberId = dto.getId();
-//     System.out.println("memberId : " + memberId);
-// } else {
-//     System.out.println("dto is null");
-// }
-// String memberId = dto.getId();
-// System.out.println("memberId : " + memberId);
-	
-%>
-          <% 
-//           	if(memberId==null){
-     		%> 
-     		<li class="top-item"><a href="/unicorn/login" class="top-link">로그인</a></li>		
-     		<li class="top-item"><a href="/unicorn/cheked" class="top-link">회원가입</a></li>
-<%--          	<% } else { %> --%>
-         		<li class="top-item"><a href="logout.jsp" class="top-link">로그아웃</a></li>
-         		<li class="top-item"><a href="#" class="top-link"><Strong>${ id }</Strong>&nbsp; 님</a>&nbsp; 환영합니다</li>
-<%--          	<% }          %> --%>
-        
-          
+      
+				 <c:choose>
+                  <c:when test="${not empty userList.name }">
+                  <ul class="topbar">
+                     <li class="top-item"><a href="support"
+                        class="top-link" style="margin-right: 20px;">고객지원</a></li>
+                     <% MemberDTO dto = (MemberDTO)session.getAttribute("userList");
+                     if(dto.getGrade() == 2){
+                        %>
+                     <li class="top-item"><a href="managerMain"
+                        class="top-link">관리자페이지</a></li>
+                        <%
+                     } else { %>
+                        <li class="top-item"><a href="mypage"
+                              class="top-link">마이페이지</a></li>
+                     <% }
+                     %>
+                     <li class="top-item"><a href="cart"
+                        class="top-link">장바구니</a></li>
+                     <li class="top-item"><a href="orderlist"
+                        class="top-link">주문조회</a></li>
+                     <li class="top-item"><a href="/unicorn/logout" class="top-link">로그아웃</a></li>
+                     <li class="top-item"><a href="#" class="top-link"><Strong>${userList.name }</Strong>&nbsp;
+                           님</a>&nbsp; 환영합니다</li>
+                  </ul>
 
-        </ul>
+               </c:when>
+					<c:otherwise>
+						<ul class="topbar">
+							<li class="top-item"><a href="support"
+								class="top-link" style="margin-right: 20px;">고객지원</a></li>
+							<li class="top-item"><a href="mypage"
+								class="top-link">마이페이지</a></li>
+							<li class="top-item"><a href="/unicorn/cart"
+								class="top-link">장바구니</a></li>
+							<li class="top-item"><a href="orderlist"
+								class="top-link">주문조회</a></li>
+							<li class="top-item"><a href="/unicorn/login" class="top-link">로그인</a></li>
+						</ul>
+
+					</c:otherwise>
+					
+				</c:choose>
+        
+        
       </div>
       <!-- top area end-->
       <!-- nav bar -->
       <nav class="navbar navbar-expand-lg">
         <!-- expand-lg 지점에 도달하면 메뉴 사라지고 버튼 나타남 -->
         <div class="container-fluid">
-          <a class="navbar-brand" href="/unicorn/main" style="font-family:'ImcreSoojin';">
+          <a class="navbar-brand" href="main" style="font-family:'ImcreSoojin';">
             <h2> Noop Noop </h2>
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -103,11 +118,11 @@
             <!-- collapse -->
             <div class="navbar-nav ms-5 hstack gap-4">
 <!--               <a class="nav-link active" aria-current="page" href="index.jsp"><h6> Home </h6></a> -->
-              <a class="nav-link" href="/unicorn/event"><h6> Event </h6></a>
-              <a class="nav-link" href="ProductList"><h6> Product </h6></a>
-              <a class="nav-link" href="ProductBestList.jsp"><h6> Best </h6></a>
+              <a class="nav-link" href="event"><h6> Event </h6></a>
+              <a class="nav-link" href="productList"><h6> Product </h6></a>
+              <a class="nav-link" href="productBestList"><h6> Best </h6></a>
               <div class="vr"></div>
-              <a class="nav-link" href="/unicorn/aboutUs"><h6> About us </h6></a>
+              <a class="nav-link" href="aboutus"><h6> About us </h6></a>
             </div>
 
             <div class="searchbar ms-auto" style="float:right;">

@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.human.unicorn.dto.InquiryDTO;
 import com.human.unicorn.dto.ReviewDTO;
 
 @Repository
@@ -52,5 +53,14 @@ public class ReviewDAOImpl implements ReviewDAO{
 		return 0;
 	}
 	
+	public List<InquiryDTO> viewInquiry(int productNo) {
+		List<InquiryDTO> list = sqlSession.selectList("review.viewInquiry", productNo);
+		return list;
+	}
+	
+	public int insertInquiry(InquiryDTO dto) {
+		int result = sqlSession.insert("review.insertInquiry", dto);
+		return result;
+	}
 
 }

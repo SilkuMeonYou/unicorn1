@@ -95,6 +95,7 @@ a:hover, a:active, a:focus {
 </style>
 </head>
 <body>
+	<%-- <%@ include file="indexheader.jsp" %> --%>
 	<section id="section" class="sectionbody">
 		<div class="sectionContainer">
 
@@ -121,6 +122,7 @@ a:hover, a:active, a:focus {
 		</div>
 
 	</section>
+	<%--      <jsp:include page="indexfooter.jsp" flush="true"/> --%>
 
 
 </body>

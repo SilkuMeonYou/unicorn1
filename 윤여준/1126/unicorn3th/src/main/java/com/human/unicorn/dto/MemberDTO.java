@@ -44,6 +44,13 @@ public class MemberDTO {
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
+	@Override
+	public String toString() {
+		return "MemberDTO [userno=" + userno + ", name=" + name + ", id=" + id + ", pw=" + pw + ", email=" + email
+				+ ", tel=" + tel + ", address=" + address + ", addressdetails=" + addressdetails + ", postcode="
+				+ postcode + ", userpoint=" + userpoint + ", grade=" + grade + ", signupdate=" + signupdate
+				+ ", startNum=" + startNum + ", endNum=" + endNum + "]";
+	}
 	public String getEmail() {
 		return email;
 	}

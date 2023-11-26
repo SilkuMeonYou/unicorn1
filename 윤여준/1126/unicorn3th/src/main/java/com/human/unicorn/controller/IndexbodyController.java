@@ -33,12 +33,15 @@ public class IndexbodyController {
 	}
 	
 	// about us page
-	@RequestMapping("/aboutUs")
+	@RequestMapping("/aboutus")
 	public String Aboutus() {
 		System.out.println("Controller check");
 		
 		return "aboutus";
 	}
 	
-
+	@RequestMapping("/support")
+	public String support() {
+		return "support";
+	}
 }

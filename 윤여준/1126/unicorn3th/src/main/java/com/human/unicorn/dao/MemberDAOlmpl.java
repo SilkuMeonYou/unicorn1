@@ -1,6 +1,7 @@
 package com.human.unicorn.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,6 @@ public class MemberDAOlmpl implements MemberDAO {
 	@Override
 	public MemberDTO loginUsers(MemberDTO dto) {
 		MemberDTO loginUsers = sqlSession.selectOne("id_users.loginusers", dto);
-
 		return loginUsers;
 	}
 
@@ -33,5 +33,26 @@ public class MemberDAOlmpl implements MemberDAO {
 		List userList = sqlSession.selectList("id_users.selectusers", dto);
 
 		return userList;
+	}
+	
+	@Override
+	public MemberDTO findid(MemberDTO dto) {
+		MemberDTO findid = sqlSession.selectOne("id_users.findid", dto);
+
+		return findid;
+	}
+	
+	@Override
+	public MemberDTO findpw(MemberDTO dto) {
+		MemberDTO findpw = sqlSession.selectOne("id_users.findpw", dto);
+		
+		return findpw;
+	}
+	
+	@Override
+	public int update(Map map) {
+		int update = sqlSession.update("id_users.update", map);
+		
+		return update;
 	}
 }

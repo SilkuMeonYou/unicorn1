@@ -203,9 +203,9 @@ button { background-color: white; border: none; font-size: 20px; font-weight: bo
 		<!-- nav tabs 기본형태 -->
 		<div class="container mt-3">
 			<ul class="nav nav-tabs justify-content-between">
-				<li class="nav-item"><a href="#productdetails" class="nav-link "
+				<li class="nav-item"><a href="#productdetails" class="nav-link active"
 					data-bs-toggle="tab" id="productdetails-tab">상세정보</a></li>
-				<li class="nav-item"><a href="#review" class="nav-link active"
+				<li class="nav-item"><a href="#review" class="nav-link"
 					data-bs-toggle="tab" id="review-tab">리뷰</a></li>
 				<li class="nav-item"><a href="#productqna" class="nav-link "
 					data-bs-toggle="tab" id="qna-tab">Q&A</a></li>
@@ -214,7 +214,7 @@ button { background-color: white; border: none; font-size: 20px; font-weight: bo
 			</ul>
 			<!-- Tab panes 상세정보-->
 			<div class="tab-content">
-				<div class="tab-pane container " id="productdetails">
+				<div class="tab-pane container active" id="productdetails">
 					<div class="titleArea">
 						<h3 class="title mt-3">상세정보</h3>
 						<hr>
@@ -285,7 +285,7 @@ button { background-color: white; border: none; font-size: 20px; font-weight: bo
 		 <!-- =========================
           review tabs 
           ========================= -->
-				<div class="tab-pane container active" id="review">
+				<div class="tab-pane container" id="review">
 				
 		            <div class="sectioncontainer">
 		              <div class="titleArea">
@@ -565,57 +565,57 @@ button { background-color: white; border: none; font-size: 20px; font-weight: bo
 
 <script>
 
-let key = "${param.key}";
-console.log(key);
-if(key === "productdetails"){
+// let key = "${param.key}";
+// console.log(key);
+// if(key === "productdetails"){
 	
-	$("#productdetails-tab").addClass("active");
-	$("#review-tab").removeClass("active");
-	$("#qna-tab").removeClass("active");
-	$("#cancleinfo-tab").removeClass("active");
+// 	$("#productdetails-tab").addClass("active");
+// 	$("#review-tab").removeClass("active");
+// 	$("#qna-tab").removeClass("active");
+// 	$("#cancleinfo-tab").removeClass("active");
 	
-	$("#productdetails").addClass("show active");
-	$("#review").removeClass("show active");
-	$("#qna").removeClass("show active");
-	$("#cancleinfo").removeClass("show active");
+// 	$("#productdetails").addClass("show active");
+// 	$("#review").removeClass("show active");
+// 	$("#qna").removeClass("show active");
+// 	$("#cancleinfo").removeClass("show active");
 	
-}else if(key === "review"){
+// }else if(key === "review"){
 	
-	$("#productdetails-tab").removeClass("active");
-	$("#review-tab").addClass("active");
-	$("#qna-tab").removeClass("active");
-	$("#cancleinfo-tab").removeClass("active");
+// 	$("#productdetails-tab").removeClass("active");
+// 	$("#review-tab").addClass("active");
+// 	$("#qna-tab").removeClass("active");
+// 	$("#cancleinfo-tab").removeClass("active");
 	
-	$("#productdetails").removeClass("show active");
-	$("#review").addClass("show active");
-	$("#qna").removeClass("show active");
-	$("#cancleinfo").removeClass("show active");
+// 	$("#productdetails").removeClass("show active");
+// 	$("#review").addClass("show active");
+// 	$("#qna").removeClass("show active");
+// 	$("#cancleinfo").removeClass("show active");
 	
-}else if(key === "qna"){
+// }else if(key === "qna"){
 	
-	$("#productdetails-tab").removeClass("active");
-	$("#review-tab").removeClass("active");
-	$("#qna-tab").addClass("active");
-	$("#cancleinfo-tab").removeClass("active");
+// 	$("#productdetails-tab").removeClass("active");
+// 	$("#review-tab").removeClass("active");
+// 	$("#qna-tab").addClass("active");
+// 	$("#cancleinfo-tab").removeClass("active");
 	
-	$("#productdetails").removeClass("show active");
-	$("#review").removeClass("show active");
-	$("#qna").addClass("show active");
-	$("#cancleinfo").removeClass("show active");
+// 	$("#productdetails").removeClass("show active");
+// 	$("#review").removeClass("show active");
+// 	$("#qna").addClass("show active");
+// 	$("#cancleinfo").removeClass("show active");
 	
-}else if(key === "cancleinfo"){
+// }else if(key === "cancleinfo"){
 	
-	$("#productdetails-tab").removeClass("active");
-	$("#review-tab").removeClass("active");
-	$("#qna-tab").removeClass("active");
-	$("#cancleinfo-tab").addClass("active");
+// 	$("#productdetails-tab").removeClass("active");
+// 	$("#review-tab").removeClass("active");
+// 	$("#qna-tab").removeClass("active");
+// 	$("#cancleinfo-tab").addClass("active");
 	
-	$("#productdetails").removeClass("show active");
-	$("#review").removeClass("show active");
-	$("#qna").removeClass("show active");
-	$("#cancleinfo").addClass("show active");
+// 	$("#productdetails").removeClass("show active");
+// 	$("#review").removeClass("show active");
+// 	$("#qna").removeClass("show active");
+// 	$("#cancleinfo").addClass("show active");
 	
-}
+// }
 
 
    // 리뷰 좋아요 스크립트

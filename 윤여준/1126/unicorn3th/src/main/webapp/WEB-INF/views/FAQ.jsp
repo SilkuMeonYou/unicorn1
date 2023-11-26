@@ -136,8 +136,8 @@ a:hover, a:active, a:focus {
 				<div class="menubar">
 					<ul>
 						<li class="menubar_title">고객지원</li>
-						<li class="menubar_item"><a href="/unicorn/noticeList">공지사항</a></li>
-						<li class="menubar_item"><a href="/unicorn/FAQ">FAQ</a></li>
+						<li class="menubar_item"><a href="noticeList">공지사항</a></li>
+						<li class="menubar_item"><a href="FAQ">FAQ</a></li>
 					</ul>
 				</div>
 
