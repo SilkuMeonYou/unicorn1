@@ -1,14 +1,14 @@
 package com.human.unicorn.controller;
 
-import java.util.List;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.human.unicorn.dto.MemberDTO;
 import com.human.unicorn.dto.UserDTO;
 import com.human.unicorn.service.UserService;
 
@@ -27,9 +27,13 @@ public class UserController {
 //	}
 	
 	@RequestMapping("/modifyList")
-	public String modifyList(@ModelAttribute UserDTO dto, Model model) {
+	public String modifyList(@ModelAttribute UserDTO dto, Model model, HttpSession session) {
 		
-		dto.setUserno(3);
+//		dto.setUserno(3);
+		
+		MemberDTO userList = (MemberDTO) session.getAttribute("userList");
+		int userno = userList.getUserno();
+		
 		UserDTO userDTO = userService.selectUser(dto);
 		System.out.println("userDTO : " + userDTO);
 		model.addAttribute("userDTO", userDTO);
@@ -45,7 +49,7 @@ public class UserController {
 		System.out.println("result °á°ú : " + result);
 		
 		
-		return "redirect:/modifyUser";
+		return "redirect:/modifyList";
 		
 		
 	}

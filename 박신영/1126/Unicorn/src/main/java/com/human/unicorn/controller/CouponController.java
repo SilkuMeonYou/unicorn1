@@ -2,16 +2,18 @@ package com.human.unicorn.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.human.unicorn.dto.CouponDTO;
+import com.human.unicorn.dto.MemberDTO;
 import com.human.unicorn.service.CouponService;
 
 @Controller
@@ -21,10 +23,12 @@ public class CouponController {
 	CouponService couponService;
 
 	@RequestMapping("/coupon")
-	public String coupon(Model model) {
+	public String coupon(Model model, HttpSession session) {
 		
 		// 받아오는 값으로 바꿀 수 있음 
-		int userno = 3;
+//		int userno = 3;
+		MemberDTO userList = (MemberDTO) session.getAttribute("userList");
+		int userno = userList.getUserno();
 
 		List coupon = couponService.selectCoupon(userno);
 

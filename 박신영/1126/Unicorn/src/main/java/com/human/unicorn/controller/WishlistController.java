@@ -3,6 +3,7 @@ package com.human.unicorn.controller;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.human.unicorn.dto.MemberDTO;
 import com.human.unicorn.dto.WishlistDTO;
 import com.human.unicorn.service.WishlistService;
 
@@ -21,7 +23,10 @@ public class WishlistController {
 	WishlistService wishlistService;
 
 	@RequestMapping("/wishlist")
-	public String wishlist(Model model, HttpServletRequest request, WishlistDTO dto) {
+	public String wishlist(Model model, HttpServletRequest request, WishlistDTO dto, HttpSession session) {
+		
+		MemberDTO userList = (MemberDTO) session.getAttribute("userList");
+		int userno = userList.getUserno();
 		
 		int pageNum = 1;	// 현재 페이지
 		int countPerPage = 3;	// 한 페이지에 몇개
@@ -71,7 +76,7 @@ public class WishlistController {
 		
 		model.addAttribute("result", result);
 		
-		return "wishlist";
+		return "redirect:/wishlist";
 	}
 	
 	

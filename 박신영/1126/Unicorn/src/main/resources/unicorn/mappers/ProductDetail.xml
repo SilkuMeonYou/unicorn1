@@ -5,7 +5,7 @@
 <mapper namespace="ProductDetail">
 
 <select id="product" parameterType ="productDTO" resultType = "productDTO" >
- select * from product
+ select * from product 
         where productno = #{productNo}
 
 </select>
@@ -29,6 +29,48 @@
 VALUES ('c'|| cart_seq.nextval, '3', #{optionNo},#{cartCount})
 
 </insert>
+
+
+
+<insert id = "wishinfo" parameterType = "wishlistDTO">
+
+	insert into wishlist(Key,productNo,userNo)
+VALUES ('w'|| wishlist_seq.nextval, #{productNo} ,'3')
+
+</insert>
+
+
+
+<select id = "orderinfo" parameterType = "paymentDTO" resultType="paymentDTO">
+
+SELECT 
+
+    p.mainimg1, 
+    o.price, 
+    o.productsize,
+ 
+    u.name,
+    u.userno,
+    u.address,
+    u.addressdetails,
+    u.postcode,
+    u.tel,
+    u.email,
+    u.userpoint,
+    p.productno,
+    o.optionno
+FROM 
+    product_option o,
+    users u,
+    product p
+   
+WHERE 
+    o.optionno = #{optionNo} AND
+    u.userno = #{userNo} AND
+    p.productno = #{productNo}
+
+
+</select>
 
 
 

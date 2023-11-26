@@ -19,7 +19,7 @@ public class WishlistServiceImpl implements WishlistService {
 	@Override
 	public Map selectWishlist(int pageNum, int countPerPage, WishlistDTO dto) {
 		
-		dto.setUserno(3);
+//		dto.setUserno(3);
 		
 		int startNum = 0, endNum = 0;
 		

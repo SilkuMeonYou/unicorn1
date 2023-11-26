@@ -1,81 +1,23 @@
 package com.human.unicorn.dto;
 
 import java.sql.Date;
+import java.util.List;
 
 public class InquiryDTO {
+	
 	private String inquiryNo;
 	private int userNo;
 	private int productNo;
 	private String inquiryTitle;
 	private String inquiryDetails;
 	private Date inquiryDate;
-	private String id;
-	private String answerDetails;
-	private Date answerDate;
-	private String mainimg1;
 	private String productname;
 	
-	int startNum;
-	int endNum;
-	public String getMainimg1() {
-		return mainimg1;
-	}
-	public void setMainimg1(String mainimg1) {
-		this.mainimg1 = mainimg1;
-	}
-	public String getProductname() {
-		return productname;
-	}
-	public void setProductname(String productname) {
-		this.productname = productname;
-	}
+	private List list_remove;
 	
+	private int startNum;
+	private int endNum;
 	
-	public String getAnswerDetails() {
-		return answerDetails;
-	}
-	public void setAnswerDetails(String answerDetails) {
-		this.answerDetails = answerDetails;
-	}
-	public Date getAnswerDate() {
-		return answerDate;
-	}
-	public void setAnswerDate(Date answerDate) {
-		this.answerDate = answerDate;
-	}
-	
-	public int getStartNum() {
-		return startNum;
-	}
-	public void setStartNum(int startNum) {
-		this.startNum = startNum;
-	}
-	public int getEndNum() {
-		return endNum;
-	}
-	public void setEndNum(int endNum) {
-		this.endNum = endNum;
-	}
-	public String getId() {
-		
-		return id;
-	}
-	public void setId(String id) {
-		
-		this.id = id;
-	}
-	public String getProcessedId() {
-		String star = "*".repeat(id.length()-3);
-		return id.substring(0,3) + star;
-	}
-	
-	@Override
-	public String toString() {
-		return "InquiryDTO [inquiryNo=" + inquiryNo + ", userNo=" + userNo + ", productNo=" + productNo
-				+ ", inquiryTitle=" + inquiryTitle + ", inquiryDetails=" + inquiryDetails + ", inquiryDate="
-				+ inquiryDate + ", id=" + id + ", answerDetails=" + answerDetails + ", answerDate=" + answerDate
-				+ ", startNum=" + startNum + ", endNum=" + endNum + "]";
-	}
 	public String getInquiryNo() {
 		return inquiryNo;
 	}
@@ -112,4 +54,40 @@ public class InquiryDTO {
 	public void setInquiryDate(Date inquiryDate) {
 		this.inquiryDate = inquiryDate;
 	}
+	public String getProductname() {
+		return productname;
+	}
+	public void setProductname(String productname) {
+		this.productname = productname;
+		
+	}
+	@Override
+	public String toString() {
+		return "InquiryDTO [inquiryno=" + inquiryNo + ", userno=" + userNo + ", productno=" + productNo
+				+ ", inquirytitle=" + inquiryTitle + ", inquirydetails=" + inquiryDetails + ", inquirydate="
+				+ inquiryDate + ", productname=" + productname + ", list_remove=" + list_remove + ", staruNum="
+				+ startNum + ", endNum=" + endNum + "]";
+	}
+	public List getList_remove() {
+		return list_remove;
+	}
+	public void setList_remove(List list_remove) {
+		this.list_remove = list_remove;
+	}
+	public int getStartNum() {
+		return startNum;
+	}
+	public void setStartNum(int startNum) {
+		this.startNum = startNum;
+	}
+	public int getEndNum() {
+		return endNum;
+	}
+	public void setEndNum(int endNum) {
+		this.endNum = endNum;
+	}
+	
+	
+	
+
 }
