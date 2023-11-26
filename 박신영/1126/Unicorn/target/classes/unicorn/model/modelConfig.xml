@@ -19,6 +19,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <typeAlias type="com.human.unicorn.dto.IndexbodyDTO" alias="indexDTO" />
 <typeAlias type="com.human.unicorn.dto.OptionDTO" alias="optionDTO" />
 <typeAlias type="com.human.unicorn.dto.ImgDTO" alias="imgDTO" />
+<typeAlias type="com.human.unicorn.dto.ReviewDTO" alias="reviewDTO" />
 
 <typeAlias type="com.human.unicorn.dto.WishlistDTO" alias="WishlistDTO" />
 <typeAlias type="com.human.unicorn.dto.UserDTO" alias="UserDTO" />

@@ -213,7 +213,7 @@ th, td {
 					<ul>
 						<li class="menubar_title"><a href="managerMember">회원 관리</li>
 						<li class="menubar_item"><a href="managerMember">회원 관리</a></li>
-						
+
 					</ul>
 
 					<ul>
@@ -221,38 +221,51 @@ th, td {
 						<li class="menubar_item"><a href="managerEvent">이벤트</a></li>
 						<li class="menubar_item"><a href="managerNotice">공지사항</a></li>
 						<li class="menubar_item"><a href="managerInquiry">Q&A</a></li>
-						<li class="menubar_item"><a href="">후기</a></li>
+<!-- 						<li class="menubar_item"><a href="">후기</a></li> -->
 					</ul>
 
 					<ul>
 						<li class="menubar_title" id="menu_product">제품 관리</li>
-						<li class="menubar_item"><a href="managerProductInsert">제품 추가</a></li>
-						<li class="menubar_item"><a href="managerProduct">제품 수정 | 삭제</a></li>
+						<li class="menubar_item"><a href="managerProductInsert">제품
+								추가</a></li>
+						<li class="menubar_item"><a href="managerProduct">제품 수정 |
+								삭제</a></li>
 					</ul>
 
 					<ul>
 						<li class="menubar_title"><a href="managerCoupon">쿠폰 관리</a></li>
 						<li class="menubar_item"><a href="managerCoupon">쿠폰 관리</a></li>
-						<li class="menubar_item"><a href="managerCouponInsert">쿠폰 생성</a></li>
-<!-- 						<li class="menubar_item"><a href="">쿠폰 지급</a></li> -->
+						<li class="menubar_item"><a href="managerCouponInsert">쿠폰
+								생성</a></li>
+						<!-- 						<li class="menubar_item"><a href="">쿠폰 지급</a></li> -->
 					</ul>
 
 				</div>
 				<div class="manu">
 					<div class="manu_top">
+
 						<div class="manu_big" id="manu_member">
-							<img class="manu_img1" src="https://ifh.cc/g/rTLctO.png" alt="">
+							<a href="managerMember"> <img class="manu_img1"
+								src="https://ifh.cc/g/rTLctO.png" alt="">
+							</a>
 						</div>
+
 						<div class="manu_big" id="manu_post">
-							<img class="manu_img2" src="https://ifh.cc/g/7zkyfo.png" alt="">
+							<a href="managerEvent"> <img class="manu_img2"
+								src="https://ifh.cc/g/7zkyfo.png" alt="">
+							</a>
 						</div>
 					</div>
 					<div class="manu_bottom">
 						<div class="manu_big" id="manu_product">
-							<img class="manu_img3" src="https://ifh.cc/g/XmARHy.png" alt="">
+							<a href="managerProduct"> <img class="manu_img3"
+								src="https://ifh.cc/g/XmARHy.png" alt="">
+							</a>
 						</div>
 						<div class="manu_big" id="manu_coupon">
-							<img class="manu_img4" src="https://ifh.cc/g/ydshQa.png" alt="">
+							<a href="managerCoupon"> <img class="manu_img4"
+								src="https://ifh.cc/g/ydshQa.png" alt="">
+							</a>
 						</div>
 					</div>
 				</div>
@@ -268,14 +281,14 @@ th, td {
 
 
 	<script>
-	document.addEventListener('DOMContentLoaded', function () {
-        var productMenu = document.getElementById('menu_product');
-        if (productMenu) {
-            productMenu.addEventListener("click", function () {
-                window.location.href = "managerProduct"; 
-            });
-        }
-    });
+		document.addEventListener('DOMContentLoaded', function() {
+			var productMenu = document.getElementById('menu_product');
+			if (productMenu) {
+				productMenu.addEventListener("click", function() {
+					window.location.href = "managerProduct";
+				});
+			}
+		});
 	</script>
 
 

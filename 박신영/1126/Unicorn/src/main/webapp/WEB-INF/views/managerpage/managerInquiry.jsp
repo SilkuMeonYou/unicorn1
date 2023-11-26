@@ -249,7 +249,7 @@ margin-right:30px;
 						<li class="menubar_item"><a href="managerEvent">이벤트</a></li>
 						<li class="menubar_item"><a href="managerNotice">공지사항</a></li>
 						<li class="menubar_item"><a href="managerInquiry">Q&A</a></li>
-						<li class="menubar_item"><a href="">후기</a></li>
+<!-- 						<li class="menubar_item"><a href="">후기</a></li> -->
 					</ul>
 
 					<ul>
