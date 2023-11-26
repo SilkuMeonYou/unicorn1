@@ -9,6 +9,8 @@ public class CouponDTO {
 	private int userno;
 	private String serialno;
 	private Date validdate;
+	private Date startdate;
+	private String possible;
 	
 	// ÆäÀÌÂ¡
 	private int startNum;
@@ -61,6 +63,18 @@ public class CouponDTO {
 	}
 	public void setEndNum(int endNum) {
 		this.endNum = endNum;
+	}
+	public Date getStartdate() {
+		return startdate;
+	}
+	public void setStartdate(Date startdate) {
+		this.startdate = startdate;
+	}
+	public String getPossible() {
+		return possible;
+	}
+	public void setPossible(String possible) {
+		this.possible = possible;
 	}
 	
 

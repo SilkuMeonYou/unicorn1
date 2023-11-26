@@ -26,6 +26,7 @@ public class OrderlistController {
 		
 		MemberDTO userList = (MemberDTO) session.getAttribute("userList");
 		int userno = userList.getUserno();
+		dto.setUserno(userno);
 		
 		List list = orderlistService.selectOrderlist(dto);
 		
@@ -33,7 +34,7 @@ public class OrderlistController {
 		
 		model.addAttribute("list", list);
 		
-		return "mypage_Orderlist";
+		return "orderlist";
 	}
 
 }

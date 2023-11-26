@@ -27,6 +27,8 @@ public class WishlistController {
 		
 		MemberDTO userList = (MemberDTO) session.getAttribute("userList");
 		int userno = userList.getUserno();
+		dto.setUserno(userno);
+
 		
 		int pageNum = 1;	// 현재 페이지
 		int countPerPage = 3;	// 한 페이지에 몇개
@@ -62,7 +64,7 @@ public class WishlistController {
 		// data 안에 wishlist와 total 값
 		model.addAttribute("data", map);
 		
-		return "mypage_Wishlist";
+		return "wishlist";
 	}
 	
 	

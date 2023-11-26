@@ -28,7 +28,9 @@ public class InquiryController {
 //		dto.setUserNo(userno);
 		
 		MemberDTO userList = (MemberDTO) session.getAttribute("userList");
-		int userno = userList.getUserno();
+		int userNo = userList.getUserno();
+		dto.setUserNo(userNo);
+		
 		
 		int pageNum = 1;
 		int countPerPage = 10;
@@ -59,7 +61,7 @@ public class InquiryController {
 		
 		model.addAttribute("data", map);
 
-		return "mypage_Inquiry";
+		return "inquiry";
 
 	}
 

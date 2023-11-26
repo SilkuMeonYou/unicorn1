@@ -185,7 +185,7 @@ table {
 
 					<ul>
 						<li class="menubar_title">활동 정보</li>
-						<li class="menubar_item"><a href="shopping_basket.jsp">나의
+						<li class="menubar_item"><a href="cart">나의
 								장바구니</a></li>
 						<li class="menubar_item"><a href="wishlist">나의
 								위시리스트</a></li>

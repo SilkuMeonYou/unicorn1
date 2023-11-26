@@ -26,9 +26,16 @@ public class MypageController {
 //		dto.setUserno(3);
 		
 		MemberDTO userList = (MemberDTO) session.getAttribute("userList");
-		int userno = userList.getUserno();
 		
+		if ( userList == null ) {
+			return "login";
+		} 
+		
+		int userno = userList.getUserno();
+
+		dto.setUserno(userno);
 		MypageDTO mypageDTO = mypageService.selectUser(dto);
+		
 		System.out.println("mypageController : " + mypageDTO);
 		
 		int total = mypageService.totalCoupon(dto);
@@ -45,6 +52,8 @@ public class MypageController {
 		model.addAttribute("totalOrder", totalOrder);
 		model.addAttribute("orderlist", orderlist);
 		
-		return "mypage_Main";
+		return "mypage";
+		
+		
 	}
 }

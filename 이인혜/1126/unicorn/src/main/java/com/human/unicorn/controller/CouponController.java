@@ -23,12 +23,14 @@ public class CouponController {
 	CouponService couponService;
 
 	@RequestMapping("/coupon")
-	public String coupon(Model model, HttpSession session) {
+	public String coupon(Model model, HttpSession session, CouponDTO dto) {
 		
 		// 받아오는 값으로 바꿀 수 있음 
 //		int userno = 3;
 		MemberDTO userList = (MemberDTO) session.getAttribute("userList");
 		int userno = userList.getUserno();
+		dto.setUserno(userno);
+
 
 		List coupon = couponService.selectCoupon(userno);
 
@@ -38,7 +40,7 @@ public class CouponController {
 		model.addAttribute("userno", userno);
 		model.addAttribute("list", list);
 		
-		return "mypage_Coupon";
+		return "coupon";
 	}
 	
 	@RequestMapping(value="updateCoupon", method=RequestMethod.POST)

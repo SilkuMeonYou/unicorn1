@@ -33,12 +33,14 @@ public class UserController {
 		
 		MemberDTO userList = (MemberDTO) session.getAttribute("userList");
 		int userno = userList.getUserno();
+		dto.setUserno(userno);
+
 		
 		UserDTO userDTO = userService.selectUser(dto);
 		System.out.println("userDTO : " + userDTO);
 		model.addAttribute("userDTO", userDTO);
 		
-		return "modify_User";
+		return "modifyUser";
 	}
 	
 	@RequestMapping("/modifyUser")

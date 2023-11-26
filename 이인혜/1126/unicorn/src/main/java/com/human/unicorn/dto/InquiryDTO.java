@@ -11,7 +11,7 @@ public class InquiryDTO {
 	private String inquiryTitle;
 	private String inquiryDetails;
 	private Date inquiryDate;
-	private String productname;
+	private String productName;
 	
 	private List list_remove;
 	
@@ -54,18 +54,18 @@ public class InquiryDTO {
 	public void setInquiryDate(Date inquiryDate) {
 		this.inquiryDate = inquiryDate;
 	}
-	public String getProductname() {
-		return productname;
+	public String getProductName() {
+		return productName;
 	}
-	public void setProductname(String productname) {
-		this.productname = productname;
+	public void setProductName(String productName) {
+		this.productName = productName;
 		
 	}
 	@Override
 	public String toString() {
-		return "InquiryDTO [inquiryno=" + inquiryNo + ", userno=" + userNo + ", productno=" + productNo
+		return "InquiryDTO [inquiryno=" + inquiryNo + ", userNo=" + userNo + ", productno=" + productNo
 				+ ", inquirytitle=" + inquiryTitle + ", inquirydetails=" + inquiryDetails + ", inquirydate="
-				+ inquiryDate + ", productname=" + productname + ", list_remove=" + list_remove + ", staruNum="
+				+ inquiryDate + ", productName=" + productName + ", list_remove=" + list_remove + ", staruNum="
 				+ startNum + ", endNum=" + endNum + "]";
 	}
 	public List getList_remove() {

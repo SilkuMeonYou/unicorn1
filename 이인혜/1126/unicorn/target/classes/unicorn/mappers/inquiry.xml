@@ -10,13 +10,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				select rownum as rnum, tmp.*
 				from (
 					select
-					i.userNo, i.productNo, i.inquiryTitle, i.inquiryDate, p.productname, i.inquiryNo
+					i.userNo, i.productNo, i.inquiryTitle, i.inquiryDate, p.productName, i.inquiryNo
 					from 
 					inquiry i , product p
 					where 
 					i.productNo = p.productNo
 					and 
-					i.userNo = #{userno}
+					i.userNo = #{userNo}
 					order by 
 					inquiryDate desc
 				) tmp
@@ -35,7 +35,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<select id="totalInquiry" resultType="int" parameterType="InquiryDTO">
 		select count(*) from inquiry
-		where userNo = #{userno}
+		where userNo = #{userNo}
 	</select>
 	
 	
