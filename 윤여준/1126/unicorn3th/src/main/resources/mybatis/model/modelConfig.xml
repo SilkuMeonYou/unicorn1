@@ -16,6 +16,7 @@
 		<typeAlias type="com.human.unicorn.dto.EventDTO" alias="eventDTO" />
 		<typeAlias type="com.human.unicorn.dto.CartDTO" alias="cartDTO" />
 		<typeAlias type="com.human.unicorn.dto.ReviewDTO" alias="reviewDTO" />
+		<typeAlias type="com.human.unicorn.dto.InquiryDTO" alias="inquiryDTO" />
 	</typeAliases>
 	
 	

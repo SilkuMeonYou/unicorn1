@@ -10,8 +10,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.human.unicorn.dto.InquiryDTO;
 import com.human.unicorn.dto.ReviewDTO;
+import com.human.unicorn.service.InquiryService;
 import com.human.unicorn.service.ReviewService;
 
 @Controller
@@ -19,6 +22,9 @@ public class Reviewcontroller {
 
 	@Autowired
 	ReviewService reviewService;
+	
+	@Autowired
+	InquiryService inquiryService;
 	
 	
 //	@RequestMapping("/review")
@@ -33,7 +39,11 @@ public class Reviewcontroller {
 //	}
 	
 	@RequestMapping("/review")
-	public String reviewPage(Model m, HttpServletRequest req) {
+	public String reviewPage(Model m, HttpServletRequest req, @RequestParam("productno") int productNo, String key) {
+		
+		List<InquiryDTO> list = inquiryService.viewInquiry(productNo);
+
+		m.addAttribute("inquiry", list);
 		
 		int pageNum = 1;
 		int countPerPage = 5;
@@ -71,6 +81,8 @@ public class Reviewcontroller {
 		
 		return "review";
 	}
+	
+	
 	
 	
 	@RequestMapping("/writereview")

@@ -131,6 +131,55 @@ td { text-align: center; border-bottom: 1px solid #d8c69c; padding: 5px; font-si
 .deletearea { visibility:hidden;}
 .buttongroup { padding-left: 30px;  padding-bottom: 10px;}   
 
+/* 상품문의 css */
+.titleArea { 	text-align: center; padding-bottom: 50px; padding-top: 50px; border-bottom: 1px solid #919191; user-select: none; }
+
+.link { border: 1px solid #919191; border-radius: 10px; font-size: 13px; padding: 5px; color: #919191; }
+
+.inquiryBtn { background-color: #d0ac88; color: white; width: 120px; border: none; border-radius: 10px; font-size: 15px; height: 27px; }
+
+.inquiryBtn:hover, .cencleBtn:hover, .writeBtn:hover, .closeBtn:hover, .Qtitle:hover { cursor: pointer; }
+
+.inquiryWrap { padding: 15px; border-bottom: 1px solid #cacaca; user-select: none; }
+
+.Qtitle { width: 100%; display: flex; flex-direction: row; padding-top: 10px; }
+
+#Qicon { width: 10%; text-align: center; font-weight: bold; font-size: 15px; }
+
+#inquiryTitle { width: 50%; }
+
+#inquiryName, #inquiryDate { width: 15%; text-align: center; }
+
+#answerStatus { width: 10%; text-align: center; }
+
+.Qdetails {
+	padding: 30px 70px 30px 130px; background-color: #e9e1d9; border-bottom: 1px solid rgb(207, 207, 207); }
+
+.dContainer { display: none; }
+
+.Awrap { display: flex; flex-direction: row; padding: 20px 70px 20px 100px; background-color: #e9e1d9; }
+
+#inquiryAnswer { width: 85%; padding-left: 20px; }
+
+#Aicon { font-weight: bold; }
+
+#writeTitle { width: 400px; height: 30px; font-size: 16px; padding: 10px; outline: none; border: 1px solid #919191; }
+
+#writeDetails { margin-top: 5px; width: 400px; height: 350px; font-size: 16px; padding: 10px; resize: none; outline: none; border: 1px solid #919191; }
+
+.writeWrap { border: 1px solid black; background-color: white; width: 450px; display: none; height: 600px; padding: 15px; position: fixed; bottom: 120px; left: 400px; }
+
+.closeBtnWrap { text-align: end; font-weight: bold; font-size: 20px; }
+
+button { background-color: white; border: none; font-size: 20px; font-weight: bold; }
+
+.buttonWrap { margin-top: 20px; text-align: center; }
+
+.cencleBtn { padding: 10px; border: 1px solid #919191; color: #919191; background-color: white; width: 100px; }
+
+.writeBtn { padding: 10px; border: 1px solid #d0ac88; color: white; background-color: #d0ac88; width: 100px; }
+
+.info { font-size: 11px; color: #919191; }
 
 </style>
 </head>
@@ -154,18 +203,18 @@ td { text-align: center; border-bottom: 1px solid #d8c69c; padding: 5px; font-si
 		<!-- nav tabs 기본형태 -->
 		<div class="container mt-3">
 			<ul class="nav nav-tabs justify-content-between">
-				<li class="nav-item"><a href="#home" class="nav-link "
-					data-bs-toggle="tab">상세정보</a></li>
-				<li class="nav-item"><a href="#menu1" class="nav-link active"
-					data-bs-toggle="tab">리뷰</a></li>
-				<li class="nav-item"><a href="#menu2" class="nav-link "
-					data-bs-toggle="tab">Q&A</a></li>
-				<li class="nav-item"><a href="#menu3" class="nav-link "
-					data-bs-toggle="tab">반품/교환정보</a></li>
+				<li class="nav-item"><a href="#productdetails" class="nav-link "
+					data-bs-toggle="tab" id="productdetails-tab">상세정보</a></li>
+				<li class="nav-item"><a href="#review" class="nav-link active"
+					data-bs-toggle="tab" id="review-tab">리뷰</a></li>
+				<li class="nav-item"><a href="#productqna" class="nav-link "
+					data-bs-toggle="tab" id="qna-tab">Q&A</a></li>
+				<li class="nav-item"><a href="#cancleinfo" class="nav-link "
+					data-bs-toggle="tab" id="canclinfo-tab">반품/교환정보</a></li>
 			</ul>
 			<!-- Tab panes 상세정보-->
 			<div class="tab-content">
-				<div class="tab-pane container " id="home">
+				<div class="tab-pane container " id="productdetails">
 					<div class="titleArea">
 						<h3 class="title mt-3">상세정보</h3>
 						<hr>
@@ -236,7 +285,7 @@ td { text-align: center; border-bottom: 1px solid #d8c69c; padding: 5px; font-si
 		 <!-- =========================
           review tabs 
           ========================= -->
-				<div class="tab-pane container active" id="menu1">
+				<div class="tab-pane container active" id="review">
 				
 		            <div class="sectioncontainer">
 		              <div class="titleArea">
@@ -370,128 +419,88 @@ td { text-align: center; border-bottom: 1px solid #d8c69c; padding: 5px; font-si
           review tabs 끝
           ========================= -->
 
-				<div class="tab-pane container " id="menu2">
+				<%
+				session.setAttribute("userno", 3);
+				int userno = (Integer) session.getAttribute("userno");
+				int productno = Integer.parseInt(request.getParameter("productno"));
+				%>
+				<div class="tab-pane container " id="productqna">
 
 					<div class="sectioncontainer">
 						<div class="titleArea">
-							<h3 class="title mt-3">Q & A</h3>
-							<hr>
-						</div>
+							<h3 class="title mt-3">상품문의</h3>
+							<p>상품에 관한 문의만 답변 가능하며 답변 완료까지 1~2일이 소요될 수 있습니다.</p>
+							<a href="FAQ" class="link">자주묻는질문 바로가기</a> <input type="button"
+								value="상품문의하기" class="inquiryBtn" id="inquiryBtn">
 
-						<table width="100%">
-							<colgroup>
-								<col width="50px">
-								<col width="500px">
-								<col width="100px">
-								<col width="120px">
-								<col width="50px">
-							</colgroup>
-
-							<th>번호</th>
-							<th>제목</th>
-							<th>작성자</th>
-							<th>작성일</th>
-							<th>조회수</th>
-
-							<tr id="qna10">
-								<td>10</td>
-								<td>상품 Q&A 입니다..</td>
-								<td>Noop Noop</td>
-								<td>2023-10-17</td>
-								<td>0</td>
-							</tr>
-
-							<tr id="qna9">
-								<td>9</td>
-								<td>상품 Q&A 입니다..</td>
-								<td>Noop Noop</td>
-								<td>2023-10-17</td>
-								<td>0</td>
-							</tr>
-
-							<tr id="qna8">
-								<td>8</td>
-								<td>상품 Q&A 입니다..</td>
-								<td>Noop Noop</td>
-								<td>2023-10-17</td>
-								<td>0</td>
-							</tr>
-
-							<tr id="qna7">
-								<td>7</td>
-								<td>상품 Q&A 입니다..</td>
-								<td>Noop Noop</td>
-								<td>2023-10-17</td>
-								<td>0</td>
-							</tr>
-
-							<tr id="qna6">
-								<td>6</td>
-								<td>상품 Q&A 입니다..</td>
-								<td>Noop Noop</td>
-								<td>2023-10-17</td>
-								<td>0</td>
-							</tr>
-
-							<tr id="qna5">
-								<td>5</td>
-								<td>상품 Q&A 입니다..</td>
-								<td>Noop Noop</td>
-								<td>2023-10-17</td>
-								<td>0</td>
-							</tr>
-
-							<tr id="qna4">
-								<td>4</td>
-								<td>상품 Q&A 입니다..</td>
-								<td>Noop Noop</td>
-								<td>2023-10-17</td>
-								<td>0</td>
-							</tr>
-
-							<tr id="qna3">
-								<td>3</td>
-								<td>상품 Q&A 입니다..</td>
-								<td>Noop Noop</td>
-								<td>2023-10-17</td>
-								<td>0</td>
-							</tr>
-
-							<tr id="qna2">
-								<td>2</td>
-								<td>상품 Q&A 입니다..</td>
-								<td>Noop Noop</td>
-								<td>2023-10-17</td>
-								<td>0</td>
-							</tr>
-
-							<tr id="qna1">
-								<td>1</td>
-								<td>상품 Q&A 입니다..</td>
-								<td>Noop Noop</td>
-								<td>2023-10-17</td>
-								<td>0</td>
-							</tr>
-
-						</table>
-						<div class="writeWrap">
-							<div class="write_QnA">글쓰기</div>
 
 						</div>
 
-						<!-- 페이지버튼 -->
-						<div class="pageWrap">
-							<div class="page_sidebutton"><</div>
+						<input type="hidden" value="<%=userno%>" id="userNo"> <input
+							type="hidden" value="<%=productno%>" id="productNo">
 
-							<div class="page_button" id="page_1">1</div>
 
-							<div class="page_sidebutton">></div>
+						<c:forEach var="inquiry" items="${inquiry }" varStatus="status">
+
+							<div class="inquiryWrap" id="inquiryWrap${status.index }">
+								<div class="Qtitle" id="Qtitle${status.index }">
+									<div id="Qicon">Q</div>
+									<div id="inquiryTitle">${inquiry.inquiryTitle }</div>
+									<div id="inquiryName">${inquiry.getProcessedId()}</div>
+									<div id="inquiryDate">${inquiry.inquiryDate }</div>
+									<div id="answerStatus">
+										<c:choose>
+											<c:when test="${not empty inquiry.answerDetails }">
+												<p style="font-weight: bold">답변완료</p>
+											</c:when>
+											<c:otherwise>
+												<p>답변대기</p>
+											</c:otherwise>
+										</c:choose>
+									</div>
+								</div>
+								<div class="dContainer" id="dContainer${status.index }">
+									<div class="Qdetails">
+										<div id="inquiryDetails">${inquiry.inquiryDetails }</div>
+									</div>
+
+									<c:if test="${not empty inquiry.answerDetails }">
+										<div class="Awrap">
+											<div id="Aicon">A</div>
+											<div id="inquiryAnswer">${inquiry.answerDetails }</div>
+											<div id="answerDate">${inquiry.answerDate }</div>
+										</div>
+									</c:if>
+
+								</div>
+							</div>
+
+						</c:forEach>
+						
+						<div class="writeWrap" id="writeWrap">
+
+							<div class="closeBtnWrap">
+								<button class="closeBtn">X</button>
+							</div>
+							<input type="text" placeholder="제목을 입력해주세요" id="writeTitle">
+							<textarea id="writeDetails"> 문의내용을 입력해주세요</textarea>
+							<p class="info">문의내역 및 답변은 마이페이지 > 상품문의에서 조회 가능합니다.</p>
+							<p class="info">근거 없는 비방 목적의 글 또는 개인 정보 노출된 글의 경우 통보 없이 삭제될 수
+								있습니다.</p>
+							<p class="info">상품 관련없는 문의는 자주묻는질문을 이용해주세요</p>
+
+							<div class="buttonWrap">
+								<input type="button" class="cencleBtn" value="취소"> <input
+									type="button" class="writeBtn" value="등록">
+							</div>
 						</div>
 					</div>
-
 				</div>
+
+
+				<div class="pageWrap"></div>
 				<!-- 반품 교환정보 tab -->
-				<div class="tab-pane container " id="menu3">
+				<div class="tab-pane container " id="cancleinfo">
 					<h3 class="title mt-3">반품/교환정보</h3>
 					<hr>
 					<div class="table-responsive">
@@ -555,6 +564,60 @@ td { text-align: center; border-bottom: 1px solid #d8c69c; padding: 5px; font-si
 
 
 <script>
+
+let key = "${param.key}";
+console.log(key);
+if(key === "productdetails"){
+	
+	$("#productdetails-tab").addClass("active");
+	$("#review-tab").removeClass("active");
+	$("#qna-tab").removeClass("active");
+	$("#cancleinfo-tab").removeClass("active");
+	
+	$("#productdetails").addClass("show active");
+	$("#review").removeClass("show active");
+	$("#qna").removeClass("show active");
+	$("#cancleinfo").removeClass("show active");
+	
+}else if(key === "review"){
+	
+	$("#productdetails-tab").removeClass("active");
+	$("#review-tab").addClass("active");
+	$("#qna-tab").removeClass("active");
+	$("#cancleinfo-tab").removeClass("active");
+	
+	$("#productdetails").removeClass("show active");
+	$("#review").addClass("show active");
+	$("#qna").removeClass("show active");
+	$("#cancleinfo").removeClass("show active");
+	
+}else if(key === "qna"){
+	
+	$("#productdetails-tab").removeClass("active");
+	$("#review-tab").removeClass("active");
+	$("#qna-tab").addClass("active");
+	$("#cancleinfo-tab").removeClass("active");
+	
+	$("#productdetails").removeClass("show active");
+	$("#review").removeClass("show active");
+	$("#qna").addClass("show active");
+	$("#cancleinfo").removeClass("show active");
+	
+}else if(key === "cancleinfo"){
+	
+	$("#productdetails-tab").removeClass("active");
+	$("#review-tab").removeClass("active");
+	$("#qna-tab").removeClass("active");
+	$("#cancleinfo-tab").addClass("active");
+	
+	$("#productdetails").removeClass("show active");
+	$("#review").removeClass("show active");
+	$("#qna").removeClass("show active");
+	$("#cancleinfo").addClass("show active");
+	
+}
+
+
    // 리뷰 좋아요 스크립트
    var tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
    var tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
@@ -594,7 +657,102 @@ td { text-align: center; border-bottom: 1px solid #d8c69c; padding: 5px; font-si
         }
     });
 
+	// inquiry 스크립트 ---------------------------------
+	  let length = document.querySelectorAll(".inquiryWrap").length;
+    for (let i = 0; i < length; i++) {
+        let Qtitle = document.getElementById("Qtitle" + i);
+        console.log("Qtitle" + document.getElementById("Qtitle0"));
+        console.log(Qtitle);
+        Qtitle.addEventListener("click", function () {
+            let dContainer = document.getElementById("dContainer" + i);
+            if (dContainer.style.display == 'none') {
+                dContainer.style.display = 'block';
+            } else {
+                dContainer.style.display = 'none';
+            }
+        })
+    }
 
+    // 상품문의 글쓰는 화면 띄우기
+    document.querySelector(".inquiryBtn").addEventListener("click", function () {
+        let writeWrap = document.getElementById("writeWrap");
+        writeWrap.style.display = 'block';
+        
+        let inquiryContainer = document.getElementById("inquiryContainer");
+
+
+    })
+
+    // x 버튼
+    document.querySelector(".closeBtn").addEventListener("click", function () {
+        let writeWrap = document.getElementById("writeWrap");
+        writeWrap.style.display = 'none';
+
+        
+    })
+
+    // 취소버튼
+    document.querySelector(".cencleBtn").addEventListener("click", function () {
+        if (confirm("취소하시겠습니까?")) {
+            let writeWrap = document.getElementById("writeWrap");
+            writeWrap.style.display = 'none';
+        }
+
+    })
+		 
+      let writeTitle = document.getElementById("writeTitle");
+     	let writeDetails = document.getElementById("writeDetails");
+      console.log("writeTitle" + writeTitle.value)
+    // 등록버튼
+    document.querySelector(".writeBtn").addEventListener("click", function () {
+        if (confirm("등록하시겠습니까?")) {
+      	 
+      	  if(writeTitle.value == "" || writeTitle.value == null){
+					
+      		  alert("제목은 필수입니다.");
+      		  
+      	  } else {
+      		  alert("상품문의가 등록되었습니다.");
+      		  let writeWrap = document.getElementById("writeWrap");
+                writeWrap.style.display = 'none';
+                      
+             	  let userNo = document.getElementById("userNo").value;
+                let productNo = document.getElementById("productNo").value;
+                console.log(writeTitle)
+                console.log(writeDetails)
+                  	
+                 submitInquiry(writeTitle.value,writeDetails.value,userNo,productNo); 
+                 writeTitle.value = "";
+                 writeDetails.value="문의내용을 입력해주세요";
+      	  }
+      	  
+            
+        }
+
+    })
+    
+      function submitInquiry(writeTitle,writeDetails,userNo,productNo) {
+	    	  $.ajax({
+	    		  type : "POST",
+	    		  url : "insertInquiry",
+	    		  data : {
+	    			  inquiryTitle : writeTitle,
+	    			  inquiryDetails : writeDetails,
+	    			  userNo : userNo,
+	    			  productNo : productNo
+	    		  },
+	    		  error : function(error){
+	    			  console.log("error");
+	    		  },
+	    		  success: function(data) {
+	    			  console.log("success");
+	    			  location.reload();
+	    		  }
+	    	  });
+	      }
+	      
+    
+    // inquiry 스크립트끝 ---------------------------------
 
 
 </script>
