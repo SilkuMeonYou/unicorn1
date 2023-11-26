@@ -14,8 +14,8 @@ public class CartService {
 	@Autowired
 	CartDAO cartDAO;
 	
-	public List viewCart() {
-		List list = cartDAO.viewCart();
+	public List<CartDTO> viewCart(int userNo) {
+		List<CartDTO> list = cartDAO.viewCart(userNo);
 		return list;
 	}
 	
@@ -29,8 +29,8 @@ public class CartService {
 		return result;
 	}
 	
-	public List<PaymentDTO> cartToPayment(List<String> deleteList) {
-		List<PaymentDTO> list = cartDAO.cartToPayment(deleteList);
+	public List<PaymentDTO> cartToPayment(List<String> orderList) {
+		List<PaymentDTO> list = cartDAO.cartToPayment(orderList);
 		return list;
 	}
 }

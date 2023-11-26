@@ -197,31 +197,25 @@
               
             </div>
           
-<%
-List<IndexbodyDTO> list = (List<IndexbodyDTO>)request.getAttribute("list");
-for(int i =0; i<2; i++) {
-	IndexbodyDTO dto = list.get(i);
-%>
+<c:forEach var="list" items="${list }">
     <!-- new item -->
     <div class="new-container mt-5">
     <!-- new item 1 -->
     <div class="new-item" id="new-item1"  
-    style="background-image: url('<%= dto.getMainImg3() %>'); background-size: cover;">
+    style="background-image: url('${list.mainImg3}'); background-size: cover;">
     
       <div class="new-title" id="new-title1">
-       <%= dto.getProductname() 	%>
+      ${list.productname}
       </div>
       <div class="new-detail" id="new-detail1">
-       <%= dto.getProductex() %> 
+       ${list.productex}
        </div>
-       <a class="new-readmore" id="new-readmore1" href="productDetail?productNum=3">더보기</a>
+       <a class="new-readmore" id="new-readmore1" href="productDetail?productNo=3">더보기</a>
        
       
        </div>
     </div>
-<%
-}
-%>
+</c:forEach>
 
     </section>
     <!-- section end -->

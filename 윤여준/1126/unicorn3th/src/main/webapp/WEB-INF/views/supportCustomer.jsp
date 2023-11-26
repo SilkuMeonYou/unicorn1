@@ -58,12 +58,12 @@
       <div class="container mt-5">
         <hr>
         <div class="buttonWrap ">
-          <button type="button" class="btn btn-outline-secondary" id="supportbutton1"><p class="display-6"><strong>공지사항</strong></p></button></a>
+          <button type="button" class="btn btn-outline-secondary" id="supportbutton1"><p class="display-6"><strong>공지사항</strong></p></button>
           <button type="button" class="btn btn-outline-warning" id="supportbutton2"><p class="display-6"><strong>FAQ</strong></p></button>
         </div>
       </div>
       
-      
+      </section>
   </div>
 
   <!-- section end -->
@@ -72,10 +72,10 @@
   
 <script>
     document.querySelector("#supportbutton1").addEventListener("click", function(){
-      window.location.href = "/unicorn/noticeList"
+      window.location.href = "noticeList"
     });
     document.querySelector("#supportbutton2").addEventListener("click", function(){
-      window.location.href = "/unicorn/FAQ"
+      window.location.href = "FAQ"
     });
 
 

@@ -2,6 +2,7 @@ package com.human.unicorn.dao;
 
 import java.util.List;
 
+import com.human.unicorn.dto.InquiryDTO;
 import com.human.unicorn.dto.ReviewDTO;
 
 public interface ReviewDAO {
@@ -15,6 +16,10 @@ public interface ReviewDAO {
 	int modifyReview(ReviewDTO dto);
 	
 	int deleteReview(ReviewDTO dto);
+	
+	public List<InquiryDTO> viewInquiry(int productNo);
+	
+	public int insertInquiry(InquiryDTO dto);
 	
 
 }

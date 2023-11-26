@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.human.unicorn.dto.InquiryDTO;
 import com.human.unicorn.dto.ReviewDTO;
-import com.human.unicorn.service.InquiryService;
 import com.human.unicorn.service.ReviewService;
 
 @Controller
@@ -22,66 +21,6 @@ public class Reviewcontroller {
 
 	@Autowired
 	ReviewService reviewService;
-	
-	@Autowired
-	InquiryService inquiryService;
-	
-	
-//	@RequestMapping("/review")
-//	public String reviewtabs(Model m) {
-//		System.out.println("reviewController check");
-//		
-//		List reviewList = reviewService.reviewTable();
-//		m.addAttribute("reviewList", reviewList);
-//		System.out.println("reviewList : " + reviewList);
-//		
-//		return "review";
-//	}
-	
-	@RequestMapping("/review")
-	public String reviewPage(Model m, HttpServletRequest req, @RequestParam("productno") int productNo, String key) {
-		
-		List<InquiryDTO> list = inquiryService.viewInquiry(productNo);
-
-		m.addAttribute("inquiry", list);
-		
-		int pageNum = 1;
-		int countPerPage = 5;
-		
-		String tmp_pageNum = req.getParameter("pageNum");
-		System.out.println("tmp_pageNum : " + tmp_pageNum);
-		
-		if(tmp_pageNum != null) {
-			
-			try {
-				pageNum = Integer.parseInt(tmp_pageNum);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-		
-		String tmp_countPerPage = req.getParameter("countPerPage");
-		System.out.println("tmp_pageNum : " + tmp_countPerPage);
-		if(tmp_countPerPage != null) {
-			
-			try {
-				countPerPage = Integer.parseInt(tmp_countPerPage);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-		
-		Map map = reviewService.getReviewPage(pageNum, countPerPage);
-		
-		map.put("pageNum", pageNum);
-		map.put("countPerPage", countPerPage);
-		
-		m.addAttribute("data", map);
-		System.out.println(map);
-		
-		return "review";
-	}
-	
 	
 	
 	
@@ -94,7 +33,7 @@ public class Reviewcontroller {
 		m.addAttribute("reviewList", reviewList);
 		System.out.println("reviewList : " + reviewList);
 		
-		return "write";
+		return "redirect:/productDetail";
 	}
 	
 	
@@ -105,7 +44,7 @@ public class Reviewcontroller {
 		int result = reviewService.modifyReview(dto);
 		System.out.println("Controller modify : " + result);
 		
-		return "redirect:/review";
+		return "redirect:/productDetail";
 	}
 	
 	
@@ -115,9 +54,14 @@ public class Reviewcontroller {
 		
 		int result = reviewService.deleteReview(dto);
 		
-		return "redirect:/review";
+		return "redirect:/productDetail";
 	}
 	
-	
+	   @RequestMapping("/insertInquiry")
+	   public String insertInquiry(@ModelAttribute InquiryDTO dto) {
+	      int result = reviewService.insertInquiry(dto);
+	      System.out.println("문의 등록 결과:" + result);
+	      return "redirect:/productDetail?productno="+dto.getProductNo();
+	   }
 	
 }

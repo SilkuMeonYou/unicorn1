@@ -6,6 +6,7 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
 <title>ID/PW찾기</title>
@@ -58,7 +59,7 @@ body {
 	justify-content: center;
 	/* min-height: 100dvh; */
 	text-align: center;
-	margin-top: 50px;
+	margin-top: 30px;
 }
 
 h3 {
@@ -66,25 +67,23 @@ h3 {
 }
 
 .id {
-	/* border: 2px solid #d0ac88; */
 	border-radius: 15px;
 	width: 500px;
-	margin: 50px;
+	margin: 30px;
 }
 
 .pw {
 	/* border: 1px solid #d0ac88; */
 	border-radius: 15px;
 	width: 500px;
-	margin: 50px;
+	margin: 30px;
 }
 
-input[type=text] {
+input[type=text], input[type=email] {
 	width: 300px;
 	height: 35px;
 	border: 1px solid gray;
 	border-radius: 5px;
-	/* margin-right: 150px; */
 }
 
 input[type=submit] {
@@ -102,6 +101,7 @@ input[type=submit] {
 	padding: 20px;
 	display: flex;
 	justify-content: center;
+	font-size: 17px;
 }
 
 a {
@@ -109,33 +109,15 @@ a {
 	text-decoration-line: none;
 }
 
-.mail1, .name1, .name2 {
+.mail1, .mail2, .name1, .name2, .id1 {
 	margin-top: 15px;
 }
 
-.id1 {
-	margin-top: 15px;
-}
-
-.success {
+.success, .success1 {
 	display: none;
-	/* 	margin-top: 10px; */
-}
-
-.success1 {
-	display: none;
-	/* 	margin-top: 10px; */
-	/* color: orangered; */
-}
-
-.success {
 	display: flex;
 	justify-content: center;
-}
-
-.success1 {
-	display: flex;
-	justify-content: center;
+	font-size: 17px;
 }
 
 .button, .button1 {
@@ -180,58 +162,51 @@ a {
 	})
 
 	function search() {
+		let id1 = document.querySelector(".id1"); // 비밀번호찾기 아이디입력필드를 쿼리셀렉터로 불러오기
 		let name1 = document.querySelector(".name1"); // 아이디찾기 이름입력필드를 쿼리셀렉터로 불러오기
 		let name2 = document.querySelector(".name2"); // 비밀번호찾기 이름입력필드를 쿼리셀렉터로 불러오기
-		let mail = document.querySelector(".mail1"); // 메일입력필드를 쿼리셀렉터로 불러오기
+		let mail1 = document.querySelector(".mail1"); // 아이디 찾기 메일입력필드를 쿼리셀렉터로 불러오기
+		let mail2 = document.querySelector(".mail2"); // 비밀번호 찾기 메일입력필드를 쿼리셀렉터로 불러오기
 		let button = document.querySelector(".button"); // 아이디찾기 버튼 쿼리셀렉터로 불러오기
+		let button1 = document.querySelector(".button1"); // 아이디찾기 버튼 쿼리셀렉터로 불러오기
 
-		let idid = document.querySelector(".idid"); // 아이디찾기 입력필드를 쿼리셀렉터로 불러오기
-		let pwpw = document.querySelector(".pwpw"); // 비밀번호찾기 입력필드를 쿼리셀렉터로 불러오기
-		let bt1 = document.querySelector(".bt1"); // 아이디찾기 버튼 쿼리셀렉터로 불러오기
-		let bt2 = document.querySelector(".bt2"); // 비밀번호찾기 버튼 쿼리셀렉터로 불러오기
 		let success = document.querySelector(".success"); // 아이디 문구 쿼리셀렉터로 불러오기
 		let success1 = document.querySelector(".success1"); // 아이디 문구 쿼리셀렉터로 불러오기
 
-		button.addEventListener("click", function() { // 아이디찾기 버튼을 클릭했을때
-
-			if (success.append) { // 이메일값이 입력한 값과 이름값이 입력한 값이 같으면
-
-				// idid.querySelector(".name1").style.display = "none" // 이름입력필드,
-				// idid.querySelector(".mail1").style.display = "none" // 이메일 입력필드,
-				// bt1.querySelector(".button").style.display = "none" // 아이디 찾기버튼이 안보이게하고
-
-				success.style.display = "block"; // 문구가 보이게
+		name1.addEventListener('keydown', function(event) { // 이름
+			console.log("Enter");
+			if (event.key === 'Enter') {
+				event.preventDefault();
+				mail1.focus();
 			}
 		});
 
-		button1.addEventListener("click", function() { // 비밀번호찾기 버튼을 클릭했을때
-			console.log("click")
-			if (success1.append) { // 아이디값이 입력한 값과 이름값이 입력한 값이 같으면
-
-				// pwpw.querySelector(".name2").style.display = "none" // 이름 입력필드,
-				// pwpw.querySelector(".id1").style.display = "none" // 아이디 입력필드,
-				// bt2.querySelector(".button1").style.display = "none" // 비밀번호 찾기버튼이 안보이게하고
-
-				success1.style.display = "block"; // 문구가 보이게
+		name2.addEventListener('keydown', function(event) { // 이름
+			console.log("Enter");
+			if (event.key === 'Enter') {
+				event.preventDefault();
+				id1.focus();
 			}
 		});
 
-		var error5 = "${error5}";
-		if (error5 !== "") {
-			alert(error5);
-		}
+		id1.addEventListener('keydown', function(event) { // 이름
+			console.log("Enter");
+			if (event.key === 'Enter') {
+				event.preventDefault();
+				mail2.focus();
+			}
+		});
 
-		var id = "${id}";
-		if (id !== "") {
-			alert(id);
+		var error = "${error}";
+		if (error !== "") {
+			alert(error);
 		}
 	}
 </script>
 
 <body>
 	<h3>
-		<a href="index.jsp" style="font-family: 'ImcreSoojin';"> Noop Noop
-		</a>
+		<a href="main" style="font-family: 'ImcreSoojin';"> Noop Noop </a>
 	</h3>
 	<form method="post" action="find_id">
 		<div id="div1">
@@ -242,17 +217,14 @@ a {
 				<hr>
 				<div class="idid">
 					<input type="text" class="name1" name="name" placeholder="이름 입력">
-					<input type="text" class="mail1" name="email"
+					<input type="email" class="mail1" name="email"
 						placeholder="이메일주소 입력">
 				</div>
 				<div class="bt1">
 					<input type="submit" class="button" value="찾기">
 				</div>
 
-				<div class="success">${id}</div>
-				<!-- <div class="login">
-                <a href="이수연_login.html">로그인하기</a>
-            </div> -->
+				<div class="success">${message}</div>
 			</div>
 	</form>
 	<form method="post" action="find_pw">
@@ -264,11 +236,12 @@ a {
 			<div class="pwpw">
 				<input type="text" class="name2" name="name" placeholder="이름 입력">
 				<input type="text" class="id1" name="id" placeholder="아이디 입력">
+				<input type="email" class="mail2" name="email" placeholder="이메일 입력">
 			</div>
 			<div class="bt2">
 				<input type="submit" class="button1" value="찾기">
 			</div>
-			<div class="success1"></div>
+			<div class="success1">${pwmessage}</div>
 		</div>
 		</div>
 	</form>
@@ -277,4 +250,5 @@ a {
 	</div>
 	</div>
 </body>
+
 </html>

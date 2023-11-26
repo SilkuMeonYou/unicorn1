@@ -286,83 +286,89 @@ td {
 		<form action="clickBtn">
 
 			<div class="sectionContainer">
+
 				<c:choose>
-					<c:when test="${ not empty cartList }">
-						<div class="cartHeader">
-							<div class="basketHead">장바구니</div>
+					<c:when test="${flag}">
+						<c:choose>
+							<c:when test="${ not empty cartList }">
+								<div class="cartHeader">
+									<div class="basketHead">장바구니</div>
+									<input type="submit" name="btn" value="삭제" class="deleteBtn">
 
-							<label class="custom-checkbox" for="selectAllButton"> <input
-								type="checkbox" class="selectAllBtn" id="selectAllButton"
-								name="cartNoList"> <span class="checkmark"></span>
-							</label> <input type="submit" name="btn" value="삭제" class="deleteBtn">
+								</div>
 
-						</div>
+								<!-- ============= 주문리스트 ================-->
+								<c:forEach var="cart" items="${cartList }" varStatus="status">
+									<div class="infoContainer" id="infoContainer${status.index }">
 
-						<!-- ============= 주문리스트 ================-->
-						<c:forEach var="cart" items="${cartList }" varStatus="status">
-							<div class="infoContainer" id="infoContainer${status.index }">
+										<table width="100%">
+											<colgroup>
+												<col width="5%">
+												<col width="20%">
+												<col width="20%">
+												<col width="15%">
+												<col width="20%">
+												<col width="20%">
+											</colgroup>
 
-								<table width="100%">
-									<colgroup>
-										<col width="5%">
-										<col width="20%">
-										<col width="20%">
-										<col width="15%">
-										<col width="20%">
-										<col width="20%">
-									</colgroup>
+											<tr>
+												<td rowspan="3"><label class="custom-checkbox"
+													for="check${status.index }"> <input type="checkbox"
+														id="check${status.index }" name="cartNoList"
+														value="${cart.cartNo }"> <span class="checkmark"></span>
+												</label></td>
 
-									<tr>
-										<td rowspan="3"><label class="custom-checkbox"
-											for="check${status.index }"> <input type="checkbox"
-												id="check${status.index }" name="cartNoList"
-												value="${cart.cartNo }"> <span class="checkmark"></span>
-										</label></td>
+												<td rowspan="3"><img src="${cart.mainImg1 }"
+													class="goodsimg"></td>
+												<td style="font-weight: bold; font-size: 18px;">${cart.productName }</td>
+												<td>수량</td>
+												<td>배송비</td>
+												<td>결제예상금액</td>
+											</tr>
 
-										<td rowspan="3"><img src="${cart.mainImg1 }"
-											class="goodsimg"></td>
-										<td style="font-weight: bold; font-size: 18px;">${cart.productName }</td>
-										<td>수량</td>
-										<td>배송비</td>
-										<td>결제예상금액</td>
-									</tr>
+											<tr>
+												<td>사이즈: ${cart.productSize }</td>
+												<td>
+													<div class="amountBox" id="amountBoxWrap">
+														<input type="button" value="-" class="amountBtn"
+															id="minusBtn${status.index }"> <input type="text"
+															value="${cart.cartCount }" class="amountBtn"
+															id="amount${status.index }"> <input type="button"
+															value="+" class="amountBtn" id="plusBtn${status.index }">
+														<input type="hidden" id="cartno${status.index }"
+															value="${cart.cartNo }">
+													</div>
+												</td>
+												<td rowspan="2" class="price"
+													id="order_deliveryFee${status.index }">0</td>
+												<td rowspan="2" class="price" id="exPrice${status.index }"></td>
+											</tr>
 
-									<tr>
-										<td>사이즈: ${cart.productSize }</td>
-										<td>
-											<div class="amountBox" id="amountBoxWrap">
-												<input type="button" value="-" class="amountBtn"
-													id="minusBtn${status.index }"> <input type="text"
-													value="${cart.cartCount }" class="amountBtn"
-													id="amount${status.index }"> <input type="button"
-													value="+" class="amountBtn" id="plusBtn${status.index }">
-												<input type="hidden" id="cartno${status.index }"
-													value="${cart.cartNo }">
-											</div>
-										</td>
-										<td rowspan="2" class="price"
-											id="order_deliveryFee${status.index }">0
-											</td>
-										<td rowspan="2" class="price" id="exPrice${status.index }"></td>
-									</tr>
+											<tr>
+												<td>판매가: ${cart.price} <input type="hidden"
+													value="${cart.price}" id="order_fee${status.index }">
+												</td>
 
-									<tr>
-										<td>판매가: ${cart.price} <input type="hidden"
-											value="${cart.price}" id="order_fee${status.index }">
-										</td>
+												<td><input type="button" value="수량변경" class="modifyBtn"
+													id="modifyBtn${status.index }"></td>
 
-										<td><input type="button" value="수량변경" class="modifyBtn"
-											id="modifyBtn${status.index }"></td>
-
-									</tr>
-								</table>
-							</div>
-						</c:forEach>
+											</tr>
+										</table>
+									</div>
+								</c:forEach>
+							</c:when>
+							<c:otherwise>
+								<div class="basketHead">장바구니</div>
+								<p>장바구니에 담긴 상품이 없습니다.</p>
+								<!-- ============= 주문리스트 끝 ================-->
+							</c:otherwise>
+						</c:choose>
 					</c:when>
 					<c:otherwise>
+
+
 						<div class="basketHead">장바구니</div>
-						<p>장바구니에 담긴 상품이 없습니다.</p>
-						<!-- ============= 주문리스트 끝 ================-->
+						<p>로그인 후 이용 가능한 페이지 입니다.</p>
 					</c:otherwise>
 				</c:choose>
 			</div>
@@ -383,8 +389,8 @@ td {
 					<tr>
 						<td>선택상품금액</td>
 						<td rowspan="2" class="operator">+</td>
-						<td>총 배송비
-						<input type="hidden" name="deliveryFee" id="delivery" value="0">
+						<td>총 배송비 <input type="hidden" name="deliveryFee"
+							id="delivery" value="0">
 						</td>
 						<td rowspan="2" class="operator">=</td>
 						<td>총 주문금액</td>

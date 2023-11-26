@@ -179,7 +179,7 @@ input[type="button"] {
 	<div id="all">
 		<div class="logo">
 			<h2>
-				<a href="index.jsp" style="font-family: 'ImcreSoojin';"> Noop
+				<a href="main" style="font-family: 'ImcreSoojin';"> Noop
 					Noop </a>
 			</h2>
 		</div>
@@ -588,17 +588,10 @@ input[type="button"] {
 							}
 						});
 
-				var error3 = "${error3}";
-				if (error3 !== "") {
-					alert(error3);
+				var error = "${error}";
+				if (error !== "") {
+					alert(error);
 				}
-
-				var error4 = "${error4}";
-				if (error4 !== "") {
-					alert(error4);
-				}
-
-				//                 window.location.href = "/signup";
 
 			});
 		</script>

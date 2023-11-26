@@ -15,8 +15,8 @@ public class CartDAO {
 	@Autowired
 	SqlSession sqlSession;
 	
-	public List viewCart() {
-		List list = sqlSession.selectList("cart.viewCart");
+	public List<CartDTO> viewCart(int userNo) {
+		List<CartDTO> list = sqlSession.selectList("cart.viewCart",userNo);
 		return list;
 	}
 	
@@ -29,17 +29,9 @@ public class CartDAO {
 		int result = sqlSession.update("cart.cartModify", dto);
 		return result;
 	}
-	public List<PaymentDTO> cartToPayment(List<String> deleteList) {
-		List<PaymentDTO> list = sqlSession.selectList("cart.cartToPayment", deleteList);
-		
-		if(list != null) {
-			for(PaymentDTO d: list) {
-				System.out.println("이미지:" + d.getMainimg1());
-				System.out.println("제품명:" + d.getProductname());
-			}
-		} else {
-			System.out.println("null");
-		}
+	public List<PaymentDTO> cartToPayment(List<String> orderList) {
+		List<PaymentDTO> list = sqlSession.selectList("cart.cartToPayment", orderList);
+
 		
 		return list;
 	}

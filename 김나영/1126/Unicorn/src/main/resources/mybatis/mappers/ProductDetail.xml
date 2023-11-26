@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ProductDetail">
+
+<select id="product" parameterType ="ProductDTO" resultType = "ProductDTO" >
+ select * from product 
+        where productno = #{productNo}
+
+</select>
+
+<select id="productOption" parameterType="OptionDTO" resultType="optionDTO">
+    select * from product_option
+    where productno = #{productNo}
+</select>
+
+
+
+<select id="productImg" parameterType ="ImgDTO" resultType = "ImgDTO">
+ select * from product_img
+        where productno = #{productNo}
+
+</select>
+
+<insert id = "cartinfo" parameterType = "cartDTO">
+
+	insert into cart(cartno, userNo, optionNo, cartCount)
+VALUES ('c'|| cart_seq.nextval, '#{userNo}', #{optionNo},#{cartCount})
+
+</insert>
+
+
+
+<insert id = "wishinfo" parameterType = "wishlistDTO">
+
+	insert into wishlist(Key,productNo,userNo)
+VALUES ('w'|| wishlist_seq.nextval, #{productNo} ,#{userNo})
+
+</insert>
+
+
+
+<select id = "orderinfo" parameterType = "paymentDTO" resultType="paymentDTO">
+
+SELECT 
+
+    p.mainimg1, 
+    o.price, 
+    o.productsize,
+ 
+    u.name,
+    u.userno,
+    u.address,
+    u.addressdetails,
+    u.postcode,
+    u.tel,
+    u.email,
+    u.userpoint,
+    p.productno,
+    o.optionno
+FROM 
+    product_option o,
+    users u,
+    product p
+   
+WHERE 
+    o.optionno = #{optionNo} AND
+    u.userno = #{userNo} AND
+    p.productno = #{productNo}
+
+
+</select>
+
+
+
+
+
+</mapper>

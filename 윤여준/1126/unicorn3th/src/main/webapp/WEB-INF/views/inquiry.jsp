@@ -618,7 +618,7 @@ button {
           review tabs 끝
           ========================= -->
 				<%
-				session.setAttribute("userno", 3);
+				
 				int userno = (Integer) session.getAttribute("userno");
 				int productno = Integer.parseInt(request.getParameter("productno"));
 				%>

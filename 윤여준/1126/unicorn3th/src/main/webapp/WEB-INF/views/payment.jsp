@@ -232,7 +232,7 @@ a:hover, a:active, a:focus {
 
 		<div class="sectionheader">
 			<div class="headerimg">
-				<a href="/unicorn/productdetail"> <img
+				<a href="javascript:history.back();"  > <img
 					src="https://ifh.cc/g/jXsrR9.jpg" alt="" class="img1">
 				</a>
 				<div class="right">

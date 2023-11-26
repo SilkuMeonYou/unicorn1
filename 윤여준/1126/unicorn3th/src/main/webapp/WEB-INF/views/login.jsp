@@ -177,7 +177,7 @@ img {
 
 <body>
 	<div id="logo">
-		<a class="navbar-brand" href="/unicorn/main"
+		<a class="navbar-brand" href="main"
 			style="font-family: 'ImcreSoojin';">
 			<h2>Noop Noop</h2>
 		</a>
@@ -218,7 +218,7 @@ img {
 			</div>
 			<div class="l">|</div>
 			<div class="join">
-				<a href="/unicorn/checked">회원가입</a>
+				<a href="checked">회원가입</a>
 			</div>
 		</div>
 
@@ -374,15 +374,14 @@ img {
                 }
             })
             
-            var error1 = "${error1}";
-            var error2 = "${error2}";
+            var error = "${error}";
             
-                if (error1 !== "") {
-                    alert(error1);
+            
+                if (error !== "") {
+                    alert(error);
                 }
-                if (error2 !== "") {
-                    alert(error2);
-                }
+              
+        
 
             //         let idvalue = "123";              // 아이디값 저장
             //         let pwvalue = "123";             // 비밀번호값 저장

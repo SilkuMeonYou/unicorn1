@@ -157,7 +157,7 @@
 
 <body>
     <h3>
-        <a href="/unicorn/main" style="font-family:'ImcreSoojin';"> Noop Noop </a>
+        <a href="main" style="font-family:'ImcreSoojin';"> Noop Noop </a>
     </h3>
     <div id="all">
         <div class="c2">
