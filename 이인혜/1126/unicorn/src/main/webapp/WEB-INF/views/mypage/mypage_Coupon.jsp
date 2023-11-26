@@ -265,15 +265,11 @@ let validlist = [];
     });
 </c:forEach>
 
-
-
 for (let i = 0; i < coupondata.length; i++) {
     console.log("쿠폰번호: " + coupondata[i].serialno);
     console.log("사용 가능 금액: " + coupondata[i].coupondc);
     console.log("유효기간: " + coupondata[i].validdate);
 }
-
-
 
 coupon_btn.addEventListener("click", function(event){
 	

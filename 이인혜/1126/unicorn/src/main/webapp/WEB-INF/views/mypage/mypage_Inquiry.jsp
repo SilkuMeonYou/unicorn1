@@ -335,11 +335,8 @@ a:hover, a:active, a:focus {
 
 
 	</section>
-	<!-- section end -->
-
 
 	</div>
-	<%--   <c:import url="indexfooter.jsp"/> --%>
 
 	<script>
 
@@ -371,9 +368,7 @@ a:hover, a:active, a:focus {
     
 	<c:forEach var="dto" items="${data.inquiry}">
 		deletelist.push({
-			inquiryno: '$
-			{dto.inquiryNo }'
-		})
+			inquiryNo: '${dto.inquiryNo }'})
 	</c:forEach>
 
 		
@@ -389,8 +384,6 @@ a:hover, a:active, a:focus {
 			
 	})
 		
-	
-    
 
     </script>
 

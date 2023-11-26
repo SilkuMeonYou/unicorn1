@@ -31,7 +31,6 @@ public class CouponController {
 		int userno = userList.getUserno();
 		dto.setUserno(userno);
 
-
 		List coupon = couponService.selectCoupon(userno);
 
 		List list = couponService.validCoupon();
@@ -43,20 +42,25 @@ public class CouponController {
 		return "coupon";
 	}
 	
-	@RequestMapping(value="updateCoupon", method=RequestMethod.POST)
-	public String updateCoupon(@ModelAttribute CouponDTO dto) {
-		
-		int result = couponService.updateCoupon(dto);
-		System.out.println("coupon result : " + result);
-		
-		return "redirect:/coupon";
-	}
+//	@RequestMapping(value="updateCoupon", method=RequestMethod.POST)
+//	public String updateCoupon(@ModelAttribute CouponDTO dto) {
+//		
+//		int result = couponService.updateCoupon(dto);
+//		System.out.println("coupon result : " + result);
+//		
+//		return "redirect:/coupon";
+//	}
 
 	@RequestMapping(value="insertCoupon", method=RequestMethod.POST)
-	public String insertCoupon(@ModelAttribute CouponDTO dto) {
+	public String insertCoupon(@ModelAttribute CouponDTO dto, HttpSession session) {
 		
-		int userno = 3;
+		System.out.println("쿠폰생성실행");
+		
+		MemberDTO userList = (MemberDTO) session.getAttribute("userList");
+		int userno = userList.getUserno();
 		dto.setUserno(userno);
+		
+		System.out.println("userno : " + userno);
 		
 		int result = couponService.insertCoupon(dto);
 		System.out.println("insert coupon result : " + result);			
