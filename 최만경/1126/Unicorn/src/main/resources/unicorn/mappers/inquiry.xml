@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="inquiry">
+<!-- 	<select id="viewInquiry" resultType="inquiryDTO" -->
+<!-- 		parameterType="inquiryDTO"> -->
+
+<!-- 		select i.*, u.id -->
+<!-- 		from (select rownum as rnum, tmp.* -->
+<!-- 		from (select -->
+<!-- 		notice.* from notice order by noticedate desc ) tmp),inquiry i, users u -->
+<!-- 		where (rnum <![CDATA[>=]]>1 -->
+<!-- 		and rnum <![CDATA[<=]]>5) -->
+<!-- 		and productno = #{productNo} and u.userno = i.userno -->
+<!-- 	</select> -->
+
+<select id="viewInquiry" resultType="inquiryDTO" parameterType="int">
+select i.*, u.id from inquiry i, users u where productno = ${_parameter} and u.userno = i.userno
+order by inquirydate desc
+</select>
+
+<insert id="insertInquiry" parameterType="inquiryDTO">
+	insert into inquiry (inquiryNo, userNo, productNo, inquiryTitle, inquiryDetails, inquiryDate)
+	values ('i'|| inquiry_seq .nextval, #{userNo},#{productNo}, #{inquiryTitle}, #{inquiryDetails},SYSDATE)
+</insert>
+
+</mapper>
