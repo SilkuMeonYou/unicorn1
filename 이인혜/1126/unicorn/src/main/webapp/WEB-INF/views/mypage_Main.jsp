@@ -123,10 +123,10 @@
 
        <div class="mypage">마이페이지</div>
        
-<%--        <% --%>
-<%--        if(session.getAttribute("id") == null){%> --%>
-<!--        		<div class="none_id">로그인 후 이용가능합니다</div>   -->
-<%--        <%}else{	%> --%>
+       <%
+       if(session.getAttribute("userList") == null){%>
+       		<div class="none_id">로그인 후 이용가능합니다</div>  
+       <%}else{	%>
 
        <div class="mypage2">안녕하세요, ${dto.name } 님 !</div>
 
@@ -179,7 +179,7 @@
 		  <ul>
 			<li class="menubar_title">나의 정보</li>
 			<li class="menubar_item"><a href="modifyList">회원정보 수정</a></li>
-			<li class="menubar_item"><a href="logout.jsp">로그아웃</a></li>
+			<li class="menubar_item"><a href="logout">로그아웃</a></li>
 		  </ul>
         
       </div>
@@ -208,20 +208,11 @@
 
             </table>
             
-<!--           </div> -->
-<!--           <div class="oderbar_num"> -->
-<!--             <div class="oderbar_num_item"><<</div> -->
-<!--             <div class="oderbar_num_item"><</div> -->
-<!--             <div class="oderbar_num_item">1</div> -->
-<!--             <div class="oderbar_num_item">></div> -->
-<!--             <div class="oderbar_num_item">>></div> -->
-<!--           </div> -->
-
         </div>
       </div>
         
     </div>
-    
+    <%} %>
     </section>
     <!-- section end -->
 

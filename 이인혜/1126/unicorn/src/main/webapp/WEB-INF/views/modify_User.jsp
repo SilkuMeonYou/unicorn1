@@ -153,7 +153,7 @@ a:hover, a:active, a:focus { text-decoration: none; }
 						  <ul>
 							<li class="menubar_title">나의 정보</li>
 							<li class="menubar_item"><a href="modifyList">회원정보 수정</a></li>
-							<li class="menubar_item"><a href="logout.jsp">로그아웃</a></li>
+							<li class="menubar_item"><a href="logout">로그아웃</a></li>
 						  </ul>
 
 					</div>
