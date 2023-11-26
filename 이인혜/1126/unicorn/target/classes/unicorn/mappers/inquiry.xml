@@ -10,15 +10,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				select rownum as rnum, tmp.*
 				from (
 					select
-					i.userno, i.productno, i.inquirytitle, i.inquirydate, p.productname, i.inquiryno
+					i.userNo, i.productNo, i.inquiryTitle, i.inquiryDate, p.productname, i.inquiryNo
 					from 
 					inquiry i , product p
 					where 
-					i.productno = p.productno
+					i.productNo = p.productNo
 					and 
-					i.userno = #{userno}
+					i.userNo = #{userno}
 					order by 
-					inquirydate desc
+					inquiryDate desc
 				) tmp
 			)
 		where rnum <![CDATA[ >= ]]> #{startNum} and rnum <![CDATA[ <= ]]> #{endNum}
@@ -27,7 +27,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<delete id="deleteInquiry" parameterType="java.util.List">
 		delete from inquiry
-		where inquiryno in
+		where inquiryNo in
 		<foreach item="item" collection="array" open="(" separator="," close=")">
 		#{item}
 		</foreach>
@@ -35,7 +35,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<select id="totalInquiry" resultType="int" parameterType="InquiryDTO">
 		select count(*) from inquiry
-		where userno = #{userno}
+		where userNo = #{userno}
 	</select>
 	
 	
